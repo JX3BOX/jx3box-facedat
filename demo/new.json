@@ -1,0 +1,138 @@
+{
+    "nDecorationID": 0,
+    "tBone": {
+        "NOSE_SIZE": -124,
+        "UP_LIP_OUT": -24,
+        "NOSEBOW_WIDTH": -43,
+        "MOUTH_OPEN": -8,
+        "CHEEK_Y": -70,
+        "EYE_OPEN": 23,
+        "FACE_Y": 34,
+        "MOUTH_END_L": 0,
+        "JAW_LENGTH": -26,
+        "UP_LIP": -3,
+        "EYE_DIST": 19,
+        "NOSETOP_POS_Y": 36,
+        "EYE_DIRC": -51,
+        "EYEBOW_OUT": 6,
+        "MOUTH_OUT": -38,
+        "RIDGE_Y": -5,
+        "MOUTH_END": -5,
+        "NOSEBOW_BEND": 48,
+        "JAW_WIDTH": -35,
+        "LOW_LIP_POS": -22,
+        "PUPIL_DIRC": 18,
+        "NOSETOP_POS_Z": 1,
+        "MOUTH_POS": 48,
+        "FACE_SCALE": -55,
+        "UP_LID_POS": 0,
+        "FACE_Z": -12,
+        "NOSETOP_WIDTH": -38,
+        "PUPIL_SIZE": 38,
+        "UP_FACE": -128,
+        "EYEBOW_POS": -39,
+        "EYEBOW_DIRC": 60,
+        "UP_LIP_POS": -9,
+        "EYE_SIZE": 6,
+        "MOUTH_ROT": -3,
+        "OUT": 0,
+        "EYE_POS": -54,
+        "MOUTH_END_R": 0,
+        "NOSETOP_UP": 0,
+        "EYECROW_Y": -25,
+        "JAW_END": -6,
+        "JAW_ROT": 48,
+        "LOW_LIP_OUT": -9,
+        "JAW_POS": 62,
+        "LOW_FACE": 39,
+        "CHEEK_Z": -15,
+        "LOW_LIP": -32,
+        "MOUTH_SIZE": -17,
+        "NOSE_HEIGHT": 3,
+        "LOW_LID_POS": 16
+    },
+    "tDecal": {
+        "BROW": {
+            "fValue1": 2,
+            "nColorID": 9,
+            "fValue2": 0.52,
+            "fValue3": 1,
+            "nShowID": 12,
+            "bUse": true
+        },
+        "IRIS_RIGHT": {
+            "fValue1": 1,
+            "nColorID": 1,
+            "bUse": true,
+            "nShowID": 5,
+            "fValue3": 1,
+            "fValue2": 0.5
+        },
+        "IRIS_LEFT": {
+            "fValue1": 1,
+            "nColorID": 1,
+            "bUse": true,
+            "nShowID": 5,
+            "fValue3": 1,
+            "fValue2": 0.5
+        },
+        "EYE_LIGHT": {
+            "fValue1": 1,
+            "nColorID": 12,
+            "bUse": true,
+            "nShowID": 10,
+            "fValue3": 1,
+            "fValue2": 0.97
+        },
+        "BLUSHER_MOUSTACHE": {
+            "fValue1": 1,
+            "nColorID": 1,
+            "fValue2": 0.63,
+            "fValue3": 1,
+            "nShowID": 6,
+            "bUse": true
+        },
+        "EYE_LINE": {
+            "fValue1": -1,
+            "nColorID": 0,
+            "fValue2": -1,
+            "fValue3": -1,
+            "nShowID": 8,
+            "bUse": false
+        },
+        "LIP_GLOSS": {
+            "fValue1": 0.5,
+            "nColorID": 1,
+            "bUse": true,
+            "nShowID": 8,
+            "fValue3": 0,
+            "fValue2": 0.6
+        },
+        "DECAL": {
+            "fValue1": -1,
+            "nColorID": 0,
+            "fValue2": -1,
+            "fValue3": -1,
+            "nShowID": 0,
+            "bUse": false
+        },
+        "EYE_SHADOW": {
+            "fValue1": 1.9500000476837,
+            "nColorID": 17,
+            "fValue2": 0.12,
+            "fValue3": 1,
+            "nShowID": 1,
+            "bUse": true
+        },
+        "BASE": {
+            "fValue1": -1,
+            "nColorID": 0,
+            "fValue2": -1,
+            "fValue3": -1,
+            "nShowID": 2,
+            "bUse": false
+        }
+    },
+    "nRoleType": 2,
+    "nVersion": 3
+}

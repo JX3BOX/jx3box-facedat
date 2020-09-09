@@ -1,0 +1,437 @@
+{
+    "status": 1,
+    "eye": [
+        {
+            "name": "OUT",
+            "value": "0",
+            "desc": "眼睛凸出",
+            "min": "-128",
+            "max": "10"
+        },
+        {
+            "name": "EYE_POS",
+            "value": "-30",
+            "desc": "眼睛位置",
+            "min": "-46",
+            "max": "15"
+        },
+        {
+            "name": "EYE_SIZE",
+            "value": "-16",
+            "desc": "眼睛大小",
+            "min": "-25",
+            "max": "18"
+        },
+        {
+            "name": "EYE_DIRC",
+            "value": "-24",
+            "desc": "眼睛倾斜",
+            "min": "-42",
+            "max": "32"
+        },
+        {
+            "name": "EYE_DIST",
+            "value": "3",
+            "desc": "眼睛间距",
+            "min": "-5",
+            "max": "40"
+        },
+        {
+            "name": "EYE_OPEN",
+            "value": "7",
+            "desc": "眼睛开合",
+            "min": "-28",
+            "max": "32"
+        },
+        {
+            "name": "EYEBOW_OUT",
+            "value": "-2",
+            "desc": "眉骨凸出",
+            "min": "-85",
+            "max": "126"
+        },
+        {
+            "name": "EYEBOW_DIRC",
+            "value": "-3",
+            "desc": "眉毛倾斜",
+            "min": "-61",
+            "max": "90"
+        },
+        {
+            "name": "EYEBOW_POS",
+            "value": "-48",
+            "desc": "眉毛高度",
+            "min": "-78",
+            "max": "41"
+        },
+        {
+            "name": "PUPIL_SIZE",
+            "value": "-33",
+            "desc": "瞳孔大小",
+            "min": "-96",
+            "max": "18"
+        },
+        {
+            "name": "PUPIL_DIRC",
+            "value": "-2",
+            "desc": "瞳孔位置",
+            "min": "-53",
+            "max": "15"
+        },
+        {
+            "name": "UP_LID_POS",
+            "value": "0",
+            "desc": "上眼睑高度",
+            "min": "-10",
+            "max": "95"
+        },
+        {
+            "name": "LOW_LID_POS",
+            "value": "0",
+            "desc": "下眼睑高度",
+            "min": "-28",
+            "max": "87"
+        },
+        {
+            "name": "EYECROW_Y",
+            "value": "0",
+            "desc": "外眼角倾斜",
+            "min": "-128",
+            "max": "65"
+        },
+        {
+            "name": "RIDGE_Y",
+            "value": "0",
+            "desc": "内眼角倾斜",
+            "min": "-63",
+            "max": "49"
+        }
+    ],
+    "mouth": [
+        {
+            "name": "MOUTH_POS",
+            "value": "-5",
+            "desc": "嘴巴位置",
+            "min": "-27",
+            "max": "55"
+        },
+        {
+            "name": "MOUTH_SIZE",
+            "value": "0",
+            "desc": "嘴巴大小",
+            "min": "-27",
+            "max": "55"
+        },
+        {
+            "name": "MOUTH_ROT",
+            "value": "0",
+            "desc": "下颚倾斜",
+            "min": "-10",
+            "max": "10"
+        },
+        {
+            "name": "MOUTH_OPEN",
+            "value": "-25",
+            "desc": "嘴唇开合",
+            "min": "-20",
+            "max": "20"
+        },
+        {
+            "name": "MOUTH_OUT",
+            "value": "0",
+            "desc": "嘴巴凸出",
+            "min": "-78",
+            "max": "10"
+        },
+        {
+            "name": "MOUTH_END",
+            "value": "0",
+            "desc": "嘴角位置",
+            "min": "-32",
+            "max": "56"
+        },
+        {
+            "name": "UP_LIP",
+            "value": "18",
+            "desc": "上唇厚度",
+            "min": "-69",
+            "max": "10"
+        },
+        {
+            "name": "LOW_LIP",
+            "value": "-23",
+            "desc": "下唇厚度",
+            "min": "-39",
+            "max": "97"
+        },
+        {
+            "name": "UP_LIP_OUT",
+            "value": "0",
+            "desc": "上唇凸出",
+            "min": "-36",
+            "max": "21"
+        },
+        {
+            "name": "LOW_LIP_OUT",
+            "value": "0",
+            "desc": "下唇凸出",
+            "min": "-6",
+            "max": "25"
+        },
+        {
+            "name": "UP_LIP_POS",
+            "value": "0",
+            "desc": "上唇位置",
+            "min": "-32",
+            "max": "25"
+        },
+        {
+            "name": "LOW_LIP_POS",
+            "value": "0",
+            "desc": "下唇位置",
+            "min": "-29",
+            "max": "89"
+        },
+        {
+            "name": "MOUTH_END_L",
+            "value": "0",
+            "desc": "左嘴角高度",
+            "min": "-22",
+            "max": "22"
+        },
+        {
+            "name": "MOUTH_END_R",
+            "value": "0",
+            "desc": "右嘴角高度",
+            "min": "-22",
+            "max": "22"
+        }
+    ],
+    "nose": [
+        {
+            "name": "NOSE_SIZE",
+            "value": "0",
+            "desc": "鼻子大小",
+            "min": "-92",
+            "max": "105"
+        },
+        {
+            "name": "NOSE_HEIGHT",
+            "value": "37",
+            "desc": "鼻子高度",
+            "min": "-128",
+            "max": "20"
+        },
+        {
+            "name": "NOSETOP_POS_Z",
+            "value": "0",
+            "desc": "鼻头高度",
+            "min": "-128",
+            "max": "20"
+        },
+        {
+            "name": "NOSETOP_POS_Y",
+            "value": "0",
+            "desc": "鼻头位置",
+            "min": "-66",
+            "max": "33"
+        },
+        {
+            "name": "NOSETOP_WIDTH",
+            "value": "0",
+            "desc": "鼻头宽度",
+            "min": "-67",
+            "max": "126"
+        },
+        {
+            "name": "NOSETOP_UP",
+            "value": "0",
+            "desc": "鼻尖弯度",
+            "min": "-128",
+            "max": "127"
+        },
+        {
+            "name": "NOSEBOW_WIDTH",
+            "value": "-18",
+            "desc": "鼻梁宽度",
+            "min": "-128",
+            "max": "126"
+        },
+        {
+            "name": "NOSEBOW_BEND",
+            "value": "24",
+            "desc": "鼻梁高度",
+            "min": "-76",
+            "max": "55"
+        }
+    ],
+    "face": [
+        {
+            "name": "CHEEK_Y",
+            "value": "27",
+            "desc": "颧骨位置",
+            "min": "-128",
+            "max": "116"
+        },
+        {
+            "name": "CHEEK_Z",
+            "value": "0",
+            "desc": "颧骨凸出",
+            "min": "-15",
+            "max": "33"
+        },
+        {
+            "name": "FACE_Y",
+            "value": "23",
+            "desc": "脸颊宽度",
+            "min": "-128",
+            "max": "126"
+        },
+        {
+            "name": "FACE_Z",
+            "value": "0",
+            "desc": "脸颊高度",
+            "min": "-112",
+            "max": "67"
+        },
+        {
+            "name": "UP_FACE",
+            "value": "-90",
+            "desc": "上脸宽度",
+            "min": "-107",
+            "max": "126"
+        },
+        {
+            "name": "LOW_FACE",
+            "value": "29",
+            "desc": "下脸宽度",
+            "min": "-128",
+            "max": "126"
+        },
+        {
+            "name": "FACE_SCALE",
+            "value": "0",
+            "desc": "脸蛋丰满",
+            "min": "-119",
+            "max": "57"
+        },
+        {
+            "name": "JAW_WIDTH",
+            "value": "15",
+            "desc": "下巴宽度",
+            "min": "-36",
+            "max": "126"
+        },
+        {
+            "name": "JAW_POS",
+            "value": "0",
+            "desc": "下巴位置",
+            "min": "-128",
+            "max": "126"
+        },
+        {
+            "name": "JAW_LENGTH",
+            "value": "0",
+            "desc": "下巴长度",
+            "min": "-39",
+            "max": "21"
+        },
+        {
+            "name": "JAW_END",
+            "value": "-17",
+            "desc": "下巴尖宽度",
+            "min": "-105",
+            "max": "38"
+        },
+        {
+            "name": "JAW_ROT",
+            "value": "0",
+            "desc": "下巴凸出",
+            "min": "-69",
+            "max": "126"
+        }
+    ],
+    "decal": [
+        {
+            "name": "BASE",
+            "value": "1",
+            "desc": "面部皮肤",
+            "type": 0,
+            "dname": "默认",
+            "icon": "5817"
+        },
+        {
+            "name": "IRIS_RIGHT",
+            "value": "1",
+            "desc": "右瞳",
+            "type": 1,
+            "dname": "默认",
+            "icon": "5841"
+        },
+        {
+            "name": "IRIS_LEFT",
+            "value": "1",
+            "desc": "左瞳",
+            "type": 2,
+            "dname": "默认",
+            "icon": "5841"
+        },
+        {
+            "name": "EYE_SHADOW",
+            "value": "0",
+            "desc": "眼影",
+            "type": 3,
+            "dname": "默认",
+            "icon": "5815"
+        },
+        {
+            "name": "EYE_LINE",
+            "value": "3",
+            "desc": "眼线",
+            "type": 4,
+            "dname": "隽秀",
+            "icon": "5732"
+        },
+        {
+            "name": "BROW",
+            "value": "6",
+            "desc": "眉毛",
+            "type": 5,
+            "dname": "标准",
+            "icon": "5627"
+        },
+        {
+            "name": "BLUSHER_MOUSTACHE",
+            "value": "0",
+            "desc": "腮红和胡须",
+            "type": 6,
+            "dname": "默认",
+            "icon": "5815"
+        },
+        {
+            "name": "LIP_GLOSS",
+            "value": "1",
+            "desc": "唇形",
+            "type": 7,
+            "dname": "默认",
+            "icon": "5569"
+        },
+        {
+            "name": "EYE_LIGHT",
+            "value": "1",
+            "desc": "眼神光",
+            "type": 8,
+            "dname": "默认",
+            "icon": "5556"
+        },
+        {
+            "name": "DECAL",
+            "value": "2",
+            "desc": "贴花",
+            "type": 9,
+            "dname": "新蕊",
+            "icon": "5684"
+        }
+    ],
+    "misc": [{ "name": "RoleType", "value": "6", "desc": "萝莉" }]
+}
