@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-facedat",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "JX3BOX Facedat viewer",
     "main": "index.js",
     "scripts": {

@@ -113,8 +113,6 @@ export default {
     props: ["data"],
     data: function () {
         return {
-            // data: demo,
-
             active: "eye",
 
             eyes: [],
@@ -126,10 +124,42 @@ export default {
             role: "",
         };
     },
-    computed: {},
+    computed : {
+        facedata : function (){
+            // let facedata = JSON.parse(JSON.stringify(this.data));
+            try{
+                return JSON.parse(this.data);
+            }catch(e){
+                console.log(e);
+                this.$notify.error({
+                    title: "错误",
+                    message: "脸型数据无法解析",
+                });
+            }
+            return ''
+        }
+    },
+    watch : {
+        facedata : function (newdata){
+            // 旧版数据
+            if (newdata.status) {
+                this.role = newdata.misc[0]["value"];
+                // 新版数据
+            } else {
+                this.role = newdata.nRoleType;
+                newdata = format(newdata);
+            }
+
+            this.eyes = newdata.eye;
+            this.mouthes = newdata.mouth;
+            this.noses = newdata.nose;
+            this.faces = newdata.face;
+            this.decals = newdata.decal;
+        }
+    },
     methods: {
         getDecalName: function (item) {
-            return  _.get(decalmap[this.role][item.type][item.value],"name") || '未知';
+            return  _.get(decalmap[this.role][item.type][item.value],"name") || '无';
         },
         getDecalIcon: function (item) {
             let iconid = _.get(decalmap[this.role][item.type][item.value],"iconid");
@@ -140,35 +170,6 @@ export default {
             }
             
         },
-    },
-    mounted: function () {
-        if (this.data) {
-            try {
-                // let facedata = JSON.parse(JSON.stringify(this.data));
-                let facedata = JSON.parse(this.data);
-
-                // 旧版数据
-                if (facedata.status) {
-                    this.role = facedata.misc[0]["value"];
-                    // 新版数据
-                } else {
-                    this.role = facedata.nRoleType;
-                    facedata = format(facedata);
-                }
-
-                this.eyes = facedata.eye;
-                this.mouthes = facedata.mouth;
-                this.noses = facedata.nose;
-                this.faces = facedata.face;
-                this.decals = facedata.decal;
-            } catch (e) {
-                console.log(e);
-                this.$notify.error({
-                    title: "错误",
-                    message: "脸型数据无法解析",
-                });
-            }
-        }
     },
 };
 </script>
