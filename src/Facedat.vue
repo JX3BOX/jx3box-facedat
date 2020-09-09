@@ -1,5 +1,5 @@
 <template>
-    <div class="c-facedat" v-if="data">
+    <div class="c-facedat" v-if="facedata">
         <el-tabs v-model="active" type="card">
             <el-tab-pane label="眼部轮廓" name="eye">
                 <div class="c-facedat-group">
@@ -121,40 +121,16 @@ export default {
             faces: [],
             decals: [],
 
+            facedata : this.data,
             role: "",
         };
     },
     computed : {
-        facedata : function (){
-            // let facedata = JSON.parse(JSON.stringify(this.data));
-            try{
-                return JSON.parse(this.data);
-            }catch(e){
-                console.log(e);
-                this.$notify.error({
-                    title: "错误",
-                    message: "脸型数据无法解析",
-                });
-            }
-            return ''
-        }
     },
     watch : {
-        facedata : function (newdata){
-            // 旧版数据
-            if (newdata.status) {
-                this.role = newdata.misc[0]["value"];
-                // 新版数据
-            } else {
-                this.role = newdata.nRoleType;
-                newdata = format(newdata);
-            }
-
-            this.eyes = newdata.eye;
-            this.mouthes = newdata.mouth;
-            this.noses = newdata.nose;
-            this.faces = newdata.face;
-            this.decals = newdata.decal;
+        data : function (newdata){
+            this.facedata = newdata
+            this.render()
         }
     },
     methods: {
@@ -170,7 +146,36 @@ export default {
             }
             
         },
+        render : function (){
+            try{
+                let facedata = JSON.parse(this.facedata);
+                // 旧版数据
+                if (facedata.status) {
+                    this.role = facedata.misc[0]["value"];
+                    // 新版数据
+                } else {
+                    this.role = facedata.nRoleType;
+                    facedata = format(facedata);
+                }
+
+                this.eyes = facedata.eye;
+                this.mouthes = facedata.mouth;
+                this.noses = facedata.nose;
+                this.faces = facedata.face;
+                this.decals = facedata.decal;
+
+            }catch(e){
+                this.facedata = ''
+                this.$notify.error({
+                    title: "错误",
+                    message: "脸型数据无法解析",
+                });
+            }
+        }
     },
+    mounted : function (){
+        this.render()
+    }
 };
 </script>
 
