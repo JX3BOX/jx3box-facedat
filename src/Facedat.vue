@@ -140,9 +140,9 @@ export default {
         getDecalIcon: function (item) {
             let iconid = _.get(decalmap[this.role][item.type][item.value],"iconid");
             if(iconid){
-                return __ossMirror + "icon/" + iconid + ".png";
+                return __iconPath + "icon/" + iconid + ".png";
             }else{
-                return __ossMirror + "icon/" + 'undefined' + ".png";
+                return __iconPath + "icon/" + 'undefined' + ".png";
             }
             
         },
