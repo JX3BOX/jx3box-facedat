@@ -98,20 +98,19 @@
 </template>
 
 <script>
-import _ from 'lodash'
+import _ from "lodash";
 import {
     __ossMirror,
     __iconPath,
     __ossRoot,
-} from "@jx3box/jx3box-common/js/jx3box.json";
+} from "@jx3box/jx3box-common/data/jx3box.json";
 import decalmap from "@jx3box/jx3box-data/data/face/facedecals.json";
 import format from "./format";
-// import demo from "../demo/old.json";
-// import demo from "../demo/new.json";
+
 export default {
     name: "Facedat",
     props: ["data"],
-    data: function () {
+    data: function() {
         return {
             active: "eye",
 
@@ -121,33 +120,37 @@ export default {
             faces: [],
             decals: [],
 
-            facedata : this.data,
+            facedata: this.data,
             role: "",
         };
     },
-    computed : {
-    },
-    watch : {
-        data : function (newdata){
-            this.facedata = newdata
-            this.render()
-        }
+    computed: {},
+    watch: {
+        data: function(newdata) {
+            this.facedata = newdata;
+            this.render();
+        },
     },
     methods: {
-        getDecalName: function (item) {
-            return  _.get(decalmap[this.role][item.type][item.value],"name") || '无';
+        getDecalName: function(item) {
+            return (
+                _.get(decalmap[this.role][item.type][item.value], "name") ||
+                "无"
+            );
         },
-        getDecalIcon: function (item) {
-            let iconid = _.get(decalmap[this.role][item.type][item.value],"iconid");
-            if(iconid){
+        getDecalIcon: function(item) {
+            let iconid = _.get(
+                decalmap[this.role][item.type][item.value],
+                "iconid"
+            );
+            if (iconid) {
                 return __iconPath + "icon/" + iconid + ".png";
-            }else{
-                return __iconPath + "icon/" + 'undefined' + ".png";
+            } else {
+                return __iconPath + "icon/" + "undefined" + ".png";
             }
-            
         },
-        render : function (){
-            try{
+        render: function() {
+            try {
                 let facedata = JSON.parse(this.facedata);
                 // 旧版数据
                 if (facedata.status) {
@@ -163,19 +166,19 @@ export default {
                 this.noses = facedata.nose;
                 this.faces = facedata.face;
                 this.decals = facedata.decal;
-
-            }catch(e){
-                this.facedata = ''
+            } catch (e) {
+                console.log(e)
+                this.facedata = "";
                 this.$notify.error({
                     title: "错误",
                     message: "脸型数据无法解析",
                 });
             }
-        }
+        },
     },
-    mounted : function (){
-        this.render()
-    }
+    mounted: function() {
+        this.render();
+    },
 };
 </script>
 
