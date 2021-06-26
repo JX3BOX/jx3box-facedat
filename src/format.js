@@ -120,8 +120,8 @@ function format(input) {
                 name: "RIDGE_Y",
                 value: _.get(input, "tBone.RIDGE_Y"),
                 desc: "内眼角倾斜",
-                min: "-63",
-                max: "49",
+                min: "-57",
+                max: "112",
             },
         ],
         mouth: [
