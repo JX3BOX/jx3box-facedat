@@ -1,17 +1,20 @@
 # Facedat
+捏脸分析公共组件
 
 ## Step.1 Install
 ```
-npm install @jx3box/jx3box-facedat
+npm install --save @jx3box/jx3box-facedat
 ```  
 
 ## Step.2 Import
-+ 指定模块
++ 引入模块
 ```javascript
+import Upload from "@jx3box/jx3box-facedat/src/Upload.vue"
 import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue"
 ```
 ## Step.3 Usage
-文章
++ 使用模块
 ```html
-<Facedat :data="data"/>
+<Upload @success="handleSuccess"/>
+<Facedat :data="data" :clean="true" client="std"/>
 ```

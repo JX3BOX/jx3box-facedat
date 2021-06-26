@@ -71,11 +71,7 @@
             </el-tab-pane>
             <el-tab-pane label="贴花" name="decal">
                 <div class="m-facedat-decals" id="decals">
-                    <div
-                        class="c-facedat-group"
-                        v-for="(decal, i) in decals"
-                        :key="decal + i"
-                    >
+                    <div class="c-facedat-group" v-for="(decal, i) in decals" :key="decal + i">
                         <h2 class="u-title">{{ decal.desc }}</h2>
                         <ul class="u-decals">
                             <li>
@@ -85,9 +81,11 @@
                                     :title="decal.dname"
                                     :alt="decal.dname"
                                 />
-                                <span class="u-dname">{{
+                                <span class="u-dname">
+                                    {{
                                     getDecalName(decal)
-                                }}</span>
+                                    }}
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -110,7 +108,7 @@ import format from "./format";
 export default {
     name: "Facedat",
     props: ["data"],
-    data: function() {
+    data: function () {
         return {
             active: "eye",
 
@@ -126,19 +124,20 @@ export default {
     },
     computed: {},
     watch: {
-        data: function(newdata) {
-            this.facedata = newdata;
-            this.render();
-        },
+        // data: function (newdata) {
+        //     this.facedata = newdata;
+        //     this.render();
+        // },
     },
     methods: {
-        getDecalName: function(item) {
+        // TODO:加载不同怀旧服\正式服的贴花
+        getDecalName: function (item) {
             return (
                 _.get(decalmap[this.role][item.type][item.value], "name") ||
                 "无"
             );
         },
-        getDecalIcon: function(item) {
+        getDecalIcon: function (item) {
             let iconid = _.get(
                 decalmap[this.role][item.type][item.value],
                 "iconid"
@@ -149,7 +148,9 @@ export default {
                 return __iconPath + "icon/" + "undefined" + ".png";
             }
         },
-        render: function() {
+        render: function () {
+            if(!this.facedata) return
+            
             try {
                 let facedata = JSON.parse(this.facedata);
                 // 旧版数据
@@ -167,7 +168,7 @@ export default {
                 this.faces = facedata.face;
                 this.decals = facedata.decal;
             } catch (e) {
-                console.log(e)
+                console.log(e);
                 this.facedata = "";
                 this.$notify.error({
                     title: "错误",
@@ -176,7 +177,7 @@ export default {
             }
         },
     },
-    mounted: function() {
+    mounted: function () {
         this.render();
     },
 };

@@ -1,25 +1,38 @@
 <template>
-    <div>
-        <Facedat :data="data" />
+    <div style="max-width:980px;margin:100px auto;">
+        <Upload @success="handleSuccess"/>
+        <Facedat :data="data" :client="client" :clean="clean"/>
     </div>
 </template>
 
 <script>
-import Facedat from './Facedat'
-// import demo from "../demo/old.json";
-import demo from "../demo/new.json";
+import Facedat from "./Facedat";
+import Upload from "./Upload";
 export default {
     props: [],
-    data: function() {
+    data: function () {
         return {
-            data: JSON.stringify(demo),
+            data: "",
         };
     },
-    computed: {},
-    methods: {},
-    mounted: function() {},
+    computed: {
+        client : function (){
+            return this.data && this.data.client || 'std'
+        },
+        clean : function (){
+            return this.data && this.data.clean || false
+        }
+    },
+    methods: {
+        handleSuccess : function (data){
+            this.data = data
+        }
+    },
+    mounted: function () {
+    },
     components: {
-        Facedat
+        Facedat,
+        Upload
     },
 };
 </script>
