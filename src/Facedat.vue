@@ -1,16 +1,16 @@
 <template>
-    <div class="c-facedat" v-if="facedata">
+    <div class="c-facedat" v-if="ready">
         <el-tabs v-model="active" type="card">
             <el-tab-pane label="眼部轮廓" name="eye">
                 <div class="c-facedat-group">
                     <ul class="u-list">
                         <li v-for="(key, i) in bonegroup['eye']" :key="key + i">
-                            <label>{{ bonemap[key]['desc'] }}</label>
+                            <label>{{ dict[key]['desc'] }}</label>
                             <span>{{ facedata['tBone'][key] }}</span>
                             <input
                                 type="range"
-                                :min="bonerange[body_type][bonemap[key]['type']]['min']"
-                                :max="bonerange[body_type][bonemap[key]['type']]['max']"
+                                :min="bonerange[body_type][dict[key]['type']]['min']"
+                                :max="bonerange[body_type][dict[key]['type']]['max']"
                                 :value="facedata['tBone'][key]"
                                 disabled
                             />
@@ -22,12 +22,12 @@
                 <div class="c-facedat-group">
                     <ul class="u-list">
                         <li v-for="(key, i) in bonegroup['mouth']" :key="key + i">
-                            <label>{{ bonemap[key]['desc'] }}</label>
+                            <label>{{ dict[key]['desc'] }}</label>
                             <span>{{ facedata['tBone'][key] }}</span>
                             <input
                                 type="range"
-                                :min="bonerange[body_type][bonemap[key]['type']]['min']"
-                                :max="bonerange[body_type][bonemap[key]['type']]['max']"
+                                :min="bonerange[body_type][dict[key]['type']]['min']"
+                                :max="bonerange[body_type][dict[key]['type']]['max']"
                                 :value="facedata['tBone'][key]"
                                 disabled
                             />
@@ -39,12 +39,12 @@
                 <div class="c-facedat-group">
                     <ul class="u-list">
                         <li v-for="(key, i) in bonegroup['nose']" :key="key + i">
-                            <label>{{ bonemap[key]['desc'] }}</label>
+                            <label>{{ dict[key]['desc'] }}</label>
                             <span>{{ facedata['tBone'][key] }}</span>
                             <input
                                 type="range"
-                                :min="bonerange[body_type][bonemap[key]['type']]['min']"
-                                :max="bonerange[body_type][bonemap[key]['type']]['max']"
+                                :min="bonerange[body_type][dict[key]['type']]['min']"
+                                :max="bonerange[body_type][dict[key]['type']]['max']"
                                 :value="facedata['tBone'][key]"
                                 disabled
                             />
@@ -56,12 +56,12 @@
                 <div class="c-facedat-group">
                     <ul class="u-list">
                         <li v-for="(key, i) in bonegroup['face']" :key="key + i">
-                            <label>{{ bonemap[key]['desc'] }}</label>
+                            <label>{{ dict[key]['desc'] }}</label>
                             <span>{{ facedata['tBone'][key] }}</span>
                             <input
                                 type="range"
-                                :min="bonerange[body_type][bonemap[key]['type']]['min']"
-                                :max="bonerange[body_type][bonemap[key]['type']]['max']"
+                                :min="bonerange[body_type][dict[key]['type']]['min']"
+                                :max="bonerange[body_type][dict[key]['type']]['max']"
                                 :value="facedata['tBone'][key]"
                                 disabled
                             />
@@ -69,28 +69,24 @@
                     </ul>
                 </div>
             </el-tab-pane>
-            <!-- <el-tab-pane label="贴花" name="decal">
+            <el-tab-pane label="贴花" name="decal">
                 <div class="m-facedat-decals" id="decals">
-                    <div class="c-facedat-group" v-for="(decal, i) in decals" :key="decal + i">
-                        <h2 class="u-title">{{ decal.desc }}</h2>
+                    <div class="c-facedat-group" v-for="(key, i) in decallist" :key="key + i">
+                        <template v-if="facedata['tDecal'][key]">
+                        <h2 class="u-title">{{ dict[key]['desc'] }}</h2>
                         <ul class="u-decals">
                             <li>
                                 <img
                                     class="u-pic"
-                                    :src="getDecalIcon(decal)"
-                                    :title="decal.dname"
-                                    :alt="decal.dname"
+                                    :src="getDecalIcon(key,facedata['tDecal'][key]['nShowID'])"
                                 />
-                                <span class="u-dname">
-                                    {{
-                                    getDecalName(decal)
-                                    }}
-                                </span>
+                                <span class="u-dname">{{getDecalName(key,facedata['tDecal'][key]['nShowID'])}}</span>
                             </li>
                         </ul>
+                        </template>
                     </div>
                 </div>
-            </el-tab-pane> -->
+            </el-tab-pane>
         </el-tabs>
     </div>
 </template>
@@ -101,43 +97,54 @@ import {
     __ossMirror,
     __iconPath,
     __ossRoot,
+    __dataPath,
 } from "@jx3box/jx3box-common/data/jx3box.json";
-import decalmap from "@jx3box/jx3box-data/data/face/facedecals.json";
 import fixOldData from "./fixOldData.js";
 
-import bonegroup from '../assets/data/bone_group.json';
-import bonemap from '../assets/data/bone_map.json';
-import bonerange from '../assets/data/bone_range.json';
+import bonegroup from "../assets/data/bone_group.json";
+import dict from "../assets/data/dict.json";
+import bonerange from "../assets/data/bone_range.json";
 
-import olddata from '../demo/old.json'
+// import olddata from '../demo/old.json'
+
+import axios from "axios";
+// import decalmap from "@jx3box/jx3box-data/data/face/facedecals.json";
+import decalgroup from "../assets/data/decal_group.json";
 
 export default {
     name: "Facedat",
-    props: ["data","client","clean"],
+    props: ["data", "client", "clean"],
     data: function () {
         return {
             active: "eye",
             body_type: "",
-            facedata : '',
-            
+            facedata: "",
+
             // 骨骼
             bonegroup,
-            bonemap,
+            dict,
             bonerange,
 
             // 妆容
-            decalmap : "",
+            decalmap: "",
+            decalgroup,
 
             // test
             // data : JSON.stringify(olddata)
         };
     },
     computed: {
-        sClient : function (){
-            return this.client || 'std'
+        sClient: function () {
+            return this.client || "std";
         },
-        bClean : function (){
-            return this.clean || false
+        bClean: function () {
+            return this.clean || false;
+        },
+        decallist: function () {
+            return decalgroup['std'];
+        },
+        ready: function () {
+            return this.facedata && this.decalmap;
         },
     },
     watch: {
@@ -149,16 +156,17 @@ export default {
         },
     },
     methods: {
-        // TODO:加载不同怀旧服\正式服的贴花
-        getDecalName: function (item) {
+        getDecalName: function (key,val) {
             return (
-                _.get(decalmap[this.role][item.type][item.value], "name") ||
-                "无"
+                _.get(
+                    this.decalmap[this.body_type][dict[key]['type']][val],
+                    "name"
+                ) || "无"
             );
         },
-        getDecalIcon: function (item) {
+        getDecalIcon: function (key,val) {
             let iconid = _.get(
-                decalmap[this.role][item.type][item.value],
+                this.decalmap[this.body_type][dict[key]['type']][val],
                 "iconid"
             );
             if (iconid) {
@@ -169,8 +177,8 @@ export default {
         },
         build: function () {
             // 是否为空
-            if(!this.data){
-                return ''
+            if (!this.data) {
+                return "";
             }
 
             // json 转为 object
@@ -179,13 +187,13 @@ export default {
                 // 旧版数据
                 if (facedata.status) {
                     this.body_type = facedata.misc[0]["value"];
-                    this.facedata = fixOldData(facedata)
-                }else{
+                    this.facedata = fixOldData(facedata);
+                } else {
                     this.body_type = facedata.nRoleType;
-                    this.facedata = facedata
+                    this.facedata = facedata;
                 }
             } catch (e) {
-                this.facedata = ''
+                this.facedata = "";
                 console.log(e);
                 this.$notify.error({
                     title: "错误",
@@ -193,9 +201,16 @@ export default {
                 });
             }
         },
+        loadDecalData: function () {
+            // TODO:贴花数据版本区分？
+            axios.get(__dataPath + "data/face/facedecals.json").then((res) => {
+                this.decalmap = res.data;
+            });
+        },
     },
     mounted: function () {
         this.build();
+        this.loadDecalData();
     },
 };
 </script>
