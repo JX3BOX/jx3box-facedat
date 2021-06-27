@@ -105,8 +105,13 @@
             </el-tab-pane>
         </el-tabs>
         <div class="c-facedata-btns">
-            <el-button class="u-btn" @click="resetData" icon="el-icon-refresh-left">清空重置</el-button>
-            <el-button class="u-btn" type="success" @click="resetData" icon="el-icon-receiving">导出下载</el-button>
+            <el-button
+                class="u-btn"
+                @click="resetData"
+                icon="el-icon-refresh-left"
+                v-if="!readOnly"
+            >清空重置</el-button>
+            <el-button class="u-btn" type="success" @click="buildData" icon="el-icon-receiving">导出下载</el-button>
         </div>
     </div>
 </template>
@@ -132,9 +137,11 @@ import axios from "axios";
 import decalgroup from "../assets/data/decal_group.json";
 import defaultdecal from "../assets/data/default_decal.json";
 
+import Bus from "./bus.js";
+
 export default {
     name: "Facedat",
-    props: ["data", "client", "clean", "lock"],
+    props: ["data", "client", "clean", "lock", "readOnly"],
     data: function () {
         return {
             active: "eye",
@@ -162,7 +169,7 @@ export default {
             return this.clean || false;
         },
         ready: function () {
-            return this.facedata && this.decalmap;
+            return !!(this.facedata && this.decalmap);
         },
         cleandata: function () {
             if (this.bClean) {
@@ -185,25 +192,7 @@ export default {
         },
     },
     methods: {
-        getDecalName: function (key, val) {
-            return (
-                _.get(
-                    this.decalmap[this.body_type][dict[key]["type"]][val],
-                    "name"
-                ) || "无"
-            );
-        },
-        getDecalIcon: function (key, val) {
-            let iconid = _.get(
-                this.decalmap[this.body_type][dict[key]["type"]][val],
-                "iconid"
-            );
-            if (iconid) {
-                return __iconPath + "icon/" + iconid + ".png";
-            } else {
-                return __iconPath + "icon/" + "undefined" + ".png";
-            }
-        },
+        // 数据构建
         render: function () {
             // 是否为空
             if (!this.data) {
@@ -230,6 +219,27 @@ export default {
                 });
             }
         },
+
+        // 贴花
+        getDecalName: function (key, val) {
+            return (
+                _.get(
+                    this.decalmap[this.body_type][dict[key]["type"]][val],
+                    "name"
+                ) || "无"
+            );
+        },
+        getDecalIcon: function (key, val) {
+            let iconid = _.get(
+                this.decalmap[this.body_type][dict[key]["type"]][val],
+                "iconid"
+            );
+            if (iconid) {
+                return __iconPath + "icon/" + iconid + ".png";
+            } else {
+                return __iconPath + "icon/" + "undefined" + ".png";
+            }
+        },
         loadDecalData: function () {
             // TODO:贴花数据版本区分？
             axios.get(__dataPath + "data/face/facedecals.json").then((res) => {
@@ -248,12 +258,25 @@ export default {
                 "CoinPrice"
             );
         },
-        resetData: function () {},
+
+        // 按钮
+        resetData: function () {
+            this.facedata = "";
+            Bus.$emit("reset");
+        },
         buildData: function () {},
     },
     mounted: function () {
         this.render();
         this.loadDecalData();
+
+        // 上传参数
+        Bus.$on("update", (data) => {
+            if (data) {
+                this.clean = data.clean;
+                this.client = data.client;
+            }
+        });
     },
 };
 </script>

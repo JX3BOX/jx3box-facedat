@@ -1,7 +1,7 @@
 <template>
     <div style="max-width:980px;margin:100px auto;">
-        <Upload @success="handleSuccess" @update="handlerParams"/>
-        <Facedat :data="json" :client="client" :clean="clean"/>
+        <Upload @success="handleSuccess"/>
+        <Facedat :data="json" :client="client" :clean="clean" :readOnly="false" :lock="false"/>
     </div>
 </template>
 
@@ -14,7 +14,8 @@ export default {
         return {
             data: "",
             clean : false,
-            client : 'std'
+            client : 'std',
+            done : false
         };
     },
     computed: {
@@ -26,10 +27,6 @@ export default {
         handleSuccess : function (data){
             this.data = data
         },
-        handlerParams : function (params){
-            this.clean = params.clean
-            this.client = params.client
-        }
     },
     mounted: function () {
     },

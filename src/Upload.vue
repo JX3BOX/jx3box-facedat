@@ -51,9 +51,10 @@
 </template>
 
 <script>
-const { parse } = require("lua-json");
+import { parse } from "lua-json";
+import Bus from "./bus.js";
 export default {
-    name: "UploadFacedat",
+    name: "Upload",
     props: [],
     components: {},
     data: function () {
@@ -76,12 +77,12 @@ export default {
         filename: function () {
             return this.file && this.file.name;
         },
-        params : function (){
+        params: function () {
             return {
                 client: this.client,
                 clean: this.clean,
-            }
-        }
+            };
+        },
     },
     methods: {
         // 上传数据
@@ -144,18 +145,30 @@ export default {
             };
         },
     },
-    watch : {
-        params : {
-            deep : true,
-            handler : function (){
-                this.$emit('update',this.params)
-            }
-        }
+    watch: {
+        params: {
+            deep: true,
+            handler: function () {
+                Bus.$emit("update", this.params);
+            },
+        },
     },
     filters: {},
     created: function () {},
     mounted: function () {
         this.support = !!window.FileReader;
+
+        // 重置
+        Bus.$on("reset", (data) => {
+            this.done = false;
+            this.file = ''
+            this.$emit("success", {
+                file: "",
+                lua: "",
+                json: "",
+                object: "",
+            });
+        });
     },
 };
 </script>
