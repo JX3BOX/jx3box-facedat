@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-facedat",
-    "version": "1.0.2",
+    "version": "2.0.0",
     "description": "JX3BOX Facedat viewer",
     "main": "index.js",
     "scripts": {
@@ -35,6 +35,7 @@
         "core-js": "^3.6.5",
         "csslab": "^4.0.3",
         "element-ui": "^2.13.2",
+        "file-saver": "^2.0.5",
         "jquery": "^3.5.1",
         "lodash": "^4.17.15",
         "prismjs": "^1.20.0",

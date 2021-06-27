@@ -1,0 +1,10 @@
+{
+    "std": {
+        "nMajorVersion": 1,
+        "nVersion": 5
+    },
+    "origin": {
+        "nMajorVersion": 2,
+        "nVersion": 2
+    }
+}

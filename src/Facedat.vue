@@ -135,10 +135,13 @@ import bonerange from "../assets/data/bone_range.json";
 // import axios from "axios";
 import decalgroup from "../assets/data/decal_group.json";
 import defaultdecal from "../assets/data/default_decal.json";
-import decalorigin from '../assets/data/decal_origin.json'
-import decalstd from '../assets/data/decal_std.json'
+import decalorigin from "../assets/data/decal_origin.json";
+import decalstd from "../assets/data/decal_std.json";
 
 import Bus from "./bus.js";
+import { format } from "lua-json";
+import { saveAs } from "file-saver";
+import versions from '../assets/data/version.json'
 
 export default {
     name: "Facedat",
@@ -148,8 +151,8 @@ export default {
             active: "eye",
 
             // 设置
-            sClient : this.client || 'std',
-            bClean : this.bClean || false,
+            sClient: this.client || "std",
+            bClean: this.bClean || false,
 
             // 数据
             body_type: "",
@@ -182,13 +185,22 @@ export default {
                 return this.facedata;
             }
         },
-        decalmap : function (){
-            if(this.sClient == 'std' || !this.sClient){
-                return decalstd
-            }else{
-                return decalorigin
+        decalmap: function () {
+            if (this.sClient == "std" || !this.sClient) {
+                return decalstd;
+            } else {
+                return decalorigin;
             }
-        }
+        },
+        output: function () {
+            // 校准版本号
+            let data = _.cloneDeep(this.cleandata)
+            data.nMajorVersion = versions[this.sClient]['nMajorVersion']
+            data.nVersion = versions[this.sClient]['nVersion']
+            // json转table
+            let table = format(data);
+            return table;
+        },
     },
     watch: {
         data: {
@@ -265,7 +277,12 @@ export default {
             this.facedata = "";
             Bus.$emit("reset");
         },
-        buildData: function () {},
+        buildData: function () {
+            let blob = new Blob([this.output], {
+                type: "application/dat;charset=utf-8",
+            });
+            saveAs(blob, Date.now() + ".dat");
+        },
     },
     mounted: function () {
         this.render();

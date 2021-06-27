@@ -16,10 +16,14 @@ import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue"
 + 使用模块
 ```html
 <Upload @success="handleSuccess"/>
-<Facedat :data="data" :clean="true" client="std" :lock="true"/>
+<Facedat :data="json" :client="client" :clean="clean" :readOnly="false" :lock="false"/>
 ```
 
 ## 测试地址
 1. 应用页
 2. 新数据渲染页
-3. 旧数据渲染页 //TODO:
+3. 旧数据渲染页
+
+## Todo
+1. 根据游戏版本进程，需要更新version.json
+2. 根据游戏更新贴花，需要更新raw内容并重新build，同时更新使用项目库
