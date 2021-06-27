@@ -9,11 +9,10 @@
                             <span>{{ facedata['tBone'][key] }}</span>
                             <el-slider
                                 class="u-range"
-                                v-model="facedata['tBone'][key]"
                                 :min="bonerange[body_type][dict[key]['type']]['min']"
                                 :max="bonerange[body_type][dict[key]['type']]['max']"
+                                v-model="facedata['tBone'][key]"
                                 :disabled="lock"
-                                size="mini"
                             ></el-slider>
                         </li>
                     </ul>
@@ -29,7 +28,7 @@
                                 class="u-range"
                                 :min="bonerange[body_type][dict[key]['type']]['min']"
                                 :max="bonerange[body_type][dict[key]['type']]['max']"
-                                :v-model="facedata['tBone'][key]"
+                                v-model="facedata['tBone'][key]"
                                 :disabled="lock"
                             ></el-slider>
                         </li>
@@ -46,7 +45,7 @@
                                 class="u-range"
                                 :min="bonerange[body_type][dict[key]['type']]['min']"
                                 :max="bonerange[body_type][dict[key]['type']]['max']"
-                                :v-model="facedata['tBone'][key]"
+                                v-model="facedata['tBone'][key]"
                                 :disabled="lock"
                             ></el-slider>
                         </li>
@@ -63,7 +62,7 @@
                                 class="u-range"
                                 :min="bonerange[body_type][dict[key]['type']]['min']"
                                 :max="bonerange[body_type][dict[key]['type']]['max']"
-                                :v-model="facedata['tBone'][key]"
+                                v-model="facedata['tBone'][key]"
                                 :disabled="lock"
                             ></el-slider>
                         </li>
