@@ -35,13 +35,7 @@
                     </a>
                 </template>
                 <template v-else>
-                    <el-button
-                        class="u-btn"
-                        type="info"
-                        @click="resetData"
-                        icon="el-icon-refresh-left"
-                    >清空重置</el-button>
-                    <p class="u-file">{{ filename }}</p>
+                    <el-alert :title="'当前文件为：' + filename" type="success" show-icon></el-alert>
                 </template>
             </div>
             <el-alert
@@ -70,24 +64,26 @@ export default {
             labelPosition: "left",
             support: true,
 
-            file : '',  //文件对象
-            lua : '',   //lua table
-            json : '',  //json data
-            object : '',  //js object
+            file: "", //文件对象
+            lua: "", //lua table
+            json: "", //json data
+            object: "", //js object
 
-            done : false
+            done: false,
         };
     },
     computed: {
-        filename : function (){
-            return this.file && this.file.name
+        filename: function () {
+            return this.file && this.file.name;
+        },
+        params : function (){
+            return {
+                client: this.client,
+                clean: this.clean,
+            }
         }
     },
     methods: {
-        // 重置数据
-        resetData : function (){
-            this.done = false  
-        },
         // 上传数据
         selectData: function (i) {
             let fileInput = document.getElementById("face_file");
@@ -100,8 +96,7 @@ export default {
         },
         // 解析数据
         parseData: function (bin) {
-
-            if(!bin) return //空数据不解析
+            if (!bin) return; //空数据不解析
 
             const vm = this;
 
@@ -112,10 +107,10 @@ export default {
 
                 let origin = e.target.result;
                 let lua = "return" + origin.slice(origin.indexOf("{"));
-                vm.lua = lua      //lua table
+                vm.lua = lua; //lua table
 
                 try {
-                    vm.object = parse(lua)
+                    vm.object = parse(lua);
                     vm.json = JSON.stringify(vm.object);
                     vm.$notify({
                         title: "成功",
@@ -123,25 +118,22 @@ export default {
                         type: "success",
                     });
 
-                    vm.done = true
-                    vm.$emit('success',{
-                        file : vm.file,
-                        lua : vm.lua,
-                        json : vm.json,
-                        object : vm.object,
-                        client : vm.client,
-                        clean : vm.clean
-                    })
-
+                    vm.done = true;
+                    vm.$emit("success", {
+                        file: vm.file,
+                        lua: vm.lua,
+                        json: vm.json,
+                        object: vm.object,
+                    });
                 } catch (e) {
                     vm.$notify.error({
                         title: "错误",
                         message: "无法解析脸型数据",
                     });
-                    vm.$emit('fail',{
-                        file : vm.file,
-                        lua : vm.lua
-                    })
+                    vm.$emit("fail", {
+                        file: vm.file,
+                        lua: vm.lua,
+                    });
                 }
             };
             fr.onerror = function (e) {
@@ -151,6 +143,14 @@ export default {
                 });
             };
         },
+    },
+    watch : {
+        params : {
+            deep : true,
+            handler : function (){
+                this.$emit('update',this.params)
+            }
+        }
     },
     filters: {},
     created: function () {},
@@ -188,7 +188,7 @@ export default {
         .fz(12px,3);
         color: @color-link;
         .underline(@color-link);
-        i{
+        i {
             .fz(14px);
             .y(-1px);
         }
@@ -198,7 +198,7 @@ export default {
         margin: 0 auto;
         .size(200px,50px);
     }
-    .u-file{
+    .u-file {
         .fz(14px,2);
         color: #49c10f;
         .bold;

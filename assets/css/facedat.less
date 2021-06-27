@@ -1,66 +1,91 @@
-.c-facedat-group{
-    .u-title{
-        .fz(15px,2);
-        background-color:@bg-light;
+.c-facedat-group {
+    .u-title {
+        .fz(15px, 2);
+        background-color: @bg-light;
         //color:#555;
-        padding:0 10px;
+        padding: 0 10px;
         // .pointer;
         .bold;
-        margin-bottom:10px;
-        user-select:none;
+        margin-bottom: 10px;
+        user-select: none;
     }
-    .u-list{
-        list-style:none;
-        padding:0 0 0 10px;
-        margin-bottom:10px;
-        font-size:0;
-        li{
-            padding:5px 0;
+    .u-list {
+        list-style: none;
+        padding: 0 0 0 10px;
+        margin-bottom: 10px;
+        font-size: 0;
+        li {
+            padding: 5px 0;
             .flex;
-            flex-flow:row;
+            flex-flow: row;
         }
-        label,input,span{
+        label,
+        input,
+        span {
             //.dbi;.y(top);
             .fz(14px);
         }
-        label{
+        label {
             .mr(10px);
-            font-weight:normal;
+            font-weight: normal;
             .w(80px);
-            color:#666;}
-            .x(right);
-        input{
+            color: #666;
+        }
+        .x(right);
+        input,.u-range {
             //.w(290px);
-            flex:1;
-            .mr(5px);}
-        span{
+            flex: 1;
+            .mr(5px);
+            .pointer !important;
+        }
+        .el-slider__runway{
+            margin:10px 0;
+        }
+        span {
             .w(50px);
             .mr(10px);
-            .nobreak;.bold;color:#fb6701;.x(right);}
-
+            .nobreak;
+            .bold;
+            color: #fb6701;
+            .x(right);
+        }
     }
-    .u-decals{
-        list-style:none;
-        padding:0 0 0 10px;
-        margin-bottom:10px;
+    .u-decals {
+        list-style: none;
+        padding: 0 0 0 10px;
+        margin-bottom: 10px;
 
-        img{
+        img {
             .size(32px);
             .y;
             .mr(5px);
             .r(3px);
         }
-        span{
+        span {
             .fz(14px);
             .nobreak;
             .ml(5px);
             .bold;
         }
+
+        .u-free{
+            .fz(12px);
+            color:#49c10f;
+        }
+        .u-price{
+            .fz(12px);
+            color:#fba524;
+        }
     }
 }
 
-.c-facedat{
-    .el-tabs--card>.el-tabs__header .el-tabs__item.is-active{
+.c-facedat {
+    .el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
         .bold;
     }
+}
+
+
+.c-facedata-btns{
+    .x;
 }
