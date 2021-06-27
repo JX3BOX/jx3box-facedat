@@ -223,6 +223,10 @@
         "desc": "眼影·晕",
         "type": 15
     },
+    "EYE_SHADOW4": {
+        "desc": "测试眼影4",
+        "type": 16
+    },
     "EYE_SHADOW_FLASH1": {
         "desc": "闪点·底",
         "type": 17
@@ -234,6 +238,10 @@
     "EYE_SHADOW_FLASH3": {
         "desc": "闪点·晕",
         "type": 19
+    },
+    "EYE_SHADOW_FLASH4": {
+        "desc": "测试闪点4",
+        "type": 20
     },
     "EYE_LINE": {
         "desc": "眼线",
@@ -254,6 +262,10 @@
     "LIP_FLASH": {
         "desc": "闪粉",
         "type": 10
+    },
+    "LIP_LIGHT": {
+        "desc": "叠涂",
+        "type": 11
     },
     "LIP_OVERLAP": {
         "desc": "叠涂",

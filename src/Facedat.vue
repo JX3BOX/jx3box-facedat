@@ -141,7 +141,7 @@ import decalstd from "../assets/data/decal_std.json";
 import Bus from "./bus.js";
 import { format } from "lua-json";
 import { saveAs } from "file-saver";
-import versions from '../assets/data/version.json'
+import versions from "../assets/data/version.json";
 
 export default {
     name: "Facedat",
@@ -175,12 +175,19 @@ export default {
             return !!(this.facedata && this.decalmap);
         },
         cleandata: function () {
-            if (this.bClean) {
-                let cleandata = _.cloneDeep(this.facedata);
-                for (let item in cleandata.tDecal) {
-                    cleandata.tDecal[item]["nShowID"] = defaultdecal[item];
+            if (this.bClean && this.facedata) {
+                let _cleandata = _.cloneDeep(this.facedata);
+                for (let key in _cleandata.tDecal) {
+                    let CanUseInCreate = this.showDecalFree(
+                        key,
+                        _cleandata?.tDecal[key]["nShowID"]
+                    );
+                    console.log(CanUseInCreate)
+                    if (!CanUseInCreate) {
+                        _cleandata.tDecal[key]["nShowID"] = defaultdecal[key];
+                    }
                 }
-                return cleandata;
+                return _cleandata;
             } else {
                 return this.facedata;
             }
@@ -193,12 +200,22 @@ export default {
             }
         },
         output: function () {
+            let table = {};
             // 校准版本号
-            let data = _.cloneDeep(this.cleandata)
-            data.nMajorVersion = versions[this.sClient]['nMajorVersion']
-            data.nVersion = versions[this.sClient]['nVersion']
+            let data = (this.cleandata && _.cloneDeep(this.cleandata)) || {
+                nMajorVersion: 0,
+                nVersion: 0,
+            };
             // json转table
-            let table = format(data);
+            data.nMajorVersion =
+                _.get(versions[this.sClient], "nMajorVersion") || 1;
+            data.nVersion = _.get(versions[this.sClient], "nVersion") || 1;
+            try {
+                table = format(JSON.stringify(data));
+            } catch (e) {
+                console.log("导出转换失败");
+                console.log(e);
+            }
             return table;
         },
     },
@@ -209,6 +226,12 @@ export default {
                 this.render();
             },
         },
+        cleandata : {
+            deep : true,
+            handler : function (){
+                this.$forceUpdate()
+            }
+        }
     },
     methods: {
         // 数据构建
@@ -260,16 +283,12 @@ export default {
             }
         },
         showDecalFree: function (key, val) {
-            return ~~_.get(
-                this.decalmap[this.body_type][dict[key]["type"]][val],
-                "CanUseInCreate"
-            );
+            return ~~(this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
+                ?.CanUseInCreate);
         },
         showDecalPrice: function (key, val) {
-            return ~~_.get(
-                this.decalmap[this.body_type][dict[key]["type"]][val],
-                "CoinPrice"
-            );
+            return ~~(this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
+                ?.CoinPrice);
         },
 
         // 按钮
