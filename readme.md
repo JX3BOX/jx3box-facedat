@@ -18,3 +18,8 @@ import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue"
 <Upload @success="handleSuccess"/>
 <Facedat :data="data" :clean="true" client="std"/>
 ```
+
+## 测试地址
+1. 应用页
+2. 新数据渲染页
+3. 旧数据渲染页 //TODO:

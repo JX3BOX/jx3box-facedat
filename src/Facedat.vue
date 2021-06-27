@@ -4,14 +4,14 @@
             <el-tab-pane label="眼部轮廓" name="eye">
                 <div class="c-facedat-group">
                     <ul class="u-list">
-                        <li v-for="(eye, i) in eyes" :key="eye + i">
-                            <label>{{ eye.desc }}</label>
-                            <span>{{ eye.value }}</span>
+                        <li v-for="(key, i) in bonegroup['eye']" :key="key + i">
+                            <label>{{ bonemap[key]['desc'] }}</label>
+                            <span>{{ facedata['tBone'][key] }}</span>
                             <input
                                 type="range"
-                                :min="eye.min"
-                                :max="eye.max"
-                                :value="eye.value"
+                                :min="bonerange[body_type][bonemap[key]['type']]['min']"
+                                :max="bonerange[body_type][bonemap[key]['type']]['max']"
+                                :value="facedata['tBone'][key]"
                                 disabled
                             />
                         </li>
@@ -21,14 +21,14 @@
             <el-tab-pane label="嘴部轮廓" name="mouth">
                 <div class="c-facedat-group">
                     <ul class="u-list">
-                        <li v-for="(mouth, i) in mouthes" :key="mouth + i">
-                            <label>{{ mouth.desc }}</label>
-                            <span>{{ mouth.value }}</span>
+                        <li v-for="(key, i) in bonegroup['mouth']" :key="key + i">
+                            <label>{{ bonemap[key]['desc'] }}</label>
+                            <span>{{ facedata['tBone'][key] }}</span>
                             <input
                                 type="range"
-                                :min="mouth.min"
-                                :max="mouth.max"
-                                :value="mouth.value"
+                                :min="bonerange[body_type][bonemap[key]['type']]['min']"
+                                :max="bonerange[body_type][bonemap[key]['type']]['max']"
+                                :value="facedata['tBone'][key]"
                                 disabled
                             />
                         </li>
@@ -38,14 +38,14 @@
             <el-tab-pane label="鼻子轮廓" name="nose">
                 <div class="c-facedat-group">
                     <ul class="u-list">
-                        <li v-for="(nose, i) in noses" :key="nose + i">
-                            <label>{{ nose.desc }}</label>
-                            <span>{{ nose.value }}</span>
+                        <li v-for="(key, i) in bonegroup['nose']" :key="key + i">
+                            <label>{{ bonemap[key]['desc'] }}</label>
+                            <span>{{ facedata['tBone'][key] }}</span>
                             <input
                                 type="range"
-                                :min="nose.min"
-                                :max="nose.max"
-                                :value="nose.value"
+                                :min="bonerange[body_type][bonemap[key]['type']]['min']"
+                                :max="bonerange[body_type][bonemap[key]['type']]['max']"
+                                :value="facedata['tBone'][key]"
                                 disabled
                             />
                         </li>
@@ -55,21 +55,21 @@
             <el-tab-pane label="脸部轮廓" name="face">
                 <div class="c-facedat-group">
                     <ul class="u-list">
-                        <li v-for="(face, i) in faces" :key="face + i">
-                            <label>{{ face.desc }}</label>
-                            <span>{{ face.value }}</span>
+                        <li v-for="(key, i) in bonegroup['face']" :key="key + i">
+                            <label>{{ bonemap[key]['desc'] }}</label>
+                            <span>{{ facedata['tBone'][key] }}</span>
                             <input
                                 type="range"
-                                :min="face.min"
-                                :max="face.max"
-                                :value="face.value"
+                                :min="bonerange[body_type][bonemap[key]['type']]['min']"
+                                :max="bonerange[body_type][bonemap[key]['type']]['max']"
+                                :value="facedata['tBone'][key]"
                                 disabled
                             />
                         </li>
                     </ul>
                 </div>
             </el-tab-pane>
-            <el-tab-pane label="贴花" name="decal">
+            <!-- <el-tab-pane label="贴花" name="decal">
                 <div class="m-facedat-decals" id="decals">
                     <div class="c-facedat-group" v-for="(decal, i) in decals" :key="decal + i">
                         <h2 class="u-title">{{ decal.desc }}</h2>
@@ -90,7 +90,7 @@
                         </ul>
                     </div>
                 </div>
-            </el-tab-pane>
+            </el-tab-pane> -->
         </el-tabs>
     </div>
 </template>
@@ -105,29 +105,43 @@ import {
 import decalmap from "@jx3box/jx3box-data/data/face/facedecals.json";
 import format from "./format";
 
+import bonegroup from '../assets/data/bone_group.json';
+import bonemap from '../assets/data/bone_map.json';
+import bonerange from '../assets/data/bone_range.json';
+
 export default {
     name: "Facedat",
-    props: ["data"],
+    props: ["data","client","clean"],
     data: function () {
         return {
             active: "eye",
+            body_type: "",
+            facedata : '',
+            
+            // 骨骼
+            bonegroup,
+            bonemap,
+            bonerange,
 
-            eyes: [],
-            mouthes: [],
-            noses: [],
-            faces: [],
-            decals: [],
-
-            facedata: this.data,
-            role: "",
+            // 妆容
+            decalmap : "",
         };
     },
-    computed: {},
+    computed: {
+        sClient : function (){
+            return this.client || 'std'
+        },
+        bClean : function (){
+            return this.clean || false
+        },
+    },
     watch: {
-        // data: function (newdata) {
-        //     this.facedata = newdata;
-        //     this.render();
-        // },
+        data: {
+            deep: true,
+            handler: function (newdata) {
+                this.build();
+            },
+        },
     },
     methods: {
         // TODO:加载不同怀旧服\正式服的贴花
@@ -148,28 +162,33 @@ export default {
                 return __iconPath + "icon/" + "undefined" + ".png";
             }
         },
-        render: function () {
-            if(!this.facedata) return
-            
+        build: function () {
+            // 是否为空
+            if(!this.data){
+                return ''
+            }
+            // json 转为 object
             try {
-                let facedata = JSON.parse(this.facedata);
+                let facedata = JSON.parse(this.data);
+
                 // 旧版数据
                 if (facedata.status) {
-                    this.role = facedata.misc[0]["value"];
-                    // 新版数据
+                    this.body_type = facedata.misc[0]["value"];
+                    // TODO:旧数据转为新版
+                // 新版数据
                 } else {
-                    this.role = facedata.nRoleType;
-                    facedata = format(facedata);
+                    this.body_type = facedata.nRoleType;
                 }
 
-                this.eyes = facedata.eye;
-                this.mouthes = facedata.mouth;
-                this.noses = facedata.nose;
-                this.faces = facedata.face;
-                this.decals = facedata.decal;
+                this.facedata = facedata
+                // this.eyes = facedata.eye;
+                // this.mouthes = facedata.mouth;
+                // this.noses = facedata.nose;
+                // this.faces = facedata.face;
+                // this.decals = facedata.decal;
             } catch (e) {
+                this.facedata = ''
                 console.log(e);
-                this.facedata = "";
                 this.$notify.error({
                     title: "错误",
                     message: "脸型数据无法解析",
@@ -178,7 +197,7 @@ export default {
         },
     },
     mounted: function () {
-        this.render();
+        this.build();
     },
 };
 </script>

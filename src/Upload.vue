@@ -112,11 +112,11 @@ export default {
 
                 let origin = e.target.result;
                 let lua = "return" + origin.slice(origin.indexOf("{"));
-                this.lua = lua      //lua table
+                vm.lua = lua      //lua table
 
                 try {
                     vm.object = parse(lua)
-                    vm.json = JSON.stringify(vm.data);
+                    vm.json = JSON.stringify(vm.object);
                     vm.$notify({
                         title: "成功",
                         message: "脸型数据解析成功",
@@ -124,7 +124,7 @@ export default {
                     });
 
                     vm.done = true
-                    this.$emit('success',{
+                    vm.$emit('success',{
                         file : vm.file,
                         lua : vm.lua,
                         json : vm.json,
@@ -138,7 +138,7 @@ export default {
                         title: "错误",
                         message: "无法解析脸型数据",
                     });
-                    this.$emit('fail',{
+                    vm.$emit('fail',{
                         file : vm.file,
                         lua : vm.lua
                     })
