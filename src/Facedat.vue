@@ -122,7 +122,7 @@ import {
     __ossMirror,
     __iconPath,
     __ossRoot,
-    __dataPath,
+    // __dataPath,
 } from "@jx3box/jx3box-common/data/jx3box.json";
 import fixOldData from "./fixOldData.js";
 
@@ -132,10 +132,11 @@ import bonerange from "../assets/data/bone_range.json";
 
 // import olddata from '../demo/old.json'
 
-import axios from "axios";
-// import decalmap from "@jx3box/jx3box-data/data/face/facedecals.json";
+// import axios from "axios";
 import decalgroup from "../assets/data/decal_group.json";
 import defaultdecal from "../assets/data/default_decal.json";
+import decalorigin from '../assets/data/decal_origin.json'
+import decalstd from '../assets/data/decal_std.json'
 
 import Bus from "./bus.js";
 
@@ -145,6 +146,12 @@ export default {
     data: function () {
         return {
             active: "eye",
+
+            // 设置
+            sClient : this.client || 'std',
+            bClean : this.bClean || false,
+
+            // 数据
             body_type: "",
             facedata: "",
 
@@ -154,7 +161,6 @@ export default {
             bonerange,
 
             // 妆容
-            decalmap: "",
             decalgroup,
 
             // test
@@ -162,12 +168,6 @@ export default {
         };
     },
     computed: {
-        sClient: function () {
-            return this.client || "std";
-        },
-        bClean: function () {
-            return this.clean || false;
-        },
         ready: function () {
             return !!(this.facedata && this.decalmap);
         },
@@ -182,6 +182,13 @@ export default {
                 return this.facedata;
             }
         },
+        decalmap : function (){
+            if(this.sClient == 'std' || !this.sClient){
+                return decalstd
+            }else{
+                return decalorigin
+            }
+        }
     },
     watch: {
         data: {
@@ -240,12 +247,6 @@ export default {
                 return __iconPath + "icon/" + "undefined" + ".png";
             }
         },
-        loadDecalData: function () {
-            // TODO:贴花数据版本区分？
-            axios.get(__dataPath + "data/face/facedecals.json").then((res) => {
-                this.decalmap = res.data;
-            });
-        },
         showDecalFree: function (key, val) {
             return ~~_.get(
                 this.decalmap[this.body_type][dict[key]["type"]][val],
@@ -268,13 +269,12 @@ export default {
     },
     mounted: function () {
         this.render();
-        this.loadDecalData();
 
         // 上传参数
         Bus.$on("update", (data) => {
             if (data) {
-                this.clean = data.clean;
-                this.client = data.client;
+                this.bClean = data.clean;
+                this.sClient = data.client;
             }
         });
     },

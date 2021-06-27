@@ -8,7 +8,8 @@
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
         "inspect": "vue inspect > output.js",
-        "update": "npm install @jx3box/jx3box-common@latest @jx3box/jx3box-data@latest"
+        "update": "npm install @jx3box/jx3box-common@latest @jx3box/jx3box-data@latest",
+        "face": "node ./tools/decal.js"
     },
     "eslintConfig": {
         "root": true,
