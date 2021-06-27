@@ -103,11 +103,13 @@ import {
     __ossRoot,
 } from "@jx3box/jx3box-common/data/jx3box.json";
 import decalmap from "@jx3box/jx3box-data/data/face/facedecals.json";
-import format from "./format";
+import fixOldData from "./fixOldData.js";
 
 import bonegroup from '../assets/data/bone_group.json';
 import bonemap from '../assets/data/bone_map.json';
 import bonerange from '../assets/data/bone_range.json';
+
+import olddata from '../demo/old.json'
 
 export default {
     name: "Facedat",
@@ -125,6 +127,9 @@ export default {
 
             // 妆容
             decalmap : "",
+
+            // test
+            // data : JSON.stringify(olddata)
         };
     },
     computed: {
@@ -167,25 +172,18 @@ export default {
             if(!this.data){
                 return ''
             }
+
             // json 转为 object
             try {
                 let facedata = JSON.parse(this.data);
-
                 // 旧版数据
                 if (facedata.status) {
                     this.body_type = facedata.misc[0]["value"];
-                    // TODO:旧数据转为新版
-                // 新版数据
-                } else {
+                    this.facedata = fixOldData(facedata)
+                }else{
                     this.body_type = facedata.nRoleType;
+                    this.facedata = facedata
                 }
-
-                this.facedata = facedata
-                // this.eyes = facedata.eye;
-                // this.mouthes = facedata.mouth;
-                // this.noses = facedata.nose;
-                // this.faces = facedata.face;
-                // this.decals = facedata.decal;
             } catch (e) {
                 this.facedata = ''
                 console.log(e);
