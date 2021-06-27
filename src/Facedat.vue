@@ -182,7 +182,6 @@ export default {
                         key,
                         _cleandata?.tDecal[key]["nShowID"]
                     );
-                    console.log(CanUseInCreate)
                     if (!CanUseInCreate) {
                         _cleandata.tDecal[key]["nShowID"] = defaultdecal[key];
                     }
