@@ -1,52 +1,33 @@
 <template>
     <div class="c-facedat-upload">
-        <el-form
-            class="c-facedat-upload-form"
-            ref="form"
-            label-width="80px"
-            :label-position="labelPosition"
-        >
-            <el-form-item label="版本">
-                <el-radio-group v-model="client">
-                    <el-radio label="std">正式服</el-radio>
-                    <el-radio label="origin">怀旧服</el-radio>
-                </el-radio-group>
-            </el-form-item>
-            <el-form-item label="高级">
-                <el-checkbox v-model="clean">清洗付费部位</el-checkbox>
-                <span class="u-tip">
-                    （
-                    <i class="el-icon-warning-outline"></i> 仅保留创建新角色时可用项）
-                </span>
-            </el-form-item>
-        </el-form>
-        <div class="c-facedat-upload-primary">
-            <div class="u-upload" v-if="support">
-                <template v-if="!done">
-                    <input class="u-input" type="file" id="face_file" @change="uploadData" />
-                    <el-button
-                        class="u-btn"
-                        type="primary"
-                        @click="selectData"
-                        icon="el-icon-upload2"
-                    >上传脸型数据</el-button>
-                    <a class="u-help" href="/tool/746" target="_blank">
-                        <i class="el-icon-collection"></i> 游戏脸型导入导出指南
-                    </a>
-                </template>
-                <template v-else>
+        <div class="u-upload" v-if="support">
+            <template v-if="!done">
+                <input class="u-input" type="file" id="face_file" @change="uploadData" />
+                <el-button
+                    class="u-btn"
+                    type="primary"
+                    @click="selectData"
+                    icon="el-icon-upload2"
+                >上传脸型数据</el-button>
+                <a class="u-help" href="/tool/746" target="_blank">
+                    <i class="el-icon-collection"></i> 游戏脸型导入导出指南
+                </a>
+            </template>
+            <template v-else>
+                <div class="u-result">
+                    <el-button class="u-reset" @click="resetData" icon="el-icon-refresh-left">清空重置</el-button>
                     <el-alert :title="'当前文件为：' + filename" type="success" show-icon></el-alert>
-                </template>
-            </div>
-            <el-alert
-                v-else
-                class="u-notsupport"
-                title="浏览器不支持"
-                type="warning"
-                description="你的浏览器太老旧不支持本地解析,请更换chrome或其它现代浏览器"
-                show-icon
-            ></el-alert>
+                </div>
+            </template>
         </div>
+        <el-alert
+            v-else
+            class="u-notsupport"
+            title="浏览器不支持"
+            type="warning"
+            description="你的浏览器太老旧不支持本地解析,请更换chrome或其它现代浏览器"
+            show-icon
+        ></el-alert>
     </div>
 </template>
 
@@ -59,10 +40,6 @@ export default {
     components: {},
     data: function () {
         return {
-            client: "std",
-            clean: false,
-
-            labelPosition: "left",
             support: true,
 
             file: "", //文件对象
@@ -76,12 +53,6 @@ export default {
     computed: {
         filename: function () {
             return this.file && this.file.name;
-        },
-        params: function () {
-            return {
-                client: this.client,
-                clean: this.clean,
-            };
         },
     },
     methods: {
@@ -144,31 +115,26 @@ export default {
                 });
             };
         },
-    },
-    watch: {
-        params: {
-            deep: true,
-            handler: function () {
-                Bus.$emit("update", this.params);
-            },
-        },
-    },
-    filters: {},
-    created: function () {},
-    mounted: function () {
-        this.support = !!window.FileReader;
-
-        // 重置
-        Bus.$on("reset", (data) => {
+        // 重置上传
+        resetData: function () {
             this.done = false;
-            this.file = ''
+
+            this.file = "";
+            this.lua = "";
+            this.json = "";
+            this.object = "";
             this.$emit("success", {
                 file: "",
                 lua: "",
                 json: "",
                 object: "",
             });
-        });
+        },
+    },
+    filters: {},
+    created: function () {},
+    mounted: function () {
+        this.support = !!window.FileReader;
     },
 };
 </script>
@@ -179,17 +145,6 @@ export default {
         .fz(12px);
         color: #999;
     }
-}
-.c-facedat-upload-form {
-    border: 1px dashed @border-hr;
-    padding: 20px;
-    background-color: @bg-light;
-
-    .el-form-item__label {
-        color: #999;
-    }
-}
-.c-facedat-upload-primary {
     .mt(20px);
     .u-input {
         .none;
@@ -215,6 +170,9 @@ export default {
         .fz(14px,2);
         color: #49c10f;
         .bold;
+    }
+    .u-reset {
+        .mb(10px);
     }
 }
 </style>

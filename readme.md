@@ -16,7 +16,7 @@ import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue"
 + 使用模块
 ```html
 <Upload @success="handleSuccess"/>
-<Facedat :data="json" :client="client" :clean="clean" :readOnly="false" :lock="false"/>
+<Facedat :data="json" :lock="false"/>
 ```
 
 ## 测试地址

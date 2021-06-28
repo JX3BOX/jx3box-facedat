@@ -84,6 +84,9 @@
                                         class="u-dname"
                                     >{{getDecalName(key,cleandata['tDecal'][key]['nShowID'])}}</span>
                                     <span
+                                        class="u-dcolor"
+                                    >(颜色:{{cleandata['tDecal'][key]['nColorID']}})</span>
+                                    <span
                                         class="u-free"
                                         v-if="showDecalFree(key,cleandata['tDecal'][key]['nShowID'])"
                                     >
@@ -103,14 +106,41 @@
                 </div>
             </el-tab-pane>
         </el-tabs>
+        <div class="c-facedat-setting">
+            <el-form
+                class="c-facedat-setting-form"
+                ref="form"
+                label-width="80px"
+                label-position="left"
+            >
+                <!-- <el-form-item label="导出">
+                    <el-radio-group v-model="client">
+                        <el-radio label="std">正式服</el-radio>
+                        <el-radio label="origin">怀旧服</el-radio>
+                    </el-radio-group>
+                </el-form-item>-->
+                <el-form-item label="高级">
+                    <el-checkbox v-model="clean">清洗付费部位</el-checkbox>
+                    <span class="u-tip">
+                        （
+                        <i class="el-icon-warning-outline"></i> 仅保留创建新角色时可用项）
+                    </span>
+                </el-form-item>
+            </el-form>
+        </div>
         <div class="c-facedata-btns">
             <el-button
                 class="u-btn"
-                @click="resetData"
-                icon="el-icon-refresh-left"
-                v-if="!readOnly"
-            >清空重置</el-button>
-            <el-button class="u-btn" type="success" @click="buildData" icon="el-icon-receiving">导出下载</el-button>
+                type="primary"
+                @click="buildData('std')"
+                icon="el-icon-receiving"
+            >导出正式服</el-button>
+            <el-button
+                class="u-btn"
+                type="warning"
+                @click="buildData('origin')"
+                icon="el-icon-receiving"
+            >导出怀旧服</el-button>
         </div>
     </div>
 </template>
@@ -136,6 +166,7 @@ import decalgroup from "../assets/data/decal_group.json";
 import defaultdecal from "../assets/data/default_decal.json";
 import decalorigin from "../assets/data/decal_origin.json";
 import decalstd from "../assets/data/decal_std.json";
+import decalprop from "../assets/data/decal_prop.json";
 
 import Bus from "./bus.js";
 import { format } from "lua-json";
@@ -144,14 +175,10 @@ import versions from "../assets/data/version.json";
 
 export default {
     name: "Facedat",
-    props: ["data", "client", "clean", "lock", "readOnly"],
+    props: ["data", "lock"],
     data: function () {
         return {
             active: "eye",
-
-            // 设置
-            sClient: this.client || "std",
-            bClean: this.bClean || false,
 
             // 数据
             body_type: "",
@@ -165,6 +192,10 @@ export default {
             // 妆容
             decalgroup,
 
+            // 导出设置
+            clean: false,
+            version: "std",
+
             // test
             // data : JSON.stringify(olddata)
         };
@@ -174,7 +205,7 @@ export default {
             return !!(this.facedata && this.decalmap);
         },
         cleandata: function () {
-            if (this.bClean && this.facedata) {
+            if (this.clean && this.facedata) {
                 let _cleandata = _.cloneDeep(this.facedata);
                 for (let key in _cleandata.tDecal) {
                     let CanUseInCreate = this.showDecalFree(
@@ -190,26 +221,53 @@ export default {
                 return this.facedata;
             }
         },
+        // 自动检测数据版本
+        client: function () {
+            let _nMajorVersion = this.facedata?.nMajorVersion;
+            if (_nMajorVersion == 1 || !_nMajorVersion) {
+                return "std";
+            } else {
+                return "origin";
+            }
+        },
         decalmap: function () {
-            if (this.sClient == "std" || !this.sClient) {
+            if (this.client == "std" || !this.client) {
                 return decalstd;
             } else {
                 return decalorigin;
             }
         },
+        output_std: function () {
+            let data = _.cloneDeep(this.cleandata);
+            data.nMajorVersion = versions["std"]["nMajorVersion"];
+            data.nVersion = versions["std"]["nVersion"];
+            return data;
+        },
+        output_origin: function () {
+            let data = _.cloneDeep(this.cleandata);
+            data.nMajorVersion = versions["origin"]["nMajorVersion"];
+            data.nVersion = versions["origin"]["nVersion"];
+            // 属性、属性值、颜色处理
+            for (let key in data.tDecal) {
+                if (decalgroup.origin.includes(key)) {
+                    data.tDecal[key]["nColorID"] = 0;
+                    for (let prop in data.tDecal[key]) {
+                        if (!decalprop.origin.includes(prop)) {
+                            delete data.tDecal[key][prop];
+                        }
+                    }
+                } else {
+                    delete data.tDecal[key];
+                }
+            }
+            return data;
+        },
         output: function () {
             let table = {};
-            // 校准版本号
-            let data = (this.cleandata && _.cloneDeep(this.cleandata)) || {
-                nMajorVersion: 0,
-                nVersion: 0,
-            };
-            // json转table
-            data.nMajorVersion =
-                _.get(versions[this.sClient], "nMajorVersion") || 1;
-            data.nVersion = _.get(versions[this.sClient], "nVersion") || 1;
+            let data =
+                this.version == "origin" ? this.output_origin : this.output_std;
             try {
-                table = format(JSON.stringify(data));
+                table = format(data);
             } catch (e) {
                 console.log("导出转换失败");
                 console.log(e);
@@ -224,12 +282,12 @@ export default {
                 this.render();
             },
         },
-        cleandata : {
-            deep : true,
-            handler : function (){
-                this.$forceUpdate()
-            }
-        }
+        cleandata: {
+            deep: true,
+            handler: function () {
+                this.$forceUpdate();
+            },
+        },
     },
     methods: {
         // 数据构建
@@ -281,20 +339,17 @@ export default {
             }
         },
         showDecalFree: function (key, val) {
-            return ~~(this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
-                ?.CanUseInCreate);
+            return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
+                ?.CanUseInCreate;
         },
         showDecalPrice: function (key, val) {
-            return ~~(this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
-                ?.CoinPrice);
+            return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
+                ?.CoinPrice;
         },
 
         // 按钮
-        resetData: function () {
-            this.facedata = "";
-            Bus.$emit("reset");
-        },
-        buildData: function () {
+        buildData: function (v) {
+            this.version = v;
             let blob = new Blob([this.output], {
                 type: "application/dat;charset=utf-8",
             });
@@ -303,14 +358,6 @@ export default {
     },
     mounted: function () {
         this.render();
-
-        // 上传参数
-        Bus.$on("update", (data) => {
-            if (data) {
-                this.bClean = data.clean;
-                this.sClient = data.client;
-            }
-        });
     },
 };
 </script>

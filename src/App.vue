@@ -1,7 +1,7 @@
 <template>
     <div style="max-width:980px;margin:100px auto;">
         <Upload @success="handleSuccess"/>
-        <Facedat :data="json" :client="client" :clean="clean" :readOnly="false" :lock="false"/>
+        <Facedat :data="json" :lock="false"/>
     </div>
 </template>
 
@@ -13,9 +13,6 @@ export default {
     data: function () {
         return {
             data: "",
-            clean : false,
-            client : 'std',
-            done : false
         };
     },
     computed: {
