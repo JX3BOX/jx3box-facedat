@@ -1,0 +1,29 @@
+{
+    "nShowID": {
+        "BASE":1,
+        "BROW": 1,
+        "BLUSHER_MOUSTACHE": 0,
+        "DECAL": 0,
+        "EYE_LIGHT": 1,
+        "EYE_LINE": 1,
+        "EYE_SHADOW": 0,
+        "IRIS_LEFT": 1,
+        "IRIS_RIGHT": 1,
+        "LIP_GLOSS": 1
+    },
+    "nColorID": {
+        "BASE":0,
+        "BROW": 0,
+        "BLUSHER_MOUSTACHE": 0,
+        "DECAL": 0,
+        "EYE_LIGHT": 0,
+        "EYE_LINE": 0,
+        "EYE_SHADOW": 0,
+        "IRIS_LEFT": 0,
+        "IRIS_RIGHT": 0,
+        "LIP_GLOSS": 0
+    },
+    "fValue1":1,
+    "fValue2":1,
+    "fValue3":1
+}

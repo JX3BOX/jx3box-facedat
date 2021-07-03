@@ -73,9 +73,9 @@
                 <div class="m-facedat-decals" id="decals">
                     <div class="c-facedat-group" v-for="(key, i) in group['decal']" :key="key + i">
                         <template v-if="cleandata['tDecal'][key]">
-                            <h2 class="u-title">{{ dict[key]['desc'] }}</h2>
                             <ul class="u-decals">
-                                <li>
+                                <li v-show="!clean || checkDecalProp(key)">
+                                    <div class="u-title">{{ dict[key]['desc'] }}</div>
                                     <img
                                         class="u-pic"
                                         :src="getDecalIcon(key,cleandata['tDecal'][key]['nShowID'])"
@@ -163,10 +163,11 @@ import bonerange from "../assets/data/bone_range.json";
 
 // import axios from "axios";
 import decalgroup from "../assets/data/decal_group.json";
-import defaultdecal from "../assets/data/default_decal.json";
 import decalorigin from "../assets/data/decal_origin.json";
 import decalstd from "../assets/data/decal_std.json";
 import decalprop from "../assets/data/decal_prop.json";
+import decaldefault from "../assets/data/decal_default.json";
+import std_decal_default from "../assets/data/std_decal_default.json";
 
 import Bus from "./bus.js";
 import { format } from "lua-json";
@@ -213,7 +214,7 @@ export default {
                         _cleandata?.tDecal[key]["nShowID"]
                     );
                     if (!CanUseInCreate) {
-                        _cleandata.tDecal[key]["nShowID"] = defaultdecal[key];
+                        _cleandata.tDecal[key]["nShowID"] = decaldefault["nShowID"][key];
                     }
                 }
                 return _cleandata;
@@ -238,24 +239,30 @@ export default {
             }
         },
         output_std: function () {
-            let data = _.cloneDeep(this.cleandata);
-            data.nMajorVersion = versions["std"]["nMajorVersion"];
-            data.nVersion = versions["std"]["nVersion"];
+            let data = this.amendVersion('std')
+            // 默认需要修订版本号与客户端版本
+            if (this.clean) {
+                // 正式服数据包含全部属性（shadow1~4），且有额外属性值（fValue1~3）
+                // 直接取一个demo数据，以防上传的是怀旧服数据缺失部分属性
+                data.tDecal = std_decal_default
+            }
             return data;
         },
         output_origin: function () {
-            let data = _.cloneDeep(this.cleandata);
-            data.nMajorVersion = versions["origin"]["nMajorVersion"];
-            data.nVersion = versions["origin"]["nVersion"];
-            // 属性、属性值、颜色处理
+            // 默认需要修订版本号与客户端版本
+            let data = this.amendVersion('origin')
             for (let key in data.tDecal) {
                 if (decalgroup.origin.includes(key)) {
-                    data.tDecal[key]["nColorID"] = 0;
+                    // 2.重置color和show_id
+                    data.tDecal[key]["nColorID"] = decaldefault['nColorID'][key];
+                    data.tDecal[key]["nShowID"] = decaldefault['nShowID'][key];
+                    // 3.移除正式服特有属性（fValue1~3）
                     for (let prop in data.tDecal[key]) {
                         if (!decalprop.origin.includes(prop)) {
                             delete data.tDecal[key][prop];
                         }
                     }
+                // 1.首先移除正式服特有的部分属性（shadow1~4）
                 } else {
                     delete data.tDecal[key];
                 }
@@ -346,6 +353,9 @@ export default {
             return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
                 ?.CoinPrice;
         },
+        checkDecalProp: function (key) {
+            return decalgroup.origin.includes(key);
+        },
 
         // 按钮
         buildData: function (v) {
@@ -354,6 +364,15 @@ export default {
                 type: "application/dat;charset=utf-8",
             });
             saveAs(blob, Date.now() + ".dat");
+        },
+
+        // 数据转换
+        amendVersion : function (v){
+            let data = _.cloneDeep(this.cleandata);
+            data.nDecorationID = 0;
+            data.nMajorVersion = versions[v]["nMajorVersion"];
+            data.nVersion = versions[v]["nVersion"];
+            return data
         },
     },
     mounted: function () {
