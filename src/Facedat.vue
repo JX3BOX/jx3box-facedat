@@ -113,12 +113,6 @@
                 label-width="80px"
                 label-position="left"
             >
-                <!-- <el-form-item label="导出">
-                    <el-radio-group v-model="client">
-                        <el-radio label="std">正式服</el-radio>
-                        <el-radio label="origin">怀旧服</el-radio>
-                    </el-radio-group>
-                </el-form-item>-->
                 <el-form-item label="高级">
                     <el-checkbox v-model="clean">清洗模式</el-checkbox>
                     <span class="u-warning">
