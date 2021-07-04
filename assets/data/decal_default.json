@@ -1,29 +1,170 @@
 {
-    "nShowID": {
-        "BASE":1,
-        "BROW": 1,
-        "BLUSHER_MOUSTACHE": 0,
-        "DECAL": 0,
-        "EYE_LIGHT": 1,
-        "EYE_LINE": 1,
-        "EYE_SHADOW": 0,
-        "IRIS_LEFT": 1,
-        "IRIS_RIGHT": 1,
-        "LIP_GLOSS": 1
+    "EYE_SHADOW_FLASH2": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
     },
-    "nColorID": {
-        "BASE":0,
-        "BROW": 0,
-        "BLUSHER_MOUSTACHE": 0,
-        "DECAL": 0,
-        "EYE_LIGHT": 0,
-        "EYE_LINE": 0,
-        "EYE_SHADOW": 0,
-        "IRIS_LEFT": 0,
-        "IRIS_RIGHT": 0,
-        "LIP_GLOSS": 0
+    "EYE_SHADOW1": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
     },
-    "fValue1":1,
-    "fValue2":1,
-    "fValue3":1
+    "LIP_LIGHT": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "BLUSHER_MOUSTACHE": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "EYE_LINE": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW_FLASH1": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "DECAL": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "BROW": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_LIGHT": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "LIP_FLASH": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "EYE_SHADOW4": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "IRIS_RIGHT": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "IRIS_LEFT": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW2": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "BASE": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW_FLASH3": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "LIP_GLOSS": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW_FLASH4": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "EYE_SHADOW3": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "LIP_OVERLAP": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    }
 }

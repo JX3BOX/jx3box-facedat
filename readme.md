@@ -27,3 +27,5 @@ import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue"
 ## Todo
 1. 根据游戏版本进程，需要更新version.json
 2. 根据游戏更新贴花，需要更新raw内容并重新build，同时更新使用项目库
+
+
