@@ -203,7 +203,8 @@ export default {
                         _cleandata?.tDecal[key]["nShowID"]
                     );
                     if (!CanUseInCreate) {
-                        _cleandata.tDecal[key]["nShowID"] = decal_default[key]["nShowID"];
+                        _cleandata.tDecal[key]["nShowID"] =
+                            decal_default[key]["nShowID"];
                     }
                 }
                 return _cleandata;
@@ -228,21 +229,21 @@ export default {
             }
         },
         output_std: function () {
-
             // 1.默认需要修订版本号与客户端版本
-            let data = this.amendVersion('std')
+            let data = this.amendVersion("std");
             // 2.补全骨骼缺失数据
-            data.tBone = this.amendBone(data.tBone)
-            
-            // 废弃：如果开启了清洗直接回档整体默认贴花部分
-            // 正式服数据包含全部属性（shadow1~4），且有额外属性值（fValue1~3）
-            // 直接取一个demo数据，以防上传的是怀旧服数据缺失部分属性
-            // data.tDecal = _.cloneDeep(decal_default)
-
+            data.tBone = this.amendBone(data.tBone);
             // 3.补全完整数据结构
             // 如果没有开启清洗也需要对数据结构进行补充，以防上传的是古老的数据（缺失部分后加的属性）
             // 同时部分古老数据即使存在该属性，但部分2级属性也是缺失的
-            data.tDecal = this.amendDecal(data.tDecal)
+            // data.tDecal = this.amendDecal(data.tDecal)
+
+            // 废弃：如果开启了清洗直接回档整体默认贴花部分
+            // 正式服数据包含全部属性（shadow1~4），且有额外属性值（fValue1~3）
+            // 直接取一个demo数据，以防上传的是怀旧服数据缺失部分属性
+            if (this.clean) {
+                data.tDecal = _.cloneDeep(decal_default);
+            }
 
             // 废弃：如果是清洗模式，还需要仅保留新建角色时存在的属性（移除shadow1~4等）
             // if (this.clean){
@@ -255,25 +256,25 @@ export default {
             return data;
         },
         output_origin: function () {
-
             // 1.默认需要修订版本号与客户端版本
-            let data = this.amendVersion('origin')
+            let data = this.amendVersion("origin");
             // 2.补全骨骼缺失数据
-            data.tBone = this.amendBone(data.tBone)
+            data.tBone = this.amendBone(data.tBone);
 
             // 3.贴花数据全部复位（怀旧服商城暂未上线）
             for (let key in data.tDecal) {
                 if (decal_group.origin.includes(key)) {
                     // 3.2重置color和show_id
-                    data.tDecal[key]["nColorID"] = decal_default[key]['nColorID'];
-                    data.tDecal[key]["nShowID"] = decal_default[key]['nShowID'];
+                    data.tDecal[key]["nColorID"] =
+                        decal_default[key]["nColorID"];
+                    data.tDecal[key]["nShowID"] = decal_default[key]["nShowID"];
                     // 3.3移除正式服特有属性（fValue1~3）
                     for (let prop in data.tDecal[key]) {
                         if (!decal_prop.origin.includes(prop)) {
                             delete data.tDecal[key][prop];
                         }
                     }
-                // 3.1首先移除正式服特有的部分属性（shadow1~4）
+                    // 3.1首先移除正式服特有的部分属性（shadow1~4）
                 } else {
                     delete data.tDecal[key];
                 }
@@ -378,31 +379,31 @@ export default {
         },
 
         // 数据修正
-        amendVersion : function (v){
+        amendVersion: function (v) {
             let data = _.cloneDeep(this.cleandata);
             data.nDecorationID = 0;
             data.nMajorVersion = versions[v]["nMajorVersion"];
             data.nVersion = versions[v]["nVersion"];
-            return data
+            return data;
         },
-        amendBone : function (data){
-            let _bone = _.cloneDeep(bone_default)
-            let _fixbone = Object.assign(_bone,data)
-            return _fixbone
+        amendBone: function (data) {
+            let _bone = _.cloneDeep(bone_default);
+            let _fixbone = Object.assign(_bone, data);
+            return _fixbone;
         },
-        amendDecal : function (data){
-            let _decal = _.cloneDeep(decal_default)
-            for(let key in decal_default){
+        amendDecal: function (data) {
+            let _decal = _.cloneDeep(decal_default);
+            for (let key in decal_default) {
                 // 不存在补全属性
-                if(!data[key]){
-                    data[key] = _.cloneDeep(decal_default[key])
-                // 存在则补全子属性
-                }else{
-                    data[key] = Object.assign(decal_default[key],data[key])
+                if (!data[key]) {
+                    data[key] = _.cloneDeep(decal_default[key]);
+                    // 存在则补全子属性
+                } else {
+                    data[key] = Object.assign(decal_default[key], data[key]);
                 }
             }
-            return data
-        }
+            return data;
+        },
     },
     mounted: function () {
         this.render();
