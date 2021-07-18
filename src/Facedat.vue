@@ -116,7 +116,7 @@
                 <el-form-item label="高级">
                     <el-checkbox v-model="clean">清洗模式</el-checkbox>
                     <span class="u-warning">
-                        <i class="el-icon-warning-outline"></i> 仅保留创建新角色时可用项
+                        <i class="el-icon-warning-outline"></i> 仅保留创建新角色时可用项，如提示非法数据也请尝试开启该模式
                     </span>
                 </el-form-item>
             </el-form>
