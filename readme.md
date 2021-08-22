@@ -25,6 +25,7 @@ import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue"
 3. 旧数据渲染页
 
 ## Todo
+涉及项目：app、share
 1. 根据游戏版本进程，需要更新version.json
 2. 根据游戏更新贴花，需要更新raw内容并重新build，同时更新使用项目库
 
