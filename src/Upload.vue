@@ -2,7 +2,7 @@
     <div class="c-facedat-upload">
         <div class="u-upload" v-if="support">
             <template v-if="!done">
-                <input class="u-input" type="file" id="face_file" @change="uploadData" />
+                <input class="u-input" type="file" id="face_file" accept=".dat,.jx3dat,.ini" @change="uploadData" />
                 <el-button
                     class="u-btn"
                     type="primary"
@@ -32,7 +32,9 @@
 </template>
 
 <script>
-import { parse } from "lua-json";
+import { parse as luaParse } from "lua-json";
+import { parse as iniParse } from "ini";
+import { convertIni } from "./iniConverter.js";
 import Bus from "./bus.js";
 export default {
     name: "Upload",
@@ -78,34 +80,60 @@ export default {
                 console.log("读取成功...开始执行分析...");
 
                 let origin = e.target.result;
-                let lua = "return" + origin.slice(origin.indexOf("{"));
-                vm.lua = lua; //lua table
 
-                try {
-                    vm.object = parse(lua);
-                    vm.json = JSON.stringify(vm.object);
-                    vm.$notify({
-                        title: "成功",
-                        message: "脸型数据解析成功",
-                        type: "success",
-                    });
+                let isKDNC = origin.startsWith("CNDK");
+                let isLuaTableWithReturn = origin.startsWith("return");
+                let isLuaTable = origin.startsWith("{");
+                if(isKDNC || isLuaTableWithReturn || isLuaTable) {
+                    let lua = "return" + origin.slice(origin.indexOf("{"));
+                    vm.lua = lua;
+                    vm.object = luaParse(lua);
+                    console.log("读取成功：类型为 LuaTable");
+                }
+                else {
+                    try {
+                        let iniContent = iniParse(origin);
+                        vm.object = convertIni(iniContent);
+                        console.log("读取成功：类型为 INI");
+                    } catch(ex) {
+                        vm.$notify.error({
+                            title: "错误",
+                            message: "无法解析脸型数据",
+                        });
+                        vm.$emit("fail", {
+                            file: vm.file,
+                            lua: vm.lua,
+                        });
+                    }
+                }
 
-                    vm.done = true;
-                    vm.$emit("success", {
-                        file: vm.file,
-                        lua: vm.lua,
-                        json: vm.json,
-                        object: vm.object,
-                    });
-                } catch (e) {
-                    vm.$notify.error({
-                        title: "错误",
-                        message: "无法解析脸型数据",
-                    });
-                    vm.$emit("fail", {
-                        file: vm.file,
-                        lua: vm.lua,
-                    });
+                // 读取成功才分析
+                if(vm.object) {
+                    try {
+                        vm.json = JSON.stringify(vm.object);
+                        vm.$notify({
+                            title: "成功",
+                            message: "脸型数据解析成功",
+                            type: "success",
+                        });
+
+                        vm.done = true;
+                        vm.$emit("success", {
+                            file: vm.file,
+                            lua: vm.lua,
+                            json: vm.json,
+                            object: vm.object,
+                        });
+                    } catch (e) {
+                        vm.$notify.error({
+                            title: "错误",
+                            message: "无法解析脸型数据",
+                        });
+                        vm.$emit("fail", {
+                            file: vm.file,
+                            lua: vm.lua,
+                        });
+                    }
                 }
             };
             fr.onerror = function (e) {
