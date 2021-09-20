@@ -1,43 +1,57 @@
 /* INI 格式捏脸转 LuaTable 格式 */
 
 // 读 Face 节下指定键的数值
-function getFaceProperty(ini, key) {
-    return parseInt(ini["Face"][key]);
+function getFaceProperty(ini, key, defaultValue=0) {
+    return parseInt(ini["Face"][key]) || defaultValue;
 }
 
 // 读指定键的 Decal 数值组
 function getDecalSection(ini, sectionName) {
-    return {
-        "fValue1": parseFloat(ini["CustomDetail"][sectionName + "_value1"]),
-        "nColorID": parseInt(ini["Decal"][sectionName + "_color"]),
+    let content = {
         "bUse": !!parseInt(ini["CustomDetail"][sectionName + "_valueEnable"]),
-        "nShowID": parseInt(ini["Decal"][sectionName]),
-        "fValue3": parseFloat(ini["CustomDetail"][sectionName + "_value3"]),
-        "fValue2": parseFloat(ini["CustomDetail"][sectionName + "_value2"])
+        "nShowID": parseInt(ini["Decal"][sectionName]) || 0,
+        "nColorID": parseInt(ini["Decal"][sectionName + "_color"]) || 0,
+        "fValue1": -1,
+        "fValue2": -1,
+        "fValue3": -1
+    };
+    if(content["bUse"]) {
+        content["fValue1"] = parseFloat(ini["CustomDetail"][sectionName + "_value1"]) || 0;
+        content["fValue2"] = parseFloat(ini["CustomDetail"][sectionName + "_value2"]) || 0;
+        content["fValue3"] = parseFloat(ini["CustomDetail"][sectionName + "_value3"]) || 0;
     }
+    return content;
 }
 
 // INI 格式转 LuaTable 格式
 export function convertIni(ini) {
     return {
+        "nRoleType": parseInt(ini["Base"]["RoleType"]),
         "nDecorationID": parseInt(ini["Base"]["DecorationID"]),
-        "tDecal":{
+        "tDecal": {
             "BASE": getDecalSection(ini, "FaceBaseTexture"),
             "BROW": getDecalSection(ini, "Brow"),
+            "EYE_LIGHT": getDecalSection(ini, "EyeLight"),
+            "EYE_LINE": getDecalSection(ini, "EyeLine"),
             "EYE_SHADOW": getDecalSection(ini, "EyeShadow"),
+            "EYE_SHADOW1": getDecalSection(ini, "EyeShadow1"),
+            "EYE_SHADOW2": getDecalSection(ini, "EyeShadow2"),
+            "EYE_SHADOW3": getDecalSection(ini, "EyeShadow3"),
+            "EYE_SHADOW4": getDecalSection(ini, "EyeShadow4"),
+            "EYE_SHADOW_FLASH1": getDecalSection(ini, "EyeShadowFlash1"),
+            "EYE_SHADOW_FLASH2": getDecalSection(ini, "EyeShadowFlash2"),
+            "EYE_SHADOW_FLASH3": getDecalSection(ini, "EyeShadowFlash3"),
+            "EYE_SHADOW_FLASH4": getDecalSection(ini, "EyeShadowFlash4"),
             "LIP_LIGHT": getDecalSection(ini, "LipLight"),
             "LIP_FLASH": getDecalSection(ini, "LipFlash"),
-            "IRIS_LEFT": getDecalSection(ini, "IrisLeft"),
-            "EYE_LIGHT": getDecalSection(ini, "EyeLight"),
-            "BLUSHER_MOUSTACHE": getDecalSection(ini, "BlusherMoustache"),
-            "EYE_LINE": getDecalSection(ini, "EyeLine"),
             "LIP_GLOSS": getDecalSection(ini, "LipGloss"),
-            "DECAL": getDecalSection(ini, "Decal"),
+            "LIP_OVERLAP":getDecalSection(ini, "LipOverlap"),
+            "IRIS_LEFT": getDecalSection(ini, "IrisLeft"),
             "IRIS_RIGHT": getDecalSection(ini, "IrisRight"),
-            "LIP_OVERLAP":getDecalSection(ini, "LipOverlap")
+            "BLUSHER_MOUSTACHE": getDecalSection(ini, "BlusherMoustache"),
+            "DECAL": getDecalSection(ini, "Decal")
         },
-        "nRoleType": parseInt(ini["Base"]["RoleType"]),
-        "tBone":{
+        "tBone": {
             "NOSE_SIZE": getFaceProperty(ini, "noseSize"),
             "UP_LIP_OUT": getFaceProperty(ini, "upLipOut"),
             "NOSEBOW_WIDTH": getFaceProperty(ini, "nosebowWidth"),
