@@ -25,10 +25,11 @@ import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue"
 3. 旧数据渲染页
 
 ## 数据构建
-1. 本地数据库构建，默认使用facedecalsxx作为主
-2. decalxx作为价格补充列
-3. 导入gb2313，导出csv
-4. 执行`npm run face`生成json
+1. 本地数据库构建，默认使用facedecals__作为主
+2. decal__作为价格补充列
+3. 导入gb2313，关联RoleType/Type/ShowID
+4. 导出csv
+5. 执行`npm run face`生成json
 
 ## Todo
 涉及项目：app、share
