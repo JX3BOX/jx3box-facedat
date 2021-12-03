@@ -85,7 +85,7 @@ export default {
                 let isLuaTableWithReturn = origin.startsWith("return");
                 let isLuaTable = origin.startsWith("{");
                 if(isKDNC || isLuaTableWithReturn || isLuaTable) {
-                    let lua = "return" + origin.slice(origin.indexOf("{"));
+                    let lua = origin.slice(origin.indexOf("return {"));
                     vm.lua = lua;
                     vm.object = luaParse(lua);
                     console.log("读取成功：类型为 LuaTable");
