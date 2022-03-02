@@ -34,6 +34,7 @@
 <script>
 import { parse as luaParse } from "lua-json";
 import { parse as iniParse } from "ini";
+import { buf as CRC32, str } from "crc-32";
 import { convertIni } from "./iniConverter.js";
 import Bus from "./bus.js";
 export default {
@@ -45,7 +46,6 @@ export default {
             support: true,
 
             file: "", //文件对象
-            lua: "", //lua table
             json: "", //json data
             object: "", //js object
 
@@ -73,42 +73,86 @@ export default {
             if (!bin) return; //空数据不解析
 
             const vm = this;
+            const gbkEncoder = new TextEncoder("gbk");
+            const gbkDecoder = new TextDecoder("gbk");
 
             let fr = new FileReader();
-            fr.readAsText(bin);
+            fr.readAsArrayBuffer(bin);
             fr.onload = function (e) {
                 console.log("读取成功...开始执行分析...");
+                let stream = e.target.result;
 
-                let origin = e.target.result;
-
-                let isKDNC = origin.startsWith("CNDK");
-                let isLuaTableWithReturn = origin.startsWith("return");
-                let isLuaTable = origin.startsWith("{");
-                if(isKDNC || isLuaTableWithReturn || isLuaTable) {
-                    let lua = origin.slice(origin.indexOf("return {"));
-                    vm.lua = lua;
-                    vm.object = luaParse(lua);
-                    console.log("读取成功：类型为 LuaTable");
-                }
-                else {
-                    try {
-                        let iniContent = iniParse(origin);
-                        vm.object = convertIni(iniContent);
-                        console.log("读取成功：类型为 INI");
-                    } catch(ex) {
-                        vm.$notify.error({
-                            title: "错误",
-                            message: "无法解析脸型数据",
-                        });
-                        vm.$emit("fail", {
-                            file: vm.file,
-                            lua: vm.lua,
-                        });
+                /* Parsing */
+                try {
+                    const sig = new Uint8Array(stream, 2, 2);
+                    /* KD header */
+                    if (sig[0] == 0x44 && sig[1] == 0x4B) { // "DK"
+                        console.log("File is LuaTable with header");
+                        const hashFlag = new Uint8Array(stream, 0, 1)[0];
+                        const compressFlag = new Uint8Array(stream, 1, 1)[0];
+                        if (compressFlag != 0x4E) { // "N"
+                            console.log("Unknown compression method: " + compressFlag);
+                            throw new Error("Compressed data is not supported");
+                        }
+                        const hash = new DataView(stream).getInt32(4, true);
+                        const length1 = new DataView(stream).getInt32(8, true);
+                        const length2 = new DataView(stream).getInt32(12, true);
+                        const remainingLen = stream.byteLength - 16;
+                        if (length1 != length2 || remainingLen != length1 || remainingLen != length2) {
+                            console.log("Length mismatch: L1=" + length1 + " L2=" + length2 + " Actual=" + remainingLen);
+                            setTimeout(() => vm.$notify.warn({
+                                title: "警告",
+                                message: "数据长度有误，将继续尝试解析",
+                                type: "warning",
+                            }), 0);
+                        }
+                        let payload = new Uint8Array(stream, 16, remainingLen);
+                        if (hashFlag != 0x4E) { // "N", has hashing
+                            let payloadHash = null;
+                            if (hashFlag == 0x43) {  // "C"
+                                payloadHash = CRC32(payload);
+                            }
+                            // Compare hash
+                            if (hash != payloadHash) {
+                                console.log("Hash mismatch: " + hash + " Actual=" + payloadHash);
+                                setTimeout(() => vm.$notify.warning({
+                                    title: "警告",
+                                    message: "数据校验有误，将继续尝试解析",
+                                    type: "warning",
+                                }), 0);
+                            }
+                        }
+                        payload = gbkDecoder.decode(payload);
+                        vm.object = luaParse("return" + payload.slice(payload.indexOf("{")));
                     }
+                    /* without header */
+                    else {
+                        console.log("No KD header detected");
+                        const payload = gbkDecoder.decode(stream);
+                        const luaData = luaParse("return" + payload.slice(payload.indexOf("{")));
+                        if (luaData.length != 0) {
+                            vm.object = luaData;
+                            console.log("File is LuaTable without header");
+                        }
+                        else {
+                            vm.object = convertIni(iniParse(payload));
+                            console.log("File is INI");
+                        }
+                    }
+                } catch (ex) {
+                    console.log(ex);
+                    vm.$notify.error({
+                        title: "错误",
+                        message: "无法解析脸型数据",
+                    });
+                    vm.$emit("fail", {
+                        file: vm.file,
+                    });
                 }
+                /* Parsing End */
 
                 // 读取成功才分析
-                if(vm.object) {
+                if (vm.object) {
                     try {
                         vm.json = JSON.stringify(vm.object);
                         vm.$notify({
@@ -116,11 +160,9 @@ export default {
                             message: "脸型数据解析成功",
                             type: "success",
                         });
-
                         vm.done = true;
                         vm.$emit("success", {
                             file: vm.file,
-                            lua: vm.lua,
                             json: vm.json,
                             object: vm.object,
                         });
@@ -131,7 +173,6 @@ export default {
                         });
                         vm.$emit("fail", {
                             file: vm.file,
-                            lua: vm.lua,
                         });
                     }
                 }
@@ -148,12 +189,10 @@ export default {
             this.done = false;
 
             this.file = "";
-            this.lua = "";
             this.json = "";
             this.object = "";
             this.$emit("success", {
                 file: "",
-                lua: "",
                 json: "",
                 object: "",
             });

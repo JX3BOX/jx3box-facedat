@@ -104,6 +104,13 @@
                         </template>
                     </div>
                 </div>
+                <span
+                    class="u-price"
+                    v-if="showAllDecalPrices()"
+                >
+                    <i class="el-icon-coin"></i>
+                    共计 {{showAllDecalPrices()}} 通宝
+                </span>
             </el-tab-pane>
         </el-tabs>
         <div class="c-facedat-setting">
@@ -328,6 +335,7 @@ export default {
                     this.body_type = facedata.nRoleType;
                     this.facedata = facedata;
                 }
+                this.showAllDecalPrices();
             } catch (e) {
                 this.facedata = "";
                 console.log(e);
@@ -365,6 +373,13 @@ export default {
         showDecalPrice: function (key, val) {
             return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
                 ?.CoinPrice;
+        },
+        showAllDecalPrices: function() {
+            let sum = 0;
+            for (const [_, key] of Object.entries(this.group['decal']))
+                if(this.cleandata['tDecal'][key])
+                    sum += this.showDecalPrice(key, this.cleandata['tDecal'][key]['nShowID']);
+            return sum;
         },
         checkdecal_prop: function (key) {
             return decal_group.origin.includes(key);
