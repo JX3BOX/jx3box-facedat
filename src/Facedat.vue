@@ -5,8 +5,8 @@
                 <div class="c-facedat-group">
                     <ul class="u-list">
                         <li v-for="(key, i) in group['eye']" :key="key + i">
-                            <label>{{ dict[key]['desc'] }}</label>
-                            <span>{{ facedata['tBone'][key] }}</span>
+                            <label>{{ dict[key]["desc"] }}</label>
+                            <span>{{ facedata["tBone"][key] }}</span>
                             <el-slider
                                 class="u-range"
                                 :min="bone_range[body_type][dict[key]['type']]['min']"
@@ -22,8 +22,8 @@
                 <div class="c-facedat-group">
                     <ul class="u-list">
                         <li v-for="(key, i) in group['mouth']" :key="key + i">
-                            <label>{{ dict[key]['desc'] }}</label>
-                            <span>{{ facedata['tBone'][key] }}</span>
+                            <label>{{ dict[key]["desc"] }}</label>
+                            <span>{{ facedata["tBone"][key] }}</span>
                             <el-slider
                                 class="u-range"
                                 :min="bone_range[body_type][dict[key]['type']]['min']"
@@ -39,8 +39,8 @@
                 <div class="c-facedat-group">
                     <ul class="u-list">
                         <li v-for="(key, i) in group['nose']" :key="key + i">
-                            <label>{{ dict[key]['desc'] }}</label>
-                            <span>{{ facedata['tBone'][key] }}</span>
+                            <label>{{ dict[key]["desc"] }}</label>
+                            <span>{{ facedata["tBone"][key] }}</span>
                             <el-slider
                                 class="u-range"
                                 :min="bone_range[body_type][dict[key]['type']]['min']"
@@ -56,8 +56,8 @@
                 <div class="c-facedat-group">
                     <ul class="u-list">
                         <li v-for="(key, i) in group['face']" :key="key + i">
-                            <label>{{ dict[key]['desc'] }}</label>
-                            <span>{{ facedata['tBone'][key] }}</span>
+                            <label>{{ dict[key]["desc"] }}</label>
+                            <span>{{ facedata["tBone"][key] }}</span>
                             <el-slider
                                 class="u-range"
                                 :min="bone_range[body_type][dict[key]['type']]['min']"
@@ -75,72 +75,39 @@
                         <template v-if="cleandata['tDecal'][key]">
                             <ul class="u-decals">
                                 <li v-show="!clean || checkdecal_prop(key)">
-                                    <div class="u-title">{{ dict[key]['desc'] }}</div>
-                                    <img
-                                        class="u-pic"
-                                        :src="getDecalIcon(key,cleandata['tDecal'][key]['nShowID'])"
-                                    />
-                                    <span
-                                        class="u-dname"
-                                    >{{getDecalName(key,cleandata['tDecal'][key]['nShowID'])}}</span>
-                                    <span
-                                        class="u-dcolor"
-                                    >(颜色:{{cleandata['tDecal'][key]['nColorID']}})</span>
-                                    <span
-                                        class="u-free"
-                                        v-if="showDecalFree(key,cleandata['tDecal'][key]['nShowID'])"
-                                    >
-                                        <i class="el-icon-success"></i> 新建角色可用
-                                    </span>
-                                    <span
-                                        class="u-price"
-                                        v-if="showDecalPrice(key,cleandata['tDecal'][key]['nShowID'])"
-                                    >
+                                    <div class="u-title">{{ dict[key]["desc"] }}</div>
+                                    <img class="u-pic" :src="getDecalIcon(key, cleandata['tDecal'][key]['nShowID'])" />
+                                    <span class="u-dname">{{ getDecalName(key, cleandata["tDecal"][key]["nShowID"]) }}</span>
+                                    <span class="u-dcolor">(颜色:{{ cleandata["tDecal"][key]["nColorID"] }})</span>
+                                    <span class="u-free" v-if="showDecalFree(key, cleandata['tDecal'][key]['nShowID'])"> <i class="el-icon-success"></i> 新建角色可用 </span>
+                                    <span class="u-price" v-if="showDecalPrice(key, cleandata['tDecal'][key]['nShowID'])">
                                         <i class="el-icon-coin"></i>
-                                        {{showDecalPrice(key,cleandata['tDecal'][key]['nShowID'])}} 通宝
+                                        {{ showDecalPrice(key, cleandata["tDecal"][key]["nShowID"]) }} 通宝
                                     </span>
                                 </li>
                             </ul>
                         </template>
                     </div>
+                    <div class="c-facedat-group">
+                        <ul class="u-decals">
+                            <div class="u-title">总计</div>
+                            <span class="u-total u-price"><i class="el-icon-coin"></i> <b>{{ total_coin }}</b> 通宝</span>
+                        </ul>
+                    </div>
                 </div>
-                <span
-                    class="u-price"
-                    v-if="showAllDecalPrices()"
-                >
-                    <i class="el-icon-coin"></i>
-                    共计 {{showAllDecalPrices()}} 通宝
-                </span>
             </el-tab-pane>
         </el-tabs>
         <div class="c-facedat-setting">
-            <el-form
-                class="c-facedat-setting-form"
-                ref="form"
-                label-width="80px"
-                label-position="left"
-            >
+            <el-form class="c-facedat-setting-form" ref="form" label-width="80px" label-position="left">
                 <el-form-item label="高级">
                     <el-checkbox v-model="clean">清洗模式</el-checkbox>
-                    <span class="u-warning">
-                        <i class="el-icon-warning-outline"></i> 仅保留创建新角色时可用项，如提示非法数据也请尝试开启该模式
-                    </span>
+                    <span class="u-warning"> <i class="el-icon-warning-outline"></i> 仅保留创建新角色时可用项，如提示非法数据也请尝试开启该模式 </span>
                 </el-form-item>
             </el-form>
         </div>
         <div class="c-facedata-btns">
-            <el-button
-                class="u-btn"
-                type="primary"
-                @click="buildData('std')"
-                icon="el-icon-receiving"
-            >导出正式服</el-button>
-            <el-button
-                class="u-btn"
-                type="warning"
-                @click="buildData('origin')"
-                icon="el-icon-receiving"
-            >导出怀旧服</el-button>
+            <el-button class="u-btn" type="primary" @click="buildData('std')" icon="el-icon-receiving">导出正式服</el-button>
+            <el-button class="u-btn" type="warning" @click="buildData('origin')" icon="el-icon-receiving">导出怀旧服</el-button>
         </div>
     </div>
 </template>
@@ -174,7 +141,7 @@ import { bstr as calcCrc32 } from "crc-32";
 export default {
     name: "Facedat",
     props: ["data", "lock"],
-    data: function () {
+    data: function() {
         return {
             active: "eye",
 
@@ -199,20 +166,16 @@ export default {
         };
     },
     computed: {
-        ready: function () {
+        ready: function() {
             return !!(this.facedata && this.decalmap);
         },
-        cleandata: function () {
+        cleandata: function() {
             if (this.clean && this.facedata) {
                 let _cleandata = _.cloneDeep(this.facedata);
                 for (let key in _cleandata.tDecal) {
-                    let CanUseInCreate = this.showDecalFree(
-                        key,
-                        _cleandata?.tDecal[key]["nShowID"]
-                    );
+                    let CanUseInCreate = this.showDecalFree(key, _cleandata?.tDecal[key]["nShowID"]);
                     if (!CanUseInCreate) {
-                        _cleandata.tDecal[key]["nShowID"] =
-                            decal_default[key]["nShowID"];
+                        _cleandata.tDecal[key]["nShowID"] = decal_default[key]["nShowID"];
                     }
                 }
                 return _cleandata;
@@ -221,7 +184,7 @@ export default {
             }
         },
         // 自动检测数据版本
-        client: function () {
+        client: function() {
             let _nMajorVersion = this.facedata?.nMajorVersion;
             if (_nMajorVersion == 1 || !_nMajorVersion) {
                 return "std";
@@ -229,14 +192,14 @@ export default {
                 return "origin";
             }
         },
-        decalmap: function () {
+        decalmap: function() {
             if (this.client == "std" || !this.client) {
                 return decal_std;
             } else {
                 return decal_origin;
             }
         },
-        output_std: function () {
+        output_std: function() {
             // 1.默认需要修订版本号与客户端版本
             let data = this.amendVersion("std");
             // 2.补全骨骼缺失数据
@@ -263,7 +226,7 @@ export default {
             // }
             return data;
         },
-        output_origin: function () {
+        output_origin: function() {
             // 1.默认需要修订版本号与客户端版本
             let data = this.amendVersion("origin");
             // 2.补全骨骼缺失数据
@@ -273,8 +236,7 @@ export default {
             for (let key in data.tDecal) {
                 if (decal_group.origin.includes(key)) {
                     // 3.2重置color和show_id
-                    data.tDecal[key]["nColorID"] =
-                        decal_default[key]["nColorID"];
+                    data.tDecal[key]["nColorID"] = decal_default[key]["nColorID"];
                     data.tDecal[key]["nShowID"] = decal_default[key]["nShowID"];
                     // 3.3移除正式服特有属性（fValue1~3）
                     for (let prop in data.tDecal[key]) {
@@ -289,10 +251,9 @@ export default {
             }
             return data;
         },
-        output: function () {
+        output: function() {
             let table = {};
-            let data =
-                this.version == "origin" ? this.output_origin : this.output_std;
+            let data = this.version == "origin" ? this.output_origin : this.output_std;
             try {
                 table = format(data);
             } catch (e) {
@@ -301,24 +262,29 @@ export default {
             }
             return table;
         },
+        total_coin: function() {
+            let sum = 0;
+            for (const [_, key] of Object.entries(this.group["decal"])) if (this.cleandata["tDecal"][key]) sum += this.showDecalPrice(key, this.cleandata["tDecal"][key]["nShowID"]);
+            return sum;
+        },
     },
     watch: {
         data: {
             deep: true,
-            handler: function (newdata) {
+            handler: function(newdata) {
                 this.render();
             },
         },
         cleandata: {
             deep: true,
-            handler: function () {
+            handler: function() {
                 this.$forceUpdate();
             },
         },
     },
     methods: {
         // 数据构建
-        render: function () {
+        render: function() {
             // 是否为空
             if (!this.data) {
                 return "";
@@ -335,7 +301,6 @@ export default {
                     this.body_type = facedata.nRoleType;
                     this.facedata = facedata;
                 }
-                this.showAllDecalPrices();
             } catch (e) {
                 this.facedata = "";
                 console.log(e);
@@ -347,47 +312,30 @@ export default {
         },
 
         // 贴花
-        getDecalName: function (key, val) {
-            return (
-                _.get(
-                    this.decalmap[this.body_type][dict[key]["type"]][val],
-                    "name"
-                ) || "无"
-            );
+        getDecalName: function(key, val) {
+            return _.get(this.decalmap[this.body_type][dict[key]["type"]][val], "name") || "无";
         },
-        getDecalIcon: function (key, val) {
-            let iconid = _.get(
-                this.decalmap[this.body_type][dict[key]["type"]][val],
-                "iconid"
-            );
+        getDecalIcon: function(key, val) {
+            let iconid = _.get(this.decalmap[this.body_type][dict[key]["type"]][val], "iconid");
             if (iconid) {
                 return __iconPath + "icon/" + iconid + ".png";
             } else {
                 return __iconPath + "icon/" + "undefined" + ".png";
             }
         },
-        showDecalFree: function (key, val) {
-            return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
-                ?.CanUseInCreate;
+        showDecalFree: function(key, val) {
+            return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]?.CanUseInCreate;
         },
-        showDecalPrice: function (key, val) {
-            return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]
-                ?.CoinPrice;
+        showDecalPrice: function(key, val) {
+            return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]?.CoinPrice;
         },
-        showAllDecalPrices: function() {
-            let sum = 0;
-            for (const [_, key] of Object.entries(this.group['decal']))
-                if(this.cleandata['tDecal'][key])
-                    sum += this.showDecalPrice(key, this.cleandata['tDecal'][key]['nShowID']);
-            return sum;
-        },
-        checkdecal_prop: function (key) {
+        checkdecal_prop: function(key) {
             return decal_group.origin.includes(key);
         },
 
         addKDHeader: function(payload) {
             let length = payload.length;
-            let crc32 = calcCrc32(payload) >>> 0;   // Convert to unsigned
+            let crc32 = calcCrc32(payload) >>> 0; // Convert to unsigned
             let output = Buffer.alloc(length + 16);
             output.write("CNDK", 0);
             output.writeUInt32LE(crc32, 4);
@@ -398,7 +346,7 @@ export default {
         },
 
         // 按钮
-        buildData: function (v) {
+        buildData: function(v) {
             this.version = v;
             let outputWithHeader = this.addKDHeader(this.output);
             let blob = new Blob([outputWithHeader], {
@@ -408,19 +356,19 @@ export default {
         },
 
         // 数据修正
-        amendVersion: function (v) {
+        amendVersion: function(v) {
             let data = _.cloneDeep(this.cleandata);
             data.nDecorationID = 0;
             data.nMajorVersion = versions[v]["nMajorVersion"];
             data.nVersion = versions[v]["nVersion"];
             return data;
         },
-        amendBone: function (data) {
+        amendBone: function(data) {
             let _bone = _.cloneDeep(bone_default);
             let _fixbone = Object.assign(_bone, data);
             return _fixbone;
         },
-        amendDecal: function (data) {
+        amendDecal: function(data) {
             let _decal = _.cloneDeep(decal_default);
             for (let key in decal_default) {
                 // 不存在补全属性
@@ -434,7 +382,7 @@ export default {
             return data;
         },
     },
-    mounted: function () {
+    mounted: function() {
         this.render();
     },
 };
