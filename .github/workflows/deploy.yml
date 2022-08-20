@@ -1,0 +1,25 @@
+name: Deploy & Build
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      # clone
+      - name: Checkout
+        uses: actions/checkout@master
+
+      # deploy
+      - name: deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_NANJING2 }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            cd /www/wwwroot/jx3box
+            cd jx3box-facedat
+            git pull origin master
