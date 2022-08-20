@@ -78,5 +78,5 @@ function buildData(input, output) {
     fs.writeFileSync(output, JSON.stringify(facedata));
 }
 
-buildData("./raw/decal/std.csv","./assets/data/decal_std.json")
-buildData("./raw/decal/origin.csv","./assets/data/decal_origin.json")
+buildData("./raw/decal/facedecal_std.csv","./assets/data/decal_std.json")
+buildData("./raw/decal/facedecal_origin.csv","./assets/data/decal_origin.json")
