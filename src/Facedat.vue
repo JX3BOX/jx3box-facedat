@@ -136,7 +136,7 @@ import versions from "../assets/data/version.json";
 import Bus from "./bus.js";
 import { format } from "lua-json";
 import { saveAs } from "file-saver";
-import { bstr as calcCrc32 } from "crc-32";
+import { dumpFace } from "./faceParser.js";
 
 export default {
     name: "Facedat",
@@ -333,22 +333,10 @@ export default {
             return decal_group.origin.includes(key);
         },
 
-        addKDHeader: function(payload) {
-            let length = payload.length;
-            let crc32 = calcCrc32(payload) >>> 0; // Convert to unsigned
-            let output = Buffer.alloc(length + 16);
-            output.write("CNDK", 0);
-            output.writeUInt32LE(crc32, 4);
-            output.writeUInt32LE(length, 8);
-            output.writeUInt32LE(length, 12);
-            output.write(payload, 16);
-            return output;
-        },
-
         // 按钮
         buildData: function(v) {
             this.version = v;
-            let outputWithHeader = this.addKDHeader(this.output);
+            let outputWithHeader = dumpFace(this.output);
             let blob = new Blob([outputWithHeader], {
                 type: "application/dat;charset=utf-8",
             });
