@@ -114,11 +114,11 @@
 
 <script>
 import _ from "lodash";
+import axios from "axios";
 import {
     __ossMirror,
     __iconPath,
     __ossRoot,
-    // __dataPath,
 } from "@jx3box/jx3box-common/data/jx3box.json";
 import fixOldData from "./fixOldData.js";
 
@@ -133,7 +133,6 @@ import bone_default from "../assets/data/bone_default.json";
 import decal_default from "../assets/data/decal_default.json";
 import versions from "../assets/data/version.json";
 
-import Bus from "./bus.js";
 import { format } from "lua-json";
 import { saveAs } from "file-saver";
 import { dumpFace } from "./faceParser.js";
@@ -160,6 +159,8 @@ export default {
             // 导出设置
             clean: false,
             version: "std",
+
+            decalmap: '',
 
             // test
             // data : JSON.stringify(olddata)
@@ -192,13 +193,13 @@ export default {
                 return "origin";
             }
         },
-        decalmap: function() {
+        /* decalmap: function() {
             if (this.client == "std" || !this.client) {
                 return decal_std;
             } else {
                 return decal_origin;
             }
-        },
+        }, */
         output_std: function() {
             // 1.默认需要修订版本号与客户端版本
             let data = this.amendVersion("std");
@@ -279,6 +280,12 @@ export default {
             deep: true,
             handler: function() {
                 this.$forceUpdate();
+            },
+        },
+        client: {
+            immediate: true,
+            handler: function(val) {
+                this.fetchDecal();
             },
         },
     },
@@ -369,6 +376,38 @@ export default {
             }
             return data;
         },
+        fetchDecal: function (client = 'std') {
+            let url = client === 'std' ? `${__ossMirror}data/face/decal_std.json` : `${__ossMirror}data/face/decal_origin.json`;
+            try {
+                // sessionStorage
+                if (client === 'std') {
+                    const decalmap = JSON.parse(sessionStorage.getItem('decal_std'));
+                    if (decalmap) {
+                        this.decalmap = decalmap;
+                        return;
+                    } else {
+                        axios.get(url).then((res) => {
+                            this.decalmap = res;
+                            sessionStorage.setItem('decal_std', JSON.stringify(res.data));
+                        });
+                    }
+                } else {
+                    const decalmap = JSON.parse(sessionStorage.getItem('decal_origin'));
+                    if (decalmap) {
+                        this.decalmap = decalmap;
+                        return;
+                    } else {
+                        axios.get(url).then((res) => {
+                            this.decalmap = res;
+                            sessionStorage.setItem('decal_origin', JSON.stringify(res.data));
+                        });
+                    }
+                }
+            } catch (e) {
+                this.decalmap = '';
+                console.log(e);
+            }
+        }
     },
     mounted: function() {
         this.render();
