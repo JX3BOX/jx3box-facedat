@@ -23,12 +23,3 @@ jobs:
             cd /www/wwwroot/jx3box
             cd jx3box-facedat
             git pull origin master
-
-      # cdn
-      - name: OSS
-        uses: manyuanrong/setup-ossutil@v2.0
-        with:
-          endpoint: "oss-cn-hangzhou.aliyuncs.com"
-          access-key-id: ${{secrets.AccessKey_ID}}
-          access-key-secret: ${{secrets.Access_Key_Secret}}
-      - run: ossutil cp -rf assets/data oss://jx3box/data/face
