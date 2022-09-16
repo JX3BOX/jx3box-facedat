@@ -256,7 +256,7 @@ export default {
             let table = {};
             let data = this.version == "origin" ? this.output_origin : this.output_std;
             try {
-                table = format(data);
+                table = format(data, { eol: "", spaces: null });
             } catch (e) {
                 console.log("导出转换失败");
                 console.log(e);
