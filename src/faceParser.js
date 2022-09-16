@@ -1,6 +1,6 @@
 import { parse as luaParse } from "lua-json";
 import { parse as iniParse } from "ini";
-import { buf as CRC32, str } from "crc-32";
+import { buf as CRC32 } from "crc-32";
 import { convertIni } from "./iniConverter.js";
 
 // 输入一个 buffer，输出解析的脸型数据 object
@@ -61,8 +61,10 @@ export function parseFace(rawData, ignoreHeaderError = false) {
 
 // 输入一个 buffer，加上合法的 KD 头
 export function dumpFace(payload) {
-    let length = payload.length;
-    let crc32 = CRC32(payload) >>> 0; // Convert to unsigned
+    const gbkEncoder = new TextEncoder("gbk");
+    let payloadBuf = gbkEncoder.encode(payload);
+    let length = payloadBuf.length;
+    let crc32 = CRC32(payloadBuf) >>> 0; // Convert to unsigned
     let output = Buffer.alloc(length + 16);
     output.write("CNDK", 0);
     output.writeUInt32LE(crc32, 4);
