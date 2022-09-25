@@ -387,7 +387,7 @@ export default {
                         return;
                     } else {
                         axios.get(url).then((res) => {
-                            this.decalmap = res;
+                            this.decalmap = res.data;
                             sessionStorage.setItem('decal_std', JSON.stringify(res.data));
                         });
                     }
@@ -398,7 +398,7 @@ export default {
                         return;
                     } else {
                         axios.get(url).then((res) => {
-                            this.decalmap = res;
+                            this.decalmap = res.data;
                             sessionStorage.setItem('decal_origin', JSON.stringify(res.data));
                         });
                     }
