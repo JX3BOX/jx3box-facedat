@@ -1,6 +1,6 @@
 <template>
     <div class="c-facedat" v-if="ready">
-        <el-tabs class="c-facedat-preivew" v-model="active" type="card">
+        <el-tabs class="c-facedat-preivew" v-model="active" :type="tab_type">
             <el-tab-pane label="眼部轮廓" name="eye">
                 <div class="c-facedat-group">
                     <ul class="u-list">
@@ -139,7 +139,7 @@ import { dumpFace } from "./faceParser.js";
 
 export default {
     name: "Facedat",
-    props: ["data", "lock"],
+    props: ["data", "lock","tab_type"],
     data: function() {
         return {
             active: "eye",
