@@ -173,6 +173,7 @@ export default {
         cleandata: function() {
             if (this.clean && this.facedata) {
                 let _cleandata = _.cloneDeep(this.facedata);
+                _cleandata.nDecorationID = 0;
                 for (let key in _cleandata.tDecal) {
                     let CanUseInCreate = this.showDecalFree(key, _cleandata?.tDecal[key]["nShowID"]);
                     if (!CanUseInCreate) {
@@ -353,7 +354,7 @@ export default {
         // 数据修正
         amendVersion: function(v) {
             let data = _.cloneDeep(this.cleandata);
-            data.nDecorationID = 0;
+            data.nDecorationID = v === "origin" ? 0 : data.nDecorationID;
             data.nMajorVersion = versions[v]["nMajorVersion"];
             data.nVersion = versions[v]["nVersion"];
             return data;
