@@ -1,11 +1,61 @@
-const parse = require("csv-parse/lib/sync");
-const fs = require("fs");
-const _ = require("lodash");
+const path = require('path');
+const { TABLE_DEFAULT_ROW_MODE, readFile, parseTable, writeCsv, writeJSON } = require("@jx3box/jx3box-build-common/file");
+const { initLogger } = require('@jx3box/jx3box-build-common/logger');
+const lodash = require("lodash");
 
-// 开始解析
-function buildData(input, output) {
+let baseLogger = null;
+
+const mergeTable = async (client) => {
+    const logger = baseLogger.job("mergeTable");
+
+    logger.info("读取并构建 settings 表");
+    const settingsTablePath = path.join(__dirname, `../raw/decal/decal_${client}.tab`);
+    const settingsTable = await parseTable(await readFile(settingsTablePath), {
+        delimiter: "\t",
+        keepColumns: ["RoleType", "Type", "ShowID", "CanUseInCreate", "CoinPrice"]
+    });
+    let settingsTableIndexed = {};
+    for (let row of settingsTable) {
+        if (!settingsTableIndexed[row.RoleType])
+            settingsTableIndexed[row.RoleType] = {};
+        if (!settingsTableIndexed[row.RoleType][row.Type])
+            settingsTableIndexed[row.RoleType][row.Type] = {};
+        settingsTableIndexed[row.RoleType][row.Type][row.ShowID] = {
+            CanUseInCreate: row.CanUseInCreate,
+            CoinPrice: row.CoinPrice
+        };
+    }
+    logger.info(`共构建 ${settingsTable.length} 条记录`);
+
+    logger.info("读取并构建 ui 表");
+    const uiTablePath = path.join(__dirname, `../raw/decal/facedecals_${client}.tab`);
+    const uiTable = await parseTable(await readFile(uiTablePath), {
+        delimiter: "\t",
+        useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE
+    });
+    logger.info(`共构建 ${uiTable.length} 条记录`);
+
+    logger.info("开始合表");
+    let mergedTable = [];
+    for (let row of uiTable) {
+        let mergedRow = {
+            ...row,
+            ...settingsTableIndexed[row.RoleType][row.Type][row.ShowID]
+        };
+        mergedTable.push(mergedRow);
+    }
+    logger.info(`共合表 ${mergedTable.length} 条记录`);
+    return mergedTable;
+};
+
+const buildData = async (client) => {
+    const logger = baseLogger.job("buildData");
+
+    logger.info(`开始构建 ${client} 的 decal 数据`);
+    const mergedTables = await mergeTable(client);
+
     //人物体型role_type 1-6
-    let facedata = {
+    let ret = {
         //成男
         1: {
             role_type: "成男",
@@ -34,39 +84,25 @@ function buildData(input, output) {
             role_type: "未知",
         },
     };
+
+    logger.info("开始构建输出");
+
     //装饰类型type 0-20
-    _.each(facedata, function(val, key) {
+    lodash.each(ret, function (val, key) {
         for (let i = 0; i <= 20; i++) {
             //let type_key = 'type_' + i
-            facedata[key][i] = {};
+            ret[key][i] = {};
         }
     });
-    // console.log(facedata)
 
-    // let data = fs.readFileSync("./raw/face/facedecals.tab");
-    let data = fs.readFileSync(input);
-
-    const records = parse(data, {
-        // delimiter: "\t",
-        delimiter: ",",
-        columns: true,
-        skip_empty_lines: true,
-    }).slice(1);
-
-    // console.log(records)
-
-    for (let record of records) {
-        // console.log(record)
-
+    for (let record of mergedTables) {
         let role_type = record.RoleType, //体型
             type = record.Type, //装饰类型
             showid = record.ShowID, //展示id
             name = record.Name, //装饰名
             iconid = record.IconID; //图标id
 
-        // console.log(type)
-
-        facedata[role_type][type][showid] = {
+        ret[role_type][type][showid] = {
             name: name,
             iconid: iconid,
             CanUseInCreate: record.CanUseInCreate,
@@ -74,9 +110,25 @@ function buildData(input, output) {
         };
     }
 
-    // console.log(facedata)
-    fs.writeFileSync(output, JSON.stringify(facedata));
-}
+    logger.info(`共构建 ${mergedTables.length} 条记录，开始写入文件`);
+    const outputPath = path.join(__dirname, `../assets/data/decal_${client}.json`);
+    await writeJSON(outputPath, ret);
+    logger.info(`写入文件 ${outputPath} 成功`);
+};
 
-buildData("./raw/decal/facedecal_std.csv","./assets/data/decal_std.json")
-buildData("./raw/decal/facedecal_origin.csv","./assets/data/decal_origin.json")
+const main = async () => {
+    baseLogger = initLogger('jx3-facedat/decal');
+    const logger = baseLogger;
+
+    try {
+        await buildData("std");
+        await buildData("origin");
+    } catch (e) {
+        console.log(e);
+        logger.fail(e);
+    }
+
+    await logger.end();
+};
+
+main();
