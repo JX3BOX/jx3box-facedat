@@ -429,7 +429,6 @@ export default {
                 const url = client === 'std' ? `${__ossMirror}data/face/decal_std.json` : `${__ossMirror}data/face/decal_origin.json`;
                 const key = `decal_${client}`;
                 this.fetchWithLocalStorage(url, key, (data) => {
-                    console.log(data);
                     this.decalMap = data;
                 });
             } catch (e) {
@@ -442,7 +441,6 @@ export default {
                 const url = client === 'std' ? `${__ossMirror}data/face/decoration_std.json` : `${__ossMirror}data/face/decoration_origin.json`;
                 const key = `decoration_${client}`;
                 this.fetchWithLocalStorage(url, key, (data) => {
-                    console.log(data);
                     this.decorationMap = data;
                 });
             } catch (e) {
