@@ -1,0 +1,451 @@
+{
+    "0": {
+        "role_type": "未知"
+    },
+    "1": {
+        "1": {
+            "Name": "玫瑰花",
+            "CoinPrice": "3800"
+        },
+        "2": {
+            "Name": "小龙虾",
+            "CoinPrice": "3800"
+        },
+        "3": {
+            "Name": "胡子",
+            "CoinPrice": "3800"
+        },
+        "4": {
+            "Name": "树枝",
+            "CoinPrice": "3800"
+        },
+        "5": {
+            "Name": "狗皮膏药",
+            "CoinPrice": "3800"
+        },
+        "6": {
+            "Name": "白胡须",
+            "CoinPrice": "3800"
+        },
+        "7": {
+            "Name": "鱼骨头",
+            "CoinPrice": "3800"
+        },
+        "8": {
+            "Name": "黑胡须",
+            "CoinPrice": "3800"
+        },
+        "9": {
+            "Name": "胡.富贵",
+            "CoinPrice": "3800"
+        },
+        "10": {
+            "Name": "胡.道骨",
+            "CoinPrice": "3800"
+        },
+        "11": {
+            "Name": "胡.八分",
+            "CoinPrice": "3800"
+        },
+        "12": {
+            "Name": "胡.小丘",
+            "CoinPrice": "3800"
+        },
+        "13": {
+            "Name": "胡.勾尾",
+            "CoinPrice": "3800"
+        },
+        "14": {
+            "Name": "胡.落霜",
+            "CoinPrice": "3800"
+        },
+        "15": {
+            "Name": "胡.燕戈",
+            "CoinPrice": "3800"
+        },
+        "16": {
+            "Name": "胡.得道",
+            "CoinPrice": "3800"
+        },
+        "17": {
+            "Name": "胡.仙风",
+            "CoinPrice": "3800"
+        },
+        "18": {
+            "Name": "胡.八分<白>",
+            "CoinPrice": "3800"
+        },
+        "19": {
+            "Name": "殇颜",
+            "CoinPrice": "3800"
+        },
+        "20": {
+            "Name": "横秋",
+            "CoinPrice": "3800"
+        },
+        "21": {
+            "Name": "随风",
+            "CoinPrice": "3800"
+        },
+        "22": {
+            "Name": "绿水",
+            "CoinPrice": "3800"
+        },
+        "23": {
+            "Name": "涎蕊",
+            "CoinPrice": "3800"
+        },
+        "24": {
+            "Name": "中典",
+            "CoinPrice": "3800"
+        },
+        "25": {
+            "Name": "厚腮",
+            "CoinPrice": "3800"
+        },
+        "26": {
+            "Name": "银箍",
+            "CoinPrice": "3800"
+        },
+        "27": {
+            "Name": "白涛调",
+            "CoinPrice": "5800"
+        },
+        "28": {
+            "Name": "天地宽",
+            "CoinPrice": "5800"
+        },
+        "29": {
+            "Name": "一夜霜",
+            "CoinPrice": "5800"
+        },
+        "30": {
+            "Name": "筋斗云",
+            "CoinPrice": "5800"
+        },
+        "31": {
+            "Name": "斜照王门",
+            "CoinPrice": "5800"
+        },
+        "32": {
+            "Name": "风波海",
+            "CoinPrice": "5800"
+        },
+        "33": {
+            "Name": "王虐",
+            "CoinPrice": "5800"
+        },
+        "34": {
+            "Name": "临岳",
+            "CoinPrice": "3800"
+        },
+        "35": {
+            "Name": "景侯",
+            "CoinPrice": "3800"
+        },
+        "36": {
+            "Name": "白日蛇",
+            "CoinPrice": "5800"
+        },
+        "37": {
+            "Name": "九江骨",
+            "CoinPrice": "5800"
+        },
+        "role_type": "成男"
+    },
+    "2": {
+        "1": {
+            "Name": "玫瑰花",
+            "CoinPrice": "3800"
+        },
+        "2": {
+            "Name": "小龙虾",
+            "CoinPrice": "3800"
+        },
+        "3": {
+            "Name": "鼻环",
+            "CoinPrice": "3800"
+        },
+        "4": {
+            "Name": "树枝",
+            "CoinPrice": "3800"
+        },
+        "5": {
+            "Name": "狗皮膏药",
+            "CoinPrice": "3800"
+        },
+        "6": {
+            "Name": "鱼骨头",
+            "CoinPrice": "3800"
+        },
+        "7": {
+            "Name": "殇颜",
+            "CoinPrice": "3800"
+        },
+        "8": {
+            "Name": "横秋",
+            "CoinPrice": "3800"
+        },
+        "9": {
+            "Name": "随风",
+            "CoinPrice": "3800"
+        },
+        "10": {
+            "Name": "绿水",
+            "CoinPrice": "3800"
+        },
+        "11": {
+            "Name": "涎蕊",
+            "CoinPrice": "3800"
+        },
+        "12": {
+            "Name": "花眉",
+            "CoinPrice": "3800"
+        },
+        "13": {
+            "Name": "花沾额",
+            "CoinPrice": "5800"
+        },
+        "14": {
+            "Name": "琉璃碧珠",
+            "CoinPrice": "5800"
+        },
+        "15": {
+            "Name": "清晓封霜",
+            "CoinPrice": "5800"
+        },
+        "16": {
+            "Name": "百叠霜罗",
+            "CoinPrice": "5800"
+        },
+        "17": {
+            "Name": "紫翠香尘",
+            "CoinPrice": "5800"
+        },
+        "18": {
+            "Name": "宝缀裁瑶",
+            "CoinPrice": "5800"
+        },
+        "19": {
+            "Name": "临岳",
+            "CoinPrice": "3800"
+        },
+        "20": {
+            "Name": "白日蛇",
+            "CoinPrice": "5800"
+        },
+        "21": {
+            "Name": "景侯",
+            "CoinPrice": "3800"
+        },
+        "22": {
+            "Name": "九江骨",
+            "CoinPrice": "5800"
+        },
+        "23": {
+            "Name": "王虐",
+            "CoinPrice": "5800"
+        },
+        "role_type": "成女"
+    },
+    "3": {
+        "role_type": "魁梧男"
+    },
+    "4": {
+        "role_type": "性感女"
+    },
+    "5": {
+        "1": {
+            "Name": "玫瑰花",
+            "CoinPrice": "3800"
+        },
+        "2": {
+            "Name": "勺子",
+            "CoinPrice": "3800"
+        },
+        "3": {
+            "Name": "小龙虾",
+            "CoinPrice": "3800"
+        },
+        "4": {
+            "Name": "树枝",
+            "CoinPrice": "3800"
+        },
+        "5": {
+            "Name": "狗皮膏药",
+            "CoinPrice": "3800"
+        },
+        "6": {
+            "Name": "鱼骨头",
+            "CoinPrice": "3800"
+        },
+        "7": {
+            "Name": "殇颜",
+            "CoinPrice": "3800"
+        },
+        "8": {
+            "Name": "横秋",
+            "CoinPrice": "3800"
+        },
+        "9": {
+            "Name": "随风",
+            "CoinPrice": "3800"
+        },
+        "10": {
+            "Name": "绿水",
+            "CoinPrice": "3800"
+        },
+        "11": {
+            "Name": "涎蕊",
+            "CoinPrice": "3800"
+        },
+        "12": {
+            "Name": "银箍",
+            "CoinPrice": "3800"
+        },
+        "13": {
+            "Name": "白涛调",
+            "CoinPrice": "5800"
+        },
+        "14": {
+            "Name": "天地宽",
+            "CoinPrice": "5800"
+        },
+        "15": {
+            "Name": "一夜霜",
+            "CoinPrice": "5800"
+        },
+        "16": {
+            "Name": "筋斗云",
+            "CoinPrice": "5800"
+        },
+        "17": {
+            "Name": "斜照王门",
+            "CoinPrice": "5800"
+        },
+        "18": {
+            "Name": "风波海",
+            "CoinPrice": "5800"
+        },
+        "19": {
+            "Name": "王虐",
+            "CoinPrice": "5800"
+        },
+        "20": {
+            "Name": "临岳",
+            "CoinPrice": "3800"
+        },
+        "21": {
+            "Name": "景侯",
+            "CoinPrice": "3800"
+        },
+        "22": {
+            "Name": "白日蛇",
+            "CoinPrice": "5800"
+        },
+        "23": {
+            "Name": "九江骨",
+            "CoinPrice": "5800"
+        },
+        "role_type": "正太"
+    },
+    "6": {
+        "1": {
+            "Name": "玫瑰花",
+            "CoinPrice": "3800"
+        },
+        "2": {
+            "Name": "勺子",
+            "CoinPrice": "3800"
+        },
+        "3": {
+            "Name": "小龙虾",
+            "CoinPrice": "3800"
+        },
+        "4": {
+            "Name": "鼻环",
+            "CoinPrice": "3800"
+        },
+        "5": {
+            "Name": "树枝",
+            "CoinPrice": "3800"
+        },
+        "6": {
+            "Name": "狗皮膏药",
+            "CoinPrice": "3800"
+        },
+        "7": {
+            "Name": "鱼骨头",
+            "CoinPrice": "3800"
+        },
+        "8": {
+            "Name": "殇颜",
+            "CoinPrice": "3800"
+        },
+        "9": {
+            "Name": "横秋",
+            "CoinPrice": "3800"
+        },
+        "10": {
+            "Name": "随风",
+            "CoinPrice": "3800"
+        },
+        "11": {
+            "Name": "绿水",
+            "CoinPrice": "3800"
+        },
+        "12": {
+            "Name": "涎蕊",
+            "CoinPrice": "3800"
+        },
+        "13": {
+            "Name": "花眉",
+            "CoinPrice": "3800"
+        },
+        "14": {
+            "Name": "花沾额",
+            "CoinPrice": "5800"
+        },
+        "15": {
+            "Name": "琉璃碧珠",
+            "CoinPrice": "5800"
+        },
+        "16": {
+            "Name": "清晓封霜",
+            "CoinPrice": "5800"
+        },
+        "17": {
+            "Name": "百叠霜罗",
+            "CoinPrice": "5800"
+        },
+        "18": {
+            "Name": "紫翠香尘",
+            "CoinPrice": "5800"
+        },
+        "19": {
+            "Name": "宝缀裁瑶",
+            "CoinPrice": "5800"
+        },
+        "20": {
+            "Name": "临岳",
+            "CoinPrice": "3800"
+        },
+        "21": {
+            "Name": "白日蛇",
+            "CoinPrice": "5800"
+        },
+        "22": {
+            "Name": "景侯",
+            "CoinPrice": "3800"
+        },
+        "23": {
+            "Name": "九江骨",
+            "CoinPrice": "5800"
+        },
+        "24": {
+            "Name": "王虐",
+            "CoinPrice": "5800"
+        },
+        "role_type": "萝莉"
+    }
+}
