@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-facedat",
-    "version": "2.3.9",
+    "version": "2.3.13",
     "description": "JX3BOX Facedat viewer",
     "main": "index.js",
     "scripts": {
@@ -29,19 +29,20 @@
         "last 2 versions"
     ],
     "dependencies": {
+        "@jx3box/jx3box-build-common": "^0.1.6",
         "@jx3box/jx3box-common": "^6.0.1",
         "@jx3box/jx3box-data": "^0.4.2",
         "axios": "^0.19.2",
         "core-js": "^3.6.5",
+        "crc-32": "^1.2.0",
         "csslab": "^4.0.3",
         "element-ui": "^2.13.2",
         "file-saver": "^2.0.5",
+        "ini": "^2.0.0",
         "jquery": "^3.5.1",
         "lodash": "^4.17.15",
         "prismjs": "^1.20.0",
-        "vue": "^2.6.11",
-        "crc-32": "^1.2.0",
-        "ini": "^2.0.0"
+        "vue": "^2.6.11"
     },
     "devDependencies": {
         "@babel/plugin-proposal-optional-chaining": "^7.14.5",

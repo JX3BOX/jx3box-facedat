@@ -90,6 +90,17 @@
                     </div>
                     <div class="c-facedat-group">
                         <ul class="u-decals">
+                            <div class="u-title">装饰物</div>
+                                    <img class="u-pic" :src="getDecorationIcon(cleandata['nDecorationID'])" />
+                                    <span class="u-dname">{{ getDecorationName(cleandata['nDecorationID']) }}</span>
+                                    <span class="u-price" v-if="showDecorationPrice(cleandata['nDecorationID'])">
+                                        <i class="el-icon-coin"></i>
+                                        {{ showDecorationPrice(cleandata['nDecorationID']) }} 通宝
+                                    </span>
+                        </ul>
+                    </div>
+                    <div class="c-facedat-group">
+                        <ul class="u-decals">
                             <div class="u-title">总计</div>
                             <span class="u-total u-price"><i class="el-icon-coin"></i> <b>{{ total_coin }}</b> 通宝</span>
                         </ul>
@@ -160,7 +171,8 @@ export default {
             clean: false,
             version: "std",
 
-            decalmap: '',
+            decalMap: '',
+            decorationMap: '',
 
             // test
             // data : JSON.stringify(olddata)
@@ -168,11 +180,12 @@ export default {
     },
     computed: {
         ready: function() {
-            return !!(this.facedata && this.decalmap);
+            return !!(this.facedata && this.decalMap && this.decorationMap);
         },
         cleandata: function() {
             if (this.clean && this.facedata) {
                 let _cleandata = _.cloneDeep(this.facedata);
+                _cleandata.nDecorationID = 0;
                 for (let key in _cleandata.tDecal) {
                     let CanUseInCreate = this.showDecalFree(key, _cleandata?.tDecal[key]["nShowID"]);
                     if (!CanUseInCreate) {
@@ -265,7 +278,11 @@ export default {
         },
         total_coin: function() {
             let sum = 0;
-            for (const [_, key] of Object.entries(this.group["decal"])) if (this.cleandata["tDecal"][key]) sum += this.showDecalPrice(key, this.cleandata["tDecal"][key]["nShowID"]);
+            for (const [_, key] of Object.entries(this.group["decal"])) 
+                if (this.cleandata["tDecal"][key]) 
+                    sum += this.showDecalPrice(key, this.cleandata["tDecal"][key]["nShowID"]);
+            if(this.cleandata["nDecorationID"])
+                sum += this.showDecorationPrice(this.cleandata["nDecorationID"]);
             return sum;
         },
     },
@@ -286,6 +303,7 @@ export default {
             immediate: true,
             handler: function(val) {
                 this.fetchDecal();
+                this.fetchDecoration();
             },
         },
     },
@@ -320,10 +338,10 @@ export default {
 
         // 贴花
         getDecalName: function(key, val) {
-            return _.get(this.decalmap[this.body_type][dict[key]["type"]][val], "name") || "无";
+            return _.get(this.decalMap[this.body_type][dict[key]["type"]][val], "name") || "无";
         },
         getDecalIcon: function(key, val) {
-            let iconid = _.get(this.decalmap[this.body_type][dict[key]["type"]][val], "iconid");
+            let iconid = _.get(this.decalMap[this.body_type][dict[key]["type"]][val], "iconid");
             if (iconid) {
                 return __iconPath + "icon/" + iconid + ".png";
             } else {
@@ -331,13 +349,29 @@ export default {
             }
         },
         showDecalFree: function(key, val) {
-            return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]?.CanUseInCreate;
+            return ~~this.decalMap?.[this.body_type]?.[dict[key]?.type]?.[val]?.CanUseInCreate;
         },
         showDecalPrice: function(key, val) {
-            return ~~this.decalmap?.[this.body_type]?.[dict[key]?.type]?.[val]?.CoinPrice;
+            return ~~this.decalMap?.[this.body_type]?.[dict[key]?.type]?.[val]?.CoinPrice;
         },
         checkdecal_prop: function(key) {
             return decal_group.origin.includes(key);
+        },
+
+        // 装饰物
+        getDecorationName: function(id) {
+            return _.get(this.decorationMap[this.body_type][id], "Name") || "无";
+        },
+        getDecorationIcon: function(id) {
+            let iconid = _.get(this.decorationMap[this.body_type][id], "IconID");
+            if (iconid) {
+                return __iconPath + "icon/" + iconid + ".png";
+            } else {
+                return __iconPath + "icon/" + "undefined" + ".png";
+            }
+        },
+        showDecorationPrice: function(id) {
+            return ~~(_.get(this.decorationMap[this.body_type][id], "CoinPrice") || "0");
         },
 
         // 按钮
@@ -353,7 +387,7 @@ export default {
         // 数据修正
         amendVersion: function(v) {
             let data = _.cloneDeep(this.cleandata);
-            data.nDecorationID = 0;
+            data.nDecorationID = v === "origin" ? 0 : data.nDecorationID;
             data.nMajorVersion = versions[v]["nMajorVersion"];
             data.nVersion = versions[v]["nVersion"];
             return data;
@@ -376,38 +410,44 @@ export default {
             }
             return data;
         },
+        fetchWithLocalStorage: function(url, key, onFetch) {
+            const localData = JSON.parse(sessionStorage.getItem(key));
+            if (localData) {
+                if(onFetch)
+                    onFetch(localData);
+                return;
+            } else {
+                axios.get(url).then((res) => {
+                    sessionStorage.setItem(key, JSON.stringify(res.data));
+                    if(onFetch)
+                        onFetch(res.data);
+                });
+            }
+        },
         fetchDecal: function (client = 'std') {
-            let url = client === 'std' ? `${__ossMirror}data/face/decal_std.json` : `${__ossMirror}data/face/decal_origin.json`;
             try {
-                // sessionStorage
-                if (client === 'std') {
-                    const decalmap = JSON.parse(sessionStorage.getItem('decal_std'));
-                    if (decalmap) {
-                        this.decalmap = decalmap;
-                        return;
-                    } else {
-                        axios.get(url).then((res) => {
-                            this.decalmap = res.data;
-                            sessionStorage.setItem('decal_std', JSON.stringify(res.data));
-                        });
-                    }
-                } else {
-                    const decalmap = JSON.parse(sessionStorage.getItem('decal_origin'));
-                    if (decalmap) {
-                        this.decalmap = decalmap;
-                        return;
-                    } else {
-                        axios.get(url).then((res) => {
-                            this.decalmap = res.data;
-                            sessionStorage.setItem('decal_origin', JSON.stringify(res.data));
-                        });
-                    }
-                }
+                const url = client === 'std' ? `${__ossMirror}data/face/decal_std.json` : `${__ossMirror}data/face/decal_origin.json`;
+                const key = `decal_${client}`;
+                this.fetchWithLocalStorage(url, key, (data) => {
+                    this.decalMap = data;
+                });
             } catch (e) {
-                this.decalmap = '';
+                this.decalMap = '';
                 console.log(e);
             }
-        }
+        },
+        fetchDecoration: function(client = "std") {
+            try {
+                const url = client === 'std' ? `${__ossMirror}data/face/decoration_std.json` : `${__ossMirror}data/face/decoration_origin.json`;
+                const key = `decoration_${client}`;
+                this.fetchWithLocalStorage(url, key, (data) => {
+                    this.decorationMap = data;
+                });
+            } catch (e) {
+                this.decorationMap = '';
+                console.log(e);
+            }
+        },
     },
     mounted: function() {
         this.render();
