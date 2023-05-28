@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-facedat",
-    "version": "2.3.13",
+    "version": "2.3.14",
     "description": "JX3BOX Facedat viewer",
     "main": "index.js",
     "scripts": {
@@ -9,7 +9,7 @@
         "lint": "vue-cli-service lint",
         "inspect": "vue inspect > output.js",
         "update": "npm install @jx3box/jx3box-common@latest @jx3box/jx3box-data@latest",
-        "face": "node ./tools/decal.js && node ./tools/range.js"
+        "face": "node ./tools/decal.js && node ./tools/decoration.js && node ./tools/range.js"
     },
     "eslintConfig": {
         "root": true,

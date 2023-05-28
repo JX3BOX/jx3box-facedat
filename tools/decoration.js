@@ -68,7 +68,7 @@ const mergeTable = async (client) => {
 const buildData = async (client) => {
     const logger = baseLogger.job("buildData");
 
-    logger.info(`开始构建 ${client} 的 decal 数据`);
+    logger.info(`开始构建 ${client} 的 decoration 数据`);
     const mergedTables = await mergeTable(client);
 
     //人物体型role_type 1-6
@@ -116,7 +116,7 @@ const buildData = async (client) => {
 };
 
 const main = async () => {
-    baseLogger = initLogger('jx3-facedat/decal');
+    baseLogger = initLogger('jx3-facedat/decoration');
     const logger = baseLogger;
 
     try {

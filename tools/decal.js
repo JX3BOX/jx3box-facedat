@@ -107,7 +107,20 @@ const buildData = async (client) => {
             iconid: iconid,
             CanUseInCreate: record.CanUseInCreate,
             CoinPrice: record.CoinPrice,
+            IsFlip: false,
         };
+
+        // 处理贴花翻转的 ID
+        let flipID = record.FlipID;
+        if(flipID) {
+            ret[role_type][type][flipID] = {
+                name: name,
+                iconid: iconid,
+                CanUseInCreate: record.CanUseInCreate,
+                CoinPrice: record.CoinPrice,
+                IsFlip: true,
+            };
+        }
     }
 
     logger.info(`开始写入文件`);

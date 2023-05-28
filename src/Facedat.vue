@@ -78,6 +78,7 @@
                                     <div class="u-title">{{ dict[key]["desc"] }}</div>
                                     <img class="u-pic" :src="getDecalIcon(key, cleandata['tDecal'][key]['nShowID'])" />
                                     <span class="u-dname">{{ getDecalName(key, cleandata["tDecal"][key]["nShowID"]) }}</span>
+                                    <span class="u-dflip" v-if="getDecalIsFlip(key, cleandata['tDecal'][key]['nShowID'])">(翻转)</span>
                                     <span class="u-dcolor">(颜色:{{ cleandata["tDecal"][key]["nColorID"] }})</span>
                                     <span class="u-free" v-if="showDecalFree(key, cleandata['tDecal'][key]['nShowID'])"> <i class="el-icon-success"></i> 新建角色可用 </span>
                                     <span class="u-price" v-if="showDecalPrice(key, cleandata['tDecal'][key]['nShowID'])">
@@ -347,6 +348,10 @@ export default {
             } else {
                 return __iconPath + "icon/" + "undefined" + ".png";
             }
+        },
+        getDecalIsFlip: function(key, val) {
+
+            return _.get(this.decalMap[this.body_type][dict[key]["type"]][val], "IsFlip") || false;
         },
         showDecalFree: function(key, val) {
             return ~~this.decalMap?.[this.body_type]?.[dict[key]?.type]?.[val]?.CanUseInCreate;
