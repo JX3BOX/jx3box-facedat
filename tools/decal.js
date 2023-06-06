@@ -9,7 +9,7 @@ const mergeTable = async (client) => {
     const logger = baseLogger.job("mergeTable");
 
     logger.info("读取并索引化 settings 表");
-    const settingsTablePath = path.join(__dirname, `../raw/decal/decal_${client}.tab`);
+    const settingsTablePath = path.join(__dirname, `../raw/decal/${client}/decal.tab`);
     const settingsTable = await parseTable(await readFile(settingsTablePath), {
         delimiter: "\t",
         keepColumns: ["RoleType", "Type", "ShowID", "CanUseInCreate", "CoinPrice"]
@@ -28,7 +28,7 @@ const mergeTable = async (client) => {
     logger.info(`共构建 ${settingsTable.length} 条记录`);
 
     logger.info("读取 ui 表");
-    const uiTablePath = path.join(__dirname, `../raw/decal/facedecals_${client}.tab`);
+    const uiTablePath = path.join(__dirname, `../raw/decal/${client}/facedecals.tab`);
     const uiTable = await parseTable(await readFile(uiTablePath), {
         delimiter: "\t",
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE
