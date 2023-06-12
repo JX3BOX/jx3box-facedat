@@ -8,7 +8,7 @@ const mergeTable = async (client) => {
     const logger = baseLogger.job("mergeTable");
 
     logger.info("读取并索引化 ui 表");
-    const uiTablePath = path.join(__dirname, `../raw/decoration/${client}/ui/decoration.tab`);
+    const uiTablePath = path.join(__dirname, `../raw/${client}/decoration/ui/decoration.tab`);
     const uiTable = await parseTable(await readFile(uiTablePath), {
         delimiter: "\t",
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE,
@@ -25,7 +25,7 @@ const mergeTable = async (client) => {
     logger.info(`共构建 ${uiTable.length} 条记录`);
 
     logger.info("读取并索引化 settings 表");
-    const settingsTablePath = path.join(__dirname, `../raw/decoration/${client}/settings/decoration.tab`);
+    const settingsTablePath = path.join(__dirname, `../raw/${client}/decoration/settings/decoration.tab`);
     const settingsTable = await parseTable(await readFile(settingsTablePath), {
         delimiter: "\t",
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE,
@@ -43,7 +43,7 @@ const mergeTable = async (client) => {
 
 
     logger.info("读取 data 表");
-    const dataTablePath = path.join(__dirname, `../raw/decoration/${client}/data/facepart_hd.tab`);
+    const dataTablePath = path.join(__dirname, `../raw/${client}/decoration/data/facepart_${client == "origin" ? "classic" : "hd"}.tab`);
     const dataTable = await parseTable(await readFile(dataTablePath), {
         delimiter: "\t",
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.NO,

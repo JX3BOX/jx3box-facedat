@@ -6,10 +6,10 @@ const { bodyMap, bodyFiles } = require("../assets/data/index.json");
 const range = {}
 
 let raw_files = [
-    "./raw/bone_range/LittleBoy.tab",
-    "./raw/bone_range/LittleGirl.tab",
-    "./raw/bone_range/StandardFemale.tab",
-    "./raw/bone_range/StandardMale.tab",
+    "./raw/std/bone/littleboy.tab",
+    "./raw/std/bone/littlegirl.tab",
+    "./raw/std/bone/standardfemale.tab",
+    "./raw/std/bone/standardmale.tab",
 ];
 
 function readRangeFiles(){
