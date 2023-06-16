@@ -136,6 +136,7 @@ const main = async () => {
     try {
         await buildData("std");
         await buildData("origin");
+        logger.success();
     } catch (e) {
         console.log(e);
         logger.fail(e);

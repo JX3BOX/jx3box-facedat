@@ -1,43 +1,54 @@
-const fs = require("fs");
-const iconv = require("iconv-lite");
-const parse = require("csv-parse/lib/sync");
-const { bodyMap, bodyFiles } = require("../assets/data/index.json");
+const path = require('path');
+const { readFile, parseTable, writeJSON } = require("@jx3box/jx3box-build-common/file");
+const { initLogger } = require('@jx3box/jx3box-build-common/logger');
+const { glob } = require("glob")
 
-const range = {}
+let baseLogger = null;
 
-let raw_files = [
-    "./raw/std/bone/littleboy.tab",
-    "./raw/std/bone/littlegirl.tab",
-    "./raw/std/bone/standardfemale.tab",
-    "./raw/std/bone/standardmale.tab",
-];
+const main = async () => {
+    baseLogger = initLogger('jx3-facedat/range');
+    const logger = baseLogger;
 
-function readRangeFiles(){
-    for(let item of raw_files){
+    try {
 
-        let data = fs.readFileSync(item)
-        data = iconv.decode(Buffer.from(data), "gbk");
-        let records = parse(data, {
-            delimiter: "\t",
-            columns: true,
-            skip_empty_lines: true,
-            quote: null,
-        });
+        const bodyTypeMapping = {
+            "standardmale": 1,
+            "standardfemale": 2,
+            "littleboy": 5,
+            "littlegirl": 6
+        };
+        let ret = {};
 
-
-        let file_name = item.split('/')[3].split('.')[0]
-        let key = bodyFiles[file_name]
-        range[key] = {}
-
-        for(let o of records){
-            range[key][o.Type] = {
-                min : ~~o.ValueMin,
-                max : ~~o.ValueMax
+        const boneRangeBaseDir = path.join(__dirname, `../raw/std/bone_range/`);
+        for (const file of await glob("*.tab", { cwd: boneRangeBaseDir })) {
+            const fileFullPath = path.join(boneRangeBaseDir, file);
+            const mainName = path.parse(fileFullPath).name.toLowerCase();
+            const bodyType = bodyTypeMapping[mainName];
+            if (bodyType) {
+                logger.info(`正在读取 ${mainName}`);
+                const boneRangeTable = await parseTable(await readFile(path.join(fileFullPath)));
+                ret[bodyType] = {};
+                for (let row of boneRangeTable) {
+                    ret[bodyType][row.Type] = {
+                        min: ~~row.ValueMin,
+                        max: ~~row.ValueMax
+                    };
+                }
+                logger.info(`共构建 ${boneRangeTable.length} 条记录`);
             }
         }
+
+        logger.info(`开始写入文件`);
+        const outputPath = path.join(__dirname, `../assets/data/bone_range.json`);
+        await writeJSON(outputPath, ret);
+        logger.info(`写入文件 ${outputPath} 成功`);
+        logger.success();
+    } catch (e) {
+        console.log(e);
+        logger.fail(e);
     }
-}
 
-readRangeFiles()
+    await logger.end();
+};
 
-fs.writeFileSync("./assets/data/bone_range.json", JSON.stringify(range));
+main();
