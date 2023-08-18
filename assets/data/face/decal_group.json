@@ -1,0 +1,34 @@
+{
+    "std": [
+        "BASE",
+        "IRIS_RIGHT",
+        "IRIS_LEFT",
+        "EYE_SHADOW",
+        "EYE_SHADOW1",
+        "EYE_SHADOW2",
+        "EYE_SHADOW3",
+        "EYE_SHADOW_FLASH1",
+        "EYE_SHADOW_FLASH2",
+        "EYE_SHADOW_FLASH3",
+        "EYE_LINE",
+        "BROW",
+        "BLUSHER_MOUSTACHE",
+        "LIP_GLOSS",
+        "LIP_FLASH",
+        "LIP_OVERLAP",
+        "EYE_LIGHT",
+        "DECAL"
+    ],
+    "origin": [
+        "BASE",
+        "IRIS_RIGHT",
+        "IRIS_LEFT",
+        "EYE_SHADOW",
+        "EYE_LINE",
+        "BROW",
+        "BLUSHER_MOUSTACHE",
+        "LIP_GLOSS",
+        "EYE_LIGHT",
+        "DECAL"
+    ]
+}

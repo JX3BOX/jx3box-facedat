@@ -1,0 +1,282 @@
+{
+    "OUT": {
+        "type": 34,
+        "desc": "眼睛凸出"
+    },
+    "EYE_POS": {
+        "type": 35,
+        "desc": "眼睛位置"
+    },
+    "EYE_SIZE": {
+        "type": 36,
+        "desc": "眼睛大小"
+    },
+    "EYE_DIRC": {
+        "type": 37,
+        "desc": "眼睛倾斜"
+    },
+    "EYE_DIST": {
+        "type": 38,
+        "desc": "眼睛间距"
+    },
+    "EYE_OPEN": {
+        "type": 39,
+        "desc": "眼睛开合"
+    },
+    "EYEBOW_OUT": {
+        "type": 40,
+        "desc": "眉骨凸出"
+    },
+    "EYEBOW_DIRC": {
+        "type": 41,
+        "desc": "眉毛倾斜"
+    },
+    "EYEBOW_POS": {
+        "type": 42,
+        "desc": "眉毛高度"
+    },
+    "PUPIL_SIZE": {
+        "type": 43,
+        "desc": "瞳孔大小"
+    },
+    "PUPIL_DIRC": {
+        "type": 44,
+        "desc": "瞳孔位置"
+    },
+    "UP_LID_POS": {
+        "type": 45,
+        "desc": "上眼睑高度"
+    },
+    "LOW_LID_POS": {
+        "type": 46,
+        "desc": "下眼睑高度"
+    },
+    "EYECROW_Y": {
+        "type": 47,
+        "desc": "外眼角倾斜"
+    },
+    "RIDGE_Y": {
+        "type": 48,
+        "desc": "内眼角倾斜"
+    },
+    "MOUTH_POS": {
+        "desc": "嘴巴位置",
+        "type": 20
+    },
+    "MOUTH_SIZE": {
+        "desc": "嘴巴大小",
+        "type": 21
+    },
+    "MOUTH_ROT": {
+        "desc": "下颚倾斜",
+        "type": 22
+    },
+    "MOUTH_OPEN": {
+        "desc": "嘴唇开合",
+        "type": 23
+    },
+    "MOUTH_OUT": {
+        "desc": "嘴巴凸出",
+        "type": 24
+    },
+    "MOUTH_END": {
+        "desc": "嘴角位置",
+        "type": 25
+    },
+    "UP_LIP": {
+        "desc": "上唇厚度",
+        "type": 26
+    },
+    "LOW_LIP": {
+        "desc": "下唇厚度",
+        "type": 27
+    },
+    "UP_LIP_OUT": {
+        "desc": "上唇凸出",
+        "type": 28
+    },
+    "LOW_LIP_OUT": {
+        "desc": "下唇凸出",
+        "type": 29
+    },
+    "UP_LIP_POS": {
+        "desc": "上唇位置",
+        "type": 30
+    },
+    "LOW_LIP_POS": {
+        "desc": "下唇位置",
+        "type": 31
+    },
+    "MOUTH_END_L": {
+        "desc": "左嘴角高度",
+        "type": 32
+    },
+    "MOUTH_END_R": {
+        "desc": "右嘴角高度",
+        "type": 33
+    },
+    "NOSE_SIZE": {
+        "desc": "鼻子大小",
+        "type": 12
+    },
+    "NOSE_HEIGHT": {
+        "desc": "鼻子高度",
+        "type": 13
+    },
+    "NOSETOP_POS_Z": {
+        "desc": "鼻头高度",
+        "type": 14
+    },
+    "NOSETOP_POS_Y": {
+        "desc": "鼻头位置",
+        "type": 15
+    },
+    "NOSETOP_WIDTH": {
+        "desc": "鼻头宽度",
+        "type": 16
+    },
+    "NOSETOP_UP": {
+        "desc": "鼻尖弯度",
+        "type": 17
+    },
+    "NOSEBOW_WIDTH": {
+        "desc": "鼻梁宽度",
+        "type": 18
+    },
+    "NOSEBOW_BEND": {
+        "desc": "鼻梁高度",
+        "type": 19
+    },
+    "CHEEK_Y": {
+        "desc": "颧骨位置",
+        "type": 0
+    },
+    "CHEEK_Z": {
+        "desc": "颧骨凸出",
+        "type": 1
+    },
+    "FACE_Y": {
+        "desc": "脸颊宽度",
+        "type": 2
+    },
+    "FACE_Z": {
+        "desc": "脸颊高度",
+        "type": 3
+    },
+    "UP_FACE": {
+        "desc": "上脸宽度",
+        "type": 4
+    },
+    "LOW_FACE": {
+        "desc": "下脸宽度",
+        "type": 5
+    },
+    "FACE_SCALE": {
+        "desc": "脸蛋丰满",
+        "type": 6
+    },
+    "JAW_WIDTH": {
+        "desc": "下巴宽度",
+        "type": 7
+    },
+    "JAW_POS": {
+        "desc": "下巴位置",
+        "type": 8
+    },
+    "JAW_LENGTH": {
+        "desc": "下巴长度",
+        "type": 9
+    },
+    "JAW_END": {
+        "desc": "下巴尖宽度",
+        "type": 10
+    },
+    "JAW_ROT": {
+        "desc": "下巴凸出",
+        "type": 11
+    },
+    "BASE": {
+        "desc": "面部皮肤",
+        "type": 0
+    },
+    "IRIS_RIGHT": {
+        "desc": "右瞳",
+        "type": 1
+    },
+    "IRIS_LEFT": {
+        "desc": "左瞳",
+        "type": 2
+    },
+    "EYE_SHADOW": {
+        "desc": "眼影",
+        "type": 3
+    },
+    "EYE_SHADOW1": {
+        "desc": "眼影·底",
+        "type": 13
+    },
+    "EYE_SHADOW2": {
+        "desc": "眼影·叠",
+        "type": 14
+    },
+    "EYE_SHADOW3": {
+        "desc": "眼影·晕",
+        "type": 15
+    },
+    "EYE_SHADOW4": {
+        "desc": "测试眼影4",
+        "type": 16
+    },
+    "EYE_SHADOW_FLASH1": {
+        "desc": "闪点·底",
+        "type": 17
+    },
+    "EYE_SHADOW_FLASH2": {
+        "desc": "闪点·叠",
+        "type": 18
+    },
+    "EYE_SHADOW_FLASH3": {
+        "desc": "闪点·晕",
+        "type": 19
+    },
+    "EYE_SHADOW_FLASH4": {
+        "desc": "测试闪点4",
+        "type": 20
+    },
+    "EYE_LINE": {
+        "desc": "眼线",
+        "type": 4
+    },
+    "BROW": {
+        "desc": "眉毛",
+        "type": 5
+    },
+    "BLUSHER_MOUSTACHE": {
+        "desc": "腮红和胡须",
+        "type": 6
+    },
+    "LIP_GLOSS": {
+        "desc": "唇形",
+        "type": 7
+    },
+    "LIP_FLASH": {
+        "desc": "闪粉",
+        "type": 10
+    },
+    "LIP_LIGHT": {
+        "desc": "叠涂",
+        "type": 11
+    },
+    "LIP_OVERLAP": {
+        "desc": "叠涂",
+        "type": 12
+    },
+    "EYE_LIGHT": {
+        "desc": "眼神光",
+        "type": 8
+    },
+    "DECAL": {
+        "desc": "贴花",
+        "type": 9
+    }
+}

@@ -134,16 +134,16 @@ import {
 } from "@jx3box/jx3box-common/data/jx3box.json";
 import fixOldData from "./fixOldData.js";
 
-import group from "../assets/data/group.json";
-import dict from "../assets/data/dict.json";
-import decal_group from "../assets/data/decal_group.json";
-import decal_origin from "../assets/data/decal_origin.json";
-import decal_std from "../assets/data/decal_std.json";
-import decal_prop from "../assets/data/decal_prop.json";
-import bone_range from "../assets/data/bone_range.json";
-import bone_default from "../assets/data/bone_default.json";
-import decal_default from "../assets/data/decal_default.json";
-import versions from "../assets/data/version.json";
+import group from "../assets/data/face/group.json";
+import dict from "../assets/data/face/dict.json";
+import decal_group from "../assets/data/face/decal_group.json";
+import decal_origin from "../assets/data/face/decal_origin.json";
+import decal_std from "../assets/data/face/decal_std.json";
+import decal_prop from "../assets/data/face/decal_prop.json";
+import bone_range from "../assets/data/face/bone_range.json";
+import bone_default from "../assets/data/face/bone_default.json";
+import decal_default from "../assets/data/face/decal_default.json";
+import versions from "../assets/data/face/version.json";
 
 import { format } from "lua-json";
 import { saveAs } from "file-saver";

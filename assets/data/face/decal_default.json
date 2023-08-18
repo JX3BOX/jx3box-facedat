@@ -1,0 +1,170 @@
+{
+    "EYE_SHADOW_FLASH2": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "EYE_SHADOW1": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "LIP_LIGHT": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "BLUSHER_MOUSTACHE": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "EYE_LINE": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW_FLASH1": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "DECAL": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "BROW": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_LIGHT": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "LIP_FLASH": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "EYE_SHADOW4": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "IRIS_RIGHT": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "IRIS_LEFT": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW2": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "BASE": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW_FLASH3": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "LIP_GLOSS": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 1,
+        "fValue2": 1
+    },
+    "EYE_SHADOW_FLASH4": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "EYE_SHADOW3": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    },
+    "LIP_OVERLAP": {
+        "fValue1": 0,
+        "nColorID": 0,
+        "bUse": false,
+        "fValue3": 1,
+        "nShowID": 0,
+        "fValue2": 1
+    }
+}
