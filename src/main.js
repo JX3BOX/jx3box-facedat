@@ -11,7 +11,7 @@ import "@jx3box/jx3box-common/css/element.css";
 import "@jx3box/jx3box-common/css/normalize.css";
 // Vue.use(JX3BOX_UI);
 
-import App from "./Body.vue";
+import App from "./App.vue";
 new Vue({
     render: h => h(App),
 }).$mount("#app");
