@@ -1,0 +1,850 @@
+{
+    "m2": {
+        "0": {
+            "Name": "BodyHeight",
+            "NameCH": "身高",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "1": {
+            "Name": "HeadSize",
+            "NameCH": "头部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "2": {
+            "Name": "NeckLength",
+            "NameCH": "脖子长度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "3": {
+            "Name": "NeckSize",
+            "NameCH": "脖子粗细",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "4": {
+            "Name": "ShoulderWidth",
+            "NameCH": "肩膀宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "5": {
+            "Name": "ShoulderThick",
+            "NameCH": "肩膀厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "6": {
+            "Name": "ChestWidth",
+            "NameCH": "胸部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "7": {
+            "Name": "ChestThick",
+            "NameCH": "胸部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "8": {
+            "Name": "LoinWidth",
+            "NameCH": "腰部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "9": {
+            "Name": "LoinThick",
+            "NameCH": "腰部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "10": {
+            "Name": "LoinUpDown",
+            "NameCH": "腰部上下位置",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "11": {
+            "Name": "BellyWidth",
+            "NameCH": "腹部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "12": {
+            "Name": "BellyThick",
+            "NameCH": "腹部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "13": {
+            "Name": "HipWidth",
+            "NameCH": "髋部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "14": {
+            "Name": "HipThick",
+            "NameCH": "髋部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "15": {
+            "Name": "LegSize",
+            "NameCH": "整体腿长",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "16": {
+            "Name": "UpperThighSize",
+            "NameCH": "大腿上部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "17": {
+            "Name": "LowerThighSize",
+            "NameCH": "大腿下部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "18": {
+            "Name": "CalfSize",
+            "NameCH": "小腿大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "19": {
+            "Name": "ArmSize",
+            "NameCH": "整体手臂大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "20": {
+            "Name": "UpperArmSize",
+            "NameCH": "上臂大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "21": {
+            "Name": "UpperForearmSize",
+            "NameCH": "前臂上部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "22": {
+            "Name": "LowerForearmSize",
+            "NameCH": "前臂下部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "23": {
+            "Name": "HandSize",
+            "NameCH": "手掌大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "24": {
+            "Name": "FootSize",
+            "NameCH": "脚掌大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "25": {
+            "Name": "BreastSize",
+            "NameCH": "乳房大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        },
+        "26": {
+            "Name": "BreastAngle",
+            "NameCH": "乳房角度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        },
+        "27": {
+            "Name": "FingerLength",
+            "NameCH": "手指长度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "28": {
+            "Name": "FingerSize",
+            "NameCH": "手指粗细",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "29": {
+            "Name": "HemlineSize",
+            "NameCH": "裙摆大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        }
+    },
+    "f2": {
+        "0": {
+            "Name": "BodyHeight",
+            "NameCH": "身高",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "1": {
+            "Name": "HeadSize",
+            "NameCH": "头部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "2": {
+            "Name": "NeckLength",
+            "NameCH": "脖子长度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "3": {
+            "Name": "NeckSize",
+            "NameCH": "脖子粗细",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "4": {
+            "Name": "ShoulderWidth",
+            "NameCH": "肩膀宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "5": {
+            "Name": "ShoulderThick",
+            "NameCH": "肩膀厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "6": {
+            "Name": "ChestWidth",
+            "NameCH": "胸部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "7": {
+            "Name": "ChestThick",
+            "NameCH": "胸部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "8": {
+            "Name": "LoinWidth",
+            "NameCH": "腰部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "9": {
+            "Name": "LoinThick",
+            "NameCH": "腰部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "10": {
+            "Name": "LoinUpDown",
+            "NameCH": "腰部上下位置",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "11": {
+            "Name": "BellyWidth",
+            "NameCH": "腹部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "12": {
+            "Name": "BellyThick",
+            "NameCH": "腹部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "13": {
+            "Name": "HipWidth",
+            "NameCH": "髋部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "14": {
+            "Name": "HipThick",
+            "NameCH": "髋部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "15": {
+            "Name": "LegSize",
+            "NameCH": "整体腿长",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "16": {
+            "Name": "UpperThighSize",
+            "NameCH": "大腿上部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "17": {
+            "Name": "LowerThighSize",
+            "NameCH": "大腿下部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "18": {
+            "Name": "CalfSize",
+            "NameCH": "小腿大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "19": {
+            "Name": "ArmSize",
+            "NameCH": "整体手臂大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "20": {
+            "Name": "UpperArmSize",
+            "NameCH": "上臂大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "21": {
+            "Name": "UpperForearmSize",
+            "NameCH": "前臂上部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "22": {
+            "Name": "LowerForearmSize",
+            "NameCH": "前臂下部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "23": {
+            "Name": "HandSize",
+            "NameCH": "手掌大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "24": {
+            "Name": "FootSize",
+            "NameCH": "脚掌大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "25": {
+            "Name": "BreastSize",
+            "NameCH": "乳房大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "26": {
+            "Name": "BreastAngle",
+            "NameCH": "乳房角度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "27": {
+            "Name": "FingerLength",
+            "NameCH": "手指长度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "28": {
+            "Name": "FingerSize",
+            "NameCH": "手指粗细",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "29": {
+            "Name": "HemlineSize",
+            "NameCH": "裙摆大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        }
+    },
+    "m1": {
+        "0": {
+            "Name": "BodyHeight",
+            "NameCH": "身高",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "1": {
+            "Name": "HeadSize",
+            "NameCH": "头部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "2": {
+            "Name": "NeckLength",
+            "NameCH": "脖子长度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "3": {
+            "Name": "NeckSize",
+            "NameCH": "脖子粗细",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "4": {
+            "Name": "ShoulderWidth",
+            "NameCH": "肩膀宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "5": {
+            "Name": "ShoulderThick",
+            "NameCH": "肩膀厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "6": {
+            "Name": "ChestWidth",
+            "NameCH": "胸部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "7": {
+            "Name": "ChestThick",
+            "NameCH": "胸部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "8": {
+            "Name": "LoinWidth",
+            "NameCH": "腰部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "9": {
+            "Name": "LoinThick",
+            "NameCH": "腰部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "10": {
+            "Name": "LoinUpDown",
+            "NameCH": "腰部上下位置",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "11": {
+            "Name": "BellyWidth",
+            "NameCH": "腹部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "12": {
+            "Name": "BellyThick",
+            "NameCH": "腹部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "13": {
+            "Name": "HipWidth",
+            "NameCH": "髋部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "14": {
+            "Name": "HipThick",
+            "NameCH": "髋部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "15": {
+            "Name": "LegSize",
+            "NameCH": "整体腿长",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "16": {
+            "Name": "UpperThighSize",
+            "NameCH": "大腿上部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "17": {
+            "Name": "LowerThighSize",
+            "NameCH": "大腿下部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "18": {
+            "Name": "CalfSize",
+            "NameCH": "小腿大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "19": {
+            "Name": "ArmSize",
+            "NameCH": "整体手臂大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "20": {
+            "Name": "UpperArmSize",
+            "NameCH": "上臂大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "21": {
+            "Name": "UpperForearmSize",
+            "NameCH": "前臂上部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "22": {
+            "Name": "LowerForearmSize",
+            "NameCH": "前臂下部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "23": {
+            "Name": "HandSize",
+            "NameCH": "手掌大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "24": {
+            "Name": "FootSize",
+            "NameCH": "脚掌大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "25": {
+            "Name": "BreastSize",
+            "NameCH": "乳房大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        },
+        "26": {
+            "Name": "BreastAngle",
+            "NameCH": "乳房角度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        },
+        "27": {
+            "Name": "FingerLength",
+            "NameCH": "手指长度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "28": {
+            "Name": "FingerSize",
+            "NameCH": "手指粗细",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "29": {
+            "Name": "HemlineSize",
+            "NameCH": "裙摆大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        }
+    },
+    "f1": {
+        "0": {
+            "Name": "BodyHeight",
+            "NameCH": "身高",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "1": {
+            "Name": "HeadSize",
+            "NameCH": "头部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "2": {
+            "Name": "NeckLength",
+            "NameCH": "脖子长度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "3": {
+            "Name": "NeckSize",
+            "NameCH": "脖子粗细",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "4": {
+            "Name": "ShoulderWidth",
+            "NameCH": "肩膀宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "5": {
+            "Name": "ShoulderThick",
+            "NameCH": "肩膀厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "6": {
+            "Name": "ChestWidth",
+            "NameCH": "胸部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "7": {
+            "Name": "ChestThick",
+            "NameCH": "胸部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "8": {
+            "Name": "LoinWidth",
+            "NameCH": "腰部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "9": {
+            "Name": "LoinThick",
+            "NameCH": "腰部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "10": {
+            "Name": "LoinUpDown",
+            "NameCH": "腰部上下位置",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "11": {
+            "Name": "BellyWidth",
+            "NameCH": "腹部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "12": {
+            "Name": "BellyThick",
+            "NameCH": "腹部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "13": {
+            "Name": "HipWidth",
+            "NameCH": "髋部宽度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "14": {
+            "Name": "HipThick",
+            "NameCH": "髋部厚度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "15": {
+            "Name": "LegSize",
+            "NameCH": "整体腿长",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "16": {
+            "Name": "UpperThighSize",
+            "NameCH": "大腿上部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "17": {
+            "Name": "LowerThighSize",
+            "NameCH": "大腿下部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "18": {
+            "Name": "CalfSize",
+            "NameCH": "小腿大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "19": {
+            "Name": "ArmSize",
+            "NameCH": "整体手臂大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "20": {
+            "Name": "UpperArmSize",
+            "NameCH": "上臂大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "21": {
+            "Name": "UpperForearmSize",
+            "NameCH": "前臂上部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "22": {
+            "Name": "LowerForearmSize",
+            "NameCH": "前臂下部大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "23": {
+            "Name": "HandSize",
+            "NameCH": "手掌大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "24": {
+            "Name": "FootSize",
+            "NameCH": "脚掌大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "25": {
+            "Name": "BreastSize",
+            "NameCH": "乳房大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        },
+        "26": {
+            "Name": "BreastAngle",
+            "NameCH": "乳房角度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        },
+        "27": {
+            "Name": "FingerLength",
+            "NameCH": "手指长度",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "28": {
+            "Name": "FingerSize",
+            "NameCH": "手指粗细",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": true
+        },
+        "29": {
+            "Name": "HemlineSize",
+            "NameCH": "裙摆大小",
+            "Min": "-50",
+            "Max": "50",
+            "IsUsedForBodyType": false
+        }
+    }
+}

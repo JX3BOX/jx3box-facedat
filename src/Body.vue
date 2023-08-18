@@ -1,12 +1,12 @@
 <template>
   <div style="max-width: 980px; margin: 100px auto">
-    <Upload @success="handleSuccess" />
-    <Facedat :data="json" :lock="false" />
+    <Upload type="body" @success="handleSuccess" />
+    <Bodydat :data="json" :lock="false" />
   </div>
 </template>
 
 <script>
-import Facedat from "./Facedat";
+import Bodydat from "./Bodydat";
 import Upload from "./Upload";
 export default {
   props: [],
@@ -27,7 +27,7 @@ export default {
   },
   mounted: function () {},
   components: {
-    Facedat,
+    Bodydat,
     Upload,
   },
 };

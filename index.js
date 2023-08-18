@@ -1,15 +1,17 @@
-import Facedat from './src/Facedat.vue'
+import Facedat from "./src/Facedat.vue";
+import Bodydat from "./src/Bodydat.vue";
 
 const components = {
-    Facedat,
-}
+  Facedat,
+  Bodydat,
+};
 
 const install = function (Vue, Option) {
-     Object.keys(components).forEach((key) => {
-        Vue.component(components[key].name, components[key])
-    })
-}
+  Object.keys(components).forEach((key) => {
+    Vue.component(components[key].name, components[key]);
+  });
+};
 
 export default {
-    install
-}
+  install,
+};

@@ -1,0 +1,42 @@
+{
+    "whole": [
+        "BodyHeight",
+        "HemlineSize"
+    ],
+    "neck": [
+        "HeadSize",
+        "NeckLength",
+        "NeckSize"
+    ],
+    "body": [
+        "ShoulderWidth",
+        "ShoulderThick",
+        "ChestWidth",
+        "ChestThick",
+        "BreastSize",
+        "BreastAngle",
+        "LoinWidth",
+        "LoinThick",
+        "LoinUpDown",
+        "BellyWidth",
+        "BellyThick",
+        "HipWidth",
+        "HipThick"
+    ],
+    "arm": [
+        "ArmSize",
+        "UpperArmSize",
+        "UpperForearmSize",
+        "LowerForearmSize",
+        "HandSize",
+        "FingerLength",
+        "FingerSize"
+    ],
+    "leg": [
+        "LegSize",
+        "UpperThighSize",
+        "LowerThighSize",
+        "CalfSize",
+        "FootSize"
+    ]
+}
