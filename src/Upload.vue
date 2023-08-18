@@ -62,7 +62,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: "face",
+      default: "",
     },
   },
   components: {},
@@ -80,7 +80,14 @@ export default {
   },
   computed: {
     btnText() {
-      return this.type === "face" ? "上传脸型数据" : "上传体型数据";
+      let txt = "上传脸型/体型数据";
+      if (this.type === "face") {
+        txt = "上传脸型数据";
+      }
+      if (this.type === "body") {
+        txt = "上传体型数据";
+      }
+      return txt;
     },
     filename: function () {
       return this.file && this.file.name;
@@ -107,6 +114,15 @@ export default {
       fr.onload = function (e) {
         console.log("读取成功...开始执行分析...");
         try {
+          if (!vm.type) {
+            // 没有指定type
+            const object = parseFace(e.target.result);
+            if (object.tBody) {
+              vm.object = load(e.target.result);
+            } else {
+              vm.object = object;
+            }
+          }
           if (vm.type === "face") {
             vm.object = parseFace(e.target.result);
             if (vm.object.tBody) {
@@ -115,7 +131,8 @@ export default {
                 message: "请导入脸型数据",
               });
             }
-          } else {
+          }
+          if (vm.type === "body") {
             vm.object = load(e.target.result);
           }
         } catch (ex) {
@@ -137,7 +154,9 @@ export default {
               title: "成功",
               message: `${
                 vm.types[vm.object.nRoleType.toString()]?.label || ""
-              }${vm.type === "face" ? "脸型" : "体型"}数据读取成功`,
+              }${
+                vm.type === "face" ? "脸型" : vm.type === "body" ? "体型" : ""
+              }数据读取成功`,
               type: "success",
             });
             vm.done = true;

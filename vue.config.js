@@ -11,12 +11,12 @@ module.exports = {
       template: "public/index.html",
       filename: "index.html",
     },
-    body: {
-      title: "Bodydat",
-      entry: "src/pages/body.js",
-      template: "public/index.html",
-      filename: "body/index.html",
-    },
+    // body: {
+    //   title: "Bodydat",
+    //   entry: "src/pages/body.js",
+    //   template: "public/index.html",
+    //   filename: "body/index.html",
+    // },
   },
 
   //❤️ define path for static files ~
