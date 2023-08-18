@@ -1,0 +1,22 @@
+{
+    "1":{
+        "value":"whole",
+        "label":"整体"
+    },
+    "2":{
+        "value":"neck",
+        "label":"头颈"
+    },
+    "3":{
+        "value":"body",
+        "label":"躯干"
+    },
+    "4":{
+        "value":"arm",
+        "label":"上肢"
+    },
+    "5":{
+        "value":"leg",
+        "label":"下肢"
+    }
+}

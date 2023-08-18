@@ -4,13 +4,13 @@
       <el-tab-pane
         :label="tab.label"
         :name="tab.value"
-        v-for="tab in tabs"
+        v-for="tab in Object.values(group_tabs)"
         :key="tab.value"
       >
         <div class="c-facedat-group">
           <ul class="u-list">
             <li v-for="(item, i) in currentGroup" :key="i">
-              <label>{{ item.NameCH }}</label>
+              <label>{{ item.name }}</label>
               <span>{{ item.value }}</span>
               <el-slider
                 class="u-range"
@@ -41,9 +41,10 @@
 import _ from "lodash";
 import { dump } from "./bodyParser.js";
 import { saveAs } from "file-saver";
-import group from "../assets/data/body/body_group.json";
+import group_tabs from "../assets/data/body/body_group_tabs.json";
+import group_fields from "../assets/data/body/body_group_fields.json";
 import types from "../assets/data/index.json";
-import fields from "../assets/data/body/body_fields_reverse.json";
+import field_range from "../assets/data/body/body_fields_reverse.json";
 
 export default {
   name: "Bodydat",
@@ -53,51 +54,36 @@ export default {
       active: "whole",
       body_data: "",
       body_type: "",
-      group,
+      group_tabs,
+      group_fields,
+      field_range,
       types: types.bodyMap,
-      tabs: [
-        {
-          value: "whole",
-          label: "整体",
-        },
-        {
-          value: "neck",
-          label: "头颈",
-        },
-        {
-          value: "body",
-          label: "躯干",
-        },
-        {
-          value: "arm",
-          label: "上肢",
-        },
-        {
-          value: "leg",
-          label: "下肢",
-        },
-      ],
     };
   },
   computed: {
     ready: function () {
       return !!this.body_data;
     },
-    currentFields() {
-      return fields[this.types[this.body_type].value];
+    // 当前体型的字段范围
+    currentFieldRanges() {
+      return field_range[this.types[this.body_type].value];
     },
+    // 当前激活的分组标签内的字段
+    currentGroupFields() {
+      return this.group_fields[this.active];
+    },
+    // 当前激活的分组标签内的控件信息
     currentGroup() {
-      return this.group[this.active]
+      return Object.keys(this.group_fields[this.active])
+        .filter((key) => this.currentFieldRanges[key].use_for_body_type)
         .map((key) => {
           return {
-            ...this.currentFields[key],
             key: key,
-            min: Number(this.currentFields[key].Min),
-            max: Number(this.currentFields[key].Max),
+            ...this.currentGroupFields[key],
+            ...this.currentFieldRanges[key],
             value: this.body_data.tBody[key],
           };
-        })
-        .filter((item) => item.IsUsedForBodyType);
+        });
     },
   },
   watch: {

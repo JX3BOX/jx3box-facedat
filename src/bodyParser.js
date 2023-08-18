@@ -17,7 +17,7 @@ function load(rawData) {
   // 将映射中存在的 index 转换为 key，其他原样保留
   tBody.forEach((value, key, map) => {
     if (bodyFieldsForward[bodyType][key]) {
-      tBody.set(bodyFieldsForward[bodyType][key]["Name"], value);
+      tBody.set(bodyFieldsForward[bodyType][key]["name"], value);
       tBody.delete(key);
     }
   });
@@ -35,11 +35,13 @@ function dump(bodyObj) {
   // 将 tBody 转为 Map，映射中存在的 key 转换为 index，其他原样保留
   const tBody = new Map();
   for (const [key, value] of Object.entries(bodyObj.tBody)) {
+    // 只有当前体型启用的字段才转换为 index
     if (bodyFieldsReverse[bodyType][key]) {
-      tBody.set(~~bodyFieldsReverse[bodyType][key]["ID"], value);
-    } else {
-      tBody.set(key, value);
+      if (bodyFieldsReverse[bodyType][key]["use_for_body_type"])
+        tBody.set(~~bodyFieldsReverse[bodyType][key]["id"], value);
     }
+    else
+      tBody.set(key, value);
   }
 
   // 剩下的转为 Map，准备序列化

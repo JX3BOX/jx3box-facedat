@@ -1,0 +1,162 @@
+{
+    "whole": {
+        "BodyHeight": {
+            "name": "身高",
+            "role": null,
+            "tip": null
+        },
+        "HemlineSize": {
+            "name": "裙摆大小",
+            "role": "2",
+            "tip": "仅对使用新骨骼的外装生效"
+        }
+    },
+    "neck": {
+        "HeadSize": {
+            "name": "头部大小",
+            "role": null,
+            "tip": null
+        },
+        "NeckLength": {
+            "name": "脖子长度",
+            "role": null,
+            "tip": null
+        },
+        "NeckSize": {
+            "name": "脖子粗细",
+            "role": null,
+            "tip": null
+        }
+    },
+    "body": {
+        "ShoulderWidth": {
+            "name": "肩膀宽度",
+            "role": null,
+            "tip": null
+        },
+        "ShoulderThick": {
+            "name": "肩膀厚度",
+            "role": null,
+            "tip": null
+        },
+        "ChestWidth": {
+            "name": "上身宽度",
+            "role": null,
+            "tip": null
+        },
+        "ChestThick": {
+            "name": "上身厚度",
+            "role": null,
+            "tip": null
+        },
+        "BreastSize": {
+            "name": "胸部大小",
+            "role": "2",
+            "tip": null
+        },
+        "BreastAngle": {
+            "name": "胸部角度",
+            "role": "2",
+            "tip": null
+        },
+        "LoinWidth": {
+            "name": "腰部宽度",
+            "role": null,
+            "tip": null
+        },
+        "LoinThick": {
+            "name": "腰部厚度",
+            "role": null,
+            "tip": null
+        },
+        "LoinUpDown": {
+            "name": "腰部位置",
+            "role": null,
+            "tip": null
+        },
+        "BellyWidth": {
+            "name": "腹部宽度",
+            "role": null,
+            "tip": null
+        },
+        "BellyThick": {
+            "name": "腹部厚度",
+            "role": null,
+            "tip": null
+        },
+        "HipWidth": {
+            "name": "髋部宽度",
+            "role": null,
+            "tip": null
+        },
+        "HipThick": {
+            "name": "髋部厚度",
+            "role": null,
+            "tip": null
+        }
+    },
+    "arm": {
+        "ArmSize": {
+            "name": "整体臂长",
+            "role": null,
+            "tip": null
+        },
+        "UpperArmSize": {
+            "name": "上臂大小",
+            "role": null,
+            "tip": null
+        },
+        "UpperForearmSize": {
+            "name": "前臂上部",
+            "role": null,
+            "tip": null
+        },
+        "LowerForearmSize": {
+            "name": "前臂下部",
+            "role": null,
+            "tip": null
+        },
+        "HandSize": {
+            "name": "手掌大小",
+            "role": null,
+            "tip": null
+        },
+        "FingerLength": {
+            "name": "手指长度",
+            "role": null,
+            "tip": null
+        },
+        "FingerSize": {
+            "name": "手指粗细",
+            "role": null,
+            "tip": null
+        }
+    },
+    "leg": {
+        "LegSize": {
+            "name": "整体腿长",
+            "role": null,
+            "tip": null
+        },
+        "UpperThighSize": {
+            "name": "大腿上部",
+            "role": null,
+            "tip": null
+        },
+        "LowerThighSize": {
+            "name": "大腿下部",
+            "role": null,
+            "tip": null
+        },
+        "CalfSize": {
+            "name": "小腿大小",
+            "role": null,
+            "tip": null
+        },
+        "FootSize": {
+            "name": "脚掌大小",
+            "role": null,
+            "tip": null
+        }
+    }
+}
