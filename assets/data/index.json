@@ -1,14 +1,26 @@
 {
-    "bodyMap": {
-        "1": "成男",
-        "2": "成女",
-        "5": "正太",
-        "6": "萝莉"
+  "bodyMap": {
+    "1": {
+      "label": "成男",
+      "value": "m2"
     },
-    "bodyFiles": {
-        "LittleBoy": 5,
-        "LittleGirl": 6,
-        "StandardFemale": 2,
-        "StandardMale": 1
+    "2": {
+      "label": "成女",
+      "value": "f2"
+    },
+    "5": {
+      "label": "正太",
+      "value": "m1"
+    },
+    "6": {
+      "label": "萝莉",
+      "value": "f1"
     }
+  },
+  "bodyFiles": {
+    "LittleBoy": 5,
+    "LittleGirl": 6,
+    "StandardFemale": 2,
+    "StandardMale": 1
+  }
 }

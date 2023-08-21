@@ -1,35 +1,43 @@
 <template>
-    <div style="max-width:980px;margin:100px auto;">
-        <Upload @success="handleSuccess"/>
-        <Facedat :data="json" :lock="false"/>
-    </div>
+  <div style="max-width: 980px; margin: 100px auto">
+    <Upload @success="handleSuccess" />
+    <Facedat v-if="isFace" :data="json" :lock="false" />
+    <Bodydat v-if="isBody" :data="json" :lock="false" />
+  </div>
 </template>
 
 <script>
 import Facedat from "./Facedat";
+import Bodydat from "./Bodydat";
 import Upload from "./Upload";
 export default {
-    props: [],
-    data: function () {
-        return {
-            data: "",
-        };
+  props: [],
+  data: function () {
+    return {
+      data: "",
+    };
+  },
+  computed: {
+    json: function () {
+      return this.data && this.data.json;
     },
-    computed: {
-        json : function (){
-            return this.data && this.data.json
-        }
+    isFace() {
+      return this.data?.object?.tBone;
     },
-    methods: {
-        handleSuccess : function (data){
-            this.data = data
-        },
+    isBody() {
+      return this.data?.object?.tBody;
     },
-    mounted: function () {
+  },
+  methods: {
+    handleSuccess: function (data) {
+      this.data = data;
     },
-    components: {
-        Facedat,
-        Upload
-    },
+  },
+  mounted: function () {},
+  components: {
+    Facedat,
+    Bodydat,
+    Upload,
+  },
 };
 </script>

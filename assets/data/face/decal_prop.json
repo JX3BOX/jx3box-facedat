@@ -1,0 +1,14 @@
+{
+    "std": [
+        "nColorID",
+        "nShowID",
+        "bUse",
+        "fValue1",
+        "fValue2",
+        "fValue3"
+    ],
+    "origin": [
+        "nColorID",
+        "nShowID"
+    ]
+}

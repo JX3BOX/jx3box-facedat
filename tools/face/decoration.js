@@ -1,46 +1,63 @@
 const path = require('path');
 const { TABLE_DEFAULT_ROW_MODE, readFile, parseTable, writeJSON } = require("@jx3box/jx3box-build-common/file");
 const { initLogger } = require('@jx3box/jx3box-build-common/logger');
-const lodash = require("lodash");
 
 let baseLogger = null;
 
 const mergeTable = async (client) => {
     const logger = baseLogger.job("mergeTable");
 
+    logger.info("读取并索引化 ui 表");
+    const uiTablePath = path.join(__dirname, `../../raw/face/${client}/decoration/ui/decoration.tab`);
+    const uiTable = await parseTable(await readFile(uiTablePath), {
+        delimiter: "\t",
+        useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE,
+        keepColumns: ["ID", "RoleType", "IconID"]
+    });
+    let dataTableIndexed = {};
+    for (let row of uiTable) {
+        if (!dataTableIndexed[row.RoleType])
+            dataTableIndexed[row.RoleType] = {};
+        dataTableIndexed[row.RoleType][row.ID] = {
+            IconID: row.IconID
+        };
+    }
+    logger.info(`共构建 ${uiTable.length} 条记录`);
+
     logger.info("读取并索引化 settings 表");
-    const settingsTablePath = path.join(__dirname, `../raw/${client}/decal/decal.tab`);
+    const settingsTablePath = path.join(__dirname, `../../raw/face/${client}/decoration/settings/decoration.tab`);
     const settingsTable = await parseTable(await readFile(settingsTablePath), {
         delimiter: "\t",
-        keepColumns: ["RoleType", "Type", "ShowID", "CanUseInCreate", "CoinPrice"]
+        useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE,
+        keepColumns: ["RoleType", "DecorationID", "CoinPrice"]
     });
     let settingsTableIndexed = {};
     for (let row of settingsTable) {
         if (!settingsTableIndexed[row.RoleType])
-            settingsTableIndexed[row.RoleType] = {};
-        if (!settingsTableIndexed[row.RoleType][row.Type])
-            settingsTableIndexed[row.RoleType][row.Type] = {};
-        settingsTableIndexed[row.RoleType][row.Type][row.ShowID] = {
-            CanUseInCreate: row.CanUseInCreate,
+        settingsTableIndexed[row.RoleType] = {};
+        settingsTableIndexed[row.RoleType][row.DecorationID] = {
             CoinPrice: row.CoinPrice
         };
     }
     logger.info(`共构建 ${settingsTable.length} 条记录`);
 
-    logger.info("读取 ui 表");
-    const uiTablePath = path.join(__dirname, `../raw/${client}/decal/facedecals.tab`);
-    const uiTable = await parseTable(await readFile(uiTablePath), {
+
+    logger.info("读取 data 表");
+    const dataTablePath = path.join(__dirname, `../../raw/face/${client}/decoration/data/facepart_${client == "origin" ? "classic" : "hd"}.tab`);
+    const dataTable = await parseTable(await readFile(dataTablePath), {
         delimiter: "\t",
-        useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE
+        useDefaultRow: TABLE_DEFAULT_ROW_MODE.NO,
+        keepColumns: ["RoleType", "ID", "Name"]
     });
-    logger.info(`共构建 ${uiTable.length} 条记录`);
+    logger.info(`共构建 ${dataTable.length} 条记录`);
 
     logger.info("开始合表");
     let mergedTable = [];
-    for (let row of uiTable) {
+    for (let row of dataTable) {
         let mergedRow = {
             ...row,
-            ...settingsTableIndexed[row.RoleType][row.Type][row.ShowID]
+            ...dataTableIndexed[row.RoleType][row.ID],
+            ...settingsTableIndexed[row.RoleType][row.ID]
         };
         mergedTable.push(mergedRow);
     }
@@ -51,7 +68,7 @@ const mergeTable = async (client) => {
 const buildData = async (client) => {
     const logger = baseLogger.job("buildData");
 
-    logger.info(`开始构建 ${client} 的 decal 数据`);
+    logger.info(`开始构建 ${client} 的 decoration 数据`);
     const mergedTables = await mergeTable(client);
 
     //人物体型role_type 1-6
@@ -87,50 +104,19 @@ const buildData = async (client) => {
 
     logger.info("开始构建输出");
 
-    //装饰类型type 0-20
-    lodash.each(ret, function (val, key) {
-        for (let i = 0; i <= 20; i++) {
-            //let type_key = 'type_' + i
-            ret[key][i] = {};
-        }
-    });
-
     for (let record of mergedTables) {
-        let role_type = record.RoleType, //体型
-            type = record.Type, //装饰类型
-            showid = record.ShowID, //展示id
-            name = record.Name, //装饰名
-            iconid = record.IconID; //图标id
-
-        ret[role_type][type][showid] = {
-            name: name,
-            iconid: iconid,
-            CanUseInCreate: record.CanUseInCreate,
-            CoinPrice: record.CoinPrice,
-            IsFlip: false,
-        };
-
-        // 处理贴花翻转的 ID
-        let flipID = record.FlipID;
-        if(flipID) {
-            ret[role_type][type][flipID] = {
-                name: name,
-                iconid: iconid,
-                CanUseInCreate: record.CanUseInCreate,
-                CoinPrice: record.CoinPrice,
-                IsFlip: true,
-            };
-        }
+        const { RoleType, ID, ...otherFields } = record;
+        ret[record.RoleType][record.ID] = otherFields;
     }
 
     logger.info(`开始写入文件`);
-    const outputPath = path.join(__dirname, `../assets/data/decal_${client}.json`);
+    const outputPath = path.join(__dirname, `../../assets/data/face/decoration_${client}.json`);
     await writeJSON(outputPath, ret);
     logger.info(`写入文件 ${outputPath} 成功`);
 };
 
 const main = async () => {
-    baseLogger = initLogger('jx3-facedat/decal');
+    baseLogger = initLogger('jx3-facedat/face/decoration');
     const logger = baseLogger;
 
     try {

@@ -6,7 +6,7 @@ const { glob } = require("glob")
 let baseLogger = null;
 
 const main = async () => {
-    baseLogger = initLogger('jx3-facedat/range');
+    baseLogger = initLogger('jx3-facedat/face/range');
     const logger = baseLogger;
 
     try {
@@ -19,7 +19,7 @@ const main = async () => {
         };
         let ret = {};
 
-        const boneRangeBaseDir = path.join(__dirname, `../raw/std/bone_range/`);
+        const boneRangeBaseDir = path.join(__dirname, `../../raw/face/std/bone_range/`);
         for (const file of await glob("*.tab", { cwd: boneRangeBaseDir })) {
             const fileFullPath = path.join(boneRangeBaseDir, file);
             const mainName = path.parse(fileFullPath).name.toLowerCase();
@@ -39,7 +39,7 @@ const main = async () => {
         }
 
         logger.info(`开始写入文件`);
-        const outputPath = path.join(__dirname, `../assets/data/bone_range.json`);
+        const outputPath = path.join(__dirname, `../../assets/data/face/bone_range.json`);
         await writeJSON(outputPath, ret);
         logger.info(`写入文件 ${outputPath} 成功`);
         logger.success();

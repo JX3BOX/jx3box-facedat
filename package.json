@@ -1,15 +1,17 @@
 {
     "name": "@jx3box/jx3box-facedat",
-    "version": "2.3.17",
+    "version": "2.3.21",
     "description": "JX3BOX Facedat viewer",
     "main": "index.js",
     "scripts": {
         "serve": "vue-cli-service serve",
+        "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
         "inspect": "vue inspect > output.js",
         "update": "npm install @jx3box/jx3box-common@latest @jx3box/jx3box-data@latest",
-        "face": "node ./tools/decal.js && node ./tools/decoration.js && node ./tools/range.js"
+        "face": "node ./tools/face/decal.js && node ./tools/face/decoration.js && node ./tools/face/range.js",
+        "body": "node ./tools/body/group.js && node ./tools/body/field_range.js"
     },
     "eslintConfig": {
         "root": true,
@@ -39,9 +41,11 @@
         "element-ui": "^2.13.2",
         "file-saver": "^2.0.5",
         "glob": "^10.2.7",
+        "iconv-lite": "^0.6.3",
         "ini": "^2.0.0",
         "jquery": "^3.5.1",
         "lodash": "^4.17.15",
+        "luadata": "^1.0.2",
         "prismjs": "^1.20.0",
         "vue": "^2.6.11"
     },

@@ -1,0 +1,730 @@
+{
+    "m2": {
+        "0": {
+            "name": "BodyHeight",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "1": {
+            "name": "HeadSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "2": {
+            "name": "NeckLength",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "3": {
+            "name": "NeckSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "4": {
+            "name": "ShoulderWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "5": {
+            "name": "ShoulderThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "6": {
+            "name": "ChestWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "7": {
+            "name": "ChestThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "8": {
+            "name": "LoinWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "9": {
+            "name": "LoinThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "10": {
+            "name": "LoinUpDown",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "11": {
+            "name": "BellyWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "12": {
+            "name": "BellyThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "13": {
+            "name": "HipWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "14": {
+            "name": "HipThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "15": {
+            "name": "LegSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "16": {
+            "name": "UpperThighSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "17": {
+            "name": "LowerThighSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "18": {
+            "name": "CalfSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "19": {
+            "name": "ArmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "20": {
+            "name": "UpperArmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "21": {
+            "name": "UpperForearmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "22": {
+            "name": "LowerForearmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "23": {
+            "name": "HandSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "24": {
+            "name": "FootSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "25": {
+            "name": "BreastSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        },
+        "26": {
+            "name": "BreastAngle",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        },
+        "27": {
+            "name": "FingerLength",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "28": {
+            "name": "FingerSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "29": {
+            "name": "HemlineSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        }
+    },
+    "f2": {
+        "0": {
+            "name": "BodyHeight",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "1": {
+            "name": "HeadSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "2": {
+            "name": "NeckLength",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "3": {
+            "name": "NeckSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "4": {
+            "name": "ShoulderWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "5": {
+            "name": "ShoulderThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "6": {
+            "name": "ChestWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "7": {
+            "name": "ChestThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "8": {
+            "name": "LoinWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "9": {
+            "name": "LoinThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "10": {
+            "name": "LoinUpDown",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "11": {
+            "name": "BellyWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "12": {
+            "name": "BellyThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "13": {
+            "name": "HipWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "14": {
+            "name": "HipThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "15": {
+            "name": "LegSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "16": {
+            "name": "UpperThighSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "17": {
+            "name": "LowerThighSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "18": {
+            "name": "CalfSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "19": {
+            "name": "ArmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "20": {
+            "name": "UpperArmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "21": {
+            "name": "UpperForearmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "22": {
+            "name": "LowerForearmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "23": {
+            "name": "HandSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "24": {
+            "name": "FootSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "25": {
+            "name": "BreastSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "26": {
+            "name": "BreastAngle",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "27": {
+            "name": "FingerLength",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "28": {
+            "name": "FingerSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "29": {
+            "name": "HemlineSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        }
+    },
+    "m1": {
+        "0": {
+            "name": "BodyHeight",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "1": {
+            "name": "HeadSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "2": {
+            "name": "NeckLength",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "3": {
+            "name": "NeckSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "4": {
+            "name": "ShoulderWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "5": {
+            "name": "ShoulderThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "6": {
+            "name": "ChestWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "7": {
+            "name": "ChestThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "8": {
+            "name": "LoinWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "9": {
+            "name": "LoinThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "10": {
+            "name": "LoinUpDown",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "11": {
+            "name": "BellyWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "12": {
+            "name": "BellyThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "13": {
+            "name": "HipWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "14": {
+            "name": "HipThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "15": {
+            "name": "LegSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "16": {
+            "name": "UpperThighSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "17": {
+            "name": "LowerThighSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "18": {
+            "name": "CalfSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "19": {
+            "name": "ArmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "20": {
+            "name": "UpperArmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "21": {
+            "name": "UpperForearmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "22": {
+            "name": "LowerForearmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "23": {
+            "name": "HandSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "24": {
+            "name": "FootSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "25": {
+            "name": "BreastSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        },
+        "26": {
+            "name": "BreastAngle",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        },
+        "27": {
+            "name": "FingerLength",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "28": {
+            "name": "FingerSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "29": {
+            "name": "HemlineSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        }
+    },
+    "f1": {
+        "0": {
+            "name": "BodyHeight",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "1": {
+            "name": "HeadSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "2": {
+            "name": "NeckLength",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "3": {
+            "name": "NeckSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "4": {
+            "name": "ShoulderWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "5": {
+            "name": "ShoulderThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "6": {
+            "name": "ChestWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "7": {
+            "name": "ChestThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "8": {
+            "name": "LoinWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "9": {
+            "name": "LoinThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "10": {
+            "name": "LoinUpDown",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "11": {
+            "name": "BellyWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "12": {
+            "name": "BellyThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "13": {
+            "name": "HipWidth",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "14": {
+            "name": "HipThick",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "15": {
+            "name": "LegSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "16": {
+            "name": "UpperThighSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "17": {
+            "name": "LowerThighSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "18": {
+            "name": "CalfSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "19": {
+            "name": "ArmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "20": {
+            "name": "UpperArmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "21": {
+            "name": "UpperForearmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "22": {
+            "name": "LowerForearmSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "23": {
+            "name": "HandSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "24": {
+            "name": "FootSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "25": {
+            "name": "BreastSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        },
+        "26": {
+            "name": "BreastAngle",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        },
+        "27": {
+            "name": "FingerLength",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "28": {
+            "name": "FingerSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": true
+        },
+        "29": {
+            "name": "HemlineSize",
+            "min": -50,
+            "max": 50,
+            "use_for_body_type": false
+        }
+    }
+}
