@@ -2535,6 +2535,41 @@
                 "CoinPrice": "1000",
                 "IsFlip": false
             },
+            "220": {
+                "name": "霜狸",
+                "iconid": "19575",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "221": {
+                "name": "雪啸",
+                "iconid": "19576",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "222": {
+                "name": "焰莲",
+                "iconid": "19577",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "223": {
+                "name": "明昭",
+                "iconid": "19578",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "224": {
+                "name": "翩跹",
+                "iconid": "19579",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
             "-1": {
                 "name": "菱眼",
                 "iconid": "6136",
@@ -5675,6 +5710,41 @@
             "210": {
                 "name": "潋岚",
                 "iconid": "18617",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "211": {
+                "name": "霜狸",
+                "iconid": "19575",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "212": {
+                "name": "雪啸",
+                "iconid": "19576",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "213": {
+                "name": "焰莲",
+                "iconid": "19577",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "214": {
+                "name": "明昭",
+                "iconid": "19578",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "215": {
+                "name": "翩跹",
+                "iconid": "19579",
                 "CanUseInCreate": "0",
                 "CoinPrice": "1000",
                 "IsFlip": false
@@ -8878,6 +8948,41 @@
                 "CoinPrice": "1000",
                 "IsFlip": false
             },
+            "212": {
+                "name": "霜狸",
+                "iconid": "19575",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "213": {
+                "name": "雪啸",
+                "iconid": "19576",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "214": {
+                "name": "焰莲",
+                "iconid": "19577",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "215": {
+                "name": "明昭",
+                "iconid": "19578",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "216": {
+                "name": "翩跹",
+                "iconid": "19579",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
             "-1": {
                 "name": "邪魅",
                 "iconid": "6134",
@@ -11990,6 +12095,41 @@
             "208": {
                 "name": "潋岚",
                 "iconid": "18617",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "209": {
+                "name": "霜狸",
+                "iconid": "19575",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "210": {
+                "name": "雪啸",
+                "iconid": "19576",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "211": {
+                "name": "焰莲",
+                "iconid": "19577",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "212": {
+                "name": "明昭",
+                "iconid": "19578",
+                "CanUseInCreate": "0",
+                "CoinPrice": "1000",
+                "IsFlip": false
+            },
+            "213": {
+                "name": "翩跹",
+                "iconid": "19579",
                 "CanUseInCreate": "0",
                 "CoinPrice": "1000",
                 "IsFlip": false
