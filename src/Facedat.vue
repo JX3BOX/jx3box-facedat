@@ -211,7 +211,7 @@ import versions from "../assets/data/face/version.json";
 
 import { format } from "lua-json";
 import { saveAs } from "file-saver";
-import { dumpFace } from "./faceParser.js";
+import * as KData from "./KData";
 
 export default {
   name: "Facedat",
@@ -469,7 +469,7 @@ export default {
     // 按钮
     buildData: function (v) {
       this.version = v;
-      let outputWithHeader = dumpFace(this.output);
+      let outputWithHeader = KData.dump(this.output);
       let blob = new Blob([outputWithHeader], {
         type: "application/dat;charset=utf-8",
       });

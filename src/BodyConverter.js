@@ -1,21 +1,16 @@
-const luadata = require("luadata").serializer;
-const kdata = require("./kdata.js");
-const iconv = require("iconv-lite");
+import { serializer as luadata } from "luadata";
+import * as KData from "./KData";
+
 const bodyFieldsForward = require("../assets/data/body/body_fields_forward.json");
 const bodyFieldsReverse = require("../assets/data/body/body_fields_reverse.json");
-
 const bodyTypes = require("../assets/data/index.json").bodyMap;
 
-function load(rawData) {
-  let payload = iconv.decode(kdata.load(rawData), "gbk");
-  if (payload.startsWith("return ")) payload = payload.slice(7);
-  const dataMap = luadata.unserialize(payload);
-
-  const bodyType = bodyTypes[dataMap.get("nRoleType")].value;
-  const tBody = dataMap.get("tBody");
+export function load(data) {
+  const bodyType = bodyTypes[data.get("nRoleType")].value;
+  const tBody = data.get("tBody");
 
   // 将映射中存在的 index 转换为 key，其他原样保留
-  tBody.forEach((value, key, map) => {
+  tBody.forEach((value, key) => {
     if (bodyFieldsForward[bodyType][key]) {
       tBody.set(bodyFieldsForward[bodyType][key]["name"], value);
       tBody.delete(key);
@@ -23,13 +18,13 @@ function load(rawData) {
   });
 
   // tBody 此时已经可以转 object
-  dataMap.set("tBody", Object.fromEntries(tBody));
+  data.set("tBody", Object.fromEntries(tBody));
 
   // 将剩下的也转 object
-  return Object.fromEntries(dataMap);
+  return Object.fromEntries(data);
 }
 
-function dump(bodyObj) {
+export function dump(bodyObj) {
   const bodyType = bodyTypes[bodyObj.nRoleType].value;
 
   // 将 tBody 转为 Map，映射中存在的 key 转换为 index，其他原样保留
@@ -49,10 +44,5 @@ function dump(bodyObj) {
   const dataMap = new Map(Object.entries(bodyObj));
 
   const payload = luadata.serialize(dataMap);
-  return kdata.dump(iconv.encode("return " + payload, "gbk"));
+  return KData.dump("return " + payload);
 }
-
-module.exports = {
-  load,
-  dump,
-};

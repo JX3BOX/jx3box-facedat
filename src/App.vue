@@ -14,6 +14,7 @@ export default {
   props: [],
   data: function () {
     return {
+      type: "",
       data: "",
     };
   },
@@ -21,11 +22,11 @@ export default {
     json: function () {
       return this.data && this.data.json;
     },
-    isFace() {
-      return this.data?.object?.tBone;
+    isFace: function () {
+      return this.data.type === "face";
     },
-    isBody() {
-      return this.data?.object?.tBody;
+    isBody: function () {
+      return this.data.type === "body";
     },
   },
   methods: {

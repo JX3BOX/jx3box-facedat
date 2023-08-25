@@ -39,7 +39,7 @@
 
 <script>
 import _ from "lodash";
-import { dump } from "./bodyParser.js";
+import { dump } from "./BodyConverter";
 import { saveAs } from "file-saver";
 import group_tabs from "../assets/data/body/body_group_tabs.json";
 import group_fields from "../assets/data/body/body_group_fields.json";
