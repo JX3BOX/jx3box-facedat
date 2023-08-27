@@ -114,7 +114,6 @@ export default {
       fr.onload = function (e) {
         console.log("文件读取成功...开始执行分析...");
         const result = load(e.target.result);
-        console.log(result);
         if (!result)
           return vm.$notify.error({
             title: "错误",

@@ -30,10 +30,12 @@ export function dump(bodyObj) {
   // 将 tBody 转为 Map，映射中存在的 key 转换为 index，其他原样保留
   const tBody = new Map();
   for (const [key, value] of Object.entries(bodyObj.tBody)) {
-    // 只有当前体型启用的字段才转换为 index
     if (bodyFieldsReverse[bodyType][key]) {
+      // 不存在的字段必须存在且为 0
       if (bodyFieldsReverse[bodyType][key]["use_for_body_type"])
         tBody.set(~~bodyFieldsReverse[bodyType][key]["id"], value);
+      else
+        tBody.set(~~bodyFieldsReverse[bodyType][key]["id"], 0);
     }
     else
       tBody.set(key, value);

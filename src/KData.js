@@ -1,6 +1,15 @@
 import { buf as CRC32 } from "crc-32";
 import iconv from "iconv-lite";
 
+function loadDecode(data, encoding, removeReturnStatement) {
+  if(!encoding)
+    return data;
+  const payloadStr = iconv.decode(data, encoding);
+  return removeReturnStatement
+    ? payloadStr.replace(/^return /, "")
+    : payloadStr;
+}
+
 /**
  * 读取 KData 格式数据
  * @param {Uint8Array} rawData
@@ -25,7 +34,7 @@ export function load(rawData, config) {
   // 判断是否有头（"DK"），无头直接返回
   const sig = new Uint8Array(buf, 2, 2);
   if (!(sig[0] == 0x44 && sig[1] == 0x4b)) {
-    return config.encoding ? iconv.decode(array, "gbk") : array;
+    return loadDecode(array, config.encoding, config.removeReturnStatement);
   }
 
   // 判断压缩和校验
@@ -62,12 +71,7 @@ export function load(rawData, config) {
     }
   }
 
-  // 不解码直接返回 buffer
-  if (!config.encoding) return payload;
-  const payloadStr = iconv.decode(payload, "gbk");
-  return config.removeReturnStatement
-    ? payloadStr.replace(/^return /, "")
-    : payloadStr;
+  return loadDecode(payload, config.encoding, config.removeReturnStatement);
 }
 
 /**
