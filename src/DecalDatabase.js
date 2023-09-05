@@ -5,12 +5,7 @@ import dict from "../assets/data/face/dict.json";
 import group from "../assets/data/face/group.json";
 
 export class DecalDatabase {
-    client = "std";
-    decal = {};
-    decoration = {};
-    bodyType = 0;
-
-    #fetchWithCache(key, url, callback) {
+    _fetchWithCache(key, url, callback) {
         // 优先使用本地缓存
         try {
             const local = sessionStorage.getItem(key);
@@ -53,15 +48,12 @@ export class DecalDatabase {
         );
     }
     getDecalIcon(key, val) {
-        let iconid = _.get(
+        /*let iconid = _.get(
             this.decal[this.bodyType][dict[key]["type"]][val],
             "iconid"
-        );
-        if (iconid) {
-            return __iconPath + "icon/" + iconid + ".png";
-        } else {
-            return __iconPath + "icon/" + "undefined" + ".png";
-        }
+        );*/
+        let iconid = _.get(this.decal, [this.bodyType, dict[key]["type"], val, "iconid"]);
+        return __iconPath + "icon/" + (iconid || "undefined") + ".png";
     }
     getDecalIsFlip(key, val) {
         return (
@@ -72,15 +64,18 @@ export class DecalDatabase {
         );
     }
     getDecalIsFree(key, val) {
-        if (this.decal?.[this.bodyType]?.[dict[key]?.type]?.[val])
+        /*if (this.decal?.[this.bodyType]?.[dict[key]?.type]?.[val])
             return ~~this.decal?.[this.bodyType]?.[dict[key]?.type]?.[val]
                 ?.CanUseInCreate;
         else    // 不存在的贴花
             return -1;
+            */
+        return ~~(_.get(this.decal, [this.bodyType, _.get(dict, [key, "type"]), val, "CanUseInCreate"], -1))
     }
     getDecalPrice(key, val) {
-        return ~~this.decal?.[this.bodyType]?.[dict[key]?.type]?.[val]
-            ?.CoinPrice;
+        /*return ~~this.decal?.[this.bodyType]?.[dict[key]?.type]?.[val]
+            ?.CoinPrice;*/
+        return ~~(_.get(this.decal, [this.bodyType, _.get(dict, [key, "type"]), val, "CoinPrice"], 0))
     }
 
     // 装饰物
@@ -88,12 +83,14 @@ export class DecalDatabase {
         return _.get(this.decoration[this.bodyType][id], "Name") || "无";
     }
     getDecorationIcon(id) {
-        let iconid = _.get(this.decoration[this.bodyType][id], "IconID");
-        if (iconid) {
+        //let iconid = _.get(this.decoration[this.bodyType][id], "IconID");
+        let iconid = _.get(this.decoration, [this.bodyType, id, "IconID"]);
+        return __iconPath + "icon/" + (iconid || "undefined") + ".png";
+        /*if (iconid) {
             return __iconPath + "icon/" + iconid + ".png";
         } else {
             return __iconPath + "icon/" + "undefined" + ".png";
-        }
+        }*/
     }
     showDecorationPrice(id) {
         return ~~(
@@ -126,7 +123,10 @@ export class DecalDatabase {
 
     constructor(client = "std") {
         this.client = client;
-        this.#fetchWithCache(`decal_${client}`, `${__ossMirror}data/face/decal_${client}.json`, r => this.decal = r);
-        this.#fetchWithCache(`decoration_${client}`, `${__ossMirror}data/face/decoration_${client}.json`, r => this.decoration = r);
+        this.decal = {};
+        this.decoration = {};
+        this.bodyType = 0;
+        this._fetchWithCache(`decal_${client}`, `${__ossMirror}data/face/decal_${client}.json`, r => this.decal = r);
+        this._fetchWithCache(`decoration_${client}`, `${__ossMirror}data/face/decoration_${client}.json`, r => this.decoration = r);
     }
 }
