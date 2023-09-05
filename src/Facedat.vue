@@ -79,20 +79,31 @@
             <template v-if="cleandata['tDecal'][key]">
               <ul class="u-decals">
                 <li v-show="!clean || checkdecal_prop(key)">
-                  <div class="u-title">{{ dict[key]["desc"] }}</div>
+                  <div class="u-title">
+                    {{ dict[key]["desc"] }}
+                  </div>
                   <img
                     class="u-pic"
                     :src="
-                      getDecalIcon(key, cleandata['tDecal'][key]['nShowID'])
+                      decalDb.getDecalIcon(
+                        key,
+                        cleandata['tDecal'][key]['nShowID']
+                      )
                     "
                   />
                   <span class="u-dname">{{
-                    getDecalName(key, cleandata["tDecal"][key]["nShowID"])
+                    decalDb.getDecalName(
+                      key,
+                      cleandata["tDecal"][key]["nShowID"]
+                    )
                   }}</span>
                   <span
                     class="u-dflip"
                     v-if="
-                      getDecalIsFlip(key, cleandata['tDecal'][key]['nShowID'])
+                      decalDb.getDecalIsFlip(
+                        key,
+                        cleandata['tDecal'][key]['nShowID']
+                      )
                     "
                     >(翻转)</span
                   >
@@ -102,20 +113,30 @@
                   <span
                     class="u-free"
                     v-if="
-                      showDecalFree(key, cleandata['tDecal'][key]['nShowID'])
+                      decalDb.getDecalIsFree(
+                        key,
+                        cleandata['tDecal'][key]['nShowID']
+                      )
                     "
                   >
-                    <i class="el-icon-success"></i> 新建角色可用
+                    <i class="el-icon-success"></i>
+                    新建角色可用
                   </span>
                   <span
                     class="u-price"
                     v-if="
-                      showDecalPrice(key, cleandata['tDecal'][key]['nShowID'])
+                      decalDb.getDecalPrice(
+                        key,
+                        cleandata['tDecal'][key]['nShowID']
+                      )
                     "
                   >
                     <i class="el-icon-coin"></i>
                     {{
-                      showDecalPrice(key, cleandata["tDecal"][key]["nShowID"])
+                      decalDb.getDecalPrice(
+                        key,
+                        cleandata["tDecal"][key]["nShowID"]
+                      )
                     }}
                     通宝
                   </span>
@@ -128,17 +149,18 @@
               <div class="u-title">装饰物</div>
               <img
                 class="u-pic"
-                :src="getDecorationIcon(cleandata['nDecorationID'])"
+                :src="decalDb.getDecorationIcon(cleandata['nDecorationID'])"
               />
               <span class="u-dname">{{
-                getDecorationName(cleandata["nDecorationID"])
+                decalDb.getDecorationName(cleandata["nDecorationID"])
               }}</span>
               <span
                 class="u-price"
-                v-if="showDecorationPrice(cleandata['nDecorationID'])"
+                v-if="decalDb.showDecorationPrice(cleandata['nDecorationID'])"
               >
                 <i class="el-icon-coin"></i>
-                {{ showDecorationPrice(cleandata["nDecorationID"]) }} 通宝
+                {{ decalDb.showDecorationPrice(cleandata["nDecorationID"]) }}
+                通宝
               </span>
             </ul>
           </div>
@@ -146,7 +168,8 @@
             <ul class="u-decals">
               <div class="u-title">总计</div>
               <span class="u-total u-price"
-                ><i class="el-icon-coin"></i> <b>{{ total_coin }}</b> 通宝</span
+                ><i class="el-icon-coin"></i>
+                <b>{{ decalDb.getTotalPrice(cleandata) }}</b> 通宝</span
               >
             </ul>
           </div>
@@ -209,6 +232,7 @@ import bone_default from "../assets/data/face/bone_default.json";
 import decal_default from "../assets/data/face/decal_default.json";
 import versions from "../assets/data/face/version.json";
 
+import { DecalDatabase } from "./DecalDatabase"
 import { format } from "lua-json";
 import { saveAs } from "file-saver";
 import * as KData from "./KData";
@@ -236,6 +260,7 @@ export default {
       clean: false,
       version: "std",
 
+      decalDb: null,
       decalMap: "",
       decorationMap: "",
 
@@ -245,14 +270,14 @@ export default {
   },
   computed: {
     ready: function () {
-      return !!(this.facedata && this.decalMap && this.decorationMap);
+      return !!(this.facedata && this.decalDb.ready());
     },
     cleandata: function () {
       if (this.clean && this.facedata) {
         let _cleandata = _.cloneDeep(this.facedata);
         _cleandata.nDecorationID = 0;
         for (let key in _cleandata.tDecal) {
-          let CanUseInCreate = this.showDecalFree(
+          let CanUseInCreate = this.decalDb.getDecalIsFree(
             key,
             _cleandata?.tDecal[key]["nShowID"]
           );
@@ -345,18 +370,6 @@ export default {
       }
       return table;
     },
-    total_coin: function () {
-      let sum = 0;
-      for (const [_, key] of Object.entries(this.group["decal"]))
-        if (this.cleandata["tDecal"][key])
-          sum += this.showDecalPrice(
-            key,
-            this.cleandata["tDecal"][key]["nShowID"]
-          );
-      if (this.cleandata["nDecorationID"])
-        sum += this.showDecorationPrice(this.cleandata["nDecorationID"]);
-      return sum;
-    },
   },
   watch: {
     data: {
@@ -374,8 +387,7 @@ export default {
     client: {
       immediate: true,
       handler: function (val) {
-        this.fetchDecal();
-        this.fetchDecoration();
+        this.decalDb = new DecalDatabase(this.client);
       },
     },
   },
@@ -393,13 +405,9 @@ export default {
       try {
         let facedata = JSON.parse(this.data);
         // 旧版数据
-        if (facedata.status) {
-          this.body_type = facedata.misc[0]["value"];
-          this.facedata = fixOldData(facedata);
-        } else {
-          this.body_type = facedata.nRoleType;
-          this.facedata = facedata;
-        }
+        this.body_type = facedata.status ? facedata.misc[0]["value"] : facedata.nRoleType;
+        this.decalDb.setBodyType(this.body_type);
+        this.facedata = facedata.status ? fixOldData(facedata) : facedata;
       } catch (e) {
         this.facedata = "";
         console.log(e);
@@ -410,61 +418,6 @@ export default {
       }
     },
 
-    // 贴花
-    getDecalName: function (key, val) {
-      return (
-        _.get(this.decalMap[this.body_type][dict[key]["type"]][val], "name") ||
-        "无"
-      );
-    },
-    getDecalIcon: function (key, val) {
-      let iconid = _.get(
-        this.decalMap[this.body_type][dict[key]["type"]][val],
-        "iconid"
-      );
-      if (iconid) {
-        return __iconPath + "icon/" + iconid + ".png";
-      } else {
-        return __iconPath + "icon/" + "undefined" + ".png";
-      }
-    },
-    getDecalIsFlip: function (key, val) {
-      return (
-        _.get(
-          this.decalMap[this.body_type][dict[key]["type"]][val],
-          "IsFlip"
-        ) || false
-      );
-    },
-    showDecalFree: function (key, val) {
-      return ~~this.decalMap?.[this.body_type]?.[dict[key]?.type]?.[val]
-        ?.CanUseInCreate;
-    },
-    showDecalPrice: function (key, val) {
-      return ~~this.decalMap?.[this.body_type]?.[dict[key]?.type]?.[val]
-        ?.CoinPrice;
-    },
-    checkdecal_prop: function (key) {
-      return decal_group.origin.includes(key);
-    },
-
-    // 装饰物
-    getDecorationName: function (id) {
-      return _.get(this.decorationMap[this.body_type][id], "Name") || "无";
-    },
-    getDecorationIcon: function (id) {
-      let iconid = _.get(this.decorationMap[this.body_type][id], "IconID");
-      if (iconid) {
-        return __iconPath + "icon/" + iconid + ".png";
-      } else {
-        return __iconPath + "icon/" + "undefined" + ".png";
-      }
-    },
-    showDecorationPrice: function (id) {
-      return ~~(
-        _.get(this.decorationMap[this.body_type][id], "CoinPrice") || "0"
-      );
-    },
 
     // 按钮
     buildData: function (v) {
@@ -502,47 +455,8 @@ export default {
       }
       return data;
     },
-    fetchWithLocalStorage: function (url, key, onFetch) {
-      const localData = JSON.parse(sessionStorage.getItem(key));
-      if (localData) {
-        if (onFetch) onFetch(localData);
-        return;
-      } else {
-        axios.get(url).then((res) => {
-          sessionStorage.setItem(key, JSON.stringify(res.data));
-          if (onFetch) onFetch(res.data);
-        });
-      }
-    },
-    fetchDecal: function (client = "std") {
-      try {
-        const url =
-          client === "std"
-            ? `${__ossMirror}data/face/decal_std.json`
-            : `${__ossMirror}data/face/decal_origin.json`;
-        const key = `decal_${client}`;
-        this.fetchWithLocalStorage(url, key, (data) => {
-          this.decalMap = data;
-        });
-      } catch (e) {
-        this.decalMap = "";
-        console.log(e);
-      }
-    },
-    fetchDecoration: function (client = "std") {
-      try {
-        const url =
-          client === "std"
-            ? `${__ossMirror}data/face/decoration_std.json`
-            : `${__ossMirror}data/face/decoration_origin.json`;
-        const key = `decoration_${client}`;
-        this.fetchWithLocalStorage(url, key, (data) => {
-          this.decorationMap = data;
-        });
-      } catch (e) {
-        this.decorationMap = "";
-        console.log(e);
-      }
+    checkdecal_prop: function (key) {
+      return decal_group.origin.includes(key);
     },
   },
   mounted: function () {
