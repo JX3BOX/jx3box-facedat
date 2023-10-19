@@ -1,7 +1,7 @@
 <template>
   <div style="max-width: 980px; margin: 100px auto">
     <Upload @success="handleSuccess" />
-    <Facedat v-if="isFace" :data="json" :lock="false" />
+    <Facedat v-if="isFace" :data="json" :lock="true" />
     <Bodydat v-if="isBody" :data="json" :lock="false" />
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
     return {
       type: "",
       data: "",
+      value: 0
     };
   },
   computed: {

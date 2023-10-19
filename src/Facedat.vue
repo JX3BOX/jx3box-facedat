@@ -1,13 +1,27 @@
 <template>
   <div class="c-facedat" v-if="ready">
-    <el-tabs class="c-facedat-preivew" v-model="active" :type="tab_type">
-      <el-tab-pane label="眼部轮廓" name="eye">
-        <div class="c-facedat-group">
+    <div class="c-facedat-tab">
+      <el-radio-group v-model="active">
+        <el-radio-button class="u-filter" label="eye">眼部轮廓</el-radio-button>
+        <el-radio-button class="u-filter" label="mouth">嘴部轮廓</el-radio-button>
+        <el-radio-button class="u-filter" label="nose">鼻子轮廓</el-radio-button>
+        <el-radio-button class="u-filter" label="face">脸部轮廓</el-radio-button>
+        <el-radio-button class="u-filter" label="decals">贴花</el-radio-button>
+      </el-radio-group>
+    </div>
+    <div class="c-facedat-preivew">
+        <div class="c-facedat-group" v-show="active === 'eye'">
           <ul class="u-list">
             <li v-for="(key, i) in group['eye']" :key="key + i">
               <label>{{ dict[key]["desc"] }}</label>
               <span>{{ facedata["tBone"][key] }}</span>
-              <el-slider
+              <slider v-if="lock"
+                  class="u-range"
+                  :min="bone_range[body_type][dict[key]['type']]['min']"
+                  :max="bone_range[body_type][dict[key]['type']]['max']"
+                  v-model="facedata['tBone'][key]"
+              ></slider>
+              <el-slider v-else
                 class="u-range"
                 :min="bone_range[body_type][dict[key]['type']]['min']"
                 :max="bone_range[body_type][dict[key]['type']]['max']"
@@ -17,14 +31,20 @@
             </li>
           </ul>
         </div>
-      </el-tab-pane>
-      <el-tab-pane label="嘴部轮廓" name="mouth">
-        <div class="c-facedat-group">
+        <div class="c-facedat-group"  v-show="active === 'mouth'">
           <ul class="u-list">
             <li v-for="(key, i) in group['mouth']" :key="key + i">
               <label>{{ dict[key]["desc"] }}</label>
               <span>{{ facedata["tBone"][key] }}</span>
+              <slider
+                  v-if="lock"
+                  class="u-range"
+                  :min="bone_range[body_type][dict[key]['type']]['min']"
+                  :max="bone_range[body_type][dict[key]['type']]['max']"
+                  v-model="facedata['tBone'][key]"
+              ></slider>
               <el-slider
+                  v-else
                 class="u-range"
                 :min="bone_range[body_type][dict[key]['type']]['min']"
                 :max="bone_range[body_type][dict[key]['type']]['max']"
@@ -34,14 +54,20 @@
             </li>
           </ul>
         </div>
-      </el-tab-pane>
-      <el-tab-pane label="鼻子轮廓" name="nose">
-        <div class="c-facedat-group">
+        <div class="c-facedat-group" v-show="active === 'nose'">
           <ul class="u-list">
             <li v-for="(key, i) in group['nose']" :key="key + i">
               <label>{{ dict[key]["desc"] }}</label>
               <span>{{ facedata["tBone"][key] }}</span>
+              <slider
+                  v-if="lock"
+                  class="u-range"
+                  :min="bone_range[body_type][dict[key]['type']]['min']"
+                  :max="bone_range[body_type][dict[key]['type']]['max']"
+                  v-model="facedata['tBone'][key]"
+              ></slider>
               <el-slider
+                  v-else
                 class="u-range"
                 :min="bone_range[body_type][dict[key]['type']]['min']"
                 :max="bone_range[body_type][dict[key]['type']]['max']"
@@ -51,15 +77,22 @@
             </li>
           </ul>
         </div>
-      </el-tab-pane>
-      <el-tab-pane label="脸部轮廓" name="face">
-        <div class="c-facedat-group">
+        <div class="c-facedat-group"  v-show="active === 'face'">
           <ul class="u-list">
             <li v-for="(key, i) in group['face']" :key="key + i">
               <label>{{ dict[key]["desc"] }}</label>
               <span>{{ facedata["tBone"][key] }}</span>
+              <slider
+                  v-if="lock"
+                  class="u-range"
+                  :min="bone_range[body_type][dict[key]['type']]['min']"
+                  :max="bone_range[body_type][dict[key]['type']]['max']"
+                  v-model="facedata['tBone'][key]"
+                  :disabled="lock"
+              ></slider>
               <el-slider
-                class="u-range"
+                  v-else
+                  class="u-range"
                 :min="bone_range[body_type][dict[key]['type']]['min']"
                 :max="bone_range[body_type][dict[key]['type']]['max']"
                 v-model="facedata['tBone'][key]"
@@ -68,9 +101,7 @@
             </li>
           </ul>
         </div>
-      </el-tab-pane>
-      <el-tab-pane label="贴花" name="decal">
-        <div class="m-facedat-decals" id="decals">
+        <div class="m-facedat-decals" id="decals"  v-show="active === 'decals'">
           <div
             class="c-facedat-group"
             v-for="(key, i) in group['decal']"
@@ -82,63 +113,63 @@
                   <div class="u-title">
                     {{ dict[key]["desc"] }}
                   </div>
-                  <img
-                    class="u-pic"
-                    :src="
+
+                  <span class="u-dname"><img
+                      class="u-pic"
+                      :src="
                       decalDb.getDecalIcon(
                         key,
                         cleandata['tDecal'][key]['nShowID']
                       )
                     "
-                  />
-                  <span class="u-dname">{{
-                    decalDb.getDecalName(
-                      key,
-                      cleandata["tDecal"][key]["nShowID"]
-                    )
-                  }}</span>
+                  />{{
+                      decalDb.getDecalName(
+                          key,
+                          cleandata["tDecal"][key]["nShowID"]
+                      )
+                    }}</span>
                   <span
-                    class="u-dflip"
-                    v-if="
+                      class="u-dflip"
+                      v-if="
                       decalDb.getDecalIsFlip(
                         key,
                         cleandata['tDecal'][key]['nShowID']
                       )
                     "
-                    >(翻转)</span
+                  >(翻转)</span
                   >
                   <span class="u-dcolor"
-                    >(颜色:{{ cleandata["tDecal"][key]["nColorID"] }})</span
+                  >(颜色:{{ cleandata["tDecal"][key]["nColorID"] }})</span
                   >
                   <span
-                    class="u-free"
-                    v-if="
+                      class="u-free"
+
+                  >
+                    <template v-if="
                       decalDb.getDecalIsFree(
                         key,
                         cleandata['tDecal'][key]['nShowID']
-                      )
-                    "
-                  >
+                      )">
                     <i class="el-icon-success"></i>
-                    新建角色可用
+                    新建角色可用</template>
                   </span>
                   <span
-                    class="u-price"
-                    v-if="
+                      class="u-price"
+                  >
+                    <template v-if="
                       decalDb.getDecalPrice(
                         key,
                         cleandata['tDecal'][key]['nShowID']
                       )
-                    "
-                  >
+                    ">
                     <i class="el-icon-coin"></i>
                     {{
                       decalDb.getDecalPrice(
-                        key,
-                        cleandata["tDecal"][key]["nShowID"]
+                          key,
+                          cleandata["tDecal"][key]["nShowID"]
                       )
                     }}
-                    通宝
+                    通宝</template>
                   </span>
                 </li>
               </ul>
@@ -146,36 +177,40 @@
           </div>
           <div class="c-facedat-group">
             <ul class="u-decals">
+              <li>
               <div class="u-title">装饰物</div>
-              <img
-                class="u-pic"
-                :src="decalDb.getDecorationIcon(cleandata['nDecorationID'])"
-              />
-              <span class="u-dname">{{
+
+              <span class="u-dname"><img
+                  class="u-pic"
+                  :src="decalDb.getDecorationIcon(cleandata['nDecorationID'])"
+              />{{
                 decalDb.getDecorationName(cleandata["nDecorationID"])
               }}</span>
+                <span class="u-dname"></span>
+                <span class="u-dname"></span>
               <span
                 class="u-price"
-                v-if="decalDb.showDecorationPrice(cleandata['nDecorationID'])"
               >
-                <i class="el-icon-coin"></i>
-                {{ decalDb.showDecorationPrice(cleandata["nDecorationID"]) }}
-                通宝
+                <template v-if="decalDb.showDecorationPrice(cleandata['nDecorationID'])">
+                  <i class="el-icon-coin"></i>
+                  {{ decalDb.showDecorationPrice(cleandata["nDecorationID"]) }}
+                  通宝
+                </template>
               </span>
+              </li>
             </ul>
           </div>
-          <div class="c-facedat-group">
-            <ul class="u-decals">
-              <div class="u-title">总计</div>
-              <span class="u-total u-price"
-                ><i class="el-icon-coin"></i>
-                <b>{{ decalDb.getTotalPrice(cleandata) }}</b> 通宝</span
-              >
-            </ul>
-          </div>
+<!--          <div class="c-facedat-group">-->
+<!--            <ul class="u-decals">-->
+<!--              <div class="u-title">总计</div>-->
+<!--              <span class="u-total u-price"-->
+<!--                ><i class="el-icon-coin"></i>-->
+<!--                <b>{{ decalDb.getTotalPrice(cleandata) }}</b> 通宝</span-->
+<!--              >-->
+<!--            </ul>-->
+<!--          </div>-->
         </div>
-      </el-tab-pane>
-    </el-tabs>
+    </div>
     <div class="c-facedat-setting">
       <el-form
         class="c-facedat-setting-form"
@@ -220,7 +255,7 @@ import {
   __ossRoot,
 } from "@jx3box/jx3box-common/data/jx3box.json";
 import fixOldData from "./fixOldData.js";
-
+import Slider from "./Slider";
 import group from "../assets/data/face/group.json";
 import dict from "../assets/data/face/dict.json";
 import decal_group from "../assets/data/face/decal_group.json";
@@ -240,6 +275,9 @@ import * as KData from "./KData";
 export default {
   name: "Facedat",
   props: ["data", "lock", "tab_type"],
+  components: {
+    Slider
+  },
   data: function () {
     return {
       active: "eye",
@@ -404,6 +442,7 @@ export default {
       // json 转为 object
       try {
         let facedata = JSON.parse(this.data);
+        console.log(facedata)
         // 旧版数据
         this.body_type = facedata.status ? facedata.misc[0]["value"] : facedata.nRoleType;
         this.decalDb.setBodyType(this.body_type);
@@ -467,4 +506,33 @@ export default {
 
 <style lang="less">
 @import "../assets/css/facedat.less";
+.c-facedat-tab {
+  .mt(20px);
+  .mb(20px);
+.u-filter {
+  white-space: nowrap;
+  vertical-align: middle;
+  .el-button,
+  .el-checkbox-button__inner,
+  .el-radio-button__inner {
+    .fz(16px, 33px);
+    padding: 0 20px 0 20px;
+    margin: 0 10px 0 10px;
+    .db;
+    .r(30px);
+    border: 1px solid #dcdfe6;
+    background-color: #e1dfdf;
+    &:hover {
+      color: #fff;
+      background-color: #3374DB;
+      border-color: #3374DB;
+    }
+  }
+  .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+    background-color: #3374DB;
+    border-color: #3374DB;
+  }
+}
+}
+
 </style>
