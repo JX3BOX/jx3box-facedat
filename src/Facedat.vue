@@ -259,62 +259,37 @@
                 <ul :key="itemIndex" class="u-decals">
                     <li  v-if="facedata.tDecal[subItem.DecalsType]?.bUse">
                     <div class="u-title">
-                      {{ subItem.ClassName }}
+<!--                      增加一个妆容图标-->
+                      {{  getNewDecal(subItem.DecalsType)?.name || subItem.ClassName }}
                     </div>
                     <span class="u-dname">
-  <!--                    <img-->
-  <!--                      class="u-pic"-->
-  <!--                      :src="-->
-  <!--                        decalDb.getDecalIcon(-->
-  <!--                          new_decal_group['妆容'][item][subItem],-->
-  <!--                          cleandata['tDecal'][new_decal_group['妆容'][item][subItem]]['nShowID']-->
-  <!--                        )-->
-  <!--                      "-->
-  <!--                  />-->
-
-                      {{
-                        new_decal_type[facedata.nRoleType][subItem.DecalsType][facedata.tDecal[subItem.DecalsType]['nShowID']]
-                      }}</span>
-                      <span class="u-dname">
-  <!--                    <img-->
-                        <!--                      class="u-pic"-->
-                        <!--                      :src="-->
-                        <!--                        decalDb.getDecalIcon(-->
-                        <!--                          new_decal_group['妆容'][item][subItem],-->
-                        <!--                          cleandata['tDecal'][new_decal_group['妆容'][item][subItem]]['nShowID']-->
-                        <!--                        )-->
-                        <!--                      "-->
-                        <!--                  />-->
-
-                      {{
-
-                          new_decal_type[facedata.nRoleType][subItem.DecalsType][facedata.tDecal[subItem.DecalsType]['nShowID']]?.Name
+<!--                      增加一个 color图标-->
+                    {{  facedata.tDecal[subItem.DecalsType].nColorID + '号'
                         }}</span>
-  <!--                  <span-->
-  <!--                      class="u-dflip"-->
-  <!--                      v-if="-->
-  <!--                        decalDb.getDecalIsFlip(-->
-  <!--                          new_decal_group['妆容'][item][subItem],-->
-  <!--                          cleandata['tDecal'][new_decal_group['妆容'][item][subItem]]['nShowID']-->
-  <!--                        )-->
-  <!--                      "-->
-  <!--                  >(翻转)</span-->
-  <!--                  >-->
-  <!--                  <span class="u-dcolor"-->
-  <!--                  >(颜色:{{ cleandata["tDecal"][new_decal_group['妆容'][item][subItem]]["nColorID"] }})</span-->
-  <!--                  >-->
-  <!--                  <span-->
-  <!--                      class="u-free"-->
-
-  <!--                  >-->
-  <!--                      <template v-if="-->
-  <!--                        decalDb.getDecalIsFree(-->
-  <!--                          new_decal_group['妆容'][item][subItem],-->
-  <!--                          cleandata['tDecal'][new_decal_group['妆容'][item][subItem]]['nShowID']-->
-  <!--                        )">-->
-  <!--                      <i class="el-icon-success"></i>-->
-  <!--                      新建角色可用</template>-->
-  <!--                    </span>-->
+                    <span class="u-decals-params">
+                      <span>{{ subItem.Name1}}</span>
+                      <span>{{facedata.tDecal[subItem.DecalsType].fValue1.toFixed(2) }}</span>
+                    </span>
+                      <span class="u-decals-params" v-if="!subItem.bValueXY">
+                      <template v-if="subItem.bShowScroll2">
+                        <span>{{ subItem.Name2}}</span>
+                        <span>{{facedata.tDecal[subItem.DecalsType].fValue2.toFixed(2) }}</span>
+                      </template>
+                    </span>
+                      <span class="u-decals-params" v-if="!subItem.bValueXY">
+                      <template v-if="subItem.bShowScroll3">
+                        <span>{{ subItem.Name3}}</span>
+                        <span>{{facedata.tDecal[subItem.DecalsType].fValue3.toFixed(2) }}</span>
+                      </template>
+                    </span>
+                    <span class="u-decals-params" v-if="subItem.bValueXY">
+                      <span>X坐标</span>
+                      <span>{{facedata.tDecal[subItem.DecalsType].fValue3.toFixed(2) }}</span>
+                    </span>
+                    <span class="u-decals-params" v-if="subItem.bValueXY">
+                      <span>Y坐标</span>
+                      <span>{{facedata.tDecal[subItem.DecalsType].fValue3.toFixed(2) }}</span>
+                    </span>
   <!--                  <span-->
   <!--                      class="u-price"-->
   <!--                  >-->
@@ -339,15 +314,15 @@
               </template>
             </el-tab-pane>
           </el-tabs>
-        <!--          <div class="c-facedat-group">-->
-        <!--            <ul class="u-decals">-->
-        <!--              <div class="u-title">总计</div>-->
-        <!--              <span class="u-total u-price"-->
-        <!--                ><i class="el-icon-coin"></i>-->
-        <!--                <b>{{ decalDb.getTotalPrice(cleandata) }}</b> 通宝</span-->
-        <!--              >-->
-        <!--            </ul>-->
-        <!--          </div>-->
+<!--            <div class="c-facedat-group">-->
+<!--              <ul class="u-decals">-->
+<!--                <div class="u-title">总计</div>-->
+<!--                <span class="u-total u-price"-->
+<!--                  ><i class="el-icon-coin"></i>-->
+<!--                  <b>{{ decalDb.getTotalPrice(cleandata) }}</b> 通宝</span-->
+<!--                >-->
+<!--              </ul>-->
+<!--            </div>-->
       </div>
     </div>
     <div class="c-facedat-preivew" v-else>
@@ -856,6 +831,9 @@ export default {
     },
     clog(i) {
       console.log(i)
+    },
+    getNewDecal(decalType) {
+      return new_decal_type[this.facedata.nRoleType][decalType][this.facedata.tDecal[decalType]['nShowID']];
     }
   },
   mounted: function () {
