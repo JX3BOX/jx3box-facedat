@@ -1,0 +1,5 @@
+BodyType	SkeletonFile	MeshFile	TPoseAniFile
+1	data/source/player/M2/部件/M2_meta_face.txt	data/source/player/M2/部件/M2_meta_face_body_HD.mesh	data/source/player/M2/动作/face/M2_meta_face_hd_standby.ani
+2	data/source/player/F2/部件/F2_meta_face.txt	data/source/player/F2/部件/F2_meta_face_body_HD.mesh	data/source/player/F2/动作/face/f2_meta_face_hd_standby.ani
+5	data/source/player/M1/部件/M1_meta_face.txt	data/source/player/M1/部件/M1_meta_face_body_HD.mesh	data/source/player/M1/动作/face/M1_meta_face_hd_standby.ani
+6	data/source/player/F1/部件/F1_meta_face.txt	data/source/player/F1/部件/F1_meta_face_body_HD.mesh	data/source/player/F1/动作/face/F1_meta_face_hd_standby.ani

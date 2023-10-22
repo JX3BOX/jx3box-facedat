@@ -1,0 +1,162 @@
+RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
+0					0	1
+1	Data\public\Face\M2\M2_068.ini	9904	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+1	Data\public\Face\M2\M2_071.ini	18646			0	0
+1	Data\public\Face\M2\M2_072.ini	18647			0	0
+1	Data\public\Face\M2\M2_069.ini	17545			0	0
+1	Data\public\Face\M2\M2_070.ini	17546			0	0
+1	Data\public\Face\M2\M2_065.ini	16314			0	0
+1	Data\public\Face\M2\M2_066.ini	16315			0	0
+1	Data\public\Face\M2\M2_067.ini	16316			0	0
+1	Data\public\Face\M2\M2_062.ini	15117			0	0
+1	Data\public\Face\M2\M2_063.ini	15118			0	0
+1	Data\public\Face\M2\M2_064.ini	15119			0	0
+1	Data\public\Face\M2\M2_060.ini	14762			0	0
+1	Data\public\Face\M2\M2_061.ini	14763			0	0
+1	Data\public\Face\M2\M2_059.ini	14617			0	0
+1	Data\public\Face\M2\M2_057.ini	13812	七夕妆容花西子·比翼相思		0	0
+1	Data\public\Face\M2\M2_058.ini	13813			0	0
+1	Data\public\Face\M2\M2_055.ini	12884			0	0
+1	Data\public\Face\M2\M2_056.ini	12883			0	0
+1	Data\public\Face\M2\M2_030.ini	10091	焙茶by舟愚	2018年“大美江湖”全民征集活动风华绝代奖	0	0
+1	Data\public\Face\M2\M2_031.ini	10087	歪果by禾遇	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+1	Data\public\Face\M2\M2_032.ini	10089	君逸by糯米	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+1	Data\public\Face\M2\M2_033.ini	10088	九容by九容	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+1	Data\public\Face\M2\M2_034.ini	10086	凉花by禾遇	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+1	Data\public\Face\M2\M2_035.ini	10090	飞将by长安小阿奴	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+1	Data\public\Face\M2\M2_040.ini	10693			0	1
+1	Data\public\Face\M2\M2_041.ini	10694			0	1
+1	Data\public\Face\M2\M2_042.ini	10695			0	1
+1	Data\public\Face\M2\M2_043.ini	10696			0	1
+1	Data\public\Face\M2\M2_044.ini	10697			0	1
+1	Data\public\Face\M2\M2_045.ini	10698			0	1
+1	Data\public\Face\M2\M2_046.ini	10699			0	1
+1	Data\public\Face\M2\M2_047.ini	10700			0	1
+1	Data\public\Face\M2\M2_048.ini	10707			0	1
+1	Data\public\Face\M2\M2_049.ini	10701			0	1
+1	Data\public\Face\M2\M2_050.ini	10702			0	1
+1	Data\public\Face\M2\M2_051.ini	10703			0	1
+1	Data\public\Face\M2\M2_052.ini	10704			0	1
+1	Data\public\Face\M2\M2_053.ini	10705			0	1
+1	Data\public\Face\M2\M2_054.ini	10706			0	1
+2	Data\public\Face\F2\F2_0045.ini	10683	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+2	Data\public\Face\F2\F2_072.ini	18637			0	0
+2	Data\public\Face\F2\F2_073.ini	18638			0	0
+2	Data\public\Face\F2\F2_070.ini	17538			0	0
+2	Data\public\Face\F2\F2_071.ini	17539			0	0
+2	Data\public\Face\F2\F2_067.ini	16317			0	0
+2	Data\public\Face\F2\F2_068.ini	16318			0	0
+2	Data\public\Face\F2\F2_069.ini	16319			0	0
+2	Data\public\Face\F2\F2_064.ini	15111			0	0
+2	Data\public\Face\F2\F2_065.ini	15112			0	0
+2	Data\public\Face\F2\F2_066.ini	15113			0	0
+2	Data\public\Face\F2\F2_062.ini	14764			0	0
+2	Data\public\Face\F2\F2_063.ini	14765			0	0
+2	Data\public\Face\F2\F2_061.ini	14618			0	0
+2	Data\public\Face\F2\F2_059.ini	13814	七夕妆容花西子·比翼相思		0	0
+2	Data\public\Face\F2\F2_060.ini	13815			0	0
+2	Data\public\Face\F2\F2_057.ini	12885			0	0
+2	Data\public\Face\F2\F2_058.ini	12886			0	0
+2	Data\public\Face\F2\F2_038.ini	10085	妙月by桜兮兮	2018年“大美江湖”全民征集活动风华绝代奖	0	0
+2	Data\public\Face\F2\F2_039.ini	10083	华棠by素忘	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+2	Data\public\Face\F2\F2_040.ini	10084	祤祤by娅娅	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+2	Data\public\Face\F2\F2_041.ini	10082	拂晓by顾沉鸢	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+2	Data\public\Face\F2\F2_042.ini	10080	归鸿by尘绡	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+2	Data\public\Face\F2\F2_043.ini	10081	青樱by初念浅	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+2	Data\public\Face\F2\F2_035.ini	9895	红络by活捉一只喜子（一等奖）	寄语：贴吧搜院长的名字“活捉一只喜纸”有更多的脸型分享给你们，多多光临我的整容康复科啦！	0	0
+2	Data\public\Face\F2\F2_036.ini	9896	媚娘by狂奔的南风君（二等奖）	寄语：脸型灵感来自于媚娘，参照范爷做模版，媚眼丹唇，眼尾上俏，非常古风。	0	0
+2	Data\public\Face\F2\F2_037.ini	9897	秋水by爱的战士小光头（三等奖）	寄语：心无执着，喻如墙壁。	0	0
+2	Data\public\Face\F2\F2_0040.ini	10678			0	1
+2	Data\public\Face\F2\F2_0042.ini	10680			0	1
+2	Data\public\Face\F2\F2_0043.ini	10681			0	1
+2	Data\public\Face\F2\F2_0044.ini	10682			0	1
+2	Data\public\Face\F2\F2_0046.ini	10684			0	1
+2	Data\public\Face\F2\F2_0047.ini	10685			0	1
+2	Data\public\Face\F2\F2_0048.ini	10686			0	1
+2	Data\public\Face\F2\F2_0049.ini	10687			0	1
+2	Data\public\Face\F2\F2_0050.ini	10688			0	1
+2	Data\public\Face\F2\F2_0051.ini	10689			0	1
+2	Data\public\Face\F2\F2_0052.ini	10690			0	1
+2	Data\public\Face\F2\F2_0054.ini	10692			0	1
+2	Data\public\Face\F2\F2_0055.ini	11452			0	1
+2	Data\public\Face\F2\F2_0056.ini	11453			0	1
+5	Data\public\Face\M1\M1_047.ini	10670	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+5	Data\public\Face\M1\M1_070.ini	18644			0	0
+5	Data\public\Face\M1\M1_071.ini	18645			0	0
+5	Data\public\Face\M1\M1_068.ini	17543			0	0
+5	Data\public\Face\M1\M1_069.ini	17544			0	0
+5	Data\public\Face\M1\M1_065.ini	16320			0	0
+5	Data\public\Face\M1\M1_066.ini	16321			0	0
+5	Data\public\Face\M1\M1_067.ini	16322			0	0
+5	Data\public\Face\M1\M1_062.ini	15114			0	0
+5	Data\public\Face\M1\M1_063.ini	15115			0	0
+5	Data\public\Face\M1\M1_064.ini	15116			0	0
+5	Data\public\Face\M1\M1_060.ini	14766			0	0
+5	Data\public\Face\M1\M1_061.ini	14767			0	0
+5	Data\public\Face\M1\M1_059.ini	14619			0	0
+5	Data\public\Face\M1\M1_057.ini	13816	七夕妆容花西子·比翼相思		0	0
+5	Data\public\Face\M1\M1_058.ini	13817			0	0
+5	Data\public\Face\M1\M1_055.ini	12888			0	0
+5	Data\public\Face\M1\M1_056.ini	12887			0	0
+5	Data\public\Face\M1\M1_028.ini	10094	小狼狗by罗斯特叔叔	2018年“大美江湖”全民征集活动风华绝代奖	0	0
+5	Data\public\Face\M1\M1_029.ini	10093	秦川by蓝殊	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+5	Data\public\Face\M1\M1_030.ini	10092	闲游by归去风满袖	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+5	Data\public\Face\M1\M1_031.ini	10097	小圆脸by糯米	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+5	Data\public\Face\M1\M1_032.ini	10096	吃虾宝宝by妙药	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+5	Data\public\Face\M1\M1_033.ini	10095	不知道取什么了by略略略	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+5	Data\public\Face\M1\M1_027.ini	9918	初衣-少真君by初衣啦（三等奖）	寄语：皈依佛，皈依法，皈依僧，皈依我。	0	0
+5	Data\public\Face\M1\M1_040.ini	10663			0	1
+5	Data\public\Face\M1\M1_041.ini	10664			0	1
+5	Data\public\Face\M1\M1_042.ini	10665			0	1
+5	Data\public\Face\M1\M1_043.ini	10666			0	1
+5	Data\public\Face\M1\M1_044.ini	10667			0	1
+5	Data\public\Face\M1\M1_045.ini	10668			0	1
+5	Data\public\Face\M1\M1_046.ini	10669			0	1
+5	Data\public\Face\M1\M1_048.ini	10671			0	1
+5	Data\public\Face\M1\M1_049.ini	10672			0	1
+5	Data\public\Face\M1\M1_050.ini	10673			0	1
+5	Data\public\Face\M1\M1_051.ini	10674			0	1
+5	Data\public\Face\M1\M1_052.ini	10675			0	1
+5	Data\public\Face\M1\M1_053.ini	10676			0	1
+5	Data\public\Face\M1\M1_054.ini	10677			0	1
+6	Data\public\Face\F1\F1_043.ini	10651	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+6	Data\public\Face\F1\F1_070.ini	18635			0	0
+6	Data\public\Face\F1\F1_071.ini	18636			0	0
+6	Data\public\Face\F1\F1_068.ini	17540			0	0
+6	Data\public\Face\F1\F1_069.ini	17541			0	0
+6	Data\public\Face\F1\F1_065.ini	16323			0	0
+6	Data\public\Face\F1\F1_066.ini	16324			0	0
+6	Data\public\Face\F1\F1_067.ini	16325			0	0
+6	Data\public\Face\F1\F1_062.ini	15108			0	0
+6	Data\public\Face\F1\F1_063.ini	15109			0	0
+6	Data\public\Face\F1\F1_064.ini	15110			0	0
+6	Data\public\Face\F1\F1_060.ini	14768			0	0
+6	Data\public\Face\F1\F1_061.ini	14769			0	0
+6	Data\public\Face\F1\F1_059.ini	14620			0	0
+6	Data\public\Face\F1\F1_057.ini	13818	七夕妆容花西子·比翼相思		0	0
+6	Data\public\Face\F1\F1_058.ini	13819			0	0
+6	Data\public\Face\F1\F1_055.ini	12889			0	0
+6	Data\public\Face\F1\F1_056.ini	12890			0	0
+6	Data\public\Face\F1\F1_034.ini	10100	小橘喵by卡卡	2018年“大美江湖”全民征集活动风华绝代奖	0	0
+6	Data\public\Face\F1\F1_035.ini	10099	蒜蒜by糯米	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+6	Data\public\Face\F1\F1_036.ini	10098	小红眼by初衣	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+6	Data\public\Face\F1\F1_037.ini	10103	雪衣by桃露	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+6	Data\public\Face\F1\F1_038.ini	10102	星辰大海by秋秋	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+6	Data\public\Face\F1\F1_039.ini	10101	酸溜溜by警觉的秀萝大哥	2018年“大美江湖”全民征集活动名扬天下奖	0	0
+6	Data\public\Face\F1\F1_031.ini	9933	青黛by清蒸蒸QwQ（二等奖)	寄语：青黛画眉红锦靴，道字不正娇唱歌。玳瑁筵中怀里醉，芙蓉帐底奈君何。	0	0
+6	Data\public\Face\F1\F1_032.ini	9934	圆嘟嘟by慢慢的粉条君（三等奖）	寄语： 这是一个小圆脸的萝莉，乖巧可爱，很有特色。虽然脸超圆，但谁让她是圆嘟嘟呢！	0	0
+6	Data\public\Face\F1\F1_033.ini	9935	雪见by三次元才不绝望呢（三等奖) 	寄语：雪见是十一月的别称，到了这时候天地间会突然变的寂静，有种在等待一场大雪的感觉。	0	0
+6	Data\public\Face\F1\F1_040.ini	10648			0	1
+6	Data\public\Face\F1\F1_041.ini	10649			0	1
+6	Data\public\Face\F1\F1_042.ini	10650			0	1
+6	Data\public\Face\F1\F1_044.ini	10652			0	1
+6	Data\public\Face\F1\F1_045.ini	10653			0	1
+6	Data\public\Face\F1\F1_046.ini	10654			0	1
+6	Data\public\Face\F1\F1_047.ini	10655			0	1
+6	Data\public\Face\F1\F1_048.ini	10656			0	1
+6	Data\public\Face\F1\F1_049.ini	10657			0	1
+6	Data\public\Face\F1\F1_050.ini	10658			0	1
+6	Data\public\Face\F1\F1_051.ini	10659			0	1
+6	Data\public\Face\F1\F1_052.ini	10660			0	1
+6	Data\public\Face\F1\F1_053.ini	10661			0	1
+6	Data\public\Face\F1\F1_054.ini	10662			0	1

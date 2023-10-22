@@ -1,0 +1,80 @@
+SubsetID	MatarialParamName	DecalID	DetailValueType	CustomDetailID	ForcedToUse	ForcedValue	UseOtherHandlerData
+Face	着色力度	Base	fMainColorScale	0	1	0.0,0.0,0.0,0.0	0
+Face	Roughness power	Base	fRoughness	1	1	1.0,0.0,0.0,0.0	0
+Face	detailNormal Strength	Base	fMetallicity	-1	1	0.2,0.0,0.0,0.0	0
+Face	着色范围修正	Base	fParam0	-1	1	1.0,0.0,0.0,0.0	0
+Face	偏色颜色	Base	Color	2	1	1.0,1.0,1.0,1.0	0
+Face	闪粉 - Tint	LipFlashG	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	闪粉 - 开关（1为打开）	LipFlashG	Switch	-1	1	0.0,0.0,0.0,0.0	0
+Face	闪粉 - Tiling	LipFlashG	fParam1	2	0	0.0,0.0,0.0,0.0	0
+Face	闪粉 - Roughness	LipFlashG	fParam2	1	0	0.0,0.0,0.0,0.0	0
+Face	闪粉 - 强度	LipFlashG	fParam0	0	0	0.0,0.0,0.0,0.0	0
+Face	叠涂 - BaseColorTint	LipOverlapB	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	叠涂 - 开关（1为打开）	LipOverlapB	Switch	-1	1	0.0,0.0,0.0,0.0	0
+Face	叠涂 - Roughness	LipOverlapB	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	叠涂 - Mask强度	LipOverlapB	fParam1	0	0	0.0,0.0,0.0,0.0	0
+Face	偏光 - 区域Tint	LipLightA	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	偏光 - 开关（1为打开）	LipLightA	Switch	-1	1	0.0,0.0,0.0,0.0	0
+Face	偏光 - 强度	LipLightA	fParam0	0	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_1_color	EyeShadowR	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_1_switch	EyeShadowR	Switch	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_1_Roughness	EyeShadowR	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_1_strength	EyeShadowR	fParam1	0	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_2_color	EyeShadowG	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_2_switch	EyeShadowG	Switch	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_2_Roughness	EyeShadowG	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_2_strength	EyeShadowG	fParam1	0	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_3_color	EyeShadowB	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_3_switch	EyeShadowB	Switch	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_3_Roughness	EyeShadowB	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_3_strength	EyeShadowB	fParam1	0	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_4_color	EyeShadowA	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_4_switch	EyeShadowA	Switch	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_4_Roughness	EyeShadowA	fParam0	-1	0	0.0,0.0,0.0,0.0	0
+Face	eyeShadow_4_strength	EyeShadowA	fParam1	0	0	0.0,0.0,0.0,0.0	0
+Face	glitter_1_Color	EyeShadowFlashR	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_1_switch	EyeShadowFlashR	Switch	-1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_1_NormalUV	EyeShadowFlashR	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_1_Density	EyeShadowFlashR	fParam1	2	0	0.0,0.0,0.0,0.0	0
+Face	glitter_1_Strength	EyeShadowFlashR	fParam2	0	0	0.0,0.0,0.0,0.0	0
+Face	glitter_2_Color	EyeShadowFlashG	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_2_switch	EyeShadowFlashG	Switch	-1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_2_NormalUV	EyeShadowFlashG	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_2_Density	EyeShadowFlashG	fParam1	2	0	0.0,0.0,0.0,0.0	0
+Face	glitter_2_Strength	EyeShadowFlashG	fParam2	0	0	0.0,0.0,0.0,0.0	0
+Face	glitter_3_Color	EyeShadowFlashB	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_3_switch	EyeShadowFlashB	Switch	-1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_3_NormalUV	EyeShadowFlashB	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_3_Density	EyeShadowFlashB	fParam1	2	0	0.0,0.0,0.0,0.0	0
+Face	glitter_3_Strength	EyeShadowFlashB	fParam2	0	0	0.0,0.0,0.0,0.0	0
+Face	glitter_4_Color	EyeShadowFlashA	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_4_switch	EyeShadowFlashA	Switch	-1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_4_NormalUV	EyeShadowFlashA	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	glitter_4_Density	EyeShadowFlashA	fParam1	2	0	0.0,0.0,0.0,0.0	0
+Face	glitter_4_Strength	EyeShadowFlashA	fParam2	0	0	0.0,0.0,0.0,0.0	0
+LeftEye	眼神光颜色	EyeLight	ColorWithoutAlpha	-1	1	1.0,1.0,1.0,1.0	0
+RightEye	眼神光颜色	EyeLight	ColorWithoutAlpha	-1	1	1.0,1.0,1.0,1.0	0
+LeftEye	眼神光颜色强度	EyeLight	fMainColorMin	0	1	0.0,0.0,0.0,0.0	0
+RightEye	眼神光颜色强度	EyeLight	fMainColorMin	0	1	0.0,0.0,0.0,0.0	0
+Face	唇膏 - 开关（1为打开）	LipGlossR	Switch	-1	1	0.0,0.0,0.0,0.0	0
+Face	唇膏 - ColorTint	LipGlossR	Color	-1	0	0.0,0.0,0.0,0.0	0
+Face	唇膏 - Roughness	LipGlossR	fParam0	1	0	0.0,0.0,0.0,0.0	0
+Face	唇部法线 - 强度	LipGlossR	fParam1	-1	0	0.0,0.0,0.0,0.0	0
+Face	唇膏 - ColorPure	LipGlossR	fParam2	0	0	0.0,0.0,0.0,0.0	0
+Face	detailNormal2 Strength	Base	fParam1	-1	1	0.2,0.0,0.0,0.0	0
+LeftEye	虹膜缩放	IrisLeft	fParam0	1	1	1.0,0.0,0.0,0.0	0
+RightEye	虹膜缩放	IrisRight	fParam0	1	1	1.0,0.0,0.0,0.0	0
+LeftEye	瞳孔缩放	IrisLeft	fParam1	2	1	0.2,0.0,0.0,0.0	0
+RightEye	瞳孔缩放	IrisRight	fParam1	2	1	0.2,0.0,0.0,0.0	0
+LeftEye	veinsSaturate	EyeWhiteLeft	fParam0	0	1	0.0,0.0,0.0,0.0	0
+LeftEye	veinsColor	EyeWhiteLeft	Color	-1	1	1.0,1.0,1.0,1.0	0
+RightEye	veinsSaturate	EyeWhiteRight	fParam0	0	1	0.0,0.0,0.0,0.0	0
+RightEye	veinsColor	EyeWhiteRight	Color	-1	1	1.0,1.0,1.0,1.0	0
+LeftEye	IrisColor	IrisLeft	Color	-1	0	0.0,0.0,0.0,0.0	0
+LeftEye	IrisColor_A	IrisLeft	fParam2	0	0	1.0,1.0,1.0,1.0	0
+LeftEye	Iris偏色开关	IrisLeft	Switch	-1	0	0.0,0.0,0.0,0.0	0
+RightEye	IrisColor	IrisRight	Color	-1	0	0.0,0.0,0.0,0.0	0
+RightEye	IrisColor_A	IrisRight	fParam2	0	0	1.0,1.0,1.0,1.0	0
+RightEye	Iris偏色开关	IrisRight	Switch	-1	0	0.0,0.0,0.0,0.0	0
+LeftEye	veins偏色开关	EyeWhiteLeft	Switch	-1	0	0.0,0.0,0.0,0.0	0
+RightEye	veins偏色开关	EyeWhiteRight	Switch	-1	0	0.0,0.0,0.0,0.0	0

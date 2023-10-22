@@ -1,0 +1,45 @@
+SubsetID	MatarialParamName	DecalID	DetailValueType	CustomDetailID	ForcedToUse	ForcedValue	UseOtherHandlerData
+0	闪粉 - Tint	10	Color	1	0	0.0,0.0,0.0,0.0	1
+0	闪粉 - 开关（1为打开）	10	Switch	-1	1	0.0,0.0,0.0,0.0	1
+0	闪粉 - Tiling	10	fParam1	0	0	0.0,0.0,0.0,0.0	1
+0	闪粉 - Roughness	10	fParam2	2	0	0.0,0.0,0.0,0.0	1
+0	叠涂 - BaseColorTint	11	Color	0	0	0.0,0.0,0.0,0.0	1
+0	叠涂 - 开关（1为打开）	11	Switch	-1	1	0.0,0.0,0.0,0.0	1
+0	偏光 - 区域Tint	12	Color	0	0	0.0,0.0,0.0,0.0	1
+0	偏光 - 开关（1为打开）	12	Switch	-1	1	0.0,0.0,0.0,0.0	1
+0	eyeShadow_1_color	13	Color	-1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_1_switch	13	Switch	-1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_1_Roughness	13	fParam0	0	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_1_strength	13	fParam1	1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_2_color	14	Color	-1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_2_switch	14	Switch	-1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_2_Roughness	14	fParam0	0	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_2_strength	14	fParam1	1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_3_color	15	Color	-1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_3_switch	15	Switch	-1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_3_Roughness	15	fParam0	0	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_3_strength	15	fParam1	1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_4_color	16	Color	-1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_4_switch	16	Switch	-1	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_4_Roughness	16	fParam0	0	0	0.0,0.0,0.0,0.0	1
+0	eyeShadow_4_strength	16	fParam1	1	0	0.0,0.0,0.0,0.0	1
+0	glitter_1_Color	17	Color	-1	0	0.0,0.0,0.0,0.0	1
+0	glitter_1_switch	17	Switch	-1	0	0.0,0.0,0.0,0.0	1
+0	glitter_1_NormalUV	17	fParam0	0	0	0.0,0.0,0.0,0.0	1
+0	glitter_1_Density	17	fParam1	1	0	0.0,0.0,0.0,0.0	1
+0	glitter_1_Strength	17	fParam2	2	0	0.0,0.0,0.0,0.0	1
+0	glitter_2_Color	18	Color	-1	0	0.0,0.0,0.0,0.0	1
+0	glitter_2_switch	18	Switch	-1	0	0.0,0.0,0.0,0.0	1
+0	glitter_2_NormalUV	18	fParam0	0	0	0.0,0.0,0.0,0.0	1
+0	glitter_2_Density	18	fParam1	1	0	0.0,0.0,0.0,0.0	1
+0	glitter_2_Strength	18	fParam2	2	0	0.0,0.0,0.0,0.0	1
+0	glitter_3_Color	19	Color	-1	0	0.0,0.0,0.0,0.0	1
+0	glitter_3_switch	19	Switch	-1	0	0.0,0.0,0.0,0.0	1
+0	glitter_3_NormalUV	19	fParam0	0	0	0.0,0.0,0.0,0.0	1
+0	glitter_3_Density	19	fParam1	1	0	0.0,0.0,0.0,0.0	1
+0	glitter_3_Strength	19	fParam2	2	0	0.0,0.0,0.0,0.0	1
+0	glitter_4_Color	20	Color	-1	0	0.0,0.0,0.0,0.0	1
+0	glitter_4_switch	20	Switch	-1	0	0.0,0.0,0.0,0.0	1
+0	glitter_4_NormalUV	20	fParam0	0	0	0.0,0.0,0.0,0.0	1
+0	glitter_4_Density	20	fParam1	1	0	0.0,0.0,0.0,0.0	1
+0	glitter_4_Strength	20	fParam2	2	0	0.0,0.0,0.0,0.0	1

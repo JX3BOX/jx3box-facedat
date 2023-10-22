@@ -1,0 +1,36 @@
+RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
+0					1	1
+1	Data\public\Face\M2DefaultFace.ini	6018	默认	创建角色时的默认脸型，可免费购买。如果您已经拥有则无法购买该脸型。	1	1
+1	Data\public\Face\M2\M2001.ini	15351			0	1
+1	Data\public\Face\M2\M2002.ini	15352			0	1
+1	Data\public\Face\M2\M2003.ini	15353			0	1
+1	Data\public\Face\M2\M2004.ini	15354			0	1
+1	Data\public\Face\M2\M2005.ini	15355			0	1
+1	Data\public\Face\M2\M2006.ini	15356			0	1
+1	Data\public\Face\M2\M2007.ini	15357			0	1
+1	Data\public\Face\M2\M2008.ini	15358			0	1
+1	Data\public\Face\M2\M2009.ini	15359			0	1
+1	Data\public\Face\M2\M2010.ini	15360			0	1
+2	Data\public\Face\F2DefaultFace.ini	6019	默认	创建角色时的默认脸型，可免费购买。如果您已经拥有则无法购买该脸型。	1	1
+2	Data\public\Face\F2\F2001.ini	15341			0	1
+2	Data\public\Face\F2\F2002.ini	15342			0	1
+2	Data\public\Face\F2\F2003.ini	15343			0	1
+2	Data\public\Face\F2\F2004.ini	15344			0	1
+2	Data\public\Face\F2\F2005.ini	15345			0	1
+2	Data\public\Face\F2\F2006.ini	15346			0	1
+2	Data\public\Face\F2\F2007.ini	15347			0	1
+2	Data\public\Face\F2\F2008.ini	15348			0	1
+2	Data\public\Face\F2\F2009.ini	15349			0	1
+2	Data\public\Face\F2\F2010.ini	15350			0	1
+5	Data\public\Face\M1DefaultFace.ini	5486	默认	创建角色时的默认脸型，可免费购买。如果您已经拥有则无法购买该脸型。	1	1
+6	Data\public\Face\F1DefaultFace.ini	5425	默认	创建角色时的默认脸型，可免费购买。如果您已经拥有则无法购买该脸型。	1	1
+6	Data\public\Face\F1\F1001.ini	15331			0	1
+6	Data\public\Face\F1\F1002.ini	15332			0	1
+6	Data\public\Face\F1\F1003.ini	15333			0	1
+6	Data\public\Face\F1\F1004.ini	15334			0	1
+6	Data\public\Face\F1\F1005.ini	15335			0	1
+6	Data\public\Face\F1\F1006.ini	15336			0	1
+6	Data\public\Face\F1\F1007.ini	15337			0	1
+6	Data\public\Face\F1\F1008.ini	15338			0	1
+6	Data\public\Face\F1\F1009.ini	15339			0	1
+6	Data\public\Face\F1\F1010.ini	15340			0	1

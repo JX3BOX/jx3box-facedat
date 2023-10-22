@@ -1,0 +1,9 @@
+RoleType	Type	ID	Mesh	Name	Animation
+1	0	1	data/source/player/M2/部件/M2_meta_face_leg_HD.mesh	M2_玫瑰花	
+1	1	1	data/source/player/M2/部件/M2_meta_face_hand_HD.mesh	M2_玫瑰花1	
+2	0	1	data/source/player/M2/部件/M2_meta_face_leg_HD.mesh	F2_玫瑰花	
+2	1	1	data/source/player/M2/部件/M2_meta_face_hand_HD.mesh	F2_玫瑰花1	
+5	0	1	data/source/player/M2/部件/M2_meta_face_leg_HD.mesh	M1_玫瑰花	
+5	1	1	data/source/player/M2/部件/M2_meta_face_hand_HD.mesh	M1_玫瑰花1	
+6	0	1	data/source/player/M2/部件/M2_meta_face_leg_HD.mesh	F1_玫瑰花	
+6	1	1	data/source/player/M2/部件/M2_meta_face_hand_HD.mesh	F1_玫瑰花1	
