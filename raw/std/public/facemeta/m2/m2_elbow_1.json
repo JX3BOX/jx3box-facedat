@@ -1,0 +1,27 @@
+{
+	"BodyType": 1,
+	"Bone": {
+		"ElbowGrpTZ": -128,
+		"ElbowStartTX": -98,
+		"ElbowStartTY": 62,
+		"ElbowStartTZ": -59,
+		"ElbowEndTX": 0,
+		"ElbowEndTY": 13,
+		"ElbowEndTZ": 33,
+		"ElbowMiddleTY": 0,
+		"ElbowMiddleTZ": 54,
+		"ElbowStartRZ": 0,
+		"ElbowStartRX": 0,
+		"ElbowStartRY": 0,
+		"ElbowEndRY": 0,
+		"ElbowEndRZ": 0,
+		"ElbowEndRX": 0,
+		"ElbowMiddleRX": -18,
+		"ElbowGrpRY": 0,
+		"ElbowStartSX": 0,
+		"ElbowStartSY": 0,
+		"ElbowStartSZ": 0,
+		"ElbowEndSX": 0,
+		"ElbowEndSY": 0
+	}
+}

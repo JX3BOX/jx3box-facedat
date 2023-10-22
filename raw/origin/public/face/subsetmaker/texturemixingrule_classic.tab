@@ -1,0 +1,17 @@
+TextureID	DecalID	IsBaseTetexture	DecalTextureType	MixMethod	DetailGenerationMethod	NeedRect	CopyAlpha	CopyAlphaFromTextureSuffix	ApplyRoughnessAndMetallicity	ForcedPasteMethod	BlendAlpha	BlendShadowAlpha	DefaultTexture
+0	0	1	MainTexture	AllChannel	_None	0	0	.tga	0	-1	1	1	_None
+0	3	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+0	4	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+0	5	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+0	6	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+0	7	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	0	_None
+0	9	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+0	-1	0	MainTexture	AllChannel	_None	0	0	.tga	0	0	1	1	_None
+1	1	1	SecondaryTexture	AllChannel	_None	0	0	.tga	0	-1	1	1	DefaultEyeDiffuse
+1	1	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+1	8	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+2	2	1	SecondaryTexture	AllChannel	_None	0	0	.tga	0	-1	1	1	DefaultEyeDiffuse
+2	2	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+2	8	0	MainTexture	AllChannel	HD	1	0	.tga	0	-1	1	1	_None
+3	8	1	SecondaryTexture	AllChannel	_None	0	0	.tga	0	-1	1	1	DefaultEyelight
+4	8	1	SecondaryTexture	AllChannel	_None	0	0	.tga	0	-1	1	1	DefaultEyelight

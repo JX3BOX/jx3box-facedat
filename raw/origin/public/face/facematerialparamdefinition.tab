@@ -1,0 +1,12 @@
+Type	TextureChanelIDinFaceMaterialParam	ColorParamName	SwitchParamName	fValueIDCount	fValue1ID	fValue2ID	fValue3ID	fValue1DefaltMaxValue	fValue2DefaltMaxValue	fValue3DefaltMaxValue	fParamCount	fParam0Name	fParam1Name	fParam2Name	fParam3Name	fParam4Name	fParam5Name	fParam6Name	fParam7Name	fParam8Name	fParam9Name	fParam10Name	fParam11Name	fParam12Name	fParam13Name	fParam14Name
+10	0	闪粉 - Tint	闪粉 - 开关（1为打开）	3	1	99	2	1	1	2	3	闪粉 - 开关（1为打开）	闪粉 - Tiling	闪粉 - Roughness												
+11	1	叠涂 - BaseColorTint	叠涂 - 开关（1为打开）	1	99	-1	-1	1	1	1	1	叠涂 - 开关（1为打开）														
+12	2	偏光 - 区域Tint	偏光 - 开关（1为打开）	1	99	-1	-1	1	1	1	1	偏光 - 开关（1为打开）														
+13	0	eyeShadow_1_color	eyeShadow_1_switch	2	0	1	-1	1	1	1	2	eyeShadow_1_Roughness	eyeShadow_1_strength													
+14	1	eyeShadow_2_color	eyeShadow_2_switch	2	0	1	-1	1	1	1	2	eyeShadow_2_Roughness	eyeShadow_2_strength													
+15	2	eyeShadow_3_color	eyeShadow_3_switch	2	0	1	-1	1	1	1	2	eyeShadow_3_Roughness	eyeShadow_3_strength													
+16	3	eyeShadow_4_color	eyeShadow_4_switch	2	0	1	-1	1	1	1	2	eyeShadow_4_Roughness	eyeShadow_4_strength													
+17	0	glitter_1_Color	glitter_1_switch	3	0	1	2	1	1	1	3	glitter_1_NormalUV	glitter_1_Density	glitter_1_Strength												
+18	1	glitter_2_Color	glitter_2_switch	3	0	1	2	1	1	1	3	glitter_2_NormalUV	glitter_2_Density	glitter_2_Strength												
+19	2	glitter_3_Color	glitter_3_switch	3	0	1	2	1	1	1	3	glitter_3_NormalUV	glitter_3_Density	glitter_3_Strength												
+20	3	glitter_4_Color	glitter_4_switch	3	0	1	2	1	1	1	3	glitter_4_NormalUV	glitter_4_Density	glitter_4_Strength												

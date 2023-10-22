@@ -1,0 +1,6 @@
+RoleType	DefaultMesh	DefaultMtl	LookAtX	LookAtY	LookAtZ	CamPosX	CamPosY	CamPosZ
+0			0	0	0	0	0	0
+1	data\source\player\M2\部件\m2_new_face.Mesh	data\source\player\M2\部件\m2_new_face.Mtl	133422	4284	35932	133374	4281	35880
+2	data\source\player\F2\部件\F2_new_face.Mesh	data\source\player\F2\部件\F2_new_face.Mtl	133422	4269	35932	133373	4266	35876
+5	data\source\player\M1\部件\m1_new_face.Mesh	data\source\player\M1\部件\m1_new_face.Mtl	133422	4231	35932	133374	4231	35883
+6	data\source\player\F1\部件\f1_new_face.Mesh	data\source\player\F1\部件\f1_new_face.Mtl	133422	4226	35932	133384	4229	35883
