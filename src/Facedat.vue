@@ -32,7 +32,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -52,7 +52,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -79,7 +79,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -99,7 +99,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -126,7 +126,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -146,7 +146,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -172,7 +172,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -192,7 +192,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -218,7 +218,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -238,7 +238,7 @@
                           class="u-range"
                           :min="-128"
                           :max="128"
-                          v-model="facedata['tBone'][key.BoneType]"
+                          :value="facedata['tBone'][key.BoneType]"
                   ></slider>
                   <el-slider v-else
                              class="u-range"
@@ -259,7 +259,16 @@
                 <ul :key="itemIndex" class="u-decals">
                     <li  v-if="facedata.tDecal[subItem.DecalsType]?.bUse">
                     <div class="u-title">
-<!--                      增加一个妆容图标-->
+                      <img
+                          class="u-pic"
+                          :src="
+                      decalDb.getDecalIcon(
+                        subItem.DecalsType,
+                        facedata.tDecal[subItem.DecalsType]['nShowID'],
+                        true
+                      )
+                    "
+                      />
                       {{  getNewDecal(subItem.DecalsType)?.name || subItem.ClassName }}
                     </div>
                     <span class="u-dname">
@@ -290,24 +299,24 @@
                       <span>Y坐标</span>
                       <span>{{facedata.tDecal[subItem.DecalsType].fValue3.toFixed(2) }}</span>
                     </span>
-  <!--                  <span-->
-  <!--                      class="u-price"-->
-  <!--                  >-->
-  <!--                      <template v-if="-->
-  <!--                        decalDb.getDecalPrice(-->
-  <!--                         new_decal_group['妆容'][item][subItem],-->
-  <!--                          cleandata['tDecal'][new_decal_group['妆容'][item][subItem]]['nShowID']-->
-  <!--                        )-->
-  <!--                      ">-->
-  <!--                      <i class="el-icon-coin"></i>-->
-  <!--                      {{-->
-  <!--                          decalDb.getDecalPrice(-->
-  <!--                              new_decal_group['妆容'][item][subItem],-->
-  <!--                              cleandata['tDecal'][new_decal_group['妆容'][item][subItem]]['nShowID']-->
-  <!--                          )-->
-  <!--                        }}-->
-  <!--                      通宝</template>-->
-  <!--                    </span>-->
+                    <span
+                        class="u-price"
+                    >
+                        <template v-if="
+                          decalDb.getDecalPrice(
+                                subItem.DecalsType,
+                                facedata.tDecal[subItem.DecalsType]['nShowID']
+                          )
+                        ">
+                        <i class="el-icon-coin"></i>
+                        {{
+                            decalDb.getDecalPrice(
+                                subItem.DecalsType,
+                                facedata.tDecal[subItem.DecalsType]['nShowID']
+                            )
+                          }}
+                        通宝</template>
+                      </span>
                   </li>
 
                 </ul>
@@ -335,7 +344,7 @@
                     class="u-range"
                     :min="bone_range[body_type][dict[key]['type']]['min']"
                     :max="bone_range[body_type][dict[key]['type']]['max']"
-                    v-model="facedata['tBone'][key]"
+                    :value="facedata['tBone'][key]"
             ></slider>
             <el-slider v-else
                        class="u-range"
@@ -357,7 +366,7 @@
                 class="u-range"
                 :min="bone_range[body_type][dict[key]['type']]['min']"
                 :max="bone_range[body_type][dict[key]['type']]['max']"
-                v-model="facedata['tBone'][key]"
+                :value="facedata['tBone'][key]"
             ></slider>
             <el-slider
                 v-else
@@ -380,7 +389,7 @@
                 class="u-range"
                 :min="bone_range[body_type][dict[key]['type']]['min']"
                 :max="bone_range[body_type][dict[key]['type']]['max']"
-                v-model="facedata['tBone'][key]"
+                :value="facedata['tBone'][key]"
             ></slider>
             <el-slider
                 v-else
@@ -403,8 +412,7 @@
                 class="u-range"
                 :min="bone_range[body_type][dict[key]['type']]['min']"
                 :max="bone_range[body_type][dict[key]['type']]['max']"
-                v-model="facedata['tBone'][key]"
-                :disabled="lock"
+                :value="facedata['tBone'][key]"
             ></slider>
             <el-slider
                 v-else
@@ -576,7 +584,7 @@ import group from "../assets/data/face/group.json";
 import dict from "../assets/data/face/dict.json";
 import new_face_dict from "../assets/data/newface/ui.json";
 import new_decal_group from "../assets/data/newface/decal.json";
-import new_decal_type from "../assets/data/newface/decal_type.json";
+import new_decal_type from "../assets/data/newface/decal_v2.json";
 import decal_group from "../assets/data/face/decal_group.json";
 import decal_origin from "../assets/data/face/decal_origin.json";
 import decal_std from "../assets/data/face/decal_std.json";
@@ -754,7 +762,8 @@ export default {
     client: {
       immediate: true,
       handler: function (val) {
-        this.decalDb = new DecalDatabase(this.client);
+        let facedata = JSON.parse(this.data);
+        this.decalDb = new DecalDatabase(this.client, facedata.bNewFace);
       },
     },
   },
@@ -771,7 +780,6 @@ export default {
       // json 转为 object
       try {
         let facedata = JSON.parse(this.data);
-        console.log(facedata)
         // 旧版数据
         this.body_type = facedata.status ? facedata.misc[0]["value"] : facedata.nRoleType;
         this.decalDb.setBodyType(this.body_type);
