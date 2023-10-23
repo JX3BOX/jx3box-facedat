@@ -20,7 +20,7 @@ const readAllFieldNames = async (dir) => {
     for (let bodyType of bodyTypes) {
         logger.info(`正在读取 ${bodyType} 的字段名称`);
 
-        const bodyParamFilePath = path.resolve(__dirname, `../../raw/std/data/public/bodyreshaping/${bodyType}/bodyparam.tab`);
+        const bodyParamFilePath = path.resolve(__dirname, `../../raw/std/public/bodyreshaping/${bodyType}/bodyparam.tab`);
         const bodyParam = await parseTable(await readFile(bodyParamFilePath), {
             newline: "\n",
             keepColumns: ["Name", "ID"]

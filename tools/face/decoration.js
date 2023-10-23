@@ -43,7 +43,7 @@ const mergeTable = async (client) => {
 
 
     logger.info("读取 data 表");
-    const dataTablePath = path.join(__dirname, `../../raw/${client}/data/public/face/facepart_${client == "origin" ? "classic" : "hd"}.tab`);
+    const dataTablePath = path.join(__dirname, `../../raw/${client}/public/face/facepart_${client == "origin" ? "classic" : "hd"}.tab`);
     const dataTable = await parseTable(await readFile(dataTablePath), {
         delimiter: "\t",
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.NO,

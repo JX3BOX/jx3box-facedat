@@ -20,14 +20,14 @@ const readTables = async () => {
   for (let bodyType of bodyTypes) {
     logger.info(`读取 ${bodyType} 的体型字段`);
 
-    const bodyParamFilePath = path.join(__dirname, `../../raw/std/data/public/bodyreshaping/${bodyType}/bodyparam.tab`);
+    const bodyParamFilePath = path.join(__dirname, `../../raw/std/public/bodyreshaping/${bodyType}/bodyparam.tab`);
     const bodyParam = await parseTable(await readFile(bodyParamFilePath), {
       useDefaultRow: TABLE_DEFAULT_ROW_MODE.NO,
       newline: "\n",
       keepColumns: ["ID", "Name", "Min", "Max"]
     });
 
-    const boneParamFilePath = path.join(__dirname, `../../raw/std/data/public/bodyreshaping/${bodyType}/boneparam.tab`);
+    const boneParamFilePath = path.join(__dirname, `../../raw/std/public/bodyreshaping/${bodyType}/boneparam.tab`);
     const boneParam = await parseTable(await readFile(boneParamFilePath), {
       useDefaultRow: TABLE_DEFAULT_ROW_MODE.NO,
       newline: "\n",
