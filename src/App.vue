@@ -1,8 +1,8 @@
 <template>
   <div style="max-width: 980px; margin: 100px auto">
     <Upload @success="handleSuccess" />
-    <Facedat v-if="isFace" :data="json" :lock="true" />
-    <Bodydat v-if="isBody" :data="json" :lock="false" />
+    <Facedat v-if="isFace" :data="this.data" :lock="true" />
+    <Bodydat v-if="isBody" :data="this.data" :lock="false" />
   </div>
 </template>
 
@@ -14,17 +14,13 @@ export default {
   props: [],
   data: function () {
     return {
-      type: "",
       data: "",
       value: 0
     };
   },
   computed: {
-    json: function () {
-      return this.data && this.data.json;
-    },
     isFace: function () {
-      return this.data.type === "face";
+      return this.data.type?.startsWith("face");
     },
     isBody: function () {
       return this.data.type === "body";

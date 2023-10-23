@@ -762,7 +762,7 @@ export default {
     client: {
       immediate: true,
       handler: function (val) {
-        let facedata = JSON.parse(this.data);
+        let facedata = this.data.object;
         this.decalDb = new DecalDatabase(this.client, facedata.bNewFace);
       },
     },
@@ -779,7 +779,7 @@ export default {
 
       // json 转为 object
       try {
-        let facedata = JSON.parse(this.data);
+        let facedata = this.data.object;
         // 旧版数据
         this.body_type = facedata.status ? facedata.misc[0]["value"] : facedata.nRoleType;
         this.decalDb.setBodyType(this.body_type);

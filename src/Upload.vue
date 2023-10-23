@@ -76,6 +76,13 @@ export default {
 
       done: false,
       types: types.bodyMap,
+
+      fileTypeNames: {
+        "face": "写意脸型",
+        "face_v2": "写实脸型",
+        "face_ini": "编辑器脸型",
+        "body": "体型"
+      }
     };
   },
   computed: {
@@ -114,48 +121,37 @@ export default {
       fr.onload = function (e) {
         console.log("文件读取成功...开始执行分析...");
         const result = load(e.target.result);
-        if (!result)
+        if (!result) {
           return vm.$notify.error({
             title: "错误",
             message: "数据类型解析失败",
           });
-        if (result.type.startsWith("face")) {
-          if (vm.type && vm.type !== "face") {
-            return vm.$notify.error({
-              title: "错误",
-              message: "请导入脸型数据",
-            });
-          } else {
-            vm.parsedType = "face";
-            vm.object = result.data;
-          }
-        } else if (result.type === "body") {
-          if (vm.type && vm.type !== "body") {
-            return vm.$notify.error({
-              title: "错误",
-              message: "请导入体型数据",
-            });
-          } else {
-            vm.parsedType = "body";
-            vm.object = result.data;
-          }
         }
+
+        if (result.type.startsWith("face") && vm.type && vm.type !== "face") {
+          return vm.$notify.error({
+            title: "错误",
+            message: "请导入脸型数据",
+          });
+        }
+        if (result.type === "body" && vm.type && vm.type !== "body") {
+          return vm.$notify.error({
+            title: "错误",
+            message: "请导入体型数据",
+          });
+        }
+
+        vm.parsedType = result.type;
+        vm.object = result.data;
 
         // 读取成功才分析
         if (vm.object) {
           try {
             vm.json = JSON.stringify(vm.object);
+            console.log();
             vm.$notify({
               title: "成功",
-              message: `${
-                vm.types[vm.object.nRoleType.toString()]?.label || ""
-              }${
-                vm.parsedType === "face"
-                  ? "脸型"
-                  : vm.parsedType === "body"
-                  ? "体型"
-                  : ""
-              }数据读取成功`,
+              message: `${vm.types[vm.object.nRoleType.toString()]?.label || ""}${vm.fileTypeNames[vm.parsedType]}数据读取成功`,
               type: "success",
             });
             vm.done = true;
@@ -166,6 +162,7 @@ export default {
               object: vm.object,
             });
           } catch (e) {
+            console.log(e);
             vm.$notify.error({
               title: "错误",
               message: "无法读取数据",
