@@ -9,7 +9,7 @@ const buildBonesUI = async () => {
     const logger = baseLogger.job("buildBonesUI");
     logger.info(`生成骨骼 UI 表`)
 
-    const uiTablePath = path.join(__dirname, `../../raw/newface/facebonesv2.tab`);
+    const uiTablePath = path.join(__dirname, `../../raw/std/ui/faceliftv2/facebonesv2.tab`);
     const uiTable = await parseTable(await readFile(uiTablePath), {
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE,
     });

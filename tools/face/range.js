@@ -19,7 +19,7 @@ const main = async () => {
         };
         let ret = {};
 
-        const boneRangeBaseDir = path.join(__dirname, `../../raw/face/std/bone_range/`);
+        const boneRangeBaseDir = path.join(__dirname, `../../raw/std/settings/facelift/bone/`);
         for (const file of await glob("*.tab", { cwd: boneRangeBaseDir })) {
             const fileFullPath = path.join(boneRangeBaseDir, file);
             const mainName = path.parse(fileFullPath).name.toLowerCase();

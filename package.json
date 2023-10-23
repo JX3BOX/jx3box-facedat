@@ -10,6 +10,7 @@
         "inspect": "vue inspect > output.js",
         "update": "npm install @jx3box/jx3box-common@latest @jx3box/jx3box-data@latest",
         "face": "node ./tools/face/decal.js && node ./tools/face/decoration.js && node ./tools/face/range.js",
+        "facev2": "node ./tools/newface/bones.js && node ./tools/newface/decalV2.js",
         "body": "node ./tools/body/group.js && node ./tools/body/field_range.js"
     },
     "eslintConfig": {

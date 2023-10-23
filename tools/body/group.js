@@ -20,7 +20,7 @@ const readAllFieldNames = async (dir) => {
     for (let bodyType of bodyTypes) {
         logger.info(`正在读取 ${bodyType} 的字段名称`);
 
-        const bodyParamFilePath = path.resolve(__dirname, `../../raw/body/${bodyType}/bodyparam.tab`);
+        const bodyParamFilePath = path.resolve(__dirname, `../../raw/std/data/public/bodyreshaping/${bodyType}/bodyparam.tab`);
         const bodyParam = await parseTable(await readFile(bodyParamFilePath), {
             newline: "\n",
             keepColumns: ["Name", "ID"]
@@ -42,7 +42,7 @@ const buildGroups = async (fieldMapping) => {
     const groupTabFilePath = path.resolve(__dirname, "../../assets/data/body/body_group_tabs.json");
     const groupTabs = JSON.parse(await readFile(groupTabFilePath, "utf-8"));
 
-    const bodyBonesFilePath = path.resolve(__dirname, "../../raw/body/bodybones.tab");
+    const bodyBonesFilePath = path.resolve(__dirname, "../../raw/std/ui/facelift/bodybones.tab");
     const bodyBones = await parseTable(await readFile(bodyBonesFilePath), {
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.IGNORE,
         keepColumns: ["ClassID", "ClassName", "BodyType", "BodyName", "RoleType", "szTip"]
