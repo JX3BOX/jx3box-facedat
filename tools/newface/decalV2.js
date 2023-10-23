@@ -101,7 +101,6 @@ const buildData = async () => {
             showid = record.ShowID, //展示id
             name = record.Name, //装饰名
             iconid = record.IconID; //图标id
-        console.log(type)
         ret[role_type][type][showid] = {
             name: name,
             iconid: iconid,

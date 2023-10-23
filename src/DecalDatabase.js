@@ -3,7 +3,7 @@ import _ from "lodash";
 import { __ossMirror, __iconPath } from "@jx3box/jx3box-common/data/jx3box.json";
 import dict from "../assets/data/face/dict.json";
 import group from "../assets/data/face/group.json";
-import v2_type from "../assets/data/face/decal_v2.json"
+import v2_type from "../assets/data/newface/decal_v2.json"
 export class DecalDatabase {
     _fetchWithCache(key, url, callback) {
         // 优先使用本地缓存

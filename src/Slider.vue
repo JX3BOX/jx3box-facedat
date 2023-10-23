@@ -54,9 +54,8 @@ export default {
       type: Number
     },
     value: {
-      type: Number,
       default: 0
-    },
+    }
   },
   mounted() {
     const observer = new ResizeObserver(entries => {
