@@ -129,7 +129,7 @@ const buildData = async () => {
 };
 
 const main = async () => {
-    baseLogger = initLogger('jx3-facedat/face/decal');
+    baseLogger = initLogger('jx3-facedat/newface/decal');
     const logger = baseLogger;
 
     try {
