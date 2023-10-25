@@ -106,7 +106,7 @@ export default {
 
       // json 转为 object
       try {
-        let body_data = JSON.parse(this.data);
+        let body_data = this.data.object;
         this.body_type = body_data.nRoleType.toString();
         this.body_data = body_data;
       } catch (e) {

@@ -19,6 +19,11 @@
             .flex;
             flex-flow: row;
         }
+        .u-sub-title {
+            .h(24px);
+            .fz(12px, 24px);
+            background: #E8E8E880;
+        }
         label,
         input,
         span {
@@ -54,7 +59,8 @@
         list-style: none;
         padding: 0 0 0 10px;
         margin-bottom: 10px;
-
+        background: #4796FF0D;
+        li {display: flex;         height: 50px;}
         img {
             .size(32px);
             .y;
@@ -67,7 +73,18 @@
             .ml(5px);
             .bold;
         }
-
+        .u-decals-params {
+            flex: 1;
+            line-height: 50px;
+            span{
+                &:first-child{width: 28px; .fz(14px);}
+                &:nth-child(2){width: 28px; color: #3374DB}
+            }
+        }
+        .u-title,.u-dname,.u-dflip,.u-dcolor,.u-free,.u-price{
+            flex: 1;
+            line-height: 50px;
+        }
         .u-free{
             .fz(12px);
             color:#49c10f;

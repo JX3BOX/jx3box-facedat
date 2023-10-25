@@ -1,27 +1,5 @@
 {
     "轮廓": {
-        "整体": {
-            "大小": [
-                {
-                    "BoneType": "37",
-                    "BoneName": "宽窄"
-                },
-                {
-                    "BoneType": "1",
-                    "BoneName": "长短"
-                }
-            ],
-            "比例": [
-                {
-                    "BoneType": "171",
-                    "BoneName": "上部"
-                },
-                {
-                    "BoneType": "86",
-                    "BoneName": "中部"
-                }
-            ]
-        },
         "额头": {
             "root": [
                 {
@@ -31,17 +9,19 @@
                 {
                     "BoneType": "19",
                     "BoneName": "倾斜"
+                },
+                {
+                    "BoneType": "1",
+                    "BoneName": "聚合"
                 }
             ]
         },
-        "颧骨": {
-            "位置": [
+        "面部": {
+            "颧骨": [
                 {
                     "BoneType": "9",
                     "BoneName": "高低"
-                }
-            ],
-            "大小": [
+                },
                 {
                     "BoneType": "7",
                     "BoneName": "宽窄"
@@ -51,29 +31,11 @@
                     "BoneName": "凹凸"
                 }
             ],
-            "微调": [
-                {
-                    "BoneType": "24",
-                    "BoneName": "外旋"
-                },
-                {
-                    "BoneType": "25",
-                    "BoneName": "侧旋"
-                },
-                {
-                    "BoneType": "26",
-                    "BoneName": "上旋"
-                }
-            ]
-        },
-        "苹果肌": {
-            "位置": [
+            "苹果肌": [
                 {
                     "BoneType": "4",
                     "BoneName": "高低"
-                }
-            ],
-            "大小": [
+                },
                 {
                     "BoneType": "2",
                     "BoneName": "宽窄"
@@ -83,44 +45,24 @@
                     "BoneName": "凹凸"
                 }
             ],
-            "微调": [
-                {
-                    "BoneType": "20",
-                    "BoneName": "外旋"
-                },
-                {
-                    "BoneType": "21",
-                    "BoneName": "侧旋"
-                },
-                {
-                    "BoneType": "22",
-                    "BoneName": "上旋"
-                }
-            ]
-        },
-        "脸颊": {
-            "大小": [
+            "脸颊": [
                 {
                     "BoneType": "10",
                     "BoneName": "胖瘦"
                 }
             ]
         },
-        "上颌": {
-            "位置": [
+        "颌骨": {
+            "上颌": [
                 {
                     "BoneType": "133",
-                    "BoneName": "突出"
-                }
-            ],
-            "大小": [
+                    "BoneName": "凹凸"
+                },
                 {
                     "BoneType": "101",
                     "BoneName": "宽窄"
                 }
-            ]
-        },
-        "下颌": {
+            ],
             "下颌": [
                 {
                     "BoneType": "14",
@@ -136,18 +78,6 @@
                 },
                 {
                     "BoneType": "44",
-                    "BoneName": "厚度"
-                }
-            ],
-            "下颌角": [
-                {
-                    "BoneType": "40",
-                    "BoneName": "高低"
-                }
-            ],
-            "下颌底": [
-                {
-                    "BoneType": "43",
                     "BoneName": "厚度"
                 }
             ]
@@ -175,11 +105,53 @@
                     "BoneName": "厚度"
                 }
             ]
+        },
+        "细节微调": {
+            "苹果肌": [
+                {
+                    "BoneType": "20",
+                    "BoneName": "外旋"
+                },
+                {
+                    "BoneType": "21",
+                    "BoneName": "侧旋"
+                },
+                {
+                    "BoneType": "22",
+                    "BoneName": "上旋"
+                }
+            ],
+            "颧骨": [
+                {
+                    "BoneType": "24",
+                    "BoneName": "外旋"
+                },
+                {
+                    "BoneType": "25",
+                    "BoneName": "侧旋"
+                },
+                {
+                    "BoneType": "26",
+                    "BoneName": "上旋"
+                }
+            ],
+            "下颌角": [
+                {
+                    "BoneType": "40",
+                    "BoneName": "高低"
+                }
+            ],
+            "下颌底": [
+                {
+                    "BoneType": "43",
+                    "BoneName": "厚度"
+                }
+            ]
         }
     },
     "眉毛": {
         "整体": {
-            "位置": [
+            "root": [
                 {
                     "BoneType": "45",
                     "BoneName": "高低"
@@ -192,19 +164,9 @@
                     "BoneType": "47",
                     "BoneName": "外凸"
                 }
-            ],
-            "大小": [
-                {
-                    "BoneType": "49",
-                    "BoneName": "长短"
-                },
-                {
-                    "BoneType": "63",
-                    "BoneName": "粗细"
-                }
             ]
         },
-        "局部": {
+        "细节微调": {
             "眉弓": [
                 {
                     "BoneType": "60",
@@ -254,7 +216,7 @@
             "大小": [
                 {
                     "BoneType": "170",
-                    "BoneName": "缩放"
+                    "BoneName": "宽窄"
                 },
                 {
                     "BoneType": "172",
@@ -305,20 +267,8 @@
             ],
             "下睫毛": [
                 {
-                    "BoneType": "176",
-                    "BoneName": "长短"
-                },
-                {
                     "BoneType": "182",
                     "BoneName": "外旋"
-                },
-                {
-                    "BoneType": "183",
-                    "BoneName": "上旋"
-                },
-                {
-                    "BoneType": "184",
-                    "BoneName": "侧旋"
                 }
             ]
         },
@@ -331,10 +281,6 @@
                 {
                     "BoneType": "151",
                     "BoneName": "开合"
-                },
-                {
-                    "BoneType": "161",
-                    "BoneName": "轮廓"
                 }
             ],
             "下眼皮": [
@@ -345,10 +291,6 @@
                 {
                     "BoneType": "153",
                     "BoneName": "开合"
-                },
-                {
-                    "BoneType": "163",
-                    "BoneName": "轮廓"
                 }
             ]
         },
@@ -483,7 +425,7 @@
     },
     "嘴部": {
         "整体": {
-            "位置": [
+            "root": [
                 {
                     "BoneType": "98",
                     "BoneName": "高低"
@@ -493,18 +435,12 @@
                     "BoneName": "凹凸"
                 },
                 {
-                    "BoneType": "116",
-                    "BoneName": "倾斜"
-                }
-            ],
-            "大小": [
-                {
-                    "BoneType": "130",
-                    "BoneName": "宽窄"
-                },
-                {
                     "BoneType": "132",
                     "BoneName": "厚度"
+                },
+                {
+                    "BoneType": "116",
+                    "BoneName": "倾斜"
                 }
             ]
         },
@@ -523,7 +459,7 @@
                     "BoneName": "上旋"
                 }
             ],
-            "中部": [
+            "上唇中部": [
                 {
                     "BoneType": "137",
                     "BoneName": "宽窄"
@@ -539,13 +475,9 @@
                 {
                     "BoneType": "106",
                     "BoneName": "凹凸"
-                },
-                {
-                    "BoneType": "122",
-                    "BoneName": "上旋"
                 }
             ],
-            "两侧": [
+            "上唇两侧": [
                 {
                     "BoneType": "108",
                     "BoneName": "宽窄"
@@ -557,37 +489,29 @@
                 {
                     "BoneType": "109",
                     "BoneName": "凹凸"
-                },
-                {
-                    "BoneType": "123",
-                    "BoneName": "外旋"
-                },
-                {
-                    "BoneType": "124",
-                    "BoneName": "侧旋"
                 }
             ]
         },
         "下唇": {
             "整体": [
                 {
-                    "BoneType": "136",
-                    "BoneName": "厚度"
+                    "BoneType": "100",
+                    "BoneName": "凹凸"
                 },
                 {
                     "BoneType": "102",
                     "BoneName": "高度"
                 },
                 {
-                    "BoneType": "100",
-                    "BoneName": "凹凸"
-                },
-                {
                     "BoneType": "118",
                     "BoneName": "上旋"
+                },
+                {
+                    "BoneType": "136",
+                    "BoneName": "厚度"
                 }
             ],
-            "中部": [
+            "下唇中部": [
                 {
                     "BoneType": "144",
                     "BoneName": "厚度"
@@ -599,13 +523,9 @@
                 {
                     "BoneType": "111",
                     "BoneName": "凹凸"
-                },
-                {
-                    "BoneType": "126",
-                    "BoneName": "上旋"
                 }
             ],
-            "两侧": [
+            "下唇两侧": [
                 {
                     "BoneType": "113",
                     "BoneName": "宽窄"
@@ -617,14 +537,6 @@
                 {
                     "BoneType": "114",
                     "BoneName": "凹凸"
-                },
-                {
-                    "BoneType": "127",
-                    "BoneName": "外旋"
-                },
-                {
-                    "BoneType": "128",
-                    "BoneName": "侧旋"
                 }
             ]
         },
@@ -641,6 +553,40 @@
                 {
                     "BoneType": "104",
                     "BoneName": "凹凸"
+                }
+            ]
+        },
+        "细节微调": {
+            "上唇中部": [
+                {
+                    "BoneType": "122",
+                    "BoneName": "上旋"
+                }
+            ],
+            "上唇两侧": [
+                {
+                    "BoneType": "123",
+                    "BoneName": "外旋"
+                },
+                {
+                    "BoneType": "124",
+                    "BoneName": "侧旋"
+                }
+            ],
+            "下唇中部": [
+                {
+                    "BoneType": "126",
+                    "BoneName": "上旋"
+                }
+            ],
+            "下唇两侧": [
+                {
+                    "BoneType": "127",
+                    "BoneName": "外旋"
+                },
+                {
+                    "BoneType": "128",
+                    "BoneName": "侧旋"
                 }
             ]
         }

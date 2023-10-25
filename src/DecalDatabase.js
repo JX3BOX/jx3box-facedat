@@ -3,7 +3,7 @@ import _ from "lodash";
 import { __ossMirror, __iconPath } from "@jx3box/jx3box-common/data/jx3box.json";
 import dict from "../assets/data/face/dict.json";
 import group from "../assets/data/face/group.json";
-
+import v2_type from "../assets/data/newface/decal_v2.json"
 export class DecalDatabase {
     _fetchWithCache(key, url, callback) {
         // 优先使用本地缓存
@@ -21,11 +21,20 @@ export class DecalDatabase {
             axios.get(url).then((res) => {
                 // 写缓存可能炸？炸就不管了
                 try {
-                    sessionStorage.setItem(key, JSON.stringify(res.data));
+                    if (res.data) {
+                        sessionStorage.setItem(key, JSON.stringify(res.data));
+                        return
+                    }
                 }
                 catch { }
                 callback(res.data);
             });
+        }
+        catch {
+            callback("");
+        }
+        try {
+            sessionStorage.setItem(key, JSON.stringify(v2_type));
         }
         catch {
             callback("");
@@ -41,41 +50,41 @@ export class DecalDatabase {
     }
 
     // 贴花
-    getDecalName(key, val) {
+    getDecalName(key, val, v2 = false) {
         return (
-            _.get(this.decal[this.bodyType][dict[key]["type"]][val], "name") ||
+            _.get(this.decal[this.bodyType][v2 ? key : dict[key]["type"]][val], "name") ||
             "无"
         );
     }
-    getDecalIcon(key, val) {
+    getDecalIcon(key, val, v2 = false) {
         /*let iconid = _.get(
             this.decal[this.bodyType][dict[key]["type"]][val],
             "iconid"
         );*/
-        let iconid = _.get(this.decal, [this.bodyType, dict[key]["type"], val, "iconid"]);
+        let iconid = _.get(this.decal, [this.bodyType, v2 ? key : dict[key]["type"], val, "iconid"]);
         return __iconPath + "icon/" + (iconid || "undefined") + ".png";
     }
-    getDecalIsFlip(key, val) {
+    getDecalIsFlip(key, val, v2 = false) {
         return (
             _.get(
-                this.decal[this.bodyType][dict[key]["type"]][val],
+                this.decal[this.bodyType][v2 ? key : dict[key]["type"]][val],
                 "IsFlip"
             ) || false
         );
     }
-    getDecalIsFree(key, val) {
+    getDecalIsFree(key, val, v2 = false) {
         /*if (this.decal?.[this.bodyType]?.[dict[key]?.type]?.[val])
             return ~~this.decal?.[this.bodyType]?.[dict[key]?.type]?.[val]
                 ?.CanUseInCreate;
         else    // 不存在的贴花
             return -1;
             */
-        return ~~(_.get(this.decal, [this.bodyType, _.get(dict, [key, "type"]), val, "CanUseInCreate"], -1))
+        return ~~(_.get(this.decal, [this.bodyType, v2 ? key : _.get(dict, [key, "type"]), val, "CanUseInCreate"], -1))
     }
-    getDecalPrice(key, val) {
+    getDecalPrice(key, val,v2 = false) {
         /*return ~~this.decal?.[this.bodyType]?.[dict[key]?.type]?.[val]
             ?.CoinPrice;*/
-        return ~~(_.get(this.decal, [this.bodyType, _.get(dict, [key, "type"]), val, "CoinPrice"], 0))
+        return ~~(_.get(this.decal, [this.bodyType, v2 ? key : _.get(dict, [key, "type"]), val, "CoinPrice"], 0))
     }
 
     // 装饰物
@@ -99,7 +108,7 @@ export class DecalDatabase {
     }
 
     // 所有
-    getTotalPrice(data) {
+    getTotalPrice(data, v2) {
         let sum = 0;
         for (let key in data["tDecal"]) {
             if (data["tDecal"][key])
@@ -121,12 +130,12 @@ export class DecalDatabase {
         return true;
     }
 
-    constructor(client = "std") {
+    constructor(client = "std", v2 = false) {
         this.client = client;
         this.decal = {};
         this.decoration = {};
         this.bodyType = 0;
-        this._fetchWithCache(`decal_${client}`, `${__ossMirror}data/face/decal_${client}.json`, r => this.decal = r);
+        this._fetchWithCache(`decal_${v2 ? 'v2' : client}`, `${__ossMirror}data/face/decal_${v2 ? 'v2' : client}.json`, r => this.decal = r);
         this._fetchWithCache(`decoration_${client}`, `${__ossMirror}data/face/decoration_${client}.json`, r => this.decoration = r);
     }
 }
