@@ -1,26 +1,142 @@
 dwID	RoleType	FilePath	Icon	Name	Des
 0	0				
-1	1	data\public\FaceMeta\M2\M2_face_1.json	9904	脸预设1	测试
-1	2	data\public\FaceMeta\F2\F2_face_1.json	10683	脸预设1	测试
-1	5	data\public\FaceMeta\M1\M1_face_1.json	9904	脸预设1	测试
-1	6	data\public\FaceMeta\F1\F1_face_1.json	10683	脸预设1	测试
-2	1	data\public\FaceMeta\M2\M2_face_2.json	9904	脸预设2	测试
-2	2	data\public\FaceMeta\F2\F2_face_2.json	10683	脸预设2	测试
-2	5	data\public\FaceMeta\M1\M1_face_2.json	9904	脸预设2	测试
-2	6	data\public\FaceMeta\F1\F1_face_2.json	10683	脸预设2	测试
-3	1	data\public\FaceMeta\M2\M2_elbow_1.json	9904	眉毛1	测试
-3	2	data\public\FaceMeta\F2\F2_elbow_1.json	10683	眉毛1	测试
-3	5	data\public\FaceMeta\M1\M1_elbow_1.json	9904	眉毛1	测试
-3	6	data\public\FaceMeta\F1\F1_elbow_1.json	10683	眉毛1	测试
-4	1	data\public\FaceMeta\M2\M2_elbow_2.json	9904	眉毛2	测试
-4	2	data\public\FaceMeta\F2\F2_elbow_2.json	10683	眉毛2	测试
-4	5	data\public\FaceMeta\M1\M1_elbow_2.json	9904	眉毛2	测试
-4	6	data\public\FaceMeta\F1\F1_elbow_2.json	10683	眉毛2	测试
-5	1	data\public\FaceMeta\M2\M2_eyes_1.json	9904	眼预设1	测试
-5	2	data\public\FaceMeta\F2\F2_eyes_1.json	10683	眼预设1	测试
-5	5	data\public\FaceMeta\M1\M1_eyes_1.json	9904	眼预设1	测试
-5	6	data\public\FaceMeta\F1\F1_eyes_1.json	10683	眼预设1	测试
-6	1	data\public\FaceMeta\M2\M2_eyes_2.json	9904	眼预设2	测试
-6	2	data\public\FaceMeta\F2\F2_eyes_2.json	10683	眼睛2	测试
-6	5	data\public\FaceMeta\M1\M1_eyes_2.json	9904	眼预设2	测试
-6	6	data\public\FaceMeta\F1\F1_eyes_2.json	10683	眼睛2	测试
+1	1	data\public\FaceMeta\M2\局部\M2_001_轮廓.json	21196	轮廓一	
+1	2	data\public\FaceMeta\F2\局部\F2_001_轮廓.json	21231	轮廓一	
+1	5	data\public\FaceMeta\M1\局部\M1_001_轮廓.json	21266	轮廓一	
+1	6	data\public\FaceMeta\F1\局部\F1_001_轮廓.json	21301	轮廓一	
+2	1	data\public\FaceMeta\M2\局部\M2_002_轮廓.json	21197	轮廓二	
+2	2	data\public\FaceMeta\F2\局部\F2_002_轮廓.json	21232	轮廓二	
+2	5	data\public\FaceMeta\M1\局部\M1_002_轮廓.json	21267	轮廓二	
+2	6	data\public\FaceMeta\F1\局部\F1_002_轮廓.json	21302	轮廓二	
+3	1	data\public\FaceMeta\M2\局部\M2_003_轮廓.json	21198	轮廓三	
+3	2	data\public\FaceMeta\F2\局部\F2_003_轮廓.json	21233	轮廓三	
+3	5	data\public\FaceMeta\M1\局部\M1_003_轮廓.json	21268	轮廓三	
+3	6	data\public\FaceMeta\F1\局部\F1_003_轮廓.json	21303	轮廓三	
+4	1	data\public\FaceMeta\M2\局部\M2_004_轮廓.json	21199	轮廓四	
+4	2	data\public\FaceMeta\F2\局部\F2_004_轮廓.json	21234	轮廓四	
+4	5	data\public\FaceMeta\M1\局部\M1_004_轮廓.json	21269	轮廓四	
+4	6	data\public\FaceMeta\F1\局部\F1_004_轮廓.json	21304	轮廓四	
+5	1	data\public\FaceMeta\M2\局部\M2_005_轮廓.json	21200	轮廓五	
+5	2	data\public\FaceMeta\F2\局部\F2_005_轮廓.json	21235	轮廓五	
+5	5	data\public\FaceMeta\M1\局部\M1_005_轮廓.json	21270	轮廓五	
+5	6	data\public\FaceMeta\F1\局部\F1_005_轮廓.json	21305	轮廓五	
+6	1	data\public\FaceMeta\M2\局部\M2_006_轮廓.json	21201	轮廓六	
+6	2	data\public\FaceMeta\F2\局部\F2_006_轮廓.json	21236	轮廓六	
+6	5	data\public\FaceMeta\M1\局部\M1_006_轮廓.json	21271	轮廓六	
+6	6	data\public\FaceMeta\F1\局部\F1_006_轮廓.json	21306	轮廓六	
+7	1	data\public\FaceMeta\M2\局部\M2_007_轮廓.json	21202	轮廓七	
+7	2	data\public\FaceMeta\F2\局部\F2_007_轮廓.json	21237	轮廓七	
+7	5	data\public\FaceMeta\M1\局部\M1_007_轮廓.json	21272	轮廓七	
+7	6	data\public\FaceMeta\F1\局部\F1_007_轮廓.json	21307	轮廓七	
+8	1	data\public\FaceMeta\M2\局部\M2_001_眉毛.json	21203	眉毛一	
+8	2	data\public\FaceMeta\F2\局部\F2_001_眉毛.json	21238	眉毛一	
+8	5	data\public\FaceMeta\M1\局部\M1_001_眉毛.json	21273	眉毛一	
+8	6	data\public\FaceMeta\F1\局部\F1_001_眉毛.json	21308	眉毛一	
+9	1	data\public\FaceMeta\M2\局部\M2_002_眉毛.json	21204	眉毛二	
+9	2	data\public\FaceMeta\F2\局部\F2_002_眉毛.json	21239	眉毛二	
+9	5	data\public\FaceMeta\M1\局部\M1_002_眉毛.json	21274	眉毛二	
+9	6	data\public\FaceMeta\F1\局部\F1_002_眉毛.json	21309	眉毛二	
+10	1	data\public\FaceMeta\M2\局部\M2_003_眉毛.json	21205	眉毛三	
+10	2	data\public\FaceMeta\F2\局部\F2_003_眉毛.json	21240	眉毛三	
+10	5	data\public\FaceMeta\M1\局部\M1_003_眉毛.json	21275	眉毛三	
+10	6	data\public\FaceMeta\F1\局部\F1_003_眉毛.json	21310	眉毛三	
+11	1	data\public\FaceMeta\M2\局部\M2_004_眉毛.json	21206	眉毛四	
+11	2	data\public\FaceMeta\F2\局部\F2_004_眉毛.json	21241	眉毛四	
+11	5	data\public\FaceMeta\M1\局部\M1_004_眉毛.json	21276	眉毛四	
+11	6	data\public\FaceMeta\F1\局部\F1_004_眉毛.json	21311	眉毛四	
+12	1	data\public\FaceMeta\M2\局部\M2_005_眉毛.json	21207	眉毛五	
+12	2	data\public\FaceMeta\F2\局部\F2_005_眉毛.json	21242	眉毛五	
+12	5	data\public\FaceMeta\M1\局部\M1_005_眉毛.json	21277	眉毛五	
+12	6	data\public\FaceMeta\F1\局部\F1_005_眉毛.json	21312	眉毛五	
+13	1	data\public\FaceMeta\M2\局部\M2_006_眉毛.json	21208	眉毛六	
+13	2	data\public\FaceMeta\F2\局部\F2_006_眉毛.json	21243	眉毛六	
+13	5	data\public\FaceMeta\M1\局部\M1_006_眉毛.json	21278	眉毛六	
+13	6	data\public\FaceMeta\F1\局部\F1_006_眉毛.json	21313	眉毛六	
+14	1	data\public\FaceMeta\M2\局部\M2_007_眉毛.json	21209	眉毛七	
+14	2	data\public\FaceMeta\F2\局部\F2_007_眉毛.json	21244	眉毛七	
+14	5	data\public\FaceMeta\M1\局部\M1_007_眉毛.json	21279	眉毛七	
+14	6	data\public\FaceMeta\F1\局部\F1_007_眉毛.json	21314	眉毛七	
+15	1	data\public\FaceMeta\M2\局部\M2_001_眼部.json	21210	眼部一	
+15	2	data\public\FaceMeta\F2\局部\F2_001_眼部.json	21245	眼部一	
+15	5	data\public\FaceMeta\M1\局部\M1_001_眼部.json	21280	眼部一	
+15	6	data\public\FaceMeta\F1\局部\F1_001_眼部.json	21315	眼部一	
+16	1	data\public\FaceMeta\M2\局部\M2_002_眼部.json	21211	眼部二	
+16	2	data\public\FaceMeta\F2\局部\F2_002_眼部.json	21246	眼部二	
+16	5	data\public\FaceMeta\M1\局部\M1_002_眼部.json	21281	眼部二	
+16	6	data\public\FaceMeta\F1\局部\F1_002_眼部.json	21316	眼部二	
+17	1	data\public\FaceMeta\M2\局部\M2_003_眼部.json	21212	眼部三	
+17	2	data\public\FaceMeta\F2\局部\F2_003_眼部.json	21247	眼部三	
+17	5	data\public\FaceMeta\M1\局部\M1_003_眼部.json	21282	眼部三	
+17	6	data\public\FaceMeta\F1\局部\F1_003_眼部.json	21317	眼部三	
+18	1	data\public\FaceMeta\M2\局部\M2_004_眼部.json	21213	眼部四	
+18	2	data\public\FaceMeta\F2\局部\F2_004_眼部.json	21248	眼部四	
+18	5	data\public\FaceMeta\M1\局部\M1_004_眼部.json	21283	眼部四	
+18	6	data\public\FaceMeta\F1\局部\F1_004_眼部.json	21318	眼部四	
+19	1	data\public\FaceMeta\M2\局部\M2_005_眼部.json	21214	眼部五	
+19	2	data\public\FaceMeta\F2\局部\F2_005_眼部.json	21249	眼部五	
+19	5	data\public\FaceMeta\M1\局部\M1_005_眼部.json	21284	眼部五	
+19	6	data\public\FaceMeta\F1\局部\F1_005_眼部.json	21319	眼部五	
+20	1	data\public\FaceMeta\M2\局部\M2_006_眼部.json	21215	眼部六	
+20	2	data\public\FaceMeta\F2\局部\F2_006_眼部.json	21250	眼部六	
+20	5	data\public\FaceMeta\M1\局部\M1_006_眼部.json	21285	眼部六	
+20	6	data\public\FaceMeta\F1\局部\F1_006_眼部.json	21320	眼部六	
+21	1	data\public\FaceMeta\M2\局部\M2_007_眼部.json	21216	眼部七	
+21	2	data\public\FaceMeta\F2\局部\F2_007_眼部.json	21251	眼部七	
+21	5	data\public\FaceMeta\M1\局部\M1_007_眼部.json	21286	眼部七	
+21	6	data\public\FaceMeta\F1\局部\F1_007_眼部.json	21321	眼部七	
+22	1	data\public\FaceMeta\M2\局部\M2_001_鼻子.json	21217	鼻子一	
+22	2	data\public\FaceMeta\F2\局部\F2_001_鼻子.json	21252	鼻子一	
+22	5	data\public\FaceMeta\M1\局部\M1_001_鼻子.json	21287	鼻子一	
+22	6	data\public\FaceMeta\F1\局部\F1_001_鼻子.json	21322	鼻子一	
+23	1	data\public\FaceMeta\M2\局部\M2_002_鼻子.json	21218	鼻子二	
+23	2	data\public\FaceMeta\F2\局部\F2_002_鼻子.json	21253	鼻子二	
+23	5	data\public\FaceMeta\M1\局部\M1_002_鼻子.json	21288	鼻子二	
+23	6	data\public\FaceMeta\F1\局部\F1_002_鼻子.json	21323	鼻子二	
+24	1	data\public\FaceMeta\M2\局部\M2_003_鼻子.json	21219	鼻子三	
+24	2	data\public\FaceMeta\F2\局部\F2_003_鼻子.json	21254	鼻子三	
+24	5	data\public\FaceMeta\M1\局部\M1_003_鼻子.json	21289	鼻子三	
+24	6	data\public\FaceMeta\F1\局部\F1_003_鼻子.json	21324	鼻子三	
+25	1	data\public\FaceMeta\M2\局部\M2_004_鼻子.json	21220	鼻子四	
+25	2	data\public\FaceMeta\F2\局部\F2_004_鼻子.json	21255	鼻子四	
+25	5	data\public\FaceMeta\M1\局部\M1_004_鼻子.json	21290	鼻子四	
+25	6	data\public\FaceMeta\F1\局部\F1_004_鼻子.json	21325	鼻子四	
+26	1	data\public\FaceMeta\M2\局部\M2_005_鼻子.json	21221	鼻子五	
+26	2	data\public\FaceMeta\F2\局部\F2_005_鼻子.json	21256	鼻子五	
+26	5	data\public\FaceMeta\M1\局部\M1_005_鼻子.json	21291	鼻子五	
+26	6	data\public\FaceMeta\F1\局部\F1_005_鼻子.json	21326	鼻子五	
+27	1	data\public\FaceMeta\M2\局部\M2_006_鼻子.json	21222	鼻子六	
+27	2	data\public\FaceMeta\F2\局部\F2_006_鼻子.json	21257	鼻子六	
+27	5	data\public\FaceMeta\M1\局部\M1_006_鼻子.json	21292	鼻子六	
+27	6	data\public\FaceMeta\F1\局部\F1_006_鼻子.json	21327	鼻子六	
+28	1	data\public\FaceMeta\M2\局部\M2_007_鼻子.json	21223	鼻子七	
+28	2	data\public\FaceMeta\F2\局部\F2_007_鼻子.json	21258	鼻子七	
+28	5	data\public\FaceMeta\M1\局部\M1_007_鼻子.json	21293	鼻子七	
+28	6	data\public\FaceMeta\F1\局部\F1_007_鼻子.json	21328	鼻子七	
+29	1	data\public\FaceMeta\M2\局部\M2_001_嘴部.json	21224	嘴部一	
+29	2	data\public\FaceMeta\F2\局部\F2_001_嘴部.json	21259	嘴部一	
+29	5	data\public\FaceMeta\M1\局部\M1_001_嘴部.json	21294	嘴部一	
+29	6	data\public\FaceMeta\F1\局部\F1_001_嘴部.json	21329	嘴部一	
+30	1	data\public\FaceMeta\M2\局部\M2_002_嘴部.json	21225	嘴部二	
+30	2	data\public\FaceMeta\F2\局部\F2_002_嘴部.json	21260	嘴部二	
+30	5	data\public\FaceMeta\M1\局部\M1_002_嘴部.json	21295	嘴部二	
+30	6	data\public\FaceMeta\F1\局部\F1_002_嘴部.json	21330	嘴部二	
+31	1	data\public\FaceMeta\M2\局部\M2_003_嘴部.json	21226	嘴部三	
+31	2	data\public\FaceMeta\F2\局部\F2_003_嘴部.json	21261	嘴部三	
+31	5	data\public\FaceMeta\M1\局部\M1_003_嘴部.json	21296	嘴部三	
+31	6	data\public\FaceMeta\F1\局部\F1_003_嘴部.json	21331	嘴部三	
+32	1	data\public\FaceMeta\M2\局部\M2_004_嘴部.json	21227	嘴部四	
+32	2	data\public\FaceMeta\F2\局部\F2_004_嘴部.json	21262	嘴部四	
+32	5	data\public\FaceMeta\M1\局部\M1_004_嘴部.json	21297	嘴部四	
+32	6	data\public\FaceMeta\F1\局部\F1_004_嘴部.json	21332	嘴部四	
+33	1	data\public\FaceMeta\M2\局部\M2_005_嘴部.json	21228	嘴部五	
+33	2	data\public\FaceMeta\F2\局部\F2_005_嘴部.json	21263	嘴部五	
+33	5	data\public\FaceMeta\M1\局部\M1_005_嘴部.json	21298	嘴部五	
+33	6	data\public\FaceMeta\F1\局部\F1_005_嘴部.json	21333	嘴部五	
+34	1	data\public\FaceMeta\M2\局部\M2_006_嘴部.json	21229	嘴部六	
+34	2	data\public\FaceMeta\F2\局部\F2_006_嘴部.json	21264	嘴部六	
+34	5	data\public\FaceMeta\M1\局部\M1_006_嘴部.json	21299	嘴部六	
+34	6	data\public\FaceMeta\F1\局部\F1_006_嘴部.json	21334	嘴部六	
+35	1	data\public\FaceMeta\M2\局部\M2_007_嘴部.json	21230	嘴部七	
+35	2	data\public\FaceMeta\F2\局部\F2_007_嘴部.json	21265	嘴部七	
+35	5	data\public\FaceMeta\M1\局部\M1_007_嘴部.json	21300	嘴部七	
+35	6	data\public\FaceMeta\F1\局部\F1_007_嘴部.json	21335	嘴部七	
