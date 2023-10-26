@@ -7,7 +7,7 @@ Face	偏色颜色	Base	Color	2	1	1.0,1.0,1.0,1.0	0
 Face	闪粉 - Tint	LipFlashG	Color	-1	0	0.0,0.0,0.0,0.0	0
 Face	闪粉 - 开关（1为打开）	LipFlashG	Switch	-1	1	0.0,0.0,0.0,0.0	0
 Face	闪粉 - Tiling	LipFlashG	fParam1	2	0	0.0,0.0,0.0,0.0	0
-Face	闪粉 - Roughness	LipFlashG	fParam2	1	0	0.0,0.0,0.0,0.0	0
+Face	闪粉 - 密度	LipFlashG	fParam2	1	0	0.0,0.0,0.0,0.0	0
 Face	闪粉 - 强度	LipFlashG	fParam0	0	0	0.0,0.0,0.0,0.0	0
 Face	叠涂 - BaseColorTint	LipOverlapB	Color	-1	0	0.0,0.0,0.0,0.0	0
 Face	叠涂 - 开关（1为打开）	LipOverlapB	Switch	-1	1	0.0,0.0,0.0,0.0	0
@@ -62,10 +62,10 @@ Face	唇膏 - Roughness	LipGlossR	fParam0	1	0	0.0,0.0,0.0,0.0	0
 Face	唇部法线 - 强度	LipGlossR	fParam1	-1	0	0.0,0.0,0.0,0.0	0
 Face	唇膏 - ColorPure	LipGlossR	fParam2	0	0	0.0,0.0,0.0,0.0	0
 Face	detailNormal2 Strength	Base	fParam1	-1	1	0.2,0.0,0.0,0.0	0
-LeftEye	虹膜缩放	IrisLeft	fParam0	1	1	1.0,0.0,0.0,0.0	0
-RightEye	虹膜缩放	IrisRight	fParam0	1	1	1.0,0.0,0.0,0.0	0
-LeftEye	瞳孔缩放	IrisLeft	fParam1	2	1	0.2,0.0,0.0,0.0	0
-RightEye	瞳孔缩放	IrisRight	fParam1	2	1	0.2,0.0,0.0,0.0	0
+LeftEye	虹膜缩放	IrisLeft	fParam0	1	1	1.1,0.0,0.0,0.0	0
+RightEye	虹膜缩放	IrisRight	fParam0	1	1	1.1,0.0,0.0,0.0	0
+LeftEye	瞳孔缩放	IrisLeft	fParam1	2	1	0.3,0.0,0.0,0.0	0
+RightEye	瞳孔缩放	IrisRight	fParam1	2	1	0.3,0.0,0.0,0.0	0
 LeftEye	veinsSaturate	EyeWhiteLeft	fParam0	0	1	0.0,0.0,0.0,0.0	0
 LeftEye	veinsColor	EyeWhiteLeft	Color	-1	1	1.0,1.0,1.0,1.0	0
 RightEye	veinsSaturate	EyeWhiteRight	fParam0	0	1	0.0,0.0,0.0,0.0	0
