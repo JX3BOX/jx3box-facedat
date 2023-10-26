@@ -23,7 +23,7 @@
       <div class="c-facedat-group" v-show="active === 'contour'">
         <el-tabs v-model="subActive.contour" :type="tab_type">
           <el-tab-pane :label="item" :name="item" v-for="(item, index) in Object.keys(new_face_dict['轮廓'])" :key="index">
-            <ul class="u-list" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['轮廓'][item])" :key="itemIndex">
+            <ul class="u-list u-new" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['轮廓'][item])" :key="itemIndex">
               <template v-if="subItem === 'root'">
                 <li v-for="(key, i) in new_face_dict['轮廓'][item].root" :key="key + i">
                   <label  @click="clog(facedata['tBone'][key.BoneType])">{{ key.BoneName }}</label>
@@ -43,7 +43,7 @@
                   ></el-slider>
                 </li>
               </template>
-              <li v-if="subItem !== 'root'" class="u-sub-title"><label>{{subItem}}</label></li>
+              <li v-if="subItem !== 'root'" class="u-sub-title">{{subItem}}</li>
               <template v-if="subItem !== 'root'">
                 <li v-for="(key, i) in new_face_dict['轮廓'][item][subItem]" :key="i">
                   <label>{{ key.BoneName }}</label>
@@ -70,7 +70,7 @@
       <div class="c-facedat-group" v-show="active === 'eyebrow'">
         <el-tabs v-model="subActive.eyebrow" :type="tab_type">
           <el-tab-pane :label="item" :name="item" v-for="(item, index) in Object.keys(new_face_dict['眉毛'])" :key="index">
-            <ul class="u-list" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['眉毛'][item])" :key="itemIndex">
+            <ul class="u-list u-new" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['眉毛'][item])" :key="itemIndex">
               <template v-if="subItem === 'root'">
                 <li v-for="(key, i) in new_face_dict['眉毛'][item].root" :key="key + i">
                   <label  @click="clog(facedata['tBone'][key.BoneType])">{{ key.BoneName }}</label>
@@ -90,7 +90,7 @@
                   ></el-slider>
                 </li>
               </template>
-              <li v-if="subItem !== 'root'" class="u-sub-title"><label>{{subItem}}</label></li>
+              <li v-if="subItem !== 'root'" class="u-sub-title">{{subItem}}</li>
               <template v-if="subItem !== 'root'">
                 <li v-for="(key, i) in new_face_dict['眉毛'][item][subItem]" :key="i">
                   <label>{{ key.BoneName }}</label>
@@ -117,7 +117,7 @@
       <div class="c-facedat-group" v-show="active === 'eye'">
         <el-tabs v-model="subActive.eye" :type="tab_type">
           <el-tab-pane :label="item" :name="item" v-for="(item, index) in Object.keys(new_face_dict['眼部'])" :key="index">
-            <ul class="u-list" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['眼部'][item])" :key="itemIndex">
+            <ul class="u-list u-new" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['眼部'][item])" :key="itemIndex">
               <template v-if="subItem === 'root'">
                 <li v-for="(key, i) in new_face_dict['眼部'][item].root" :key="key + i">
                   <label  @click="clog(facedata['tBone'][key.BoneType])">{{ key.BoneName }}</label>
@@ -137,7 +137,7 @@
                   ></el-slider>
                 </li>
               </template>
-              <li v-if="subItem !== 'root'" class="u-sub-title"><label>{{subItem}}</label></li>
+              <li v-if="subItem !== 'root'" class="u-sub-title">{{subItem}}</li>
               <template v-if="subItem !== 'root'">
                 <li v-for="(key, i) in new_face_dict['眼部'][item][subItem]" :key="i">
                   <label>{{ key.BoneName }}</label>
@@ -163,7 +163,7 @@
       <div class="c-facedat-group" v-show="active === 'nose'">
         <el-tabs v-model="subActive.nose" :type="tab_type">
           <el-tab-pane :label="item" :name="item" v-for="(item, index) in Object.keys(new_face_dict['鼻子'])" :key="index">
-            <ul class="u-list" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['鼻子'][item])" :key="itemIndex">
+            <ul class="u-list u-new" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['鼻子'][item])" :key="itemIndex">
               <template v-if="subItem === 'root'">
                 <li v-for="(key, i) in new_face_dict['鼻子'][item].root" :key="key + i">
                   <label  @click="clog(facedata['tBone'][key.BoneType])">{{ key.BoneName }}</label>
@@ -183,7 +183,7 @@
                   ></el-slider>
                 </li>
               </template>
-              <li v-if="subItem !== 'root'" class="u-sub-title"><label>{{subItem}}</label></li>
+              <li v-if="subItem !== 'root'" class="u-sub-title">{{subItem}}</li>
               <template v-if="subItem !== 'root'">
                 <li v-for="(key, i) in new_face_dict['鼻子'][item][subItem]" :key="i">
                   <label>{{ key.BoneName }}</label>
@@ -209,7 +209,7 @@
       <div class="c-facedat-group" v-show="active === 'mouth'">
         <el-tabs v-model="subActive.mouth" :type="tab_type">
           <el-tab-pane :label="item" :name="item" v-for="(item, index) in Object.keys(new_face_dict['嘴部'])" :key="index">
-            <ul class="u-list" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['嘴部'][item])" :key="itemIndex">
+            <ul class="u-list u-new" v-for="(subItem, itemIndex) in Object.keys(new_face_dict['嘴部'][item])" :key="itemIndex">
               <template v-if="subItem === 'root'">
                 <li v-for="(key, i) in new_face_dict['嘴部'][item].root" :key="key + i">
                   <label  @click="clog(facedata['tBone'][key.BoneType])">{{ key.BoneName }}</label>
@@ -229,7 +229,7 @@
                   ></el-slider>
                 </li>
               </template>
-              <li v-if="subItem !== 'root'" class="u-sub-title"><label>{{subItem}}</label></li>
+              <li v-if="subItem !== 'root'" class="u-sub-title">{{subItem}}</li>
               <template v-if="subItem !== 'root'">
                 <li v-for="(key, i) in new_face_dict['嘴部'][item][subItem]" :key="i">
                   <label>{{ key.BoneName }}</label>
@@ -269,7 +269,11 @@
                       )
                     "
                       />
-                      {{  getNewDecal(subItem.DecalsType)?.name || subItem.ClassName }}
+                      {{  decalDb.getDecalName(
+                        subItem.DecalsType,
+                        facedata.tDecal[subItem.DecalsType]['nShowID'],
+                        true
+                    ) }}
                     </div>
                     <span class="u-dname">
 <!--                      增加一个 color图标-->
@@ -305,14 +309,16 @@
                         <template v-if="
                           decalDb.getDecalPrice(
                                 subItem.DecalsType,
-                                facedata.tDecal[subItem.DecalsType]['nShowID']
+                                facedata.tDecal[subItem.DecalsType]['nShowID'],
+                                true
                           )
                         ">
                         <i class="el-icon-coin"></i>
                         {{
                             decalDb.getDecalPrice(
                                 subItem.DecalsType,
-                                facedata.tDecal[subItem.DecalsType]['nShowID']
+                                facedata.tDecal[subItem.DecalsType]['nShowID'],
+                                true
                             )
                           }}
                         通宝</template>
@@ -765,7 +771,7 @@ export default {
         let facedata = this.data.object;
         this.decalDb = new DecalDatabase(this.client, facedata.bNewFace);
       },
-    },
+    }
   },
   methods: {
     // 数据构建

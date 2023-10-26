@@ -3,10 +3,17 @@ import _ from "lodash";
 import { __ossMirror, __iconPath } from "@jx3box/jx3box-common/data/jx3box.json";
 import dict from "../assets/data/face/dict.json";
 import group from "../assets/data/face/group.json";
-import v2_type from "../assets/data/newface/decal_v2.json"
+import decal_v2 from "../assets/data/newface/decal_v2.json"
+import decal_origin from "../assets/data/face/decal_origin.json"
+import decal_std from "../assets/data/face/decal_std.json"
+import decoration_std from "../assets/data/face/decoration_std.json"
+import decoration_origin from "../assets/data/face/decoration_origin.json"
+import decoration_v2 from "../assets/data/newface/decoration_v2.json"
+const files = {decoration_std, decoration_v2, decoration_origin,decal_origin,decal_std,decal_v2}
 export class DecalDatabase {
     _fetchWithCache(key, url, callback) {
         // 优先使用本地缓存
+        console.log(key)
         try {
             const local = sessionStorage.getItem(key);
             if (local) {
@@ -23,18 +30,19 @@ export class DecalDatabase {
                 try {
                     if (res.data) {
                         sessionStorage.setItem(key, JSON.stringify(res.data));
+                        callback(res.data);
                         return
                     }
                 }
                 catch { }
-                callback(res.data);
             });
         }
         catch {
-            callback("");
         }
         try {
-            sessionStorage.setItem(key, JSON.stringify(v2_type));
+            sessionStorage.setItem(key, JSON.stringify(files[key]));
+            callback(files[key]);
+            return
         }
         catch {
             callback("");
@@ -42,7 +50,7 @@ export class DecalDatabase {
     }
 
     ready() {
-        return this.decal && this.decoration;
+        return !!this.decal && !!this.decoration
     }
 
     setBodyType(bodyType) {
@@ -132,10 +140,16 @@ export class DecalDatabase {
 
     constructor(client = "std", v2 = false) {
         this.client = client;
-        this.decal = {};
-        this.decoration = {};
+        this.decal = null;
+        this.decoration = null;
         this.bodyType = 0;
-        this._fetchWithCache(`decal_${v2 ? 'v2' : client}`, `${__ossMirror}data/face/decal_${v2 ? 'v2' : client}.json`, r => this.decal = r);
-        this._fetchWithCache(`decoration_${client}`, `${__ossMirror}data/face/decoration_${client}.json`, r => this.decoration = r);
+        this._fetchWithCache(`decal_${v2 ? 'v2' : client}`,
+            `${__ossMirror}data/face/decal_${v2 ? 'v2' : client}.json`,
+                r => {
+            this.decal = r
+        });
+        this._fetchWithCache(`decoration_${v2 ? 'v2' : client}`,
+            `${__ossMirror}data/face/decoration_${v2 ? 'v2' : client}.json`,
+                r => this.decoration = r);
     }
 }
