@@ -144,12 +144,12 @@ export class DecalDatabase {
         this.decoration = null;
         this.bodyType = 0;
         this._fetchWithCache(`decal_${v2 ? 'v2' : client}`,
-            `${__ossMirror}data/face/decal_${v2 ? 'v2' : client}.json`,
+            `${__ossMirror}data/${v2 ? 'newface' : 'face'}/decal_${v2 ? 'v2' : client}.json`,
                 r => {
             this.decal = r
         });
         this._fetchWithCache(`decoration_${v2 ? 'v2' : client}`,
-            `${__ossMirror}data/face/decoration_${v2 ? 'v2' : client}.json`,
+            `${__ossMirror}data/${v2 ? 'newface' : 'face'}/decoration_${v2 ? 'v2' : client}.json`,
                 r => this.decoration = r);
     }
 }
