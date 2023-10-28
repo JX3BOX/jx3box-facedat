@@ -122,7 +122,8 @@ export class DecalDatabase {
             if (data["tDecal"][key])
                 sum += this.getDecalPrice(
                     key,
-                    data["tDecal"][key]["nShowID"]
+                    data["tDecal"][key]["nShowID"],
+                    v2
                 );
         }
         if (data["nDecorationID"])
@@ -143,13 +144,14 @@ export class DecalDatabase {
         this.decal = null;
         this.decoration = null;
         this.bodyType = 0;
+        this.v2 = v2;
         this._fetchWithCache(`decal_${v2 ? 'v2' : client}`,
-            `${__ossMirror}data/${v2 ? 'newface' : 'face'}/decal_${v2 ? 'v2' : client}.json`,
+            `${__ossMirror}data/face/decal_${v2 ? 'v2' : client}.json`,
                 r => {
             this.decal = r
         });
         this._fetchWithCache(`decoration_${v2 ? 'v2' : client}`,
-            `${__ossMirror}data/${v2 ? 'newface' : 'face'}/decoration_${v2 ? 'v2' : client}.json`,
+            `${__ossMirror}data/face/decoration_${v2 ? 'v2' : client}.json`,
                 r => this.decoration = r);
     }
 }
