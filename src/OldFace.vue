@@ -217,10 +217,12 @@
 import Slider from "./Slider.vue"
 import group from "../assets/data/face/group.json";
 import dict from "../assets/data/face/dict.json";
+import decal_group from "../assets/data/face/decal_group.json";
 import bone_range from "../assets/data/face/bone_range.json";
+import decal_default from "../assets/data/face/decal_default.json";
 export default {
     name: 'Jx3boxFacedatOldFace',   
-    props: ["facedata", "lock", "decalDb", "body_type", "cleandata", "clean"],
+    props: ["facedata", "lock", "decalDb", "body_type", "clean"],
     components: {
         Slider
     },
@@ -241,13 +243,35 @@ export default {
             bone_range,
         };
     },
-
+    computed: {
+      cleandata: function () {
+        if (this.clean && this.facedata) {
+          let _cleandata = _.cloneDeep(this.facedata);
+          _cleandata.nDecorationID = 0;
+          for (let key in _cleandata.tDecal) {
+            let CanUseInCreate = this.decalDb.getDecalIsFree(
+              key,
+              _cleandata.tDecal[key]["nShowID"]
+            );
+            console.log(CanUseInCreate);
+            if (!CanUseInCreate) {
+              _cleandata.tDecal[key]["nShowID"] = decal_default[key]["nShowID"];
+            }
+          }
+          return _cleandata;
+        } else {
+          return this.facedata;
+        }
+      }
+    },
     mounted() {
         console.log(bone_range[this.body_type]);
     },
-
+    
     methods: {
-        
+      checkdecal_prop: function (key) {
+        return decal_group.origin.includes(key);
+      },
     },
 };
 </script>

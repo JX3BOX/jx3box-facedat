@@ -329,8 +329,7 @@
             v-for="(item, index) in Object.keys(new_decal_group['妆容'])"
             :key="index"
           >
-            <template v-for="(subItem, itemIndex) in new_decal_group['妆容'][item]">
-              <ul :key="itemIndex" class="u-decals">
+              <ul v-for="(subItem, itemIndex) in new_decal_group['妆容'][item]" :key="itemIndex" class="u-decals">
                 <li v-if="facedata.tDecal[subItem.DecalsType].bUse">
                   <div class="u-title">
                     <img
@@ -412,7 +411,6 @@
                   </span>
                 </li>
               </ul>
-            </template>
           </el-tab-pane>
         </el-tabs>
         <div class="c-facedat-group">
@@ -436,7 +434,7 @@ import new_decal_group from "../assets/data/newface/decal.json";
 import new_decal_type from "../assets/data/newface/decal_v2.json";
 export default {
   name: "NewFace",
-  props: ["facedata", "lock", "decalDb", "body_type", "cleandata", "clean"],
+  props: ["facedata", "lock", "decalDb", "body_type", "clean"],
   components: {
     Slider,
   },
@@ -462,6 +460,28 @@ export default {
     console.log(this.decalDb);
   },
 
+  computed: {
+    cleandata: function () {
+      if (this.clean && this.facedata) {
+        let _cleandata = _.cloneDeep(this.facedata);
+        _cleandata.nDecorationID = 0;
+        for (let key in _cleandata.tDecal) {
+          let CanUseInCreate = this.decalDb.getDecalIsFree(
+            key,
+            _cleandata.tDecal[key]["nShowID"],
+            true
+          );
+          console.log(CanUseInCreate);
+          if (!CanUseInCreate) {
+            _cleandata.tDecal[key]["nShowID"] = decal_default[key]["nShowID"];
+          }
+        }
+        return _cleandata;
+      } else {
+        return this.facedata;
+      }
+    }
+  },
   methods: {},
 };
 </script>
