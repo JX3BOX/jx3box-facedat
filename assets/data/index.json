@@ -24,8 +24,8 @@
         "StandardMale": 1
     },
     "majorMap": {
-        "1": "origin",
-        "2": "std"
+        "1": "std",
+        "2": "origin"
     },
     "faceSubtype": {
         "1": "写实",
