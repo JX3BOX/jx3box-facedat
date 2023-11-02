@@ -8,6 +8,7 @@
               <el-radio-button class="u-filter" label="face">脸部轮廓</el-radio-button>
               <el-radio-button class="u-filter" label="decals">贴花</el-radio-button>
             </el-radio-group>
+          <slot></slot>
           </div>
           <div class="c-facedat-preivew">
             <div class="c-facedat-group" v-show="active === 'eye'">
@@ -112,7 +113,7 @@
                       <div class="u-title">
                         {{ dict[key]["desc"] }}
                       </div>
-      
+
                       <span class="u-dname"><img
                           class="u-pic"
                           :src="
@@ -142,7 +143,7 @@
                       >
                       <span
                           class="u-free"
-      
+
                       >
                           <template v-if="
                             decalDb.getDecalIsFree(
@@ -178,7 +179,7 @@
                 <ul class="u-decals">
                   <li>
                     <div class="u-title">装饰物</div>
-      
+
                     <span class="u-dname"><img
                         class="u-pic"
                         :src="decalDb.getDecorationIcon(cleandata['nDecorationID'])"
@@ -221,7 +222,7 @@ import decal_group from "../assets/data/face/decal_group.json";
 import bone_range from "../assets/data/face/bone_range.json";
 import decal_default from "../assets/data/face/decal_default.json";
 export default {
-    name: 'Jx3boxFacedatOldFace',   
+    name: 'Jx3boxFacedatOldFace',
     props: ["facedata", "lock", "decalDb", "body_type", "clean"],
     components: {
         Slider
@@ -267,7 +268,7 @@ export default {
     mounted() {
         console.log(bone_range[this.body_type]);
     },
-    
+
     methods: {
       checkdecal_prop: function (key) {
         return decal_group.origin.includes(key);
@@ -276,6 +277,39 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
 
+<style lang="less">
+.c-facedat-tab {
+  .mt(20px);
+  .mb(20px);
+  .u-filter {
+    white-space: nowrap;
+    vertical-align: middle;
+    .el-button,
+    .el-checkbox-button__inner,
+    .el-radio-button__inner {
+      .fz(16px, 33px);
+      padding: 0 20px 0 20px;
+      margin: 0 10px 0 10px;
+      .db;
+      .r(30px);
+      color: #8D8D8D;
+      border: 1px solid #fff;
+      background-color: #fff;
+      .bold(400);
+      &:hover {
+        color: #fff;
+        background-color: #6B52FF;
+        border-color: #6B52FF;
+        .bold(400);
+      }
+    }
+    .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+      background-color: #6B52FF;
+      border-color: #6B52FF;
+      color: #fff;
+      .bold(400);
+    }
+  }
+}
 </style>

@@ -9,6 +9,7 @@
         <el-radio-button class="u-filter" label="mouth">嘴部</el-radio-button>
         <el-radio-button class="u-filter" label="decals">妆容</el-radio-button>
       </el-radio-group>
+      <slot></slot>
     </div>
     <div class="c-facedat-preivew">
       <div class="c-facedat-group" v-show="active === 'contour'">
@@ -440,7 +441,7 @@ export default {
   },
   data() {
     return {
-      tab_type: "",
+      tab_type: "card",
       active: "contour",
       subActive: {
         mouth: "整体",
@@ -486,4 +487,73 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less">
+.c-facedat-tab {
+  .mt(20px);
+  .mb(20px);
+  .u-filter {
+    white-space: nowrap;
+    vertical-align: middle;
+    .el-button,
+    .el-checkbox-button__inner,
+    .el-radio-button__inner {
+      .fz(16px, 33px);
+      padding: 0 20px 0 20px;
+      margin: 0 10px 0 10px;
+      .db;
+      .r(30px);
+      color: #8D8D8D;
+      border: 1px solid #fff;
+      background-color: #fff;
+      .bold(400);
+      &:hover {
+        color: #fff;
+        background-color: #6B52FF;
+        border-color: #6B52FF;
+        .bold(400);
+      }
+    }
+    .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+      background-color: #6B52FF;
+      border-color: #6B52FF;
+      color: #fff;
+      .bold(400);
+    }
+  }
+}
+.el-tabs__header{
+  border-color: transparent !important;
+}
+.el-tabs__nav{
+  .w(100%);
+  border-color: transparent !important;
+  .el-tabs__item{
+    .size(64px, 30px);
+    .fz(14px, 30px);
+    margin: 0 10px 0 10px;
+    padding: 0px !important;
+    text-align: center;
+    .dbi;
+    .r(5px);
+    color: #8D8D8D;
+    border: 1px solid #f3f3f3 !important;
+    background-color: #f3f3f3;
+    .bold(400);
+    &:hover {
+      color: #fff;
+      background-color: #6B52FF;
+      border-color: #6B52FF;
+      .bold(400);
+    }
+    &.is-active{
+      color: #fff;
+      background-color: #6B52FF;
+      border-color: #6B52FF;
+      .bold(400);
+    }
+  }
+  &:after {
+    background-color: transparent !important;
+  }
+}
+</style>

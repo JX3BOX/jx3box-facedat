@@ -1,3 +1,8 @@
+.c-facedat-preivew{
+    background-color: #fff;
+    .r(10px);
+    padding: 10px;
+}
 .c-facedat-group {
     .u-title {
         .fz(15px, 2);
@@ -23,7 +28,8 @@
             .h(24px);
             .fz(12px, 24px);
             .r(5px);
-            padding-left: 10px;
+            padding: 0 0 0 10px;
+            color: #6f6f6f;
             background: #E8E8E880;
             .bold(700)
         }
@@ -37,7 +43,7 @@
             .mr(10px);
             font-weight: normal;
             .w(80px);
-            color: #666;
+            color: #000;
         }
         .x(right);
         input,.u-range {
@@ -61,16 +67,13 @@
             label{
                 .w(40px);
             }
-            span {
-                .w(30px);
-            }
         }
     }
     .u-decals {
         list-style: none;
         padding: 0 0 0 10px;
         margin-bottom: 10px;
-        background: #4796FF0D;
+        background: #6B52FF0D;
         li {display: flex;         height: 50px;}
         img {
             .size(32px);
@@ -92,7 +95,7 @@
                 &:nth-child(2){width: 28px; color: #3374DB}
             }
         }
-        .u-title,.u-dname,.u-dflip,.u-dcolor,.u-free,.u-price{
+        .u-title,.u-dname,.u-dflip,.u-dcolor,.u-free{
             flex: 1;
             line-height: 50px;
         }
@@ -101,8 +104,11 @@
             color:#49c10f;
         }
         .u-price{
-            .fz(12px);
+            .fz(12px, 50px);
+            .w(100px);
+            .mr(10px);
             color:#fba524;
+            text-align: right;
         }
         .u-dcolor{
             .fz(12px);
@@ -123,7 +129,31 @@
     }
 }
 
-
+.u-clean-button{
+    float: right;
+    .fz(16px, 33px);
+    padding: 0 20px 0 20px;
+    margin: 0 10px 0 10px;
+    .db;
+    .r(5px);
+    color: #8D8D8D;
+    border: 1px solid #fff;
+    background-color: #fff;
+    .bold(400);
+    cursor: pointer;
+    &.active {
+        color: #fff;
+        background-color: #6B52FF;
+        border-color: #6B52FF;
+        .bold(400);
+    }
+    &:hover{
+        color: #fff;
+        background-color: #6B52FF;
+        border-color: #6B52FF;
+        .bold(400);
+    }
+}
 .c-facedat-btns{
     .x;
     .mt(20px);

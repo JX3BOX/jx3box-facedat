@@ -33,13 +33,14 @@ export default {
     sliderStyle () {
       const height = this.height;
       if (Math.abs(this.center - this.value) < 1){
-        return `width:  ${height}px !important; left: calc(50% - ${1 / 2 * height}px) !important;background: linear-gradient(89.73deg, #C2DAFF 0.23%, #3374DB 100%);border-radius: 10px;`
+        return `width:  ${height}px !important; left: calc(50% - ${1 / 2 * height}px) !important;background: #6B52FF;border-radius: 10px;`
       } else if (this.center - this.value < 0){
         const width = (this.value - this.center) / (this.max - this.min)
-        return `width:  calc(${width * 100}% - ${2 / 5 * height + 1 / 2 * height}px) !important; left: calc(50% + ${2 / 5 * height + 1 / 2 * height}px) !important;background: linear-gradient(89.73deg, #C2DAFF 0.23%, #3374DB 100%);border-radius: 10px;`
+        return `width:  calc(${width * 100}% - ${2 / 5 * height + 1 / 2 * height}px) !important; left: calc(50% + ${2 / 5 * height + 1 / 2 * height}px) !important;background: linear-gradient(89.73deg, #C2DAFF 0.23%, rgba(107, 82, 255, 0.1) 0.24%, #6B52FF 100%);border-radius: 10px;`
       } else if (this.center - this.value > 0)  {
         const width = (this.center - this.value) / (this.max - this.min)
-        return `width: calc(${width * 100}% - ${2 / 5 * height + 1 / 2 * height}px) !important; left: ${50 - width * 100}% !important;background: linear-gradient(89.73deg, #3374DB 0.23%, #C2DAFF 100%);border-radius: 10px;`
+        return `width: calc(${width * 100}% - ${2 / 5 * height + 1 / 2 * height}px) !important; left: ${50 - width * 100}% !important;background: linear-gradient(89.73deg, #6B52FF 0.23%, rgba(107, 82, 255, 0.1) 100%);border-radius: 10px;`
+
       }
       return '';
     }

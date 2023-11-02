@@ -8,7 +8,8 @@
       :lock="lock"
       :decalDb="decalDb"
       v-if="decalDb && facedata.bNewFace"
-    ></NewFace>
+    >
+    </NewFace>
     <OldFace
       :facedata="facedata"
       :body_type="body_type"
@@ -17,23 +18,25 @@
       :lock="lock"
       :decalDb="decalDb"
       v-if="decalDb && !facedata.bNewFace"
-    ></OldFace>
-    <div class="c-facedat-setting">
-      <el-form
-        class="c-facedat-setting-form"
-        ref="form"
-        label-width="80px"
-        label-position="left"
-      >
-        <el-form-item label="高级">
-          <el-checkbox v-model="clean">清洗模式</el-checkbox>
-          <span class="u-warning">
-            <i class="el-icon-warning-outline"></i>
-            仅保留创建新角色时可用项，如提示非法数据也请尝试开启该模式
-          </span>
-        </el-form-item>
-      </el-form>
-    </div>
+    >
+      <div class="u-clean-button" :class="clean ? 'active' : ''" @click="clean = !clean;">清洗模式</div>
+    </OldFace>
+<!--    <div class="c-facedat-setting">-->
+<!--      <el-form-->
+<!--        class="c-facedat-setting-form"-->
+<!--        ref="form"-->
+<!--        label-width="80px"-->
+<!--        label-position="left"-->
+<!--      >-->
+<!--        <el-form-item label="高级">-->
+<!--          <el-checkbox v-model="clean">清洗模式</el-checkbox>-->
+<!--          <span class="u-warning">-->
+<!--            <i class="el-icon-warning-outline"></i>-->
+<!--            仅保留创建新角色时可用项，如提示非法数据也请尝试开启该模式-->
+<!--          </span>-->
+<!--        </el-form-item>-->
+<!--      </el-form>-->
+<!--    </div>-->
     <div class="c-facedat-btns">
       <el-button
         class="u-btn"
@@ -323,32 +326,5 @@ export default {
 
 <style lang="less">
 @import "../assets/css/facedat.less";
-.c-facedat-tab {
-  .mt(20px);
-  .mb(20px);
-  .u-filter {
-    white-space: nowrap;
-    vertical-align: middle;
-    .el-button,
-    .el-checkbox-button__inner,
-    .el-radio-button__inner {
-      .fz(16px, 33px);
-      padding: 0 20px 0 20px;
-      margin: 0 10px 0 10px;
-      .db;
-      .r(30px);
-      border: 1px solid #dcdfe6;
-      background-color: #e1dfdf;
-      &:hover {
-        color: #fff;
-        background-color: #3374db;
-        border-color: #3374db;
-      }
-    }
-    .el-radio-button__orig-radio:checked + .el-radio-button__inner {
-      background-color: #3374db;
-      border-color: #3374db;
-    }
-  }
-}
+
 </style>
