@@ -127,7 +127,7 @@ export class DecalDatabase {
                 );
         }
         if (data["nDecorationID"])
-            sum += this.showDecorationPrice(this.cleandata["nDecorationID"]);
+            sum += this.showDecorationPrice(data["nDecorationID"]);
         return sum;
     }
     canUseInCreate(data) {
