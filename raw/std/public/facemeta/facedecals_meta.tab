@@ -1440,7 +1440,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	7	12	data\source\Texture\face_meta\贴花2021年_雪花.tga		520	361	128	128	1	0	512	1	1	0	0	0	0	0	0	
 5	7	13	data\source\Texture\face_meta\贴花2021年_狐狸.tga		208	356	128	128	0	0	512	1	1	0	0	0	0	0	0	
 5	7	14	data\source\Texture\face_meta\贴花2021年_梅花鹿.tga		208	337	128	128	0	0	512	1	1	0	0	0	0	0	0	
-5	7	15	data\source\Texture\face_meta\贴花2021年1月2104_儿童节_海浪.tga		283	392	128	128	0	0	0	1	0	0	1	0	0	0	0	
+5	7	15	data\source\Texture\face_meta\贴花2021年1月2104_儿童节_海浪.tga		283	392	128	128	0	0	0	1	0	0	0	0	0	0	0	
 5	7	16	data\source\Texture\face_meta\贴花2021年1月2102.tga		253	398	128	128	0	0	0	1	1	0	0	1	0	0	0	
 5	7	17	data\source\Texture\face_meta\贴花2020年6月11014.tga		513	361	128	128	1	0	512	1	1	0	0	1	0	0	0	
 5	7	18	data\source\Texture\face_meta\贴花_战损妆容.tga		301	373	128	128	0	0	0	1	0	0	0	0	0	0	0	
