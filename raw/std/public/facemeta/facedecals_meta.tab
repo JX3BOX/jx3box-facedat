@@ -37,6 +37,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	1	31	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_030.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 1	1	32	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_031.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 1	1	33	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_032.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
+1	1	34	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_033.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 1	2	1	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_001.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 1	2	2	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_001.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 1	2	3	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_002.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
@@ -70,6 +71,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	2	31	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_030.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 1	2	32	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_031.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 1	2	33	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_032.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
+1	2	34	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_033.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 1	3	1	data\source\player\M2\部件\M2裸体模型\facemeta\M2_meta眉毛_001.tga		512	333	256	128	1	0	512	1	0	0	1	1	0	0	0	
 1	3	2	data\source\player\M2\部件\M2裸体模型\facemeta\M2_meta眉毛_001.tga		512	333	256	128	1	0	512	1	0	0	1	1	0	0	0	
 1	3	3	data\source\player\M2\部件\M2裸体模型\facemeta\M2_meta眉毛_002.tga		512	333	256	128	1	0	512	1	0	0	1	1	0	0	0	
@@ -656,6 +658,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	1	31	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_030.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 2	1	32	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_031.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 2	1	33	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_032.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
+2	1	34	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_033.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 2	2	1	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_001.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 2	2	2	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_001.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 2	2	3	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_002.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
@@ -689,6 +692,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	2	31	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_030.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 2	2	32	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_031.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 2	2	33	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_032.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
+2	2	34	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_033.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 2	3	1	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta眉毛_001.tga		512	333	256	128	1	0	512	1	0	0	1	1	0	0	0	
 2	3	2	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta眉毛_001.tga		512	333	256	128	1	0	512	1	0	0	1	1	0	0	0	
 2	3	3	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta眉毛_002.tga		512	333	256	128	1	0	512	1	0	0	1	1	0	0	0	
@@ -1305,6 +1309,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	1	31	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_030.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 5	1	32	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_031.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 5	1	33	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_032.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
+5	1	34	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_033.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 5	2	1	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_001.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 5	2	2	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_001.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 5	2	3	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_002.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
@@ -1338,6 +1343,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	2	31	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_030.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 5	2	32	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_031.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 5	2	33	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_032.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
+5	2	34	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_033.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 5	3	1	data\source\player\M1\部件\M1裸体模型\facemeta\M1_meta眉毛_001.tga		524	404	256	128	1	0	512	1	0	0	1	1	0	0	0	
 5	3	2	data\source\player\M1\部件\M1裸体模型\facemeta\M1_meta眉毛_001.tga		524	404	256	128	1	0	512	1	0	0	1	1	0	0	0	
 5	3	3	data\source\player\M1\部件\M1裸体模型\facemeta\M1_meta眉毛_002.tga		524	412	256	128	1	0	512	1	0	0	1	1	0	0	0	
@@ -1901,6 +1907,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 6	1	31	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_030.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 6	1	32	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_031.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 6	1	33	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_032.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
+6	1	34	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_033.tga		128	128	256	256	0	0	0	1	0	0	1	0	0	0	0	
 6	2	1	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_001.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 6	2	2	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_001.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 6	2	3	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_002.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
@@ -1934,6 +1941,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 6	2	31	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_030.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 6	2	32	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_031.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 6	2	33	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_032.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
+6	2	34	data\source\player\F2\部件\F2裸体模型\facemeta\F2_meta瞳孔_033.tga		128	128	256	256	0	0	0	1	0	0	0	0	0	0	0	
 6	3	1	data\source\player\F1\部件\F1裸体模型\facemeta\F1_meta眉毛_001.tga		524	404	256	128	1	0	512	1	0	0	1	1	0	0	0	
 6	3	2	data\source\player\F1\部件\F1裸体模型\facemeta\F1_meta眉毛_001.tga		524	404	256	128	1	0	512	1	0	0	1	1	0	0	0	
 6	3	3	data\source\player\F1\部件\F1裸体模型\facemeta\F1_meta眉毛_002.tga		524	404	256	128	1	0	512	1	0	0	1	1	0	0	0	

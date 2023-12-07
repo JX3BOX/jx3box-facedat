@@ -355,6 +355,12 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	9	222	data\source\Texture\face\贴花2023年10月_国风01.tga	2023贴花国风01	616	211	311	305	0	0	256	1	0	0	
 1	9	223	data\source\Texture\face\贴花2023年10月_西游01.tga	2023贴花西游01	674	223	188	111	0	0	256	1	0	0	
 1	9	224	data\source\Texture\face\贴花2023年10月_西游02.tga	2023贴花西游02	615	208	311	205	0	0	256	1	0	0	
+1	9	225	data\source\Texture\face\贴花2023年_8月2211.tga	2023贴花8月01	613	147	311	250	0	0	256	1	0	0	
+1	9	226	data\source\Texture\face\贴花2023年_8月2211.tga	2023贴花8月01_翻转	613	147	311	250	0	0	256	1	0	1	
+1	9	227	data\source\Texture\face\贴花2023年_8月2212.tga	2023贴花8月02	603	165	311	250	0	0	256	1	0	0	
+1	9	228	data\source\Texture\face\贴花2023年_8月2212.tga	2023贴花8月02_翻转	603	165	311	250	0	0	256	1	0	1	
+1	9	229	data\source\Texture\face\贴花2023年_8月2213.tga	2023贴花8月03	623	139	311	250	0	0	256	1	0	0	
+1	9	230	data\source\Texture\face\贴花2023年_8月2213.tga	2023贴花8月03_翻转	623	139	311	250	0	0	256	1	0	1	
 1	10	1	data\source\player\M2\部件\Texture\face\M2_偏光_001.tga	闪点1	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\Noise_mask_01.tga
 1	10	2	data\source\player\M2\部件\Texture\face\M2_偏光_001.tga	闪点2	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\noise_mask_02.tga
 1	10	3	data\source\player\M2\部件\Texture\face\M2_偏光_001.tga	闪点3	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\noise_mask_03.tga
@@ -784,6 +790,12 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	9	213	data\source\Texture\face\贴花2023年10月_国风01.tga	2023贴花国风01	617	199	311	305	0	0	256	1	0	0	
 2	9	214	data\source\Texture\face\贴花2023年10月_西游01.tga	2023贴花西游01	672	198	188	111	0	0	256	1	0	0	
 2	9	215	data\source\Texture\face\贴花2023年10月_西游02.tga	2023贴花西游02	613	197	311	205	0	0	256	1	0	0	
+2	9	216	data\source\Texture\face\贴花2023年_8月2211.tga	2023贴花8月01	616	139	311	250	0	0	256	1	0	0	
+2	9	217	data\source\Texture\face\贴花2023年_8月2211.tga	2023贴花8月01_翻转	616	139	311	250	0	0	256	1	0	1	
+2	9	218	data\source\Texture\face\贴花2023年_8月2212.tga	2023贴花8月02	616	139	311	250	0	0	256	1	0	0	
+2	9	219	data\source\Texture\face\贴花2023年_8月2212.tga	2023贴花8月02_翻转	616	139	311	250	0	0	256	1	0	1	
+2	9	220	data\source\Texture\face\贴花2023年_8月2213.tga	2023贴花8月03	616	130	311	250	0	0	256	1	0	0	
+2	9	221	data\source\Texture\face\贴花2023年_8月2213.tga	2023贴花8月03_翻转	616	130	311	250	0	0	256	1	0	1	
 2	10	1	data\source\player\F2\部件\Texture\face\F2_偏光_001.tga	测试闪点	0	192	512	512	0	0	256	1	0	0	data\material\Material\Texture\FaceTexture\Noise_mask.TGA
 2	10	2	data\source\player\F2\部件\Texture\face\F2_偏光_001.tga	闪点1	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\Noise_mask_01.tga
 2	10	3	data\source\player\F2\部件\Texture\face\F2_偏光_001.tga	闪点2	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\noise_mask_02.tga
@@ -1213,6 +1225,12 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	9	214	data\source\Texture\face\贴花2023年10月_国风01.tga	2023贴花国风01	618	199	311	305	0	0	256	1	0	0	
 5	9	215	data\source\Texture\face\贴花2023年10月_西游01.tga	2023贴花西游01	674	224	188	111	0	0	256	1	0	0	
 5	9	216	data\source\Texture\face\贴花2023年10月_西游02.tga	2023贴花西游02	615	216	311	205	0	0	256	1	0	0	
+5	9	217	data\source\Texture\face\贴花2023年_8月2211.tga	2023贴花8月01	615	167	311	250	0	0	256	1	0	0	
+5	9	218	data\source\Texture\face\贴花2023年_8月2211.tga	2023贴花8月01_翻转	615	167	311	250	0	0	256	1	0	1	
+5	9	219	data\source\Texture\face\贴花2023年_8月2212.tga	2023贴花8月02	615	167	311	250	0	0	256	1	0	0	
+5	9	220	data\source\Texture\face\贴花2023年_8月2212.tga	2023贴花8月02_翻转	615	167	311	250	0	0	256	1	0	1	
+5	9	221	data\source\Texture\face\贴花2023年_8月2213.tga	2023贴花8月03	615	157	311	250	0	0	256	1	0	0	
+5	9	222	data\source\Texture\face\贴花2023年_8月2213.tga	2023贴花8月03_翻转	615	157	311	250	0	0	256	1	0	1	
 5	10	1	data\source\player\M1\部件\Texture\face\M1_偏光_001.tga	闪点1	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\Noise_mask_01.tga
 5	10	2	data\source\player\M1\部件\Texture\face\M1_偏光_001.tga	闪点2	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\noise_mask_02.tga
 5	10	3	data\source\player\M1\部件\Texture\face\M1_偏光_001.tga	闪点3	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\noise_mask_03.tga
@@ -1636,6 +1654,12 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 6	9	211	data\source\Texture\face\贴花2023年10月_国风01.tga	2023贴花国风01	618	194	311	305	0	0	256	1	0	0	
 6	9	212	data\source\Texture\face\贴花2023年10月_西游01.tga	2023贴花西游01	674	204	188	111	0	0	256	1	0	0	
 6	9	213	data\source\Texture\face\贴花2023年10月_西游02.tga	2023贴花西游02	614	202	311	205	0	0	256	1	0	0	
+6	9	214	data\source\Texture\face\贴花2023年_8月2211.tga	2023贴花8月01	614	150	311	150	0	0	256	1	0	0	
+6	9	215	data\source\Texture\face\贴花2023年_8月2211.tga	2023贴花8月01_翻转	614	150	311	150	0	0	256	1	0	1	
+6	9	216	data\source\Texture\face\贴花2023年_8月2212.tga	2023贴花8月02	614	150	311	150	0	0	256	1	0	0	
+6	9	217	data\source\Texture\face\贴花2023年_8月2212.tga	2023贴花8月02_翻转	614	150	311	150	0	0	256	1	0	1	
+6	9	218	data\source\Texture\face\贴花2023年_8月2213.tga	2023贴花8月03	614	142	311	150	0	0	256	1	0	0	
+6	9	219	data\source\Texture\face\贴花2023年_8月2213.tga	2023贴花8月03_翻转	614	142	311	150	0	0	256	1	0	1	
 6	10	1	data\source\player\F1\部件\Texture\face\F1_偏光_001.tga	闪点1	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\Noise_mask_01.tga
 6	10	2	data\source\player\F1\部件\Texture\face\F1_偏光_001.tga	闪点2	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\noise_mask_02.tga
 6	10	3	data\source\player\F1\部件\Texture\face\F1_偏光_001.tga	闪点3	0	192	512	512	0	0	256	1	0	0	data\material\Texture\FaceTexture\noise_mask_03.tga
