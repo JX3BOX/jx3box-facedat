@@ -19,7 +19,7 @@
       :decalDb="decalDb"
       v-if="decalDb && !facedata.bNewFace"
     >
-      <div class="u-clean-button" :class="clean ? 'active' : ''" @click="clean = !clean;">清洗模式</div>
+      <div class="u-clean-button" @click="clean = true;visible = !visible">数据清洗</div>
     </OldFace>
 <!--    <div class="c-facedat-setting">-->
 <!--      <el-form-->
@@ -37,22 +37,26 @@
 <!--        </el-form-item>-->
 <!--      </el-form>-->
 <!--    </div>-->
-    <div class="c-facedat-btns">
-      <el-button
-        class="u-btn"
-        type="primary"
-        @click="buildData('std')"
-        icon="el-icon-receiving"
-        >导出正式服</el-button
-      >
-      <el-button
-        class="u-btn"
-        type="warning"
-        @click="buildData('origin')"
-        icon="el-icon-receiving"
-        >导出怀旧服</el-button
-      >
-    </div>
+      <el-dialog
+          title="数据清洗"
+          :visible.sync="visible"
+          @close="clean = false"
+          width="30%">
+          <el-button
+              class="u-btn"
+              type="primary"
+              @click="buildData('std')"
+              icon="el-icon-receiving"
+          >导出正式服</el-button
+          >
+          <el-button
+              class="u-btn"
+              type="warning"
+              @click="buildData('origin')"
+              icon="el-icon-receiving"
+          >导出怀旧服</el-button
+          >
+      </el-dialog>
   </div>
 </template>
 
@@ -96,7 +100,7 @@ export default {
       // 数据
       body_type: "",
       facedata: "",
-
+        visible: false,
       // 骨骼
 
       // 妆容
