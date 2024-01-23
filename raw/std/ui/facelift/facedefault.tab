@@ -40,6 +40,9 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 1	Data\public\Face\M2\M2_053.ini	10705			0	1
 1	Data\public\Face\M2\M2_054.ini	10706			0	1
 2	Data\public\Face\F2\F2_0045.ini	10683	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+2	Data\public\Face\F2\F2_074.ini	21756	by西一欧咻		0	0
+2	Data\public\Face\F2\F2_075.ini	21757	by西一欧咻		0	0
+2	Data\public\Face\F2\F2_076.ini	21758	by西一欧咻		0	0
 2	Data\public\Face\F2\F2_072.ini	18637			0	0
 2	Data\public\Face\F2\F2_073.ini	18638			0	0
 2	Data\public\Face\F2\F2_070.ini	17538			0	0
@@ -120,6 +123,8 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 5	Data\public\Face\M1\M1_053.ini	10676			0	1
 5	Data\public\Face\M1\M1_054.ini	10677			0	1
 6	Data\public\Face\F1\F1_043.ini	10651	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+6	Data\public\Face\F1\F1_072.ini	21759	by雀翎少主		0	0
+6	Data\public\Face\F1\F1_073.ini	21760	by糯猪猪		0	0
 6	Data\public\Face\F1\F1_070.ini	18635			0	0
 6	Data\public\Face\F1\F1_071.ini	18636			0	0
 6	Data\public\Face\F1\F1_068.ini	17540			0	0
@@ -145,7 +150,7 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 6	Data\public\Face\F1\F1_039.ini	10101	酸溜溜by警觉的秀萝大哥	2018年“大美江湖”全民征集活动名扬天下奖	0	0
 6	Data\public\Face\F1\F1_031.ini	9933	青黛by清蒸蒸QwQ（二等奖)	寄语：青黛画眉红锦靴，道字不正娇唱歌。玳瑁筵中怀里醉，芙蓉帐底奈君何。	0	0
 6	Data\public\Face\F1\F1_032.ini	9934	圆嘟嘟by慢慢的粉条君（三等奖）	寄语： 这是一个小圆脸的萝莉，乖巧可爱，很有特色。虽然脸超圆，但谁让她是圆嘟嘟呢！	0	0
-6	Data\public\Face\F1\F1_033.ini	9935	雪见by三次元才不绝望呢（三等奖) 	寄语：雪见是十一月的别称，到了这时候天地间会突然变的寂静，有种在等待一场大雪的感觉。	0	0
+6	Data\public\Face\F1\F1_033.ini	9935	雪见by三次元才不绝望呢（三等奖)	寄语：雪见是十一月的别称，到了这时候天地间会突然变的寂静，有种在等待一场大雪的感觉。	0	0
 6	Data\public\Face\F1\F1_040.ini	10648			0	1
 6	Data\public\Face\F1\F1_041.ini	10649			0	1
 6	Data\public\Face\F1\F1_042.ini	10650			0	1

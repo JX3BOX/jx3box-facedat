@@ -1,8 +1,8 @@
 RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 0					0	1
-1	data\public\FaceMeta\M2\M2_001.json	21136	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+1	data\public\FaceMeta\M2\M2_003.json	21138	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+1	data\public\FaceMeta\M2\M2_001.json	21136				
 1	data\public\FaceMeta\M2\M2_002.json	21137	by渊持			
-1	data\public\FaceMeta\M2\M2_003.json	21138	by渊持			
 1	data\public\FaceMeta\M2\M2_004.json	21139	by夜醉风			
 1	data\public\FaceMeta\M2\M2_005.json	21140	by夜醉风			
 1	data\public\FaceMeta\M2\M2_006.json	21141	by夜醉风			
@@ -15,6 +15,26 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 1	data\public\FaceMeta\M2\M2_013.json	21148	by夜醉风			
 1	data\public\FaceMeta\M2\M2_014.json	21149	by夜醉风			
 1	data\public\FaceMeta\M2\M2_015.json	21150	by妧九			
+1	data\public\FaceMeta\M2\M2_016.json	21761	by夺月			
+1	data\public\FaceMeta\M2\M2_017.json	21762	by夺月			
+1	data\public\FaceMeta\M2\M2_018.json	21763	by秦未谙			
+1	data\public\FaceMeta\M2\M2_019.json	21764	by秦未谙			
+1	data\public\FaceMeta\M2\M2_020.json	21765	by星河浮霁			
+1	data\public\FaceMeta\M2\M2_021.json	21766	by雨弑			
+1	data\public\FaceMeta\M2\M2_022.json	21767	by雨弑			
+1	data\public\FaceMeta\M2\M2_023.json	21768	by雨弑			
+1	data\public\FaceMeta\M2\M2_024.json	21769	by雨弑			
+1	data\public\FaceMeta\M2\M2_025.json	21770	by夜醉风			
+1	data\public\FaceMeta\M2\M2_026.json	21771	by夜醉风			
+1	data\public\FaceMeta\M2\M2_027.json	21772	by夜醉风			
+1	data\public\FaceMeta\M2\M2_028.json	21773	by夜醉风			
+1	data\public\FaceMeta\M2\M2_029.json	21774	by猫英俊			
+1	data\public\FaceMeta\M2\M2_030.json	21775	by西岭			
+1	data\public\FaceMeta\M2\M2_031.json	21776	by一块喵酥			
+1	data\public\FaceMeta\M2\M2_032.json	21777	by君安雪词			
+1	data\public\FaceMeta\M2\M2_033.json	21778	by池大狗			
+1	data\public\FaceMeta\M2\M2_034.json	21779	byme非我			
+1	data\public\FaceMeta\M2\M2_035.json	21780	by氙猫			
 2	data\public\FaceMeta\F2\F2_001.json	21151	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
 2	data\public\FaceMeta\F2\F2_002.json	21152	by烟夕罗			
 2	data\public\FaceMeta\F2\F2_003.json	21153	by烟夕罗			
@@ -30,6 +50,26 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 2	data\public\FaceMeta\F2\F2_013.json	21163	by夺月			
 2	data\public\FaceMeta\F2\F2_014.json	21164	by夺月			
 2	data\public\FaceMeta\F2\F2_015.json	21165	by夺月			
+2	data\public\FaceMeta\F2\F2_016.json	21781	by夺月			
+2	data\public\FaceMeta\F2\F2_017.json	21782	by夺月			
+2	data\public\FaceMeta\F2\F2_018.json	21783	by夺月			
+2	data\public\FaceMeta\F2\F2_019.json	21784	by夺月			
+2	data\public\FaceMeta\F2\F2_020.json	21785	by夺月			
+2	data\public\FaceMeta\F2\F2_021.json	21786	bycall酱			
+2	data\public\FaceMeta\F2\F2_022.json	21787	by君安雪词			
+2	data\public\FaceMeta\F2\F2_023.json	21788	by君安雪词			
+2	data\public\FaceMeta\F2\F2_024.json	21789	by妧九			
+2	data\public\FaceMeta\F2\F2_025.json	21790	by妧九			
+2	data\public\FaceMeta\F2\F2_026.json	21791	by烟夕罗			
+2	data\public\FaceMeta\F2\F2_027.json	21792	by烟夕罗			
+2	data\public\FaceMeta\F2\F2_028.json	21793	by银光照长夜			
+2	data\public\FaceMeta\F2\F2_029.json	21794	by银光照长夜			
+2	data\public\FaceMeta\F2\F2_030.json	21795	by星河浮霁			
+2	data\public\FaceMeta\F2\F2_031.json	21796	by花呜呜			
+2	data\public\FaceMeta\F2\F2_032.json	21797	by麻酱裹肥羊羊羊			
+2	data\public\FaceMeta\F2\F2_033.json	21798	by妄海汲遥			
+2	data\public\FaceMeta\F2\F2_034.json	21799	by要五块盐酥叽			
+2	data\public\FaceMeta\F2\F2_035.json	21800	by三涧雾			
 5	data\public\FaceMeta\M1\M1_001.json	21166	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
 5	data\public\FaceMeta\M1\M1_002.json	21167	by清肆			
 5	data\public\FaceMeta\M1\M1_003.json	21168	by清肆			
@@ -45,6 +85,25 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 5	data\public\FaceMeta\M1\M1_013.json	21178	by妧九			
 5	data\public\FaceMeta\M1\M1_014.json	21179	by妧九			
 5	data\public\FaceMeta\M1\M1_015.json	21180	by妧九			
+5	data\public\FaceMeta\M1\M1_016.json	21801	by雨弑			
+5	data\public\FaceMeta\M1\M1_017.json	21802	by陆短腿			
+5	data\public\FaceMeta\M1\M1_018.json	21803	by三涧雾			
+5	data\public\FaceMeta\M1\M1_019.json	21804	by陆短腿			
+5	data\public\FaceMeta\M1\M1_020.json	21805	by陆短腿			
+5	data\public\FaceMeta\M1\M1_021.json	21806	by陆短腿			
+5	data\public\FaceMeta\M1\M1_022.json	21807	by汪仔雪饼snowcake			
+5	data\public\FaceMeta\M1\M1_023.json	21808	by境一			
+5	data\public\FaceMeta\M1\M1_024.json	21809	by兔子头呵呵哒			
+5	data\public\FaceMeta\M1\M1_025.json	21810	by兔子头呵呵哒			
+5	data\public\FaceMeta\M1\M1_026.json	21811	by兔子头呵呵哒			
+5	data\public\FaceMeta\M1\M1_027.json	21812	by木佑几几几几			
+5	data\public\FaceMeta\M1\M1_028.json	21813	by流浪屠屠			
+5	data\public\FaceMeta\M1\M1_029.json	21814	by米子稻			
+5	data\public\FaceMeta\M1\M1_030.json	21815	by有鹿听寒			
+5	data\public\FaceMeta\M1\M1_031.json	21816	by稀有苹果派			
+5	data\public\FaceMeta\M1\M1_032.json	21817	by要五块盐酥叽			
+5	data\public\FaceMeta\M1\M1_033.json	21818	by暮松大哥			
+5	data\public\FaceMeta\M1\M1_034.json	21819	by清清清野			
 6	data\public\FaceMeta\F1\F1_001.json	21181	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
 6	data\public\FaceMeta\F1\F1_002.json	21182	by糯猪猪			
 6	data\public\FaceMeta\F1\F1_003.json	21183	by糯猪猪			
@@ -60,3 +119,23 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 6	data\public\FaceMeta\F1\F1_013.json	21193	by月舟			
 6	data\public\FaceMeta\F1\F1_014.json	21194	by仙草			
 6	data\public\FaceMeta\F1\F1_015.json	21195	by夺月			
+6	data\public\FaceMeta\F1\F1_016.json	21820	by夺月			
+6	data\public\FaceMeta\F1\F1_017.json	21821	by夺月			
+6	data\public\FaceMeta\F1\F1_018.json	21822	by夺月			
+6	data\public\FaceMeta\F1\F1_019.json	21823	by书中寻鹤仙			
+6	data\public\FaceMeta\F1\F1_020.json	21824	byKirara绵绵冰			
+6	data\public\FaceMeta\F1\F1_021.json	21825	by糯猪猪			
+6	data\public\FaceMeta\F1\F1_022.json	21826	by糯猪猪			
+6	data\public\FaceMeta\F1\F1_023.json	21827	by糯猪猪			
+6	data\public\FaceMeta\F1\F1_024.json	21828	by吗喽烧酒			
+6	data\public\FaceMeta\F1\F1_025.json	21829	by妧九			
+6	data\public\FaceMeta\F1\F1_026.json	21830	by素语清禅			
+6	data\public\FaceMeta\F1\F1_027.json	21831	by星河浮霁			
+6	data\public\FaceMeta\F1\F1_028.json	21832	by星河浮霁			
+6	data\public\FaceMeta\F1\F1_029.json	21833	by烟云散烬			
+6	data\public\FaceMeta\F1\F1_030.json	21834	by烟云散烬			
+6	data\public\FaceMeta\F1\F1_031.json	21835	by君安雪词			
+6	data\public\FaceMeta\F1\F1_032.json	21836	by妄海汲遥			
+6	data\public\FaceMeta\F1\F1_033.json	21837	by妄海汲遥			
+6	data\public\FaceMeta\F1\F1_034.json	21838	by坂田鸡块			
+6	data\public\FaceMeta\F1\F1_035.json	21839	byKirara绵绵冰			
