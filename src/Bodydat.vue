@@ -136,4 +136,37 @@ export default {
 
 <style lang="less">
 @import "../assets/css/facedat.less";
+.c-facedat-tab {
+    .mt(20px);
+    .mb(20px);
+    .u-filter {
+        white-space: nowrap;
+        vertical-align: middle;
+        .el-button,
+        .el-checkbox-button__inner,
+        .el-radio-button__inner {
+            .fz(16px, 33px);
+            padding: 0 20px 0 20px;
+            margin: 10px 10px 0 10px;
+            .db;
+            .r(30px);
+            color: #8d8d8d;
+            border: 1px solid #fff;
+            background-color: #fff;
+            .bold(400);
+            &:hover {
+                color: #fff;
+                background-color: #6b52ff;
+                border-color: #6b52ff;
+                .bold(400);
+            }
+        }
+        .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+            background-color: #6b52ff;
+            border-color: #6b52ff;
+            color: #fff;
+            .bold(400);
+        }
+    }
+}
 </style>
