@@ -1,29 +1,30 @@
 <template>
-  <div class="c-facedat" v-if="ready">
-    <el-tabs class="c-facedat-preivew" v-model="active" :type="tab_type">
-      <el-tab-pane
-        :label="tab.label"
-        :name="tab.value"
-        v-for="tab in Object.values(group_tabs)"
-        :key="tab.value"
-      >
-        <div class="c-facedat-group">
-          <ul class="u-list">
-            <li v-for="(item, i) in currentGroup" :key="i">
-              <label>{{ item.name }}</label>
-              <span>{{ item.value }}</span>
-              <el-slider
-                class="u-range"
-                :min="item.min"
-                :max="item.max"
-                v-model="body_data.tBody[item.key]"
-                :disabled="lock"
-              ></el-slider>
-            </li>
-          </ul>
+  <div class="c-facedat" v-if="ready && group_tabs">
+      <div class="c-facedat-tab">
+          <el-radio-group v-model="active">
+              <el-radio-button v-for="(tab, index) in Object.values(group_tabs)" :key="index" class="u-filter" :label="tab.value">{{ tab.label }}</el-radio-button>
+          </el-radio-group>
+          <slot></slot>
+      </div>
+      <template v-for="tab in Object.values(group_tabs)" >
+        <div class="c-facedat-preivew" v-show="active === tab.value" :key="tab.value">
+            <div class="c-facedat-group" >
+              <ul class="u-list">
+                <li v-for="(item, i) in currentGroup" :key="i">
+                  <label>{{ item.name }}</label>
+                  <span>{{ item.value }}</span>
+                  <slider
+                    class="u-range"
+                    :min="item.min"
+                    :max="item.max"
+                    v-model="body_data.tBody[item.key]"
+                    :disabled="lock"
+                  ></slider>
+                </li>
+              </ul>
+            </div>
         </div>
-      </el-tab-pane>
-    </el-tabs>
+      </template>
     <div class="c-facedat-btns">
       <el-button
         class="u-btn"
@@ -45,10 +46,12 @@ import group_tabs from "../assets/data/body/body_group_tabs.json";
 import group_fields from "../assets/data/body/body_group_fields.json";
 import types from "../assets/data/index.json";
 import field_range from "../assets/data/body/body_fields_reverse.json";
+import Slider from "@/Slider.vue";
 
 export default {
   name: "Bodydat",
   props: ["data", "lock", "tab_type"],
+    components:{Slider},
   data: function () {
     return {
       active: "whole",
