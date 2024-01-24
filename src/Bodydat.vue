@@ -46,7 +46,7 @@ import group_tabs from "../assets/data/body/body_group_tabs.json";
 import group_fields from "../assets/data/body/body_group_fields.json";
 import types from "../assets/data/index.json";
 import field_range from "../assets/data/body/body_fields_reverse.json";
-import Slider from "@/Slider.vue";
+import Slider from "./Slider.vue";
 
 export default {
   name: "Bodydat",
