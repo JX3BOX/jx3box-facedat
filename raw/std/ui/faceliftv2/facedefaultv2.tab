@@ -1,9 +1,9 @@
 RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 0					0	1
-1	data\public\FaceMeta\M2\M2_003.json	21138	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
+1	data\public\FaceMeta\M2\M2_004.json	21139	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
 1	data\public\FaceMeta\M2\M2_001.json	21136				
 1	data\public\FaceMeta\M2\M2_002.json	21137	by渊持			
-1	data\public\FaceMeta\M2\M2_004.json	21139	by夜醉风			
+1	data\public\FaceMeta\M2\M2_003.json	21138	by渊持			
 1	data\public\FaceMeta\M2\M2_005.json	21140	by夜醉风			
 1	data\public\FaceMeta\M2\M2_006.json	21141	by夜醉风			
 1	data\public\FaceMeta\M2\M2_007.json	21142	by夜醉风			
