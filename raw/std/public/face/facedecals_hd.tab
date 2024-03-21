@@ -124,7 +124,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	8	3	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光002.tga	M2眼神光2	64	64	128	128	0	0	512	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_02.tga
 1	8	4	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光003.tga	M2眼神光3	64	64	128	128	0	0	512	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_03.tga
 1	8	5	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光004.tga	M2眼神光4	64	64	128	128	0	0	512	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_04.tga
-1	8	6	data\source\player\f2\部件\texture\face\f2_眼神光005.tga	M2眼神光5	64	64	508	96	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_05.tga
+1	8	6	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光005.tga	M2眼神光5	64	64	4	4	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_05.tga
 1	8	7	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光006.tga	M2眼神光6	64	64	128	128	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_06.tga
 1	8	8	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光007.tga	M2眼神光7	64	64	128	128	0	0	512	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_07.tga
 1	8	9	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光008.tga	M2眼神光8	64	64	128	128	0	0	512	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_none.tga
@@ -566,7 +566,7 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	8	3	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光002.tga	F2眼神光2	64	64	128	128	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_02.tga
 2	8	4	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光003.tga	F2眼神光3	64	64	128	128	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_03.tga
 2	8	5	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光004.tga	F2眼神光4	64	64	128	128	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_04.tga
-2	8	6	data\source\player\f2\部件\texture\face\f2_眼神光005.tga	F2眼神光5	64	64	508	96	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_05.tga
+2	8	6	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光005.tga	F2眼神光5	64	64	4	4	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_05.tga
 2	8	7	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光006.tga	F2眼神光6	64	64	128	128	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_06.tga
 2	8	8	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光007.tga	F2眼神光7	64	64	128	128	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_07.tga
 2	8	9	data\source\player\M2\部件\M2裸体模型\face\M2_眼神光008.tga	F2眼神光8	64	64	128	128	0	0	256	1	0	0	0	0	0	0	1	data\source\player\M2\部件\M2裸体模型\face\M2_EyeLight_none.tga
