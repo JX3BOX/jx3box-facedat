@@ -1,0 +1,494 @@
+{
+	"BodyType": 1,
+	"Bone": {
+		"ForeHeadTY": 11,
+		"ForeHeadTZ": 59,
+		"AppleTX": -15,
+		"AppleTY": -6,
+		"AppleTZ": -45,
+		"ChinTY": 36,
+		"ChinTZ": -66,
+		"MalarTX": -29,
+		"MalarTY": 29,
+		"MalarTZ": 91,
+		"CheekTX": -15,
+		"CheekTY": 0,
+		"CheekTZ": 0,
+		"ChinEdgeTX": -31,
+		"ChinEdgeTY": -27,
+		"ChinEdgeTZ": -29,
+		"ChinBottomTX": 0,
+		"ChinBottomTY": 0,
+		"ChinBottomTZ": 0,
+		"ForeHeadRX": 70,
+		"AppleRY": 84,
+		"AppleRZ": 32,
+		"AppleRX": -128,
+		"ChinRX": -43,
+		"MalarRY": 77,
+		"MalarRZ": 6,
+		"MalarRX": 51,
+		"CheekRY": 0,
+		"CheekRZ": 0,
+		"CheekRX": 0,
+		"ChinBottomRX": 0,
+		"ChinSX": 21,
+		"ChinSY": 0,
+		"ChinSZ": 0,
+		"MalarSX": 0,
+		"MalarSY": 0,
+		"MalarSZ": 0,
+		"CheekSX": -50,
+		"CheekSY": 0,
+		"CheekSZ": 0,
+		"ChinEdgeSX": 72,
+		"ChinEdgeSY": 0,
+		"ChinEdgeSZ": 0,
+		"ChinBottomSX": 14,
+		"ChinBottomSZ": -17,
+		"ElbowGrpTZ": 34,
+		"ElbowStartTX": -42,
+		"ElbowStartTY": 15,
+		"ElbowStartTZ": -48,
+		"ElbowEndTX": -90,
+		"ElbowEndTY": 12,
+		"ElbowEndTZ": 3,
+		"ElbowMiddleTY": 0,
+		"ElbowMiddleTZ": -18,
+		"ElbowStartRZ": 0,
+		"ElbowStartRX": 0,
+		"ElbowStartRY": 0,
+		"ElbowEndRY": 0,
+		"ElbowEndRZ": 0,
+		"ElbowEndRX": 0,
+		"ElbowMiddleRX": 4,
+		"ElbowGrpRY": 0,
+		"ElbowStartSX": 0,
+		"ElbowStartSY": 127,
+		"ElbowStartSZ": 0,
+		"ElbowEndSX": 0,
+		"ElbowEndSY": 0,
+		"NoseGrpTY": 42,
+		"NoseGrpTZ": -25,
+		"NoseTipTY": -3,
+		"NoseTipTZ": 24,
+		"NoseEdgeTX": 51,
+		"NoseEdgeTY": 20,
+		"NoseEdgeTZ": 16,
+		"NoseBridgeTY": 0,
+		"NoseBridgeTZ": -38,
+		"NoseBottomTY": -24,
+		"NoseBottomTZ": 0,
+		"NoseGrpRX": 29,
+		"NoseTipRX": 16,
+		"NoseEdgeRY": 3,
+		"NoseEdgeRZ": 73,
+		"NoseEdgeRX": -18,
+		"NoseBridgeRX": -4,
+		"NoseBottomRX": 50,
+		"NoseGrpSX": 0,
+		"NoseGrpSY": 99,
+		"NoseGrpSZ": 0,
+		"NoseTipSX": -22,
+		"NoseTipSY": 0,
+		"NoseEdgeSX": 0,
+		"NoseEdgeSY": 0,
+		"NoseBridgeSX": -61,
+		"NoseBridgeSY": 0,
+		"NoseBridgeSZ": -1,
+		"NoseBottomSX": -15,
+		"NoseBottomSY": 0,
+		"MouthGrpTY": 3,
+		"MouthGrpTZ": -10,
+		"UMouthGrpTY": -12,
+		"DMouthGrpTY": -102,
+		"UMouthGrpTZ": 66,
+		"DMouthGrpTZ": 67,
+		"modiolusTX": 80,
+		"modiolusTY": -36,
+		"modiolusTZ": 4,
+		"UpMouthMTY": -25,
+		"UpMouthMTZ": 36,
+		"UMouthSideTX": -33,
+		"UMouthSideTY": -20,
+		"UMouthSideTZ": 19,
+		"DMouthMTY": -31,
+		"DMouthMTZ": 43,
+		"DMouthSideTX": 2,
+		"DMouthSideTY": 72,
+		"DMouthSideTZ": 30,
+		"MouthGrpRX": -34,
+		"UMouthGrpRX": 69,
+		"DMouthGrpRX": -29,
+		"modiolusRY": 0,
+		"modiolusRZ": 0,
+		"modiolusRX": 0,
+		"UpMouthMRX": -69,
+		"UMouthSideRY": 66,
+		"UMouthSideRZ": -75,
+		"UMouthSideRX": 0,
+		"DMouthMRX": 28,
+		"DMouthSideRY": 81,
+		"DMouthSideRZ": 26,
+		"DMouthSideRX": 0,
+		"MouthGrpSX": 51,
+		"MouthGrpSY": 0,
+		"MouthGrpSZ": -1,
+		"UMouthGrpSY": 67,
+		"DMouthGrpSY": 0,
+		"UMouthGrpSZ": -10,
+		"DMouthGrpSZ": 24,
+		"UpMouthMSX": 34,
+		"UpMouthMSY": 0,
+		"UpMouthMSZ": 20,
+		"UMouthSideSX": 0,
+		"UMouthSideSY": 0,
+		"DMouthMSX": 0,
+		"DMouthMSY": 0,
+		"DMouthMSZ": 21,
+		"DMouthSideSX": 0,
+		"DMouthSideSY": 0,
+		"EyeGrpTX": 46,
+		"EyeGrpTY": 12,
+		"EyeGrpTZ": 109,
+		"EyeUTX": 29,
+		"EyeUTZ": 15,
+		"EyeDTX": 54,
+		"EyeDTZ": -15,
+		"EyeITX": -41,
+		"EyeITZ": -59,
+		"EyeOTX": -20,
+		"EyeOTZ": -70,
+		"EyeGrpRY": 7,
+		"EyeGrpRZ": 8,
+		"EyeGrpRX": 23,
+		"EyeURY": -128,
+		"EyeURX": 0,
+		"EyeDRY": -46,
+		"EyeDRZ": 0,
+		"EyeIRY": 0,
+		"EyeIRZ": 0,
+		"EyeIRX": 0,
+		"EyeORY": 0,
+		"EyeORX": 0,
+		"EyeGrpSX": -41,
+		"EyeGrpSY": -3,
+		"EyeGrpSZ": -45,
+		"EyeUSX": 0,
+		"EyeUSY": 0,
+		"EyeUSZ": 0,
+		"EyeDSY": 90,
+		"EyeISY": 0,
+		"EyeOSY": 0,
+		"EyeLashURZ": -128,
+		"EyeLashURX": 12,
+		"EyeLashURY": 127,
+		"EyeLashDRZ": 68,
+		"EyeLashDRX": 98,
+		"EyeLashDRY": -128,
+		"EyeBallRZ": -33,
+		"EyeBallRX": 11
+	},
+	"Decal": {
+		"Base": {
+			"ColorID": 15,
+			"CustomDetail": {
+				"bEnable": true,
+				"fValue1": 0.4300000071525574,
+				"fValue2": 1.0,
+				"fValue3": 1.1200000047683716
+			},
+			"ShowID": 1
+		},
+		"IrisLeft": {
+			"ColorID": 46,
+			"CustomDetail": {
+				"bEnable": true,
+				"fValue1": 0.6600000262260437,
+				"fValue2": 0.9399999976158142,
+				"fValue3": 0.4099999964237213
+			},
+			"ShowID": 20
+		},
+		"IrisRight": {
+			"ColorID": 46,
+			"CustomDetail": {
+				"bEnable": true,
+				"fValue1": 0.6600000262260437,
+				"fValue2": 0.9399999976158142,
+				"fValue3": 0.4099999964237213
+			},
+			"ShowID": 20
+		},
+		"Brow": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 34
+		},
+		"Blush": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"Moustache": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"EyeLight": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 15
+		},
+		"Decal1": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"Decal2": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"Decal3": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"LipGlossR": {
+			"ColorID": 9,
+			"CustomDetail": {
+				"bEnable": true,
+				"fValue1": 0.27000001072883608,
+				"fValue2": 1.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 11
+		},
+		"LipFlashG": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"LipOverlapB": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"LipLightA": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"Mouth": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 18
+		},
+		"EyeShadowR": {
+			"ColorID": 40,
+			"CustomDetail": {
+				"bEnable": true,
+				"fValue1": 0.699999988079071,
+				"fValue2": 2.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 9
+		},
+		"EyeShadowG": {
+			"ColorID": 47,
+			"CustomDetail": {
+				"bEnable": true,
+				"fValue1": 1.0,
+				"fValue2": 1.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 6
+		},
+		"EyeShadowB": {
+			"ColorID": 1,
+			"CustomDetail": {
+				"bEnable": true,
+				"fValue1": 1.0,
+				"fValue2": 1.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 8
+		},
+		"EyeShadowA": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"EyeShadowFlashR": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"EyeShadowFlashG": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"EyeShadowFlashB": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"EyeShadowFlashA": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"Eyelash": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 11
+		},
+		"EyeWhiteLeft": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"EyeWhiteRight": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 0
+		},
+		"Shadow": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 7
+		},
+		"AegyoSal": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 6
+		},
+		"DoubleEyelid": {
+			"ColorID": 0,
+			"CustomDetail": {
+				"bEnable": false,
+				"fValue1": 0.0,
+				"fValue2": 0.0,
+				"fValue3": 0.0
+			},
+			"ShowID": 18
+		}
+	},
+	"FacePart": {
+		"Mouth": {
+			"ColorID": 0,
+			"ID": 0
+		},
+		"Nose": {
+			"ColorID": 0,
+			"ID": 0
+		}
+	}
+}
