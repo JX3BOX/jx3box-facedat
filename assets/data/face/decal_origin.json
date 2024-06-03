@@ -67,11 +67,25 @@
                 "CoinPrice": "500",
                 "IsFlip": false
             },
+            "7": {
+                "name": "墨颜",
+                "iconid": "12879",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
+                "IsFlip": false
+            },
+            "8": {
+                "name": "皎月",
+                "iconid": "14582",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
+                "IsFlip": false
+            },
             "-1": {
-                "name": "冠玉",
-                "iconid": "5836",
-                "CanUseInCreate": "1",
-                "CoinPrice": "500",
+                "name": "皎月",
+                "iconid": "14582",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
                 "IsFlip": true
             }
         },
@@ -1403,11 +1417,25 @@
                 "CoinPrice": "500",
                 "IsFlip": false
             },
+            "7": {
+                "name": "墨颜",
+                "iconid": "12880",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
+                "IsFlip": false
+            },
+            "8": {
+                "name": "皎月",
+                "iconid": "14580",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
+                "IsFlip": false
+            },
             "-1": {
-                "name": "冰肌",
-                "iconid": "5826",
-                "CanUseInCreate": "1",
-                "CoinPrice": "500",
+                "name": "皎月",
+                "iconid": "14580",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
                 "IsFlip": true
             }
         },
@@ -4592,11 +4620,25 @@
                 "CoinPrice": "500",
                 "IsFlip": false
             },
+            "5": {
+                "name": "墨颜",
+                "iconid": "12876",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
+                "IsFlip": false
+            },
+            "6": {
+                "name": "皎月",
+                "iconid": "14581",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
+                "IsFlip": false
+            },
             "-1": {
-                "name": "凝脂",
-                "iconid": "5820",
-                "CanUseInCreate": "1",
-                "CoinPrice": "500",
+                "name": "皎月",
+                "iconid": "14581",
+                "CanUseInCreate": "0",
+                "CoinPrice": "5000",
                 "IsFlip": true
             }
         },
