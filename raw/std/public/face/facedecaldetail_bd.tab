@@ -1,0 +1,10 @@
+RoleType	Type	ShowID	ColorID	szName	fMax	fMin	fScale	fColorR	fColorG	fColorB	fColorA	fMetallicity	fRoughness	fValue1Min	fValue1Max	fValue2Min	fValue2Max	fValue3Min	fValue3Max	fValue4Min	fValue4Max	fValue5Min	fValue5Max	fValue6Min	fValue6Max	fValue7Min	fValue7Max	fValue8Min	fValue8Max	fValue9Min	fValue9Max	fParam0	fParam1	fParam2	fParam3	fParam4	fParam5	fParam6	fParam7	fParam8	fParam9	fParam10	fParam11	fParam12	fParam13	fParam14
+0	0	0	1		0	1	0	0	0	0	0.6	1	1	0	1	0	1.2	0	2	0	2	0	2	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+1	0	8	1		1	1	0.6	1	1	1	2	0	1	0.01	0.3	0.8	1.9	0	2	0	2	0	2	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+1	0	9	1		1	1	0.9	1	1	1	2	0	1	0.01	0.6	0.8	1.9	0	2	0	2	0	2	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+2	0	8	1		1	0	0.6	1	1	1	2	1	1	0.01	0.3	0.8	1.9	0	2	0	2	0	1	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+2	0	9	1		1	1	0.9	1	1	1	2	0	1	0.01	0.5	0.8	1.9	0	2	0	2	0	1	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+5	0	6	1		1	1	0.5	1	1	1	2	0	1	0.01	0.3	0.8	1.9	0	2	0	2	0	2	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+5	0	7	1		1	1	0.8	1	1	1	2	0	1	0.01	0.5	0.8	1.9	0	2	0	2	0	2	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+6	0	6	1		1	1	0.6	1	1	1	2	0	1	0.01	0.3	0.8	1.9	0	2	0	2	0	2	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+6	0	7	1		1	1	0.9	1	1	1	2	0	1	0.01	0.6	0.8	1.9	0	2	0	2	0	2	0	2	0	2	0	2	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0

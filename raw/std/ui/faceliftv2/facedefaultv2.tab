@@ -2,9 +2,9 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 0					0	1
 1	data\public\FaceMeta\M2\M2_004.json	21139	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
 1	data\public\FaceMeta\M2\【脸型】展锋成男.json	22343				
-1	data\public\FaceMeta\M2\【脸型】钻宝成男.json	22344				
-1	data\public\FaceMeta\M2\【脸型】踏宝成男.json	22345				
-1	data\public\FaceMeta\M2\【脸型】一点沧州成男.json	22346				
+1	data\public\FaceMeta\M2\【脸型】灵龙成男.json	22344				
+1	data\public\FaceMeta\M2\【脸型】校服成男.json	22345				
+1	data\public\FaceMeta\M2\【脸型】预约套成男.json	22346				
 1	data\public\FaceMeta\M2\【脸型】神鹿成男.json	22347				
 1	data\public\FaceMeta\M2\【脸型】弓盒成男.json	22348				
 1	data\public\FaceMeta\M2\M2_001.json	21136				
@@ -43,9 +43,9 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 1	data\public\FaceMeta\M2\M2_035.json	21780	by氙猫			
 2	data\public\FaceMeta\F2\F2_001.json	21151	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
 2	data\public\FaceMeta\F2\【脸型】展锋成女.json	22349				
-2	data\public\FaceMeta\F2\【脸型】钻宝成女.json	22350				
-2	data\public\FaceMeta\F2\【脸型】踏宝成女.json	22351				
-2	data\public\FaceMeta\F2\【脸型】一点沧州成女.json	22352				
+2	data\public\FaceMeta\F2\【脸型】灵龙成女.json	22350				
+2	data\public\FaceMeta\F2\【脸型】校服成女.json	22351				
+2	data\public\FaceMeta\F2\【脸型】预约套成女.json	22352				
 2	data\public\FaceMeta\F2\【脸型】神鹿成女.json	22353				
 2	data\public\FaceMeta\F2\【脸型】弓盒成女.json	22354				
 2	data\public\FaceMeta\F2\F2_002.json	21152	by烟夕罗			
@@ -84,9 +84,9 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 2	data\public\FaceMeta\F2\F2_035.json	21800	by三涧雾			
 5	data\public\FaceMeta\M1\M1_001.json	21166	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
 5	data\public\FaceMeta\M1\【脸型】展锋正太.json	22355				
-5	data\public\FaceMeta\M1\【脸型】钻宝正太.json	22356				
-5	data\public\FaceMeta\M1\【脸型】踏宝正太.json	22357				
-5	data\public\FaceMeta\M1\【脸型】一点沧州正太.json	22358				
+5	data\public\FaceMeta\M1\【脸型】灵龙正太.json	22356				
+5	data\public\FaceMeta\M1\【脸型】校服正太.json	22357				
+5	data\public\FaceMeta\M1\【脸型】预约套正太.json	22358				
 5	data\public\FaceMeta\M1\【脸型】神鹿正太.json	22359				
 5	data\public\FaceMeta\M1\【脸型】弓盒正太.json	22360				
 5	data\public\FaceMeta\M1\M1_002.json	21167	by清肆			
@@ -124,9 +124,9 @@ RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
 5	data\public\FaceMeta\M1\M1_034.json	21819	by清清清野			
 6	data\public\FaceMeta\F1\F1_001.json	21181	默认	创建角色时的默认脸型，如果您已经拥有则无法购买该脸型。	1	1
 6	data\public\FaceMeta\F1\【脸型】展锋萝莉.json	22361				
-6	data\public\FaceMeta\F1\【脸型】钻宝萝莉.json	22362				
-6	data\public\FaceMeta\F1\【脸型】踏宝萝莉.json	22363				
-6	data\public\FaceMeta\F1\【脸型】一点沧州萝莉.json	22364				
+6	data\public\FaceMeta\F1\【脸型】灵龙萝莉.json	22362				
+6	data\public\FaceMeta\F1\【脸型】校服萝莉.json	22364				
+6	data\public\FaceMeta\F1\【脸型】预约套萝莉.json	22363				
 6	data\public\FaceMeta\F1\【脸型】神鹿萝莉.json	22365				
 6	data\public\FaceMeta\F1\【脸型】弓盒萝莉.json	22366				
 6	data\public\FaceMeta\F1\F1_002.json	21182	by糯猪猪			
