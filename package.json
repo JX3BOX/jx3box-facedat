@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-facedat",
-    "version": "2.6.1",
+    "version": "2.6.2",
     "description": "JX3BOX Facedat viewer",
     "main": "index.js",
     "scripts": {
@@ -32,8 +32,8 @@
     ],
     "dependencies": {
         "@jx3box/jx3box-build-common": "^0.1.9",
-        "@jx3box/jx3box-common": "^6.0.1",
-        "@jx3box/jx3box-data": "^0.4.2",
+        "@jx3box/jx3box-common": "^8.3.3",
+        "@jx3box/jx3box-data": "^3.6.2",
         "axios": "^0.19.2",
         "core-js": "^3.6.5",
         "crc-32": "^1.2.0",
