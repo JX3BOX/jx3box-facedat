@@ -109,7 +109,9 @@
                         <ul class="u-decals">
                             <li v-show="!clean || checkdecal_prop(key)">
                                 <div class="u-title">
-                                    {{ dict[key]["desc"] }}
+                                    <template v-if="dict[key]['desc'] === '右瞳'">左瞳</template>
+                                    <template v-else-if="dict[key]['desc'] === '左瞳'">右瞳</template>
+                                    <template v-else>{{ dict[key]["desc"] }}</template>
                                 </div>
 
                                 <span class="u-dname"
