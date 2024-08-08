@@ -88,6 +88,8 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	5	23	data\source\player\M2\部件\M2裸体模型\face\M2_眉毛_017.tga	M2眉毛021	485	585	256	128	1	0	512	1	0	0	1	1	0	0	0	
 1	5	24	data\source\player\M2\部件\M2裸体模型\face\M2_眉毛_018.tga	M2眉毛022	485	589	256	128	1	0	512	1	0	0	1	1	0	0	0	
 1	5	25	data\source\player\M2\部件\M2裸体模型\face\M2_眉毛_019.tga	M2眉毛023	485	598	256	128	1	0	512	1	0	0	1	1	0	0	0	
+1	5	26	data\source\player\M2\部件\M2裸体模型\face\M2_眉毛_020.tga	M2眉毛024	489	566	256	128	1	0	512	1	0	0	1	1	0	0	0	
+1	5	27	data\source\player\M2\部件\M2裸体模型\face\M2_眉毛_021.tga	M2眉毛025	480	572	256	128	1	0	512	1	0	0	1	1	0	0	0	
 1	6	1	data\source\player\M2\部件\M2裸体模型\face\M2_胡须_001.tga	M2胡须01	512	626	304	399	1	0	512	1	0	0	1	1	0	0	0	
 1	6	2	data\source\player\M2\部件\M2裸体模型\face\M2_胡须_002.tga	M2胡须02	512	623	304	399	1	0	512	1	0	0	1	1	0	0	0	
 1	6	3	data\source\player\M2\部件\M2裸体模型\face\M2_胡须_003.tga	M2胡须03	512	623	304	399	1	0	512	1	0	0	1	1	0	0	0	
@@ -361,6 +363,10 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	9	228	data\source\Texture\face_f_HD\贴花2023年_8月2212.tga	2023贴花8月02_翻转	273	462	475	382	0	0	1024	1	0	1	0	0	0	0	0	
 1	9	229	data\source\Texture\face_f_HD\贴花2023年_8月2213.tga	2023贴花8月03	288	430	475	382	0	0	1024	1	0	0	0	0	0	0	0	
 1	9	230	data\source\Texture\face_f_HD\贴花2023年_8月2213.tga	2023贴花8月03_翻转	288	430	475	382	0	0	1024	1	0	1	0	0	0	0	0	
+1	9	231	data\source\Texture\face_f_HD\贴花2024年_8月8_鱼.tga	2024贴花8月08_鱼	364	548	220	177	0	0	1024	1	0	0	0	0	0	0	0	
+1	9	232	data\source\Texture\face_f_HD\贴花2024年_8月8_鱼02.tga	2024贴花8月08_鱼02	384	492	220	177	0	0	1024	1	0	0	0	0	0	0	0	
+1	9	233			312	480	190	315	0	0	1024	1	0	0	0	0	0	0	0	
+1	9	234			312	480	180	298	0	0	1024	1	0	0	0	0	0	0	0	
 1	10	1	data\source\player\M2\部件\M2裸体模型\face\M2_偏光_001.tga	闪点_1	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\Noise_mask.TGA
 1	10	2	data\source\player\M2\部件\M2裸体模型\face\M2_偏光_001.tga	闪点_2	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\noise_mask_02.tga
 1	10	3	data\source\player\M2\部件\M2裸体模型\face\M2_偏光_001.tga	闪点_3	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\noise_mask_03.tga
@@ -390,6 +396,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	13	14	data\material\Texture\FaceTexture\M2_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	13	15	data\material\Texture\FaceTexture\M2_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	13	16	data\material\Texture\FaceTexture\M2_eyeShadowMask016.tga	眼影16_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	13	17	data\material\Texture\FaceTexture\M2_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	13	18	data\material\Texture\FaceTexture\M2_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	13	19	data\material\Texture\FaceTexture\M2_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	14	1	data\material\Texture\FaceTexture\M2_eyeShadowMask01.tga	眼影1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	14	2	data\material\Texture\FaceTexture\M2_eyeShadowMask02.tga	眼影2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	14	3	data\material\Texture\FaceTexture\M2_eyeShadowMask03.tga	眼影3	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -406,6 +415,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	14	14	data\material\Texture\FaceTexture\M2_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	14	15	data\material\Texture\FaceTexture\M2_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	14	16	data\material\Texture\FaceTexture\M2_eyeShadowMask016.tga	眼影16_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	14	17	data\material\Texture\FaceTexture\M2_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	14	18	data\material\Texture\FaceTexture\M2_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	14	19	data\material\Texture\FaceTexture\M2_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	15	1	data\material\Texture\FaceTexture\M2_eyeShadowMask01.tga	眼影1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	15	2	data\material\Texture\FaceTexture\M2_eyeShadowMask02.tga	眼影2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	15	3	data\material\Texture\FaceTexture\M2_eyeShadowMask03.tga	眼影3	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -422,6 +434,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 1	15	14	data\material\Texture\FaceTexture\M2_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	15	15	data\material\Texture\FaceTexture\M2_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	15	16	data\material\Texture\FaceTexture\M2_eyeShadowMask016.tga	眼影16_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	15	17	data\material\Texture\FaceTexture\M2_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	15	18	data\material\Texture\FaceTexture\M2_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+1	15	19	data\material\Texture\FaceTexture\M2_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	16	1	data/material/texture/facetexture/eyeshadowmask04.tga	测试眼影4	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	17	1	data/material/texture/facetexture/glitter_normal_rgba_001.tga	眼影闪点1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 1	17	2	data\material\Texture\FaceTexture\glitter_normal_RGBA_002.tga	眼影闪点2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -540,6 +555,8 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	5	24	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_018.tga	F2眉毛022	482	581	256	128	1	0	512	1	0	0	1	1	0	0	0	
 2	5	25	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_019.tga	F2眉毛023	482	584	256	128	1	0	512	1	0	0	1	1	0	0	0	
 2	5	26	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_020.tga	F2眉毛024	482	587	256	128	1	0	512	1	0	0	1	1	0	0	0	
+2	5	27	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_021.tga	F2眉毛025	512	552	256	128	1	0	512	1	0	0	1	1	0	0	0	
+2	5	28	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_022.tga	F2眉毛026	497	564	256	128	1	0	512	1	0	0	1	1	0	0	0	
 2	6	1	data\source\player\F2\部件\F2裸体模型\face\F2_腮红_001.tga	F2腮红01	522	638	256	256	1	0	512	1	0	0	0	1	0	0	0	
 2	6	2	data\source\player\F2\部件\F2裸体模型\face\F2_腮红_002.tga	F2腮红02	499	633	256	256	1	0	512	1	0	0	0	1	0	0	0	
 2	6	3	data\source\player\F2\部件\F2裸体模型\face\F2_腮红_003.tga	F2腮红03	499	633	256	256	1	0	512	1	0	0	0	1	0	0	0	
@@ -795,6 +812,10 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	9	219	data\source\Texture\face_f_HD\贴花2023年_8月2212.tga	2023贴花8月02_翻转	267	456	475	382	0	0	1024	1	0	1	0	0	0	0	0	
 2	9	220	data\source\Texture\face_f_HD\贴花2023年_8月2213.tga	2023贴花8月03	289	439	475	382	0	0	1024	1	0	0	0	0	0	0	0	
 2	9	221	data\source\Texture\face_f_HD\贴花2023年_8月2213.tga	2023贴花8月03_翻转	289	439	475	382	0	0	1024	1	0	1	0	0	0	0	0	
+2	9	222	data\source\Texture\face_f_HD\贴花2024年_8月8_鱼.tga	2024贴花8月8_鱼	364	532	220	177	0	0	1024	1	0	0	0	0	0	0	0	
+2	9	223	data\source\Texture\face_f_HD\贴花2024年_8月8_鱼02.tga	2024贴花8月8_鱼02	379	461	220	177	0	0	1024	1	0	0	0	0	0	0	0	
+2	9	224			312	481	200	332	0	0	1024	1	0	0	0	0	0	0	0	
+2	9	225			312	481	180	298	0	0	1024	1	0	0	0	0	0	0	0	
 2	10	1	data\material\Texture\FaceTexture\LipMask.tga	测试闪点	64	64	128	128	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\Noise_mask.TGA
 2	10	2	data\source\player\F2\部件\F2裸体模型\face\F2_偏光_001.tga	闪点01	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\Noise_mask_01.tga
 2	10	3	data\source\player\F2\部件\F2裸体模型\face\F2_偏光_001.tga	闪点02	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\noise_mask_02.tga
@@ -825,6 +846,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	13	14	data\material\Texture\FaceTexture\F2_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	13	15	data\material\Texture\FaceTexture\F2_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	13	16	data\material\Texture\FaceTexture\F2_eyeShadowMask016.tga	眼影16_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	13	17	data\material\Texture\FaceTexture\F2_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	13	18	data\material\Texture\FaceTexture\F2_eyeShadowMask018.tga	眼影17_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	13	19	data\material\Texture\FaceTexture\F2_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	14	1	data\material\Texture\FaceTexture\F2_eyeShadowMask01.tga	眼影1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	14	2	data\material\Texture\FaceTexture\F2_eyeShadowMask02.tga	眼影2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	14	3	data\material\Texture\FaceTexture\F2_eyeShadowMask03.tga	眼影3	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -841,6 +865,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	14	14	data\material\Texture\FaceTexture\F2_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	14	15	data\material\Texture\FaceTexture\F2_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	14	16	data\material\Texture\FaceTexture\F2_eyeShadowMask016.tga	眼影16_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	14	17	data\material\Texture\FaceTexture\F2_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	14	18	data\material\Texture\FaceTexture\F2_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	14	19	data\material\Texture\FaceTexture\F2_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	15	1	data\material\Texture\FaceTexture\F2_eyeShadowMask01.tga	眼影1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	15	2	data\material\Texture\FaceTexture\F2_eyeShadowMask02.tga	眼影2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	15	3	data\material\Texture\FaceTexture\F2_eyeShadowMask03.tga	眼影3	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -857,6 +884,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 2	15	14	data\material\Texture\FaceTexture\F2_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	15	15	data\material\Texture\FaceTexture\F2_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	15	16	data\material\Texture\FaceTexture\F2_eyeShadowMask016.tga	眼影15_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	15	17	data\material\Texture\FaceTexture\F2_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	15	18	data\material\Texture\FaceTexture\F2_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+2	15	19	data\material\Texture\FaceTexture\F2_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	16	1	data/material/texture/facetexture/eyeshadowmask04.tga	测试眼影4	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	17	1	data\material\Texture\FaceTexture\glitter_normal_RGBA_001.tga	眼影闪点1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 2	17	2	data\material\Texture\FaceTexture\glitter_normal_RGBA_002.tga	眼影闪点2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -969,6 +999,8 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	5	24	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_018.tga	M1眉毛022	498	552	256	128	1	0	512	1	0	0	1	1	0	0	0	
 5	5	25	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_019.tga	M1眉毛023	498	552	256	128	1	0	512	1	0	0	1	1	0	0	0	
 5	5	26	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_020.tga	M1眉毛024	498	561	256	128	1	0	512	1	0	0	1	1	0	0	0	
+5	5	27	data\source\player\M1\部件\M1裸体模型\face\M1_眉毛_016.tga	M1眉毛025	498	527	256	128	1	0	512	1	0	0	1	1	0	0	0	
+5	5	28	data\source\player\M1\部件\M1裸体模型\face\M1_眉毛_017.tga	M1眉毛026	501	548	256	128	1	0	512	1	0	0	1	1	0	0	0	
 5	6	1	data\source\player\M2\部件\M2裸体模型\face\M2_胡须_001.tga	M1胡须01	512	588	304	399	1	0	512	1	0	0	1	1	0	0	0	
 5	6	2	data\source\player\M2\部件\M2裸体模型\face\M2_胡须_002.tga	M1胡须02	507	579	304	399	1	0	512	1	0	0	1	1	0	0	0	
 5	6	3	data\source\player\M2\部件\M2裸体模型\face\M2_胡须_003.tga	M1胡须03	512	566	304	399	1	0	512	1	0	0	1	1	0	0	0	
@@ -1230,6 +1262,10 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	9	220	data\source\Texture\face_f_HD\贴花2023年_8月2212.tga	2023贴花8月02_翻转	278	443	475	382	0	0	1024	1	0	1	0	0	0	0	0	
 5	9	221	data\source\Texture\face_f_HD\贴花2023年_8月2213.tga	2023贴花8月03	278	427	475	382	0	0	1024	1	0	0	0	0	0	0	0	
 5	9	222	data\source\Texture\face_f_HD\贴花2023年_8月2213.tga	2023贴花8月03_翻转	278	427	475	382	0	0	1024	1	0	1	0	0	0	0	0	
+5	9	223	data\source\Texture\face_f_HD\贴花2024年_8月8_鱼.tga	2024贴花8月08_鱼	361	497	220	177	0	0	1024	1	0	0	0	0	0	0	0	
+5	9	224	data\source\Texture\face_f_HD\贴花2024年_8月8_鱼02.tga	2024贴花8月08_鱼02	379	445	220	177	0	0	1024	1	0	0	0	0	0	0	0	
+5	9	225			297	461	190	315	0	0	1024	1	0	0	0	0	0	0	0	
+5	9	226			266	414	230	382	0	0	1024	1	0	0	0	0	0	0	0	
 5	10	1	data\source\player\M1\部件\M1裸体模型\face\M1_偏光_001.tga	闪点1	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\Noise_mask.TGA
 5	10	2	data\source\player\M1\部件\M1裸体模型\face\M1_偏光_001.tga	闪点2	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\noise_mask_02.tga
 5	10	3	data\source\player\M1\部件\M1裸体模型\face\M1_偏光_001.tga	闪点3	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\noise_mask_03.tga
@@ -1259,6 +1295,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	13	14	data\material\Texture\FaceTexture\M1_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	13	15	data\material\Texture\FaceTexture\M1_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	13	16	data\material\Texture\FaceTexture\M1_eyeShadowMask016.tga	眼影16_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	13	17	data\material\Texture\FaceTexture\M1_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	13	18	data\material\Texture\FaceTexture\M1_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	13	19	data\material\Texture\FaceTexture\M1_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	14	1	data\material\Texture\FaceTexture\M1_eyeShadowMask01.tga	眼影1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	14	2	data\material\Texture\FaceTexture\M1_eyeShadowMask02.tga	眼影2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	14	3	data\material\Texture\FaceTexture\M1_eyeShadowMask03.tga	眼影3	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -1275,6 +1314,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	14	14	data\material\Texture\FaceTexture\M1_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	14	15	data\material\Texture\FaceTexture\M1_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	14	16	data\material\Texture\FaceTexture\M1_eyeShadowMask016.tga	眼影16_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	14	17	data\material\Texture\FaceTexture\M1_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	14	18	data\material\Texture\FaceTexture\M1_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	14	19	data\material\Texture\FaceTexture\M1_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	15	1	data\material\Texture\FaceTexture\M1_eyeShadowMask01.tga	眼影1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	15	2	data\material\Texture\FaceTexture\M1_eyeShadowMask02.tga	眼影2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	15	3	data\material\Texture\FaceTexture\M1_eyeShadowMask03.tga	眼影3	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -1291,6 +1333,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 5	15	14	data\material\Texture\FaceTexture\M1_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	15	15	data\material\Texture\FaceTexture\M1_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	15	16	data\material\Texture\FaceTexture\M1_eyeShadowMask016.tga	眼影16_刀宗	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	15	17	data\material\Texture\FaceTexture\M1_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	15	18	data\material\Texture\FaceTexture\M1_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+5	15	19	data\material\Texture\FaceTexture\M1_eyeShadowMask019.tga	眼影18_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	16	1	data/material/texture/facetexture/eyeshadowmask04.tga	测试眼影4	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	17	1	data/material/texture/facetexture/glitter_normal_rgba_001.tga	眼影闪点1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 5	17	2	data\material\Texture\FaceTexture\glitter_normal_RGBA_002.tga	眼影闪点2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -1407,6 +1452,8 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 6	5	26	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_018.tga	F1眉毛024	480	569	256	128	1	0	512	1	0	0	0	1	0	0	0	
 6	5	27	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_019.tga	F1眉毛025	484	571	256	128	1	0	512	1	0	0	0	1	0	0	0	
 6	5	28	data\source\player\F2\部件\F2裸体模型\face\F2_眉毛_020.tga	F1眉毛026	489	577	256	128	1	0	512	1	0	0	0	1	0	0	0	
+6	5	29	data\source\player\F1\部件\F1裸体模型\face\F1_眉毛_016.tga	F1眉毛027	495	550	256	128	1	0	512	1	0	0	0	1	0	0	0	
+6	5	30	data\source\player\F1\部件\F1裸体模型\face\F1_眉毛_017.tga	F1眉毛028	489	557	256	128	1	0	512	1	0	0	0	1	0	0	0	
 6	6	1	data\source\player\F2\部件\F2裸体模型\face\F2_腮红_001.tga	F1腮红01	520	645	256	256	1	0	512	1	0	0	0	0	0	0	0	
 6	6	2	data\source\player\F2\部件\F2裸体模型\face\F2_腮红_002.tga	F1腮红02	520	645	256	256	1	0	512	1	0	0	0	0	0	0	0	
 6	6	3	data\source\player\F2\部件\F2裸体模型\face\F2_腮红_003.tga	F1腮红03	510	640	256	256	1	0	512	1	0	0	0	0	0	0	0	
@@ -1659,6 +1706,10 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 6	9	217	data\source\Texture\face_f_HD\贴花2023年_8月2212.tga	2023贴花8月02_翻转	278	451	475	382	0	0	1024	1	0	1	0	0	0	0	0	
 6	9	218	data\source\Texture\face_f_HD\贴花2023年_8月2213.tga	2023贴花8月03	278	445	475	382	0	0	1024	1	0	0	0	0	0	0	0	
 6	9	219	data\source\Texture\face_f_HD\贴花2023年_8月2213.tga	2023贴花8月03_翻转	278	445	475	382	0	0	1024	1	0	1	0	0	0	0	0	
+6	9	220	data\source\Texture\face_f_HD\贴花2024年_8月8_鱼.tga	2024贴花8月08_鱼	364	527	220	177	0	0	1024	1	0	0	0	0	0	0	0	
+6	9	221	data\source\Texture\face_f_HD\贴花2024年_8月8_鱼02.tga	2024贴花8月08_鱼02	378	456	220	177	0	0	1024	1	0	0	0	0	0	0	0	
+6	9	222			309	487	190	315	0	0	1024	1	0	0	0	0	0	0	0	
+6	9	223			303	489	180	298	0	0	1024	1	0	0	0	0	0	0	0	
 6	10	1	data\source\player\F1\部件\F1裸体模型\face\F1_偏光_001.tga	闪点1	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\Noise_mask_01.tga
 6	10	2	data\source\player\F1\部件\F1裸体模型\face\F1_偏光_001.tga	闪点2	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\noise_mask_02.tga
 6	10	3	data\source\player\F1\部件\F1裸体模型\face\F1_偏光_001.tga	闪点3	64	64	1024	1024	0	0	256	1	0	0	0	0	0	0	1	data\material\Texture\FaceTexture\noise_mask_03.tga
@@ -1688,6 +1739,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 6	13	14	data\material\Texture\FaceTexture\F1_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	13	15	data\material\Texture\FaceTexture\F1_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	13	16	data\material\Texture\FaceTexture\F1_eyeShadowMask016.tga	眼影16_刀宗	64	64	546	512	0	0	256	1	0	0	0	0	0	0	1	
+6	13	17	data\material\Texture\FaceTexture\F1_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+6	13	18	data\material\Texture\FaceTexture\F1_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+6	13	19	data\material\Texture\FaceTexture\F1_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	14	1	data\material\Texture\FaceTexture\F1_eyeShadowMask01.tga	眼影1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	14	2	data\material\Texture\FaceTexture\F1_eyeShadowMask02.tga	眼影2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	14	3	data\material\Texture\FaceTexture\F1_eyeShadowMask03.tga	眼影3	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -1704,6 +1758,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 6	14	14	data\material\Texture\FaceTexture\F1_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	14	15	data\material\Texture\FaceTexture\F1_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	14	16	data\material\Texture\FaceTexture\F1_eyeShadowMask016.tga	眼影16_刀宗	64	64	546	512	0	0	256	1	0	0	0	0	0	0	1	
+6	14	17	data\material\Texture\FaceTexture\F1_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+6	14	18	data\material\Texture\FaceTexture\F1_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+6	14	19	data\material\Texture\FaceTexture\F1_eyeShadowMask019.tga	眼影18_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	15	1	data\material\Texture\FaceTexture\F1_eyeShadowMask01.tga	眼影1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	15	2	data\material\Texture\FaceTexture\F1_eyeShadowMask02.tga	眼影2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	15	3	data\material\Texture\FaceTexture\F1_eyeShadowMask03.tga	眼影3	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
@@ -1720,6 +1777,9 @@ RoleType	Type	ShowID	FileName	Annotate	PosX	PosY	Width	Height	NeedMirror	MirrorA
 6	15	14	data\material\Texture\FaceTexture\F1_eyeShadowMask014.tga	眼影14_白鹿	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	15	15	data\material\Texture\FaceTexture\F1_eyeShadowMask015.tga	眼影15_雪花	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	15	16	data\material\Texture\FaceTexture\F1_eyeShadowMask016.tga	眼影16_刀宗	64	64	546	512	0	0	256	1	0	0	0	0	0	0	1	
+6	15	17	data\material\Texture\FaceTexture\F1_eyeShadowMask017.tga	眼影17_青山	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+6	15	18	data\material\Texture\FaceTexture\F1_eyeShadowMask018.tga	眼影18_鳞片	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
+6	15	19	data\material\Texture\FaceTexture\F1_eyeShadowMask019.tga	眼影19_鹤	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	16	1	data/material/texture/facetexture/eyeshadowmask04.tga	测试眼影4	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	17	1	data/material/texture/facetexture/glitter_normal_rgba_001.tga	眼影闪点1	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
 6	17	2	data\material\Texture\FaceTexture\glitter_normal_RGBA_002.tga	眼影闪点2	64	64	512	512	0	0	256	1	0	0	0	0	0	0	1	
