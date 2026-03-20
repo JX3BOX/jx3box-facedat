@@ -1,4 +1,5 @@
 <template>
+    <!-- eslint-disable-next-line vue/no-mutating-props -->
     <div>
         <div class="c-facedat-tab">
             <el-radio-group v-model="active">
@@ -16,21 +17,12 @@
                     <li v-for="(key, i) in group['eye']" :key="key + i">
                         <label>{{ dict[key]["desc"] }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
-                        <slider
-                            v-if="lock"
-                            class="u-range"
-                            :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']"
-                            :value="facedata['tBone'][key]"
-                        ></slider>
-                        <el-slider
-                            v-else
-                            class="u-range"
-                            :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']"
-                            v-model="facedata['tBone'][key]"
-                            :disabled="lock"
-                        ></el-slider>
+                        <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
+                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
+                        </slider>
+                        <el-slider v-else class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
+                            :max="bone_range[body_type][dict[key]['type']]['max']" v-model="facedata['tBone'][key]"
+                            :disabled="lock"></el-slider>
                     </li>
                 </ul>
             </div>
@@ -39,21 +31,12 @@
                     <li v-for="(key, i) in group['mouth']" :key="key + i">
                         <label>{{ dict[key]["desc"] }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
-                        <slider
-                            v-if="lock"
-                            class="u-range"
-                            :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']"
-                            :value="facedata['tBone'][key]"
-                        ></slider>
-                        <el-slider
-                            v-else
-                            class="u-range"
-                            :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']"
-                            v-model="facedata['tBone'][key]"
-                            :disabled="lock"
-                        ></el-slider>
+                        <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
+                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
+                        </slider>
+                        <el-slider v-else class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
+                            :max="bone_range[body_type][dict[key]['type']]['max']" v-model="facedata['tBone'][key]"
+                            :disabled="lock"></el-slider>
                     </li>
                 </ul>
             </div>
@@ -62,21 +45,12 @@
                     <li v-for="(key, i) in group['nose']" :key="key + i">
                         <label>{{ dict[key]["desc"] }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
-                        <slider
-                            v-if="lock"
-                            class="u-range"
-                            :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']"
-                            :value="facedata['tBone'][key]"
-                        ></slider>
-                        <el-slider
-                            v-else
-                            class="u-range"
-                            :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']"
-                            v-model="facedata['tBone'][key]"
-                            :disabled="lock"
-                        ></el-slider>
+                        <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
+                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
+                        </slider>
+                        <el-slider v-else class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
+                            :max="bone_range[body_type][dict[key]['type']]['max']" v-model="facedata['tBone'][key]"
+                            :disabled="lock"></el-slider>
                     </li>
                 </ul>
             </div>
@@ -85,21 +59,12 @@
                     <li v-for="(key, i) in group['face']" :key="key + i">
                         <label>{{ dict[key]["desc"] }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
-                        <slider
-                            v-if="lock"
-                            class="u-range"
-                            :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']"
-                            :value="facedata['tBone'][key]"
-                        ></slider>
-                        <el-slider
-                            v-else
-                            class="u-range"
-                            :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']"
-                            v-model="facedata['tBone'][key]"
-                            :disabled="lock"
-                        ></el-slider>
+                        <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
+                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
+                        </slider>
+                        <el-slider v-else class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
+                            :max="bone_range[body_type][dict[key]['type']]['max']" v-model="facedata['tBone'][key]"
+                            :disabled="lock"></el-slider>
                     </li>
                 </ul>
             </div>
@@ -114,29 +79,23 @@
                                     <template v-else>{{ dict[key]["desc"] }}</template>
                                 </div>
 
-                                <span class="u-dname"
-                                    ><img
-                                        class="u-pic"
-                                        :src="decalDb.getDecalIcon(key, cleandata['tDecal'][key]['nShowID'])"
-                                    />{{ decalDb.getDecalName(key, cleandata["tDecal"][key]["nShowID"]) }}</span
-                                >
-                                <span
-                                    class="u-dflip"
-                                    v-if="decalDb.getDecalIsFlip(key, cleandata['tDecal'][key]['nShowID'])"
-                                    >(翻转)</span
-                                >
+                                <span class="u-dname"><img class="u-pic"
+                                        :src="decalDb.getDecalIcon(key, cleandata['tDecal'][key]['nShowID'])" />{{ decalDb.getDecalName(key, cleandata["tDecal"][key]["nShowID"]) }}</span>
+                                <span class="u-dflip"
+                                    v-if="decalDb.getDecalIsFlip(key, cleandata['tDecal'][key]['nShowID'])">(翻转)</span>
                                 <span class="u-dcolor">(颜色:{{ cleandata["tDecal"][key]["nColorID"] }})</span>
                                 <span class="u-free">
                                     <template v-if="decalDb.getDecalIsFree(key, cleandata['tDecal'][key]['nShowID'])">
-                                        <i class="el-icon-success"></i>
-                                        新建角色可用</template
-                                    >
+                                        <el-icon>
+                                            <SuccessFilled />
+                                        </el-icon>
+                                        新建角色可用</template>
                                 </span>
-                                <span
-                                    class="u-price"
-                                    v-if="decalDb.getDecalPrice(key, cleandata['tDecal'][key]['nShowID'])"
-                                >
-                                    <i class="el-icon-coin"></i>
+                                <span class="u-price"
+                                    v-if="decalDb.getDecalPrice(key, cleandata['tDecal'][key]['nShowID'])">
+                                    <el-icon>
+                                        <Coin />
+                                    </el-icon>
                                     {{ decalDb.getDecalPrice(key, cleandata["tDecal"][key]["nShowID"]) }}
                                     通宝
                                 </span>
@@ -149,15 +108,16 @@
                         <li>
                             <div class="u-title">装饰物</div>
 
-                            <span class="u-dname"
-                                ><img class="u-pic" :src="decalDb.getDecorationIcon(cleandata['nDecorationID'])" />{{
-                                    decalDb.getDecorationName(cleandata["nDecorationID"])
-                                }}</span
-                            >
+                            <span class="u-dname"><img class="u-pic"
+                                    :src="decalDb.getDecorationIcon(cleandata['nDecorationID'])" />{{
+                                        decalDb.getDecorationName(cleandata["nDecorationID"])
+                                    }}</span>
                             <span class="u-dname"></span>
                             <span class="u-dname"></span>
                             <span class="u-price" v-if="decalDb.showDecorationPrice(cleandata['nDecorationID'])">
-                                <i class="el-icon-coin"></i>
+                                <el-icon>
+                                    <Coin />
+                                </el-icon>
                                 {{ decalDb.showDecorationPrice(cleandata["nDecorationID"]) }}
                                 通宝
                             </span>
@@ -167,9 +127,9 @@
                 <div class="c-facedat-group">
                     <ul class="u-decals">
                         <div class="u-title">总计</div>
-                        <span class="u-total u-price"
-                            ><i class="el-icon-coin"></i> <b>{{ decalDb.getTotalPrice(cleandata) }}</b> 通宝</span
-                        >
+                        <span class="u-total u-price"><el-icon>
+                                <Coin />
+                            </el-icon> <b>{{ decalDb.getTotalPrice(cleandata) }}</b> 通宝</span>
                     </ul>
                 </div>
             </div>
@@ -178,6 +138,8 @@
 </template>
 
 <script>
+/* eslint-disable vue/no-mutating-props */
+import { Coin, SuccessFilled } from "@element-plus/icons-vue";
 import Slider from "./Slider.vue";
 import group from "../assets/data/face/group.json";
 import dict from "../assets/data/face/dict.json";
@@ -189,6 +151,8 @@ export default {
     props: ["facedata", "lock", "decalDb", "body_type", "clean"],
     components: {
         Slider,
+        Coin,
+        SuccessFilled,
     },
     data() {
         return {
@@ -241,9 +205,11 @@ export default {
 .c-facedat-tab {
     .mt(20px);
     .mb(20px);
+
     .u-filter {
         white-space: nowrap;
         vertical-align: middle;
+
         .el-button,
         .el-checkbox-button__inner,
         .el-radio-button__inner {
@@ -256,6 +222,7 @@ export default {
             border: 1px solid #fff;
             background-color: #fff;
             .bold(400);
+
             &:hover {
                 color: #fff;
                 background-color: #6b52ff;
@@ -263,7 +230,8 @@ export default {
                 .bold(400);
             }
         }
-        .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+
+        .el-radio-button__orig-radio:checked+.el-radio-button__inner {
             background-color: #6b52ff;
             border-color: #6b52ff;
             color: #fff;

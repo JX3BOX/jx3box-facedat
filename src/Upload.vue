@@ -3,39 +3,37 @@
         <div class="u-upload" v-if="support">
             <template v-if="!done">
                 <input class="u-input" type="file" id="face_file" accept=".dat,.jx3dat,.ini" @change="uploadData" />
-                <el-button class="u-btn" type="primary" @click="selectData" icon="el-icon-upload2">{{
+                <el-button class="u-btn" type="primary" @click="selectData" :icon="Upload2">{{
                     btnText
                 }}</el-button>
                 <slot name="guide">
                     <a v-if="type === 'face'" class="u-help" href="/tool/746" target="_blank">
-                        <i class="el-icon-collection"></i> 游戏脸型导入导出指南
+                        <el-icon>
+                            <Collection />
+                        </el-icon> 游戏脸型导入导出指南
                     </a>
                 </slot>
             </template>
             <template v-else>
                 <div class="u-result">
-                    <el-button class="u-reset" @click="resetData" icon="el-icon-refresh-left">清空重置</el-button>
+                    <el-button class="u-reset" @click="resetData" :icon="RefreshLeft">清空重置</el-button>
                     <el-alert :title="'当前文件为：' + filename" type="success" show-icon></el-alert>
                 </div>
             </template>
         </div>
-        <el-alert
-            v-else
-            class="u-notsupport"
-            title="浏览器不支持"
-            type="warning"
-            description="你的浏览器太老旧不支持本地读取,请更换chrome或其它现代浏览器"
-            show-icon
-        ></el-alert>
+        <el-alert v-else class="u-notsupport" title="浏览器不支持" type="warning"
+            description="你的浏览器太老旧不支持本地读取,请更换chrome或其它现代浏览器" show-icon></el-alert>
     </div>
 </template>
 
 <script>
+import { ElNotification } from "element-plus";
+import { Upload2, RefreshLeft, Collection } from "@element-plus/icons-vue";
 import types from "../assets/data/index.json";
 import { load } from "./DataRouter";
 
 export default {
-    name: "Upload",
+    name: "Jx3boxUpload",
     props: {
         type: {
             type: String,
@@ -61,6 +59,10 @@ export default {
                 face_ini: "编辑器脸型",
                 body: "体型",
             },
+            // Element Plus 图标
+            Upload2,
+            RefreshLeft,
+            Collection,
         };
     },
     computed: {
@@ -100,20 +102,20 @@ export default {
                 console.log("文件读取成功...开始执行分析...");
                 const result = load(e.target.result);
                 if (!result) {
-                    return vm.$notify.error({
+                    return ElNotification.error({
                         title: "错误",
                         message: "数据类型解析失败",
                     });
                 }
 
                 if (result.type.startsWith("face") && vm.type && vm.type !== "face") {
-                    return vm.$notify.error({
+                    return ElNotification.error({
                         title: "错误",
                         message: "请导入脸型数据",
                     });
                 }
                 if (result.type === "body" && vm.type && vm.type !== "body") {
-                    return vm.$notify.error({
+                    return ElNotification.error({
                         title: "错误",
                         message: "请导入体型数据",
                     });
@@ -127,11 +129,10 @@ export default {
                     try {
                         vm.json = JSON.stringify(vm.object);
                         console.log();
-                        vm.$notify({
+                        ElNotification({
                             title: "成功",
-                            message: `${vm.types[vm.object.nRoleType.toString()]?.label || ""}${
-                                vm.fileTypeNames[vm.parsedType]
-                            }数据读取成功`,
+                            message: `${vm.types[vm.object.nRoleType.toString()]?.label || ""}${vm.fileTypeNames[vm.parsedType]
+                                }数据读取成功`,
                             type: "success",
                         });
                         vm.done = true;
@@ -143,7 +144,7 @@ export default {
                         });
                     } catch (e) {
                         console.log(e);
-                        vm.$notify.error({
+                        ElNotification.error({
                             title: "错误",
                             message: "无法读取数据",
                         });
@@ -154,7 +155,7 @@ export default {
                 }
             };
             fr.onerror = function (e) {
-                vm.$notify.error({
+                ElNotification.error({
                     title: "错误",
                     message: "文件读取异常",
                 });
@@ -176,7 +177,7 @@ export default {
         },
     },
     filters: {},
-    created: function () {},
+    created: function () { },
     mounted: function () {
         this.support = !!window.FileReader;
     },
@@ -189,32 +190,40 @@ export default {
         .fz(12px);
         color: #999;
     }
+
     .mt(20px);
+
     .u-input {
         .none;
     }
+
     .u-upload {
         .x;
     }
+
     .u-help {
-        .fz(12px,3);
+        .fz(12px, 3);
         color: @color-link;
         .underline(@color-link);
+
         i {
             .fz(14px);
             .y(-1px);
         }
     }
+
     .u-btn {
         .db;
         margin: 0 auto;
-        .size(200px,50px);
+        .size(200px, 50px);
     }
+
     .u-file {
-        .fz(14px,2);
+        .fz(14px, 2);
         color: #49c10f;
         .bold;
     }
+
     .u-reset {
         .mb(10px);
     }

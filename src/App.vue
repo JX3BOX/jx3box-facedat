@@ -1,8 +1,8 @@
 <template>
     <div style="max-width: 980px; margin: 100px auto">
         <Upload @success="handleSuccess" />
-        <Facedat v-if="isFace" :data="this.data" :lock="true" />
-        <Bodydat v-if="isBody" :data="this.data" :lock="false" />
+        <Facedat v-if="isFace" :data="data" :lock="true" />
+        <Bodydat v-if="isBody" :data="data" :lock="false" />
     </div>
 </template>
 

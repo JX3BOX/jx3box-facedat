@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-facedat",
-    "version": "2.6.2",
+    "version": "2.6.3",
     "description": "JX3BOX Facedat viewer",
     "main": "index.js",
     "scripts": {
@@ -20,11 +20,14 @@
             "node": true
         },
         "extends": [
-            "plugin:vue/essential"
+            "plugin:vue/vue3-essential"
         ],
-        "rules": {},
+        "rules": {
+            "vue/no-mutating-props": "off"
+        },
         "parserOptions": {
-            "parser": "babel-eslint"
+            "parser": "@babel/eslint-parser",
+            "requireConfigFile": false
         }
     },
     "browserslist": [
@@ -32,14 +35,15 @@
         "last 2 versions"
     ],
     "dependencies": {
+        "@element-plus/icons-vue": "^2.3.1",
         "@jx3box/jx3box-build-common": "^0.1.9",
-        "@jx3box/jx3box-common": "^8.3.3",
-        "@jx3box/jx3box-data": "^3.6.2",
+        "@jx3box/jx3box-common": "^9.1.3",
+        "@jx3box/jx3box-data": "^3.9.2",
         "axios": "^0.19.2",
         "core-js": "^3.6.5",
         "crc-32": "^1.2.0",
-        "csslab": "^4.0.3",
-        "element-ui": "^2.13.2",
+        "csslab": "^6.0.2",
+        "element-plus": "^2.5.0",
         "file-saver": "^2.0.5",
         "glob": "^10.2.7",
         "iconv-lite": "^0.6.3",
@@ -47,25 +51,25 @@
         "jquery": "^3.5.1",
         "lodash": "^4.17.15",
         "luadata": "^1.0.2",
+        "mitt": "^3.0.0",
         "prismjs": "^1.20.0",
-        "vue": "^2.6.11"
+        "vue": "^3.4.0"
     },
     "devDependencies": {
+        "@babel/eslint-parser": "^7.23.0",
         "@babel/plugin-proposal-optional-chaining": "^7.14.5",
-        "@vue/cli-plugin-babel": "~4.3.0",
-        "@vue/cli-plugin-eslint": "~4.3.0",
-        "@vue/cli-plugin-vuex": "^4.0.0",
-        "@vue/cli-service": "~4.3.0",
-        "babel-eslint": "^10.1.0",
-        "eslint": "^6.7.2",
-        "eslint-plugin-vue": "^6.2.2",
-        "less": "^3.0.4",
-        "less-loader": "^5.0.0",
+        "@vue/cli-plugin-babel": "~5.0.8",
+        "@vue/cli-plugin-eslint": "~5.0.8",
+        "@vue/cli-plugin-vuex": "~5.0.8",
+        "@vue/cli-service": "~5.0.8",
+        "@vue/compiler-sfc": "^3.4.0",
+        "eslint": "^8.56.0",
+        "eslint-plugin-vue": "^9.20.0",
+        "less": "^4.1.3",
+        "less-loader": "^11.0.0",
         "lua-json": "^1.0.0",
-        "style-resources-loader": "^1.3.3",
-        "vue-cli-plugin-element": "~1.0.1",
-        "vue-svg-inline-loader": "^1.4.6",
-        "vue-template-compiler": "^2.6.11"
+        "style-resources-loader": "^1.5.0",
+        "vue-svg-inline-loader": "^2.1.3"
     },
     "repository": {
         "type": "git",

@@ -1,18 +1,18 @@
-Vue.config.productionTip = false;
+import { createApp } from "vue";
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
 
-// 第三方UI组件
-import Vue from "vue";
-import ElementUI from "element-ui";
-Vue.use(ElementUI);
-
-// // 通用UI模块
-// import JX3BOX_UI from '@jx3box/jx3box-common-ui'
+// 通用UI模块样式
 import "@jx3box/jx3box-common/css/element.css";
 import "@jx3box/jx3box-common/css/normalize.css";
-// Vue.use(JX3BOX_UI);
 
 import App from "./App.vue";
-new Vue({
-    render: h => h(App),
-}).$mount("#app");
 
+// 创建 Vue 应用实例
+const app = createApp(App);
+
+// 注册 Element Plus
+app.use(ElementPlus);
+
+// 挂载应用
+app.mount("#app");

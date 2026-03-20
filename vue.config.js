@@ -67,12 +67,8 @@ module.exports = {
     // });
 
     //💝 in-line small imgs ~
-    config.module
-      .rule("images")
-      .use("url-loader")
-      .loader("url-loader")
-      .tap((options) => Object.assign(options, { limit: 10240 }));
-
+    // Vue CLI 5 已默认配置，不需要单独配置 url-loader
+    
     //💝 in-line svg imgs ~
     config.module
       .rule("vue")
