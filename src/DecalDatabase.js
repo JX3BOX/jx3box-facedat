@@ -1,6 +1,7 @@
 import axios from "axios";
 import _ from "lodash";
-import { __ossMirror, __iconPath } from "@jx3box/jx3box-common/data/jx3box.json";
+import jx3box from "@jx3box/jx3box-common/data/jx3box.json";
+const { __ossMirror, __iconPath } = jx3box;
 import dict from "../assets/data/face/dict.json";
 import group from "../assets/data/face/group.json";
 import decal_v2 from "../assets/data/newface/decal_v2.json"
