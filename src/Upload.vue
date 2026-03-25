@@ -3,7 +3,7 @@
         <div class="u-upload" v-if="support">
             <template v-if="!done">
                 <input class="u-input" type="file" id="face_file" accept=".dat,.jx3dat,.ini" @change="uploadData" />
-                <el-button class="u-btn" type="primary" @click="selectData" :icon="Upload2">{{
+                <el-button class="u-btn" type="primary" @click="selectData" :icon="Upload">{{
                     btnText
                 }}</el-button>
                 <slot name="guide">
@@ -28,7 +28,7 @@
 
 <script>
 import { ElNotification } from "element-plus";
-import { Upload2, RefreshLeft, Collection } from "@element-plus/icons-vue";
+import { Upload, RefreshLeft, Collection } from "@element-plus/icons-vue";
 import types from "../assets/data/index.json";
 import { load } from "./DataRouter";
 
@@ -60,7 +60,7 @@ export default {
                 body: "体型",
             },
             // Element Plus 图标
-            Upload2,
+            Upload,
             RefreshLeft,
             Collection,
         };

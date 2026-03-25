@@ -23,7 +23,6 @@
 
 <script>
 import _ from "lodash";
-import axios from "axios";
 import { ElNotification } from "element-plus";
 import { Download } from "@element-plus/icons-vue";
 import { __ossMirror, __iconPath, __ossRoot } from "@jx3box/jx3box-common/data/jx3box.json";
@@ -173,6 +172,7 @@ export default {
             handler: function (val) {
                 let facedata = this.data.object;
                 this.decalDb = new DecalDatabase(this.client, facedata.bNewFace);
+                console.log(this.decalDb)
             },
         },
     },

@@ -167,6 +167,7 @@ export default {
       color: #fff;
       .bold(400);
     }
+
   }
 }
 </style>
