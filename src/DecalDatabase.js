@@ -254,6 +254,15 @@ export class DecalDatabase {
     }
 
     /**
+     * 获取装饰物价格（向后兼容）
+     * @param {number} id - 装饰物 ID
+     * @returns {number} 价格（通宝）
+     */
+    showDecorationPrice(id) {
+        return this.getDecorationPrice(id);
+    }
+
+    /**
      * 计算面部数据总价格
      * @param {Object} data - 面部数据对象
      * @param {boolean} v2 - 是否使用 v2 格式
