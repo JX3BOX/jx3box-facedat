@@ -1,7 +1,7 @@
 {
     "name": "@jx3box/jx3box-facedat",
     "version": "2.6.6",
-    "description": "JX3BOX Facedat viewer",
+    "description": "JX3BOX Facedat Viewer",
     "main": "index.js",
     "scripts": {
         "serve": "vue-cli-service serve",
