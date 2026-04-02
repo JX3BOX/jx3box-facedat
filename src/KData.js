@@ -91,11 +91,26 @@ export function dump(payload, config) {
 
   const payloadBuf = config.encoding ? iconv.encode(payload, "gbk") : payload;
   let length = payloadBuf.length;
-  let crc32 = CRC32(payloadBuf) >>> 0; // Convert to unsigned
-  let output = Buffer.alloc(16);
-  output.write("CNDK", 0);
-  output.writeUInt32LE(crc32, 4);
-  output.writeUInt32LE(length, 8);
-  output.writeUInt32LE(length, 12);
-  return Uint8Array.from(Buffer.concat([output, payloadBuf]));
+  let crc32 = CRC32(payloadBuf) >>> 0;
+  const output = new Uint8Array(16);
+  output[0] = 0x43;
+  output[1] = 0x4e;
+  output[2] = 0x44;
+  output[3] = 0x4b;
+  output[4] = crc32 & 0xff;
+  output[5] = (crc32 >> 8) & 0xff;
+  output[6] = (crc32 >> 16) & 0xff;
+  output[7] = (crc32 >> 24) & 0xff;
+  output[8] = length & 0xff;
+  output[9] = (length >> 8) & 0xff;
+  output[10] = (length >> 16) & 0xff;
+  output[11] = (length >> 24) & 0xff;
+  output[12] = length & 0xff;
+  output[13] = (length >> 8) & 0xff;
+  output[14] = (length >> 16) & 0xff;
+  output[15] = (length >> 24) & 0xff;
+  const result = new Uint8Array(output.length + payloadBuf.length);
+  result.set(output, 0);
+  result.set(payloadBuf, output.length);
+  return result;
 }
