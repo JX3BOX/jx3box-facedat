@@ -5,10 +5,29 @@
 }
 
 .c-facedat-group {
+    .el-tabs__header {
+        .h(auto);
+        border: none;
+    }
+
     .el-tabs__nav {
         .flex;
         gap: 10px;
         flex-wrap: wrap;
+        border: none !important;
+    }
+
+    .el-tabs__item {
+        border: none !important;
+        color: #8d8d8d;
+        background-color: #f3f3f3;
+        .r(5px);
+
+        &.is-active {
+            background-color: var(--el-color-primary);
+            color: #fff;
+            .bold;
+        }
     }
 
     .u-title {
