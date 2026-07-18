@@ -5,7 +5,7 @@
 
     .c-facedat-preivew {
         min-width: 0;
-        padding: 10px;
+        padding: 0;
         overflow: hidden;
         background-color: var(--jx3-facedat-color-surface);
         border-radius: var(--jx3-facedat-radius-md);
@@ -16,7 +16,7 @@
         align-items: center;
         gap: 12px;
         min-width: 0;
-        margin: 20px 0;
+        margin: 20px 0 10px;
 
         > .el-radio-group {
             display: flex;
@@ -64,7 +64,25 @@
 
         .el-tabs__header {
             height: auto;
+            margin: 0 0 10px;
             border: none;
+        }
+
+        .el-tabs--card > .el-tabs__header {
+            border-bottom: 0;
+        }
+
+        .el-tabs--card > .el-tabs__header .el-tabs__nav {
+            border: 0;
+        }
+
+        .el-tabs--card > .el-tabs__header .el-tabs__item {
+            border: 1px solid var(--jx3-facedat-color-border) !important;
+            border-radius: var(--jx3-facedat-radius-sm) !important;
+
+            &.is-active {
+                border-color: var(--jx3-facedat-color-primary) !important;
+            }
         }
 
         .el-tabs__nav-wrap {
@@ -354,7 +372,7 @@
                 gap: 16px;
                 min-height: 58px;
                 padding: 12px 18px;
-                margin-top: 18px;
+                margin-top: 0;
                 border: 1px solid color-mix(in srgb, var(--jx3-facedat-color-primary) 16%, var(--jx3-facedat-color-border));
                 border-radius: var(--jx3-facedat-radius-md);
 
@@ -507,7 +525,7 @@
         }
 
         .c-facedat-preivew {
-            padding: 0 8px 10px;
+            padding: 0;
         }
 
         .c-facedat-group {
