@@ -1,46 +1,50 @@
 <template>
-    <div class="c-facedat-upload">
+    <div class="jx3box-facedat-upload c-facedat-upload">
         <div class="u-upload" v-if="support">
             <template v-if="!done">
-                <input class="u-input" type="file" id="face_file" accept=".dat,.jx3dat,.ini" @change="uploadData" />
+                <input ref="fileInput" class="u-input" type="file" accept=".dat,.jx3dat,.ini" @change="uploadData" />
                 <el-button class="u-btn" type="primary" @click="selectData" :icon="Upload">{{
                     btnText
                 }}</el-button>
                 <slot name="guide">
-                    <a v-if="type === 'face'" class="u-help" href="/tool/746" target="_blank">
+                    <a v-if="type === 'face'" class="u-help" href="/tool/746" target="_blank" rel="noopener noreferrer">
                         <el-icon>
                             <Collection />
-                        </el-icon> 游戏脸型导入导出指南
+                        </el-icon> {{ fdT("facedat.upload.guide") }}
                     </a>
                 </slot>
             </template>
             <template v-else>
                 <div class="u-result">
-                    <el-button class="u-reset" @click="resetData" :icon="RefreshLeft">清空重置</el-button>
-                    <el-alert :title="'当前文件为：' + filename" type="success" show-icon></el-alert>
+                    <el-button class="u-reset" @click="resetData" :icon="RefreshLeft">{{ fdT("facedat.upload.reset") }}</el-button>
+                    <el-alert :title="fdT('facedat.upload.currentFile', { filename })" type="success" show-icon></el-alert>
                 </div>
             </template>
         </div>
-        <el-alert v-else class="u-notsupport" title="浏览器不支持" type="warning"
-            description="你的浏览器太老旧不支持本地读取,请更换chrome或其它现代浏览器" show-icon></el-alert>
+        <el-alert v-else class="u-notsupport" :title="fdT('facedat.upload.unsupportedTitle')" type="warning"
+            :description="fdT('facedat.upload.unsupportedDescription')" show-icon></el-alert>
     </div>
 </template>
 
 <script>
+import { markRaw } from "vue";
 import { ElNotification } from "element-plus";
 import { Upload, RefreshLeft, Collection } from "@element-plus/icons-vue";
 import types from "../assets/data/index.json";
 import { load } from "./DataRouter";
+import facedatI18nMixin from "./locale/mixin";
 
 export default {
     name: "Jx3boxUpload",
+    mixins: [facedatI18nMixin],
+    emits: ["success", "fail"],
     props: {
         type: {
             type: String,
             default: "",
         },
     },
-    components: {},
+    components: { Collection },
     data: function () {
         return {
             support: true,
@@ -53,28 +57,16 @@ export default {
             done: false,
             types: types.bodyMap,
 
-            fileTypeNames: {
-                face: "写意脸型",
-                face_v2: "写实脸型",
-                face_ini: "编辑器脸型",
-                body: "体型",
-            },
             // Element Plus 图标
-            Upload,
-            RefreshLeft,
-            Collection,
+            Upload: markRaw(Upload),
+            RefreshLeft: markRaw(RefreshLeft),
         };
     },
     computed: {
         btnText() {
-            let txt = "上传脸型/体型数据";
-            if (this.type === "face") {
-                txt = "上传脸型数据";
-            }
-            if (this.type === "body") {
-                txt = "上传体型数据";
-            }
-            return txt;
+            if (this.type === "face") return this.fdT("facedat.upload.selectFace");
+            if (this.type === "body") return this.fdT("facedat.upload.selectBody");
+            return this.fdT("facedat.upload.selectAny");
         },
         filename: function () {
             return this.file && this.file.name;
@@ -82,12 +74,12 @@ export default {
     },
     methods: {
         // 上传数据
-        selectData: function (i) {
-            let fileInput = document.getElementById("face_file");
-            fileInput.dispatchEvent(new MouseEvent("click"));
+        selectData: function () {
+            this.$refs.fileInput?.click();
         },
         uploadData: function (e) {
-            let file = e.target.files[0];
+            const file = e.target.files?.[0];
+            if (!file) return;
             this.file = file;
             this.parseData(file);
         },
@@ -97,68 +89,75 @@ export default {
             const vm = this;
 
             // 读入 File 转 ArrayBuffer 进行读取
-            let fr = new FileReader();
+            const fr = new FileReader();
             fr.onload = function (e) {
-                console.log("文件读取成功...开始执行分析...");
-                const result = load(e.target.result);
-                if (!result) {
-                    return ElNotification.error({
-                        title: "错误",
-                        message: "数据类型解析失败",
-                    });
-                }
-
-                if (result.type.startsWith("face") && vm.type && vm.type !== "face") {
-                    return ElNotification.error({
-                        title: "错误",
-                        message: "请导入脸型数据",
-                    });
-                }
-                if (result.type === "body" && vm.type && vm.type !== "body") {
-                    return ElNotification.error({
-                        title: "错误",
-                        message: "请导入体型数据",
-                    });
-                }
-
-                vm.parsedType = result.type;
-                vm.object = result.data;
-
-                // 读取成功才分析
-                if (vm.object) {
-                    try {
-                        vm.json = JSON.stringify(vm.object);
-                        console.log();
-                        ElNotification({
-                            title: "成功",
-                            message: `${vm.types[vm.object.nRoleType.toString()]?.label || ""}${vm.fileTypeNames[vm.parsedType]
-                                }数据读取成功`,
-                            type: "success",
-                        });
-                        vm.done = true;
-                        vm.$emit("success", {
-                            type: vm.parsedType,
-                            file: vm.file,
-                            json: vm.json,
-                            object: vm.object,
-                        });
-                    } catch (e) {
-                        console.log(e);
+                try {
+                    const result = load(e.target.result);
+                    if (!result) {
                         ElNotification.error({
-                            title: "错误",
-                            message: "无法读取数据",
+                            title: vm.fdT("facedat.notification.errorTitle"),
+                            message: vm.fdT("facedat.notification.parseFailed"),
                         });
-                        vm.$emit("fail", {
-                            file: vm.file,
-                        });
+                        vm.$emit("fail", { file: vm.file });
+                        return;
                     }
+
+                    if (vm.type === "face" && !result.type.startsWith("face")) {
+                        ElNotification.error({
+                            title: vm.fdT("facedat.notification.errorTitle"),
+                            message: vm.fdT("facedat.notification.requireFace"),
+                        });
+                        vm.$emit("fail", { file: vm.file });
+                        return;
+                    }
+                    if (vm.type === "body" && result.type !== "body") {
+                        ElNotification.error({
+                            title: vm.fdT("facedat.notification.errorTitle"),
+                            message: vm.fdT("facedat.notification.requireBody"),
+                        });
+                        vm.$emit("fail", { file: vm.file });
+                        return;
+                    }
+
+                    vm.parsedType = result.type;
+                    vm.object = result.data;
+                    if (!vm.object) throw new Error("Missing parsed data");
+
+                    vm.json = JSON.stringify(vm.object);
+                    const roleType = vm.object.nRoleType?.toString();
+                    ElNotification({
+                        title: vm.fdT("facedat.notification.successTitle"),
+                        message: vm.fdT("facedat.notification.readSuccess", {
+                            role: vm.fdT(
+                                `facedat.common.roles.${roleType}`,
+                                {},
+                                vm.types[roleType]?.label || ""
+                            ),
+                            type: vm.fdT(`facedat.common.fileTypes.${vm.parsedType}`, {}, vm.parsedType),
+                        }),
+                        type: "success",
+                    });
+                    vm.done = true;
+                    vm.$emit("success", {
+                        type: vm.parsedType,
+                        file: vm.file,
+                        json: vm.json,
+                        object: vm.object,
+                    });
+                } catch {
+                    ElNotification.error({
+                        title: vm.fdT("facedat.notification.errorTitle"),
+                        message: vm.fdT("facedat.notification.cannotRead"),
+                    });
+                    vm.$emit("fail", { file: vm.file });
                 }
             };
-            fr.onerror = function (e) {
+            fr.onerror = function () {
                 ElNotification.error({
-                    title: "错误",
-                    message: "文件读取异常",
+                    title: vm.fdT("facedat.notification.errorTitle"),
+                    message: vm.fdT("facedat.notification.fileReadError"),
                 });
+                vm.$emit("fail", { file: vm.file });
             };
             fr.readAsArrayBuffer(file);
         },
@@ -167,8 +166,10 @@ export default {
             this.done = false;
 
             this.file = "";
+            this.parsedType = "";
             this.json = "";
             this.object = "";
+            if (this.$refs.fileInput) this.$refs.fileInput.value = "";
             this.$emit("success", {
                 file: "",
                 json: "",
@@ -176,8 +177,6 @@ export default {
             });
         },
     },
-    filters: {},
-    created: function () { },
     mounted: function () {
         this.support = !!window.FileReader;
     },
@@ -185,10 +184,12 @@ export default {
 </script>
 
 <style lang="less">
+@import "../assets/css/tokens.less";
+
 .c-facedat-upload {
     .u-tip {
         .fz(12px);
-        color: #999;
+        color: var(--jx3-facedat-color-text-secondary);
     }
 
     .mt(20px);
@@ -203,8 +204,12 @@ export default {
 
     .u-help {
         .fz(12px, 3);
-        color: @color-link;
-        .underline(@color-link);
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        max-width: 100%;
+        color: var(--jx3-facedat-color-primary);
+        text-decoration: underline;
 
         i {
             .fz(14px);
@@ -215,17 +220,46 @@ export default {
     .u-btn {
         .db;
         margin: 0 auto;
-        .size(200px, 50px);
+        width: min(100%, 320px);
+        min-height: 50px;
     }
 
     .u-file {
         .fz(14px, 2);
-        color: #49c10f;
+        color: var(--jx3-facedat-color-success);
         .bold;
     }
 
     .u-reset {
         .mb(10px);
+    }
+
+    .u-result {
+        min-width: 0;
+    }
+
+    .el-alert {
+        min-width: 0;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .c-facedat-upload {
+        margin-top: 12px;
+
+        .u-btn,
+        .u-reset {
+            min-height: 44px;
+        }
+
+        .u-reset {
+            width: 100%;
+        }
+
+        .u-help {
+            padding: 8px 0;
+            line-height: 1.5;
+        }
     }
 }
 </style>

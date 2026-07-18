@@ -1,13 +1,13 @@
 <template>
     <!-- eslint-disable-next-line vue/no-mutating-props -->
-    <div>
+    <div class="jx3box-facedat">
         <div class="c-facedat-tab">
             <el-radio-group v-model="active">
-                <el-radio-button class="u-filter" label="eye">眼部轮廓</el-radio-button>
-                <el-radio-button class="u-filter" label="mouth">嘴部轮廓</el-radio-button>
-                <el-radio-button class="u-filter" label="nose">鼻子轮廓</el-radio-button>
-                <el-radio-button class="u-filter" label="face">脸部轮廓</el-radio-button>
-                <el-radio-button class="u-filter" label="decals">贴花</el-radio-button>
+                <el-radio-button class="u-filter" value="eye">{{ fdT("facedat.face.old.tabs.eye") }}</el-radio-button>
+                <el-radio-button class="u-filter" value="mouth">{{ fdT("facedat.face.old.tabs.mouth") }}</el-radio-button>
+                <el-radio-button class="u-filter" value="nose">{{ fdT("facedat.face.old.tabs.nose") }}</el-radio-button>
+                <el-radio-button class="u-filter" value="face">{{ fdT("facedat.face.old.tabs.face") }}</el-radio-button>
+                <el-radio-button class="u-filter" value="decals">{{ fdT("facedat.face.old.tabs.decals") }}</el-radio-button>
             </el-radio-group>
             <slot></slot>
         </div>
@@ -15,7 +15,7 @@
             <div class="c-facedat-group" v-show="active === 'eye'">
                 <ul class="u-list">
                     <li v-for="(key, i) in group['eye']" :key="key + i">
-                        <label>{{ dict[key]["desc"] }}</label>
+                        <label>{{ oldFieldLabel(key) }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
                         <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
                             :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
@@ -29,7 +29,7 @@
             <div class="c-facedat-group" v-show="active === 'mouth'">
                 <ul class="u-list">
                     <li v-for="(key, i) in group['mouth']" :key="key + i">
-                        <label>{{ dict[key]["desc"] }}</label>
+                        <label>{{ oldFieldLabel(key) }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
                         <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
                             :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
@@ -43,7 +43,7 @@
             <div class="c-facedat-group" v-show="active === 'nose'">
                 <ul class="u-list">
                     <li v-for="(key, i) in group['nose']" :key="key + i">
-                        <label>{{ dict[key]["desc"] }}</label>
+                        <label>{{ oldFieldLabel(key) }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
                         <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
                             :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
@@ -57,7 +57,7 @@
             <div class="c-facedat-group" v-show="active === 'face'">
                 <ul class="u-list">
                     <li v-for="(key, i) in group['face']" :key="key + i">
-                        <label>{{ dict[key]["desc"] }}</label>
+                        <label>{{ oldFieldLabel(key) }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
                         <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
                             :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
@@ -74,22 +74,20 @@
                         <ul class="u-decals">
                             <li v-show="!clean || checkdecal_prop(key)">
                                 <div class="u-title">
-                                    <template v-if="dict[key]['desc'] === '右瞳'">左瞳</template>
-                                    <template v-else-if="dict[key]['desc'] === '左瞳'">右瞳</template>
-                                    <template v-else>{{ dict[key]["desc"] }}</template>
+                                    {{ oldFieldLabel(key, true) }}
                                 </div>
 
-                                <span class="u-dname"><img class="u-pic"
+                                <span class="u-dname"><img class="u-pic" :alt="decalDb.getDecalName(key, cleandata['tDecal'][key]['nShowID'])"
                                         :src="decalDb.getDecalIcon(key, cleandata['tDecal'][key]['nShowID'])" />{{ decalDb.getDecalName(key, cleandata["tDecal"][key]["nShowID"]) }}</span>
                                 <span class="u-dflip"
-                                    v-if="decalDb.getDecalIsFlip(key, cleandata['tDecal'][key]['nShowID'])">(翻转)</span>
-                                <span class="u-dcolor">(颜色:{{ cleandata["tDecal"][key]["nColorID"] }})</span>
+                                    v-if="decalDb.getDecalIsFlip(key, cleandata['tDecal'][key]['nShowID'])">({{ fdT("facedat.common.flipped") }})</span>
+                                <span class="u-dcolor">({{ fdT("facedat.common.color", { value: cleandata["tDecal"][key]["nColorID"] }) }})</span>
                                 <span class="u-free">
                                     <template v-if="decalDb.getDecalIsFree(key, cleandata['tDecal'][key]['nShowID'])">
                                         <el-icon>
                                             <SuccessFilled />
                                         </el-icon>
-                                        新建角色可用</template>
+                                        {{ fdT("facedat.face.old.availableOnCreate") }}</template>
                                 </span>
                                 <span class="u-price"
                                     v-if="decalDb.getDecalPrice(key, cleandata['tDecal'][key]['nShowID'])">
@@ -97,7 +95,7 @@
                                         <Coin />
                                     </el-icon>
                                     {{ decalDb.getDecalPrice(key, cleandata["tDecal"][key]["nShowID"]) }}
-                                    通宝
+                                    {{ fdT("facedat.common.coin") }}
                                 </span>
                             </li>
                         </ul>
@@ -106,9 +104,9 @@
                 <div class="c-facedat-group">
                     <ul class="u-decals">
                         <li>
-                            <div class="u-title">装饰物</div>
+                            <div class="u-title">{{ fdT("facedat.common.decoration") }}</div>
 
-                            <span class="u-dname"><img class="u-pic"
+                            <span class="u-dname"><img class="u-pic" :alt="decalDb.getDecorationName(cleandata['nDecorationID'])"
                                     :src="decalDb.getDecorationIcon(cleandata['nDecorationID'])" />{{
                                         decalDb.getDecorationName(cleandata["nDecorationID"])
                                     }}</span>
@@ -119,17 +117,17 @@
                                     <Coin />
                                 </el-icon>
                                 {{ decalDb.showDecorationPrice(cleandata["nDecorationID"]) }}
-                                通宝
+                                {{ fdT("facedat.common.coin") }}
                             </span>
                         </li>
                     </ul>
                 </div>
                 <div class="c-facedat-group">
                     <ul class="u-decals">
-                        <div class="u-title">总计</div>
+                        <div class="u-title">{{ fdT("facedat.common.total") }}</div>
                         <span class="u-total u-price"><el-icon>
                                 <Coin />
-                            </el-icon> <b>{{ decalDb.getTotalPrice(cleandata) }}</b> 通宝</span>
+                            </el-icon> <b>{{ decalDb.getTotalPrice(cleandata) }}</b> {{ fdT("facedat.common.coin") }}</span>
                     </ul>
                 </div>
             </div>
@@ -145,10 +143,11 @@ import group from "../assets/data/face/group.json";
 import dict from "../assets/data/face/dict.json";
 import decal_group from "../assets/data/face/decal_group.json";
 import bone_range from "../assets/data/face/bone_range.json";
-import decal_default from "../assets/data/face/decal_default.json";
+import facedatI18nMixin from "./locale/mixin";
 export default {
     name: "Jx3boxFacedatOldFace",
-    props: ["facedata", "lock", "decalDb", "body_type", "clean"],
+    mixins: [facedatI18nMixin],
+    props: ["facedata", "lock", "decalDb", "body_type", "clean", "cleandata"],
     components: {
         Slider,
         Coin,
@@ -171,29 +170,13 @@ export default {
             bone_range,
         };
     },
-    computed: {
-        cleandata: function () {
-            if (this.clean && this.facedata) {
-                let _cleandata = _.cloneDeep(this.facedata);
-                _cleandata.nDecorationID = 0;
-                for (let key in _cleandata.tDecal) {
-                    let CanUseInCreate = this.decalDb.getDecalIsFree(key, _cleandata.tDecal[key]["nShowID"]);
-                    console.log(CanUseInCreate);
-                    if (!CanUseInCreate) {
-                        _cleandata.tDecal[key]["nShowID"] = decal_default[key]["nShowID"];
-                    }
-                }
-                return _cleandata;
-            } else {
-                return this.facedata;
-            }
-        },
-    },
-    mounted() {
-        console.log(bone_range[this.body_type]);
-    },
-
     methods: {
+        oldFieldLabel(key, swapIris = false) {
+            let displayKey = key;
+            if (swapIris && key === "IRIS_RIGHT") displayKey = "IRIS_LEFT";
+            if (swapIris && key === "IRIS_LEFT") displayKey = "IRIS_RIGHT";
+            return this.fdT(`facedat.face.old.fields.${displayKey}`, {}, dict[displayKey]?.desc || key);
+        },
         checkdecal_prop: function (key) {
             return decal_group.origin.includes(key);
         },
@@ -202,41 +185,5 @@ export default {
 </script>
 
 <style lang="less">
-.c-facedat-tab {
-    .mt(20px);
-    .mb(20px);
-
-    .u-filter {
-        white-space: nowrap;
-        vertical-align: middle;
-
-        .el-button,
-        .el-checkbox-button__inner,
-        .el-radio-button__inner {
-            .fz(16px, 33px);
-            padding: 0 20px 0 20px;
-            margin: 10px 10px 0 10px;
-            .db;
-            .r(30px);
-            color: #8d8d8d;
-            border: 1px solid #fff;
-            background-color: #fff;
-            .bold(400);
-
-            &:hover {
-                color: #fff;
-                background-color: #6b52ff;
-                border-color: #6b52ff;
-                .bold(400);
-            }
-        }
-
-        .el-radio-button__orig-radio:checked+.el-radio-button__inner {
-            background-color: #6b52ff;
-            border-color: #6b52ff;
-            color: #fff;
-            .bold(400);
-        }
-    }
-}
+@import "../assets/css/facedat.less";
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div class="c-facedat" v-if="ready && group_tabs">
+  <div class="jx3box-facedat c-facedat" v-if="ready && group_tabs">
     <div class="c-facedat-tab">
       <el-radio-group v-model="active">
         <el-radio-button v-for="(tab, index) in cachedTabs" :key="index" class="u-filter"
-          :label="tab.value">{{ tab.label }}</el-radio-button>
+          :value="tab.value">{{ fdT(`facedat.body.tabs.${tab.value}`, {}, tab.label) }}</el-radio-button>
       </el-radio-group>
       <slot></slot>
     </div>
@@ -14,8 +14,10 @@
             <li v-for="(item, i) in currentGroup" :key="i">
               <label>{{ item.name }}</label>
               <span>{{ item.value }}</span>
-              <slider class="u-range" :min="item.min" :max="item.max" v-model="body_data.tBody[item.key]"
-                :disabled="lock"></slider>
+              <slider v-if="lock" class="u-range" :min="item.min" :max="item.max"
+                :value="body_data.tBody[item.key]"></slider>
+              <el-slider v-else class="u-range" :min="item.min" :max="item.max"
+                v-model="body_data.tBody[item.key]"></el-slider>
             </li>
           </ul>
         </div>
@@ -23,12 +25,13 @@
     </template>
     <div class="c-facedat-btns">
       <el-button class="u-btn" type="primary" @click="buildData" :disabled="!body_data"
-        :icon="Download">导出正式服</el-button>
+        :icon="Download">{{ fdT("facedat.face.actions.exportStd") }}</el-button>
     </div>
   </div>
 </template>
 
 <script>
+import { markRaw } from "vue";
 import _ from "lodash";
 import { ElNotification } from "element-plus";
 import { Download } from "@element-plus/icons-vue";
@@ -39,9 +42,11 @@ import group_fields from "../assets/data/body/body_group_fields.json";
 import types from "../assets/data/index.json";
 import field_range from "../assets/data/body/body_fields_reverse.json";
 import Slider from "./Slider.vue";
+import facedatI18nMixin from "./locale/mixin";
 
 export default {
   name: "Jx3boxBodydat",
+  mixins: [facedatI18nMixin],
   // props: 父组件传入的体型数据对象
   props: ["data", "lock", "tab_type"],
   components: { Slider },
@@ -62,7 +67,7 @@ export default {
       // 体型类型映射表（从 index.json 导入）
       types: types.bodyMap,
       // Element Plus 图标
-      Download,
+      Download: markRaw(Download),
     };
   },
   computed: {
@@ -94,7 +99,7 @@ export default {
           const fieldRange = this.currentFieldRanges[key];
           return {
             key: key,
-            name: this.currentGroupFields[key].name,
+            name: this.fdT(`facedat.body.fields.${key}`, {}, this.currentGroupFields[key].name),
             min: fieldRange?.min ?? 0,
             max: fieldRange?.max ?? 100,
             use_for_body_type: fieldRange?.use_for_body_type ?? false,
@@ -139,8 +144,8 @@ export default {
         this.body_type = "";
         // Vue 3 使用 ElNotification 替代 this.$notify
         ElNotification.error({
-          title: "错误",
-          message: "体型数据无法解析",
+          title: this.fdT("facedat.notification.errorTitle"),
+          message: this.fdT("facedat.notification.bodyParseFailed"),
         });
       }
     },
@@ -150,57 +155,24 @@ export default {
      */
     buildData: function () {
       if (!this.body_data) return;
-      // 深拷贝避免修改原始数据
-      const outputWithHeader = dump(_.cloneDeep(this.body_data));
-      const blob = new Blob([outputWithHeader], {
-        type: "application/dat;charset=utf-8",
-      });
-      saveAs(blob, Date.now() + ".dat");
+      try {
+        // 深拷贝避免修改原始数据
+        const outputWithHeader = dump(_.cloneDeep(this.body_data));
+        const blob = new Blob([outputWithHeader], {
+          type: "application/dat;charset=utf-8",
+        });
+        saveAs(blob, Date.now() + ".dat");
+      } catch {
+        ElNotification.error({
+          title: this.fdT("facedat.notification.errorTitle"),
+          message: this.fdT("facedat.notification.exportFailed"),
+        });
+      }
     },
   },
-  mounted() { },
 };
 </script>
 
 <style lang="less">
 @import "../assets/css/facedat.less";
-
-.c-facedat-tab {
-  .mt(20px);
-  .mb(20px);
-
-  .u-filter {
-    white-space: nowrap;
-    vertical-align: middle;
-
-    .el-button,
-    .el-checkbox-button__inner,
-    .el-radio-button__inner {
-      .fz(16px, 33px);
-      padding: 0 20px 0 20px;
-      margin: 10px 10px 0 10px;
-      .db;
-      .r(30px);
-      color: #8d8d8d;
-      border: 1px solid #fff;
-      background-color: #fff;
-      .bold(400);
-
-      &:hover {
-        color: #fff;
-        background-color: #6b52ff;
-        border-color: #6b52ff;
-        .bold(400);
-      }
-    }
-
-    .el-radio-button__orig-radio:checked+.el-radio-button__inner {
-      background-color: #6b52ff;
-      border-color: #6b52ff;
-      color: #fff;
-      .bold(400);
-    }
-
-  }
-}
 </style>

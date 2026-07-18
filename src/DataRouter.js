@@ -21,21 +21,18 @@ export function load(buf) {
         lua = luadata.unserialize(payload);
 
         if (lua.get("tBody")) {
-            console.log("数据为体型数据");
             return {
                 type: "body",
                 data: convertBody(lua),
             }
         }
         else if(lua.get("bNewFace")) {
-            console.log("数据为写实脸型数据");
             return {
                 type: "face_v2",
                 data: luadata.unserialize(payload, { dictType: "object" }), // FIXME: 同上
             }
         }
         else {
-            console.log("数据为写意脸型数据");
             return {
                 type: "face",
                 data: luaJsonParse("return " + payload),    // 为了和之前的代码保持兼容，暂时不更换 lua-json，要手动加回去 return
@@ -47,7 +44,6 @@ export function load(buf) {
         try {
             const ini = iniParse(payload);
             const face = convertFaceIni(ini);
-            console.log("数据为编辑器 INI 脸型数据");
             return {
                 type: "face_ini",
                 data: face,

@@ -1,9 +1,9 @@
 <template>
-    <div style="max-width: 980px; margin: 100px auto">
+    <main class="p-facedat-demo">
         <Upload @success="handleSuccess" />
         <Facedat v-if="isFace" :data="data" :lock="true" />
         <Bodydat v-if="isBody" :data="data" :lock="false" />
-    </div>
+    </main>
 </template>
 
 <script>
@@ -39,3 +39,17 @@ export default {
     },
 };
 </script>
+
+<style lang="less">
+.p-facedat-demo {
+    width: min(calc(100% - 32px), 980px);
+    margin: 48px auto;
+}
+
+@media screen and (max-width: 720px) {
+    .p-facedat-demo {
+        width: min(calc(100% - 24px), 980px);
+        margin: 20px auto;
+    }
+}
+</style>

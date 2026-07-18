@@ -1,32 +1,31 @@
 <template>
-    <div class="c-facedat" v-if="ready">
+    <div class="jx3box-facedat c-facedat" v-if="ready">
         <NewFace :facedata="facedata" :body_type="body_type" :cleandata="cleandata" :clean="clean" :lock="lock"
-            :decalDb="decalDb" v-if="decalDb && facedata.bNewFace">
+            :decalDb="decalDb" :locale="facedatLocale" v-if="decalDb && facedata.bNewFace">
         </NewFace>
         <OldFace :facedata="facedata" :body_type="body_type" :cleandata="cleandata" :clean="clean" :lock="lock"
-            :decalDb="decalDb" v-if="decalDb && !facedata.bNewFace">
-            <div class="u-clean-button" @click="
+            :decalDb="decalDb" :locale="facedatLocale" v-if="decalDb && !facedata.bNewFace">
+            <button type="button" class="u-clean-button" @click="
                 clean = true;
             visible = !visible;
             ">
-                数据清洗
-            </div>
+                {{ fdT("facedat.face.actions.clean") }}
+            </button>
         </OldFace>
-        <el-dialog title="数据清洗" class="m-data-clean" v-model="visible" @close="clean = false">
+        <el-dialog :title="fdT('facedat.face.actions.clean')" class="m-data-clean" v-model="visible" @close="clean = false">
             <div class="m-button">
-                <el-button class="u-btn" type="primary" @click="buildData('std')" :icon="Download">导出正式服</el-button>
-                <el-button class="u-btn" type="warning" @click="buildData('origin')" :icon="Download">导出怀旧服</el-button>
+                <el-button class="u-btn" type="primary" @click="buildData('std')" :icon="Download">{{ fdT("facedat.face.actions.exportStd") }}</el-button>
+                <el-button class="u-btn" type="warning" @click="buildData('origin')" :icon="Download">{{ fdT("facedat.face.actions.exportOrigin") }}</el-button>
             </div>
         </el-dialog>
     </div>
 </template>
 
 <script>
+import { markRaw } from "vue";
 import _ from "lodash";
 import { ElNotification } from "element-plus";
 import { Download } from "@element-plus/icons-vue";
-import jx3box from "@jx3box/jx3box-common/data/jx3box.json";
-const { __ossMirror, __iconPath, __ossRoot } = jx3box;
 import fixOldData from "./fixOldData.js";
 import decal_group from "../assets/data/face/decal_group.json";
 import decal_prop from "../assets/data/face/decal_prop.json";
@@ -41,21 +40,14 @@ import * as KData from "./KData";
 
 import NewFace from "./NewFace";
 import OldFace from "./OldFace";
+import facedatI18nMixin from "./locale/mixin";
 export default {
     name: "Jx3boxFacedat",
+    mixins: [facedatI18nMixin],
     props: ["data", "lock", "tab_type"],
 
     data: function () {
         return {
-            active: "eye",
-            subActive: {
-                mouth: "整体",
-                eye: "整体",
-                nose: "整体",
-                decals: "底妆",
-                contour: "额头",
-                eyebrow: "整体",
-            },
             // 数据
             body_type: "",
             facedata: "",
@@ -69,11 +61,8 @@ export default {
             version: "std",
 
             decalDb: null,
-            decalMap: "",
-            decorationMap: "",
-            totalPrice: "",
             // Element Plus 图标
-            Download,
+            Download: markRaw(Download),
         };
     },
     components: {
@@ -144,20 +133,13 @@ export default {
             return data;
         },
         output: function () {
-            let table = {};
-            let data = this.version == "origin" ? this.output_origin : this.output_std;
-            try {
-                table = "return " + format(data, { eol: "", spaces: 0 }).slice(6);
-            } catch (e) {
-                console.log("导出转换失败");
-                console.log(e);
-            }
-            return table;
+            const data = this.version == "origin" ? this.output_origin : this.output_std;
+            return "return " + format(data, { eol: "", spaces: 0 }).slice(6);
         },
     },
     watch: {
         data: {
-            deep: true,
+            immediate: true,
             handler: function (newdata) {
                 this.render();
             },
@@ -168,14 +150,6 @@ export default {
                 this.$forceUpdate();
             },
         },
-        client: {
-            immediate: true,
-            handler: function (val) {
-                let facedata = this.data.object;
-                this.decalDb = new DecalDatabase(this.client, facedata.bNewFace);
-                console.log(this.decalDb)
-            },
-        },
     },
     methods: {
         // 数据构建
@@ -184,6 +158,7 @@ export default {
             if (!this.data) {
                 this.body_type = "";
                 this.facedata = "";
+                this.decalDb = null;
                 return;
             }
 
@@ -192,30 +167,37 @@ export default {
                 let facedata = this.data.object;
                 // 旧版数据
                 this.body_type = facedata.status ? facedata.misc[0]["value"] : facedata.nRoleType;
-                this.decalDb.setBodyType(this.body_type);
                 this.facedata = facedata.status ? fixOldData(facedata) : facedata;
-                if (!this.facedata.bNewFace) {
-                    this.totalPrice = this.decalDb.getTotalPrice(this.cleandata);
-                }
-            } catch (e) {
+                this.decalDb = new DecalDatabase(this.client, this.facedata.bNewFace, {
+                    t: (key, params, fallback) => this.fdT(key, params, fallback),
+                });
+                this.decalDb.setBodyType(this.body_type);
+            } catch {
                 this.facedata = "";
-                console.log(e);
+                this.decalDb = null;
                 // Vue 3 使用 ElNotification 替代 this.$notify
                 ElNotification.error({
-                    title: "错误",
-                    message: "脸型数据无法解析",
+                    title: this.fdT("facedat.notification.errorTitle"),
+                    message: this.fdT("facedat.notification.faceParseFailed"),
                 });
             }
         },
 
         // 按钮
         buildData: function (v) {
-            this.version = v;
-            let outputWithHeader = KData.dump(this.output);
-            let blob = new Blob([outputWithHeader], {
-                type: "application/dat;charset=utf-8",
-            });
-            saveAs(blob, Date.now() + ".dat");
+            try {
+                this.version = v;
+                const outputWithHeader = KData.dump(this.output);
+                const blob = new Blob([outputWithHeader], {
+                    type: "application/dat;charset=utf-8",
+                });
+                saveAs(blob, Date.now() + ".dat");
+            } catch {
+                ElNotification.error({
+                    title: this.fdT("facedat.notification.errorTitle"),
+                    message: this.fdT("facedat.notification.exportFailed"),
+                });
+            }
         },
 
         // 数据修正
@@ -247,15 +229,6 @@ export default {
         checkdecal_prop: function (key) {
             return decal_group.origin.includes(key);
         },
-        clog(i) {
-            console.log(i);
-        },
-        getNewDecal(decalType) {
-            return new_decal_type[this.facedata.nRoleType][decalType][this.facedata.tDecal[decalType]["nShowID"]];
-        },
-    },
-    mounted: function () {
-        this.render();
     },
 };
 </script>

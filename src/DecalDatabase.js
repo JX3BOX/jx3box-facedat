@@ -34,10 +34,11 @@ export class DecalDatabase {
      * @param {string} client - 客户端类型，可选值: "std" | "origin"
      * @param {boolean} v2 - 是否使用 v2 版本数据
      */
-    constructor(client = "std", v2 = false) {
+    constructor(client = "std", v2 = false, options = {}) {
         this.client = client;
         this.bodyType = 0;
         this.v2 = v2;
+        this.t = options.t || ((key, params, fallback) => fallback || key);
 
         // 立即使用本地文件数据初始化（同步），确保 ready() 立即可用
         const dataKey = v2 ? "v2" : client;
@@ -161,7 +162,7 @@ export class DecalDatabase {
      */
     getDecalName(key, val, v2 = false) {
         const item = this._getDecalItem(key, val, v2);
-        return item?.name || "无";
+        return item?.name || this.t("facedat.common.none", {}, "无");
     }
 
     /**
@@ -229,7 +230,7 @@ export class DecalDatabase {
      */
     getDecorationName(id) {
         const item = this._getDecorationItem(id);
-        return item?.Name || "无";
+        return item?.Name || this.t("facedat.common.none", {}, "无");
     }
 
     /**

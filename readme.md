@@ -1,37 +1,76 @@
-# Facedat
-捏脸分析公共组件
+# @jx3box/jx3box-facedat
 
-## Step.1 Install
-```
-npm install --save @jx3box/jx3box-facedat
-```  
+剑网 3 捏脸/体型数据解析、展示与导出组件，基于 Vue 3 和 Element Plus。
 
-## Step.2 Import
-+ 引入模块
-```javascript
-import Upload from "@jx3box/jx3box-facedat/src/Upload.vue"
-import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue"
-```
-## Step.3 Usage
-+ 使用模块
-```html
-<Upload @success="handleSuccess"/>
-<Facedat :data="json" :lock="false"/>
+## 安装
+
+```bash
+npm install @jx3box/jx3box-facedat
 ```
 
-## 测试地址
-1. 应用页
-2. 新数据渲染页
-3. 旧数据渲染页
+## 按需使用
+
+```js
+import Upload from "@jx3box/jx3box-facedat/src/Upload.vue";
+import Facedat from "@jx3box/jx3box-facedat/src/Facedat.vue";
+import Bodydat from "@jx3box/jx3box-facedat/src/Bodydat.vue";
+```
+
+```vue
+<Upload locale="zh-CN" @success="handleSuccess" />
+<Facedat v-if="data.type?.startsWith('face')" :data="data" :lock="true" locale="zh-CN" />
+<Bodydat v-if="data.type === 'body'" :data="data" :lock="false" locale="zh-CN" />
+```
+
+组件支持 `zh-CN`、`zh-TW`、`en-US`、`vi`。如果宿主已经安装 vue-i18n，组件会跟随宿主 locale；显式 `locale` prop 的优先级更高。宿主也可以统一合并本包词条：
+
+```js
+import { mergeFacedatLocaleMessages } from "@jx3box/jx3box-facedat/src/locale";
+
+mergeFacedatLocaleMessages(i18n);
+```
+
+## 全量注册
+
+```js
+import FacedatPlugin from "@jx3box/jx3box-facedat";
+
+app.use(FacedatPlugin, { i18n });
+```
+
+插件会注册 `Facedat`、`Bodydat`、`Upload` 和 `Slider`。
+
+## 主题
+
+主题通过 CSS 变量覆盖，变量作用域限制在组件根节点，不影响宿主其他 Element Plus 组件：
+
+```css
+.my-facedat-theme {
+    --jx3-facedat-color-primary: #2563eb;
+    --jx3-facedat-color-success: #16a34a;
+    --jx3-facedat-color-price: #d97706;
+}
+```
+
+将该 class 放在组件祖先节点即可。完整变量见 `assets/css/tokens.less`。
+
+## 事件载荷
+
+`Upload` 解析成功后触发：
+
+```js
+{
+    type: "face" | "face_v2" | "face_ini" | "body",
+    file: File,
+    json: String,
+    object: Object,
+}
+```
 
 ## 数据构建
-1. 本地数据库构建，默认使用facedecals__作为主
-2. decal__作为价格补充列
-3. 导入gb2313，关联RoleType/Type/ShowID
-4. 导出csv
-5. 执行`npm run face`生成json
 
-## Todo
-涉及项目：app、share
-1. 根据游戏版本进程，需要更新version.json
-2. 根据游戏更新贴花，需要更新raw内容并重新build，同时更新使用项目库
+- `npm run face`：生成写意脸型数据；
+- `npm run facev2`：生成写实脸型数据；
+- `npm run body`：生成体型字段数据。
+
+更完整的架构、i18n、主题和响应式规则见 [`docs/README.md`](./docs/README.md)。
