@@ -80,6 +80,9 @@ export default {
         uploadData: function (e) {
             const file = e.target.files?.[0];
             if (!file) return;
+            // Allow selecting the same file again after either a success or a failure.
+            // The File object remains valid after the native input value is cleared.
+            e.target.value = "";
             this.file = file;
             this.parseData(file);
         },

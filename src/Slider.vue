@@ -1,6 +1,7 @@
 <template>
     <!-- 滑动条组件 -->
     <div class="slider-container" :class="{ 'is-negative': currentValue < center }" role="meter"
+        :aria-label="label || undefined"
         :aria-valuemin="min" :aria-valuemax="max" :aria-valuenow="currentValue">
         <div class="slider-runway">
             <div class="slider-track slider-track-left"></div>
@@ -58,8 +59,11 @@ export default {
             default: undefined,
             type: Number,
         },
+        label: {
+            default: "",
+            type: String,
+        },
     },
-    emits: ["update:modelValue"],
     methods: {
         toPercent(value) {
             if (this.max === this.min) return 50;

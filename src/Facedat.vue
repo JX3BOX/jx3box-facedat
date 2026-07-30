@@ -218,13 +218,13 @@ export default {
             for (let key in decal_default) {
                 // 不存在补全属性
                 if (!data[key]) {
-                    data[key] = _.cloneDeep(decal_default[key]);
+                    _decal[key] = _.cloneDeep(decal_default[key]);
                     // 存在则补全子属性
                 } else {
-                    data[key] = Object.assign(decal_default[key], data[key]);
+                    _decal[key] = Object.assign(_decal[key], data[key]);
                 }
             }
-            return data;
+            return _decal;
         },
         checkdecal_prop: function (key) {
             return decal_group.origin.includes(key);

@@ -24,7 +24,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -36,7 +36,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -57,7 +57,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range kk" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -69,7 +69,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range kk" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -90,7 +90,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range kk" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -102,7 +102,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range kk" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -123,7 +123,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range kk" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -135,7 +135,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range kk" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -156,7 +156,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range kk" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>
@@ -168,7 +168,7 @@
                                     <label>{{ newFaceLabel(key.BoneName) }}</label>
                                     <span>{{ facedata["tBone"][key.BoneType] }}</span>
                                     <Slider v-if="lock" class="u-range kk" :min="-128" :max="128"
-                                        v-model="facedata['tBone'][key.BoneType]">
+                                        v-model="facedata['tBone'][key.BoneType]" :label="newFaceLabel(key.BoneName)">
                                     </Slider>
                                     <el-slider v-else class="u-range" :min="-128" :max="128"
                                         v-model="facedata['tBone'][key.BoneType]" :disabled="lock"></el-slider>

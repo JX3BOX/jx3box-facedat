@@ -15,7 +15,7 @@
               <label>{{ item.name }}</label>
               <span>{{ item.value }}</span>
               <slider v-if="lock" class="u-range" :min="item.min" :max="item.max"
-                :value="body_data.tBody[item.key]"></slider>
+                :value="body_data.tBody[item.key]" :label="item.name"></slider>
               <el-slider v-else class="u-range" :min="item.min" :max="item.max"
                 v-model="body_data.tBody[item.key]"></el-slider>
             </li>

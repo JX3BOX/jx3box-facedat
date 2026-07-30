@@ -1,12 +1,13 @@
 {
     "name": "@jx3box/jx3box-facedat",
-    "version": "2.7.6",
+    "version": "2.7.7",
     "description": "JX3BOX Facedat viewer",
     "main": "index.js",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
+        "check:i18n": "node scripts/check-i18n.js",
         "node+": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
         "inspect": "vue inspect > output.js",
         "update": "npm install @jx3box/jx3box-common@latest @jx3box/jx3box-data@latest",

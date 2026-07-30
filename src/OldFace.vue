@@ -18,7 +18,8 @@
                         <label>{{ oldFieldLabel(key) }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
                         <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
+                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]"
+                            :label="oldFieldLabel(key)">
                         </slider>
                         <el-slider v-else class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
                             :max="bone_range[body_type][dict[key]['type']]['max']" v-model="facedata['tBone'][key]"
@@ -32,7 +33,8 @@
                         <label>{{ oldFieldLabel(key) }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
                         <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
+                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]"
+                            :label="oldFieldLabel(key)">
                         </slider>
                         <el-slider v-else class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
                             :max="bone_range[body_type][dict[key]['type']]['max']" v-model="facedata['tBone'][key]"
@@ -46,7 +48,8 @@
                         <label>{{ oldFieldLabel(key) }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
                         <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
+                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]"
+                            :label="oldFieldLabel(key)">
                         </slider>
                         <el-slider v-else class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
                             :max="bone_range[body_type][dict[key]['type']]['max']" v-model="facedata['tBone'][key]"
@@ -60,7 +63,8 @@
                         <label>{{ oldFieldLabel(key) }}</label>
                         <span>{{ facedata["tBone"][key] }}</span>
                         <slider v-if="lock" class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
-                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]">
+                            :max="bone_range[body_type][dict[key]['type']]['max']" :value="facedata['tBone'][key]"
+                            :label="oldFieldLabel(key)">
                         </slider>
                         <el-slider v-else class="u-range" :min="bone_range[body_type][dict[key]['type']]['min']"
                             :max="bone_range[body_type][dict[key]['type']]['max']" v-model="facedata['tBone'][key]"

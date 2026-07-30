@@ -40,6 +40,9 @@ app.use(FacedatPlugin, { i18n });
 
 插件会注册 `Facedat`、`Bodydat`、`Upload` 和 `Slider`。
 
+`Slider` 是只读数值展示组件，使用 `role="meter"`；可通过 `label` 提供无障碍名称。需要编辑数值时请使用
+Element Plus Slider 或其他可交互控件。
+
 ## 主题
 
 主题通过 CSS 变量覆盖，变量作用域限制在组件根节点，不影响宿主其他 Element Plus 组件：
